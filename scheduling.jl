@@ -1,17 +1,22 @@
 using JuMP
 using CPLEX
 
+################## CREATE A MODEL OBJECT TO BE RUN ON CPLEX  ####################
 m = Model(solver=CplexSolver(CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1))
 
 MAX_EXECUTION_TIME = 60*15
 
 
 bigM = 100000
+############################ START MAIN FUNCTION ##############################
 open("Instances/Instances With Deterioration/instance_list.txt") do file
+    #### READING THE INSTANCE LIST
     for instanceName in eachline(file)
+        #### MAIN PARAMETERS OF THE OPTIMIZATION
         NUMBER_OF_JOBS = 0
         NUMBER_OF_MACHINES = 0
         NUMBER_OF_PERIODS = 0
+        ########################### START TO READ A INSTANCE ###################
         open(string("Instances/Instances With Deterioration/Instances/",instanceName)) do instance
            NUMBER_OF_MACHINES = parse(Int64, readline(instance))
            NUMBER_OF_JOBS = parse(Int64, readline(instance))
@@ -21,13 +26,15 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
               NUMBER_OF_PERIODS = 1
            end
 
-           d = zeros(NUMBER_OF_JOBS, NUMBER_OF_MACHINES)
-           p = zeros(NUMBER_OF_JOBS, NUMBER_OF_MACHINES)
-           t = zeros(NUMBER_OF_MACHINES)
+           d = zeros(NUMBER_OF_JOBS, NUMBER_OF_MACHINES)     #2-dimensional array
+           p = zeros(NUMBER_OF_JOBS, NUMBER_OF_MACHINES)     #2-dimensional array
+           t = zeros(NUMBER_OF_MACHINES)                     #1-dimensional array
 
            jobDurationData = readline(instance)
            jobDurations = split(jobDurationData, " ")
 
+           ##### STORE JOBS DURATION. IT IS SUPPOSED THAT ALL MACHINES ARE
+           ##### EQUALS HERE
            for i in 1:NUMBER_OF_JOBS
                for j in 1:NUMBER_OF_MACHINES
                    p[i,j] = parse(Float64, jobDurations[i])
@@ -37,11 +44,13 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            maintenanceDurationData = readline(instance)
            maintenanceDuration = split(maintenanceDurationData, " ")
 
+           ##### STORE MAINTENANCE DATA
            for i in NUMBER_OF_MACHINES
                t[i] = parse(Float64, maintenanceDuration[i])
            end
 
-
+           #### STORE DETERIORATION DATA. IT IS SUPPOSED THAT THE MACHINES ARE
+           #### DIFERENT HERE
            for i in 1:NUMBER_OF_JOBS
                  stringData = readline(instance)
                  rowData = split(stringData, " ")
@@ -49,6 +58,8 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                      d[i,j] = parse(Float64, rowData[j])
                 end
            end
+
+           ##################################### MODEL CREATION #######################################
 
            #Binary variable. Defines if the job j is assigned to machine k at position h
            @variable(m,x[1:NUMBER_OF_JOBS, 1:NUMBER_OF_MACHINES, 1: NUMBER_OF_PERIODS]>=0, Bin,basename="x")
@@ -72,7 +83,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ############################################################################################
            for h = 1:NUMBER_OF_PERIODS
                for k = 1:NUMBER_OF_MACHINES
-                   @constraint(m, sum(x[j,k,h] for j in 1:NUMBER_OF_JOBS) +s[k,h] <= 1 )
+                  @constraint(m, sum(x[j,k,h] for j in 1:NUMBER_OF_JOBS) +s[k,h] <= 1 )
                end
            end
 
@@ -88,7 +99,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ############################################################################################
            for k =1:NUMBER_OF_MACHINES
                for h = 2:NUMBER_OF_PERIODS
-                   @constraint(m, s[k,h-1] + s[k,h] <= 1)
+                  @constraint(m, s[k,h-1] + s[k,h] <= 1)
                end
            end
 
@@ -120,9 +131,9 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ############################################################################################
            for j = 1:NUMBER_OF_JOBS
                for k = 1:NUMBER_OF_MACHINES
-                   for h = 1:NUMBER_OF_PERIODS
+                  for h = 1:NUMBER_OF_PERIODS
                        @constraint( m,  a[j,k,h] <= bigM*x[j,k,h])
-                   end
+                  end
                end
            end
 
@@ -134,9 +145,9 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ############################################################################################
            for j = 1:NUMBER_OF_JOBS
                for k = 1:NUMBER_OF_MACHINES
-                   for h = 1:NUMBER_OF_PERIODS
+                  for h = 1:NUMBER_OF_PERIODS
                        @constraint( m,  a[j,k,h] >= p[j,k]*q[k,h] - bigM*(1-x[j,k,h]))
-                   end
+                  end
                end
            end
 
@@ -145,7 +156,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ############################################################################################
            for k = 1:NUMBER_OF_MACHINES
                @constraint(m,  sum(a[j,k,h] for j in 1:NUMBER_OF_JOBS, h in 1:NUMBER_OF_PERIODS) +
-                              sum(t[k]*s[k,h] for h in 1:NUMBER_OF_PERIODS) - Cmax<= 0)
+                             sum(t[k]*s[k,h] for h in 1:NUMBER_OF_PERIODS) - Cmax<= 0)
            end
 
 
@@ -154,9 +165,9 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ############################################################################################
            for j= 1:NUMBER_OF_JOBS
                for k = 1:NUMBER_OF_MACHINES
-                   for h = 2:NUMBER_OF_PERIODS
+                  for h = 2:NUMBER_OF_PERIODS
                        @constraint(m, x[j,k,h] - sum(x[jj,k,h-1] for jj in 1:NUMBER_OF_MACHINES) -s[k,h-1] <= 0)
-                   end
+                  end
                end
            end
 
@@ -166,7 +177,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ############################################################################################
            for k = 1:NUMBER_OF_MACHINES
                for h = 2:NUMBER_OF_PERIODS
-                   @constraint(m, q[k,h] <= bigM*(1-s[k,h-1])+1)
+                  @constraint(m, q[k,h] <= bigM*(1-s[k,h-1])+1)
                end
            end
 
@@ -175,9 +186,9 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ############################################################################################
            for j= 1:NUMBER_OF_JOBS
                for k = 1:NUMBER_OF_MACHINES
-                   for h = 2:NUMBER_OF_PERIODS
+                  for h = 2:NUMBER_OF_PERIODS
                        @constraint(m, q[k,h] >= d[j,k]*q[k,h-1] - bigM*(s[k,h-1] + (1- x[j,k,h])))
-                   end
+                  end
                end
            end
 
@@ -201,9 +212,9 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            @constraint(m, Cmax >= 0)
            for j = 1:NUMBER_OF_JOBS
                for k = 1:NUMBER_OF_MACHINES
-                   for h = 1:NUMBER_OF_PERIODS
+                  for h = 1:NUMBER_OF_PERIODS
                        @constraint(m, a[j,k,h] >= 0 )
-                   end
+                  end
                end
            end
 
@@ -237,7 +248,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                ##                              PRINTING X VARIABLE VALUES
                ############################################################################################
                for j = 1:NUMBER_OF_JOBS
-                   for k = 1:NUMBER_OF_MACHINES
+                  for k = 1:NUMBER_OF_MACHINES
                        for h = 1:NUMBER_OF_PERIODS
                            if ( getvalue(x[j,k,h] ) >  0)
                                println(string("x(", j, ",", k , ",", h,") " , getvalue(x[j,k,h])))
@@ -250,7 +261,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                ##                              PRINTING A VARIABLE VALUES
                ############################################################################################
                for j = 1:NUMBER_OF_JOBS
-                   for k = 1:NUMBER_OF_MACHINES
+                  for k = 1:NUMBER_OF_MACHINES
                        for h = 1:NUMBER_OF_PERIODS
                            if ( getvalue(a[j,k,h] ) > 0)
                                println(string("a(", j, ",", k , ",", h,") " , getvalue(a[j,k,h])))
@@ -263,11 +274,11 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                ##                              PRINTING Q VARIABLE VALUES
                ############################################################################################
                for k = 1:NUMBER_OF_MACHINES
-                   for h = 1:NUMBER_OF_PERIODS
+                  for h = 1:NUMBER_OF_PERIODS
                        if ( getvalue(q[k,h] ) > 0)
                            println(string("q(", k , ",", h,") " , getvalue(q[k,h])))
                        end
-                   end
+                  end
                 end
 
 
@@ -285,29 +296,3 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
         end
     end
 end
-
-
-
-p = [10 12 13;
-	  27 38 35;
-	  34 25 16;
-	  19 13 28;
-	  26 17 30;
-	  35 39 17;
-	  15 24 23;
-	  22 39 37;
-	  34 23 18;
-	  10 12 28]
-
-d = [1.10 1.2 1.3;
-                                        	1.5 2.18 1.05;
-                                        	2.41 7.5 1.6;
-                                        	1.09 2.3 1.18;
-                                        	2.6 1.71 1.01;
-                                        	1.5 1.29 1.27;
-                                        	1.51 1.4 1.23;
-                                        	1.21 14.9 1.7;
-                                        	2.34 14.23 2.8;
-                                        	1.0 2.2 1.8]
-
-t = [3,2,4]
