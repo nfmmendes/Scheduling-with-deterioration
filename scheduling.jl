@@ -2,7 +2,7 @@ using JuMP
 using CPLEX
 
 ################## CREATE A MODEL OBJECT TO BE RUN ON CPLEX  ####################
-m = Model(solver=CplexSolver(CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1))
+m = Model(solver=CplexSolver(CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1, CPX_PARAM_TILIM = 3600))
 
 MAX_EXECUTION_TIME = 60*15
 
