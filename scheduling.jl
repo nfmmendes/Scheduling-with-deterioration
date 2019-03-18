@@ -225,7 +225,8 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ############################################################################################
            @objective(m, Min, Cmax)
 
-           println("Starting optimization");
+           println("Starting optimization: ", instanceName);
+           flush(stdout) 
 
            #print(m)
 
@@ -238,8 +239,8 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ############################################################################################
            ##                              PRINTING SOLUTION
            ############################################################################################
-
-           if(st == :Optimal)
+           println("Optimization finished")
+           if(termination_status(m) == MOI.OPTIMAL)
                ############################################################################################
                ##                              PRINTING CMAX VARIABLE VALUE
                ############################################################################################
@@ -292,8 +293,19 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                            println(string("s(", k , ",", h,") " , getvalue(s[k,h])))
                        end
                     end
-                end
+                end 
+           elseif termination_status(m) == MOI.TIME_LIMIT && has_values(m)
+                println("-------TIME LIMIT REACHED. BEST VALUE FOUND: ", objective_value(m))
+                println(" ")
+                println(" ")
+                println(" ")
+           else
+                println("-------UNEXPECTED ERROR : ", instanceName )
+                println(" ")
+                println(" ")
+                println(" ")
            end
+           flush(stdout)
         end
     end
 end
