@@ -1,8 +1,7 @@
 using JuMP
 using CPLEX
 
-################## CREATE A MODEL OBJECT TO BE RUN ON CPLEX  ####################
-m = Model(solver=CplexSolver(CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1, CPX_PARAM_TILIM = 3600))
+
 
 MAX_EXECUTION_TIME = 60*15
 
@@ -12,6 +11,8 @@ bigM = 100000
 open("Instances/Instances With Deterioration/instance_list.txt") do file
     #### READING THE INSTANCE LIST
     for instanceName in eachline(file)
+        ################## CREATE A MODEL OBJECT TO BE RUN ON CPLEX  ####################
+        m = Model(with_optimizer(CPLEX.Optimizer, CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1, CPX_PARAM_TILIM=7200))
         #### MAIN PARAMETERS OF THE OPTIMIZATION
         NUMBER_OF_JOBS = 0
         NUMBER_OF_MACHINES = 0
@@ -62,19 +63,19 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ##################################### MODEL CREATION #######################################
 
            #Binary variable. Defines if the job j is assigned to machine k at position h
-           @variable(m,x[1:NUMBER_OF_JOBS, 1:NUMBER_OF_MACHINES, 1: NUMBER_OF_PERIODS]>=0, Bin,basename="x")
+           @variable(m,x[1:NUMBER_OF_JOBS, 1:NUMBER_OF_MACHINES, 1: NUMBER_OF_PERIODS], Bin,base_name="x")
 
            #Binary variable. Defines if there is a maintenance service on machine k at position h
-           @variable(m,s[1:NUMBER_OF_MACHINES, 1: NUMBER_OF_PERIODS]>=0, Bin,basename="s")
+           @variable(m,s[1:NUMBER_OF_MACHINES, 1: NUMBER_OF_PERIODS], Bin,base_name="s")
 
            #Continuous variable. Defines the delay in finishing the job assigned at h-esime position of machine k
-           @variable(m,q[1:NUMBER_OF_MACHINES, 1: NUMBER_OF_PERIODS]>=0,basename="q")
+           @variable(m,q[1:NUMBER_OF_MACHINES, 1: NUMBER_OF_PERIODS]>=0,base_name="q")
 
            #Continuous variable. Define the time spent to execute the job j on the machine k at position h
-           @variable(m, a[1:NUMBER_OF_JOBS, 1:NUMBER_OF_MACHINES, 1:NUMBER_OF_PERIODS], basename="a")
+           @variable(m, a[1:NUMBER_OF_JOBS, 1:NUMBER_OF_MACHINES, 1:NUMBER_OF_PERIODS], base_name="a")
 
            #Continuous variable. Defines the makespan
-           @variable(m, Cmax, basename="Cmax")
+           @variable(m, Cmax, base_name="Cmax")
 
 
            ############################################################################################
@@ -118,11 +119,11 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ############################################################################################
            ##           CONSTRAINT 5: JUST ONE JOB CAN BE DONE IN THE POSITION H ON MACHINE K
            ############################################################################################
-           for k =1:NUMBER_OF_MACHINES
-               for h = 1:NUMBER_OF_PERIODS
-                  @constraint(m, sum(x[j,k,h] for j in 1:NUMBER_OF_JOBS) <= 1 )
-               end
-           end
+          # for k =1:NUMBER_OF_MACHINES
+          #     for h = 1:NUMBER_OF_PERIODS
+          #         @constraint(m, sum(x[j,k,h] for j in 1:NUMBER_OF_JOBS) <= 1 )
+          #     end
+          # end
 
 
            ############################################################################################
@@ -230,9 +231,9 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
 
           # write("output.txt", readstring(`ls -l`))
 
-           tic()
-           st = solve(m)
-           toc()
+           @time begin
+           st = optimize!(m)
+           end
 
            ############################################################################################
            ##                              PRINTING SOLUTION
