@@ -24,7 +24,7 @@ struct Solution
                                     #each machine where maintenances are done.
                                     #First index indicates the machine
 
-     interMaintenanceTimes         #Stores the time between two maintentances.
+      interMaintenanceTimes         #Stores the time between two maintentances.
                                     #If none task is changed in the interval this
                                     #times remains constant
 
@@ -42,6 +42,37 @@ end
 
 globalBestSolution = Solution(zeros(0,0), zeros(0,0), zeros(0), zeros(0,0), -1)
 globalBestSolutionValue = 1e100
+
+
+
+function  insertMaintenances(solution, NUMBER_OF_MACHINES, NUMBER_OF_JOBS, p,d,t)
+
+     accumulatedDeterioration = ones(NUMBER_OF_MACHINES)
+     accumulatedWork = zeros(NUMBER_OF_MACHINES)
+     accumulatedDelay = zeros(NUMBER_OF_MACHINES)
+
+     for i in 1:NUMBER_OF_MACHINES
+          jobsOnMachine = size(solution.machineScheduling[i])
+          accumulatedWork[i] = p[i]
+          if jobsOnMachine >1
+               for j in (jobsOnMachine-1):1
+                    job = solution.machineScheduling[i,j]
+                    accumulatedDeterioration[i] *= d[job,i]
+                    accumulatedWork[i] += p[job,i]
+                    accumulatedDelay[i] += accumulatedWork[i]+accumulatedDeterioration[i]
+
+                    if accumulatedDelay[i] > t[i]
+                        accumulatedWork[i] = 0
+                        accumulatedDelay[i] = 0
+                        accumulatedDeterioration[i] = 1
+
+                        #remove the item "element" of the position "index" insert the values [-1, element] instead
+                        splice!(initialSolution.machineScheduling[j,i], j:j, [-1, job] )
+                    end
+               end
+          end
+     end
+end
 
 function evaluateSolution(currentSolution,machine, firstSwapSlot,secondSwapSlot,thirdSwapSlot)
 
@@ -334,9 +365,10 @@ function external2Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p
                continue
            end
 
+           #This part is where actually is done the swap of the jobs. After
            previousSolution = Solution(currentSolution)
            firstJob = currentSolution.machineScheduling[secondMachine, secondSwapSlot]
-           currentSolution.machineScheduling[secondMachine,secondMachineSlot] = currentSolution.machineSchueduling[firstMachine,firstMachine]
+           currentSolution.machineScheduling[secondMachine,secondMachineSlot] = currentSolution.machineScheduling[firstMachine,firstMachine]
            currentSolution.machineScheduling[firstMachine, firstSwapSlot] = firstJob
 
            if bestSolution.solutionValue > currentSolution.lastSwapSlot
@@ -448,33 +480,105 @@ function external3Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p
            currentSolution.machineScheduling[thirdMachine,thirdMachineSlot] =  currentSolution.machineScheduling[firstMachine, firstSwapSlot]
            currentSolution.machineScheduling[firstMachine, firstSwapSlot] = firstJob
 
+           if bestSolution.solutionValue > currentSolution.lastSwapSlot
+              bestSolution = Solution(currentSolution)
+           end
+
+           currentSolution = Solution(previousSolution)
      end
 end
 
 
 function runTaskBalacing(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
 
+     currentSolution = Solution(initialSolution)
+     completionTimes = initialSolution
+
 end
 
-#################################### INITIAL SOLUTIONS STRATEGIES ##############################
+#################################### INITIAL SOLUTIONS STRATEGIES ###############################
+
+############### Function to build a initial solution based on processing time   ##################
+######## This function takes the jobs with bigger processing times and put them first ############
+######## in the machine. It can permit lower delays, as bigger times are in begining  ############
+##################################################################################################
 function biggerTasksFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
+     jobOrderedByDuration = Arrray{Pair{Float64, Int32},2}(undef,NUMBER_OF_MACHINES,NUMBER_OF_JOBS)
+     solution = Solution(zeros(0,0), zeros(0,0), zeros(0), zeros(0,0), -1)
 
+     for i in 1:NUMBER_OF_MACHINES
+          for j in 1:NUMBER_OF_JOBS
+               jobOrderedByDuration[i,j] = p[j,i]
+          end
+          sort(jobOrderedByDuration[i], rev=true)
+     end
+
+     jobUsed = zeros(NUMBER_OF_JOBS)
+     countInserted = 0
+     for i in 1:NUMBER_OF_MACHINES
+          for j in 1:NUMBER_OF_JOBS
+               if jobUsed[jobOrderedByDuration[i,j].second] == 0
+                  jobUsed[jobOrderedByDuration[i,j].second] =1
+                  pushfirst!(solution.machineScheduling[i],jobOrderedByDuration[i,j].second)
+                  countInserted +=1
+               end
+          end
+          if countInserted == NUMBER_OF_JOBS
+               break
+          end
+     end
+     ### In this point will be inserted the maintenances
+     insertMaintenances(solution, NUMBER_OF_MACHINES, NUMBER_OF_JOBS, p,d,t)
+     return solution
 end
 
-##################### Function reverse task job order on machines   ############################
-######## This function reverse the job orders in all the machines, recalculating all ###########
-######## the maintenances and their respective intervals times                       ###########
-################################################################################################
-function biggerExpectDelayFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
 
+############### Function to build a initial solution based on expected delay   ##################
+######## This function takes the jobs with lower deteriorations and put them first   ############
+######## in the machine. It can permit more tasks be done without a maintenance      ############
+#################################################################################################
+function lowerExpectDelayFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
+     jobOrderedByDeterioration = Arrray{Pair{Float64, Int32},2}(undef,NUMBER_OF_MACHINES,NUMBER_OF_JOBS)
+     solution = Solution(zeros(0,0), zeros(0,0), zeros(0), zeros(0,0), -1)
+
+     for i in 1:NUMBER_OF_MACHINES
+          for j in 1:NUMBER_OF_JOBS
+               jobOrderedByDeterioration[i,j] = p[j,i]
+          end
+          sort(jobOrderedByDeterioration[i])
+     end
+
+     jobUsed = zeros(NUMBER_OF_JOBS)
+     countInserted = 0
+     for i in 1:NUMBER_OF_MACHINES
+          for j in 1:NUMBER_OF_JOBS
+               if jobUsed[jobOrderedByDeterioration[i,j].second] == 0
+                  jobUsed[jobOrderedByDeterioration[i,j].second] =1
+                  pushfirst!(solution.machineScheduling[i],jobOrderedByDeterioration[i,j].second)
+                  countInserted +=1
+               end
+          end
+          if countInserted == NUMBER_OF_JOBS
+               break
+          end
+     end
+
+     ### In this point will be inserted the maintenances
+     insertMaintenances(solution, NUMBER_OF_MACHINES, NUMBER_OF_JOBS, p,d,t)
+
+     return solution
 end
 
+####################### Function to run a constructive heuristic   ##############################
+######## This function takes the jobs with lower deteriorations and put them first   ############
+######## in the machine. It can permit more tasks be done without a maintenance      ############
+#################################################################################################
 function constructiveHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p,t)
 
      if CONSTRUCTIVE_HEURISTIC_STRATEGY == 1
           biggerTasksFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
      elseif CONSTRUCTIVE_HEURISTIC_STRATEGY == 2
-          biggerExpectDelayFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
+          lowerExpectDelayFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
      end
 end
 
