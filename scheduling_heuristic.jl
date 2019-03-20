@@ -24,10 +24,6 @@ struct Solution
                                     #each machine where maintenances are done.
                                     #First index indicates the machine
 
-      interMaintenanceTimes         #Stores the time between two maintentances.
-                                    #If none task is changed in the interval this
-                                    #times remains constant
-
       machineCompletionTimes       #Stores the completion time in each machine
 
       machineScheduling             #2-dimensional array to define the activity
@@ -44,16 +40,50 @@ globalBestSolution = Solution(zeros(0,0), zeros(0,0), zeros(0), zeros(0,0), -1)
 globalBestSolutionValue = 1e100
 
 
+function evaluateCompletionTimes(solution, NUMBER_OF_MACHINES, p, d, t)
 
+     for i = 1: NUMBER_OF_MACHINES
+          completionTimeOnMachine(solution,machine, p, d, t)
+     end
+end
+
+function completionTimeOnMachine(solution,machine, p, d, t)
+     accumulated = 0
+     deterioration = 1
+     jobsOnMachine = size(currentSolution.machineScheduling[machine])
+
+     for i in 1:jobsOnMachine
+          if solution.machineScheduling[machine, i] == -1
+               deterioration = 1
+               accumulated += t[machine]
+               continue
+          end
+
+          accumulated += p[i,machine]*deterioration
+          deterioration *= d[i,machine]
+     end
+
+     solution.machineCompletionTimes[machine] = accumulated
+end
+
+################    Function to test where to put machine maintenances     ####################
+#### This function uses the propertie that the optimal solution has no accumulated        #####
+####  (between maintenances) deterioration delay bigger than the machine maintenance time #####
 function  insertMaintenances(solution, NUMBER_OF_MACHINES, NUMBER_OF_JOBS, p,d,t)
 
      accumulatedDeterioration = ones(NUMBER_OF_MACHINES)
      accumulatedWork = zeros(NUMBER_OF_MACHINES)
      accumulatedDelay = zeros(NUMBER_OF_MACHINES)
 
+     #### All the machines have their schedules checked from the end to the beggining
+     ### Evaluating the delay and deterioration from the current job
+     ### until the next maintenance (or the last job) we check if the cumulated
+     ### delay is greater than a maintenance. If it is, the maintenance is inserted
+     ### one position before and all the delay is removed from the final time
+     initialSolution.maintenancePositions = Array{Int32,2}(undef,NUMBER_OF_MACHINES,0)
      for i in 1:NUMBER_OF_MACHINES
           jobsOnMachine = size(solution.machineScheduling[i])
-          accumulatedWork[i] = p[i]
+          accumulatedWork[i] = 0
           if jobsOnMachine >1
                for j in (jobsOnMachine-1):1
                     job = solution.machineScheduling[i,j]
@@ -61,25 +91,33 @@ function  insertMaintenances(solution, NUMBER_OF_MACHINES, NUMBER_OF_JOBS, p,d,t
                     accumulatedWork[i] += p[job,i]
                     accumulatedDelay[i] += accumulatedWork[i]+accumulatedDeterioration[i]
 
+                    ### Sufficient condition to a maintenance be useful
                     if accumulatedDelay[i] > t[i]
                         accumulatedWork[i] = 0
                         accumulatedDelay[i] = 0
                         accumulatedDeterioration[i] = 1
 
                         #remove the item "element" of the position "index" insert the values [-1, element] instead
-                        splice!(initialSolution.machineScheduling[j,i], j:j, [-1, job] )
+                        splice!(initialSolution.machineScheduling[i,j], j:j, [-1, job] )
+                        push!(initialSolution.maintenancePositions[i],i)
                     end
                end
           end
      end
 end
 
-function evaluateSolution(currentSolution,machine, firstSwapSlot,secondSwapSlot,thirdSwapSlot)
 
-end
+function evaluateSolution(solution, machines, p, d, t)
 
-function evalutateSolution(currentSolution, machineA, machineB, firstSwapSlot, secondSwapSlot)
+     for i in 1:size(machines)
+         completionTimeOnMachine(solution,machines[i], p, d, t)
 
+         if solution.machineCompletionTimes[machines[i]] > solution.solutionValue
+              solution.solutionValue= currentSolution.machineCompletionTimes[machines[i]]
+         end
+     end
+
+     return solution.solutionValue
 end
 
 function updateBestGlobalSolution(currentSolution, iterationsWithoutImprovement)
@@ -91,7 +129,8 @@ function updateBestGlobalSolution(currentSolution, iterationsWithoutImprovement)
 end
 
 
-
+############### Function to set the current/best solution after a swap #######################
+#### This function does not make any search on the input solution, just evaluate it  #########
 function updateBestSolutionsOnSwapLS(initialSolution, previousSolution, solutionValue, currentSolution, bestSolution, bestSolutionOnMachineLoop)
      #### Evaluate if it is the best solution in the local search
      if solutionValue < bestSolutionValue
@@ -193,7 +232,7 @@ function internal2Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p
            currentSolution.machineScheduling[machine,lastSwapSlot] = currentSolution.machineScheduling[machine,firstSwapSlot]
            currentSolution.machineScheduling[machine,firstSwapSlot] = firstJob
 
-           solutionValue = evaluateSolution(currentSolution,firstSwapSlot,lastSwapSlot,-1)
+           solutionValue = evaluateSolution(currentSolution,[machine],p, d,t)
            updateBestSolutionsOnSwapLS(initialSolution, previousSolution, solutionValue, currentSolution, bestSolution, bestSolutionOnMachineLoop)
            lastSwapSlot = lastSwapSlot+1
 
@@ -285,9 +324,8 @@ function internal3Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p
              currentSolution.machineScheduling[machine,thirdSwapSlot] = currentSolution.machineScheduling[machine,secondSwapSlot]
              currentSolution.machineScheduling[machine,secondSwapSlot] = firstJob
 
-             solutionValue = evaluateSolution(currentSolution,firstSwapSlot,secondSwapSlot,thirdSwapSlot)
+             solutionValue = evaluateSolution(currentSolution,[machine], p,d, t)
              updateBestSolutionsOnSwapLS(initialSolution, previousSolution, solutionValue, currentSolution, bestSolution, bestSolutionOnMachineLoop)
-
 
              ### Second permutation
              firstJob = currentSolution.machineScheduling[machine,secondSwapSlot]
@@ -298,7 +336,7 @@ function internal3Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p
              currentSolution.machineScheduling[machine,thirdSwapSlot] = currentSolution.machineScheduling[machine,firstSwapSlot]
              currentSolution.machineScheduling[machine,firstSwapSlot] = firstJob
 
-             solutionValue = evaluateSolution(currentSolution,firstSwapSlot,secondSwapSlot,thirdSwapSlot)
+             solutionValue = evaluateSolution(currentSolution,[machine], p, d, t)
              updateBestSolutionsOnSwapLS(initialSolution, previousSolution, solutionValue, currentSolution, bestSolution, bestSolutionOnMachineLoop)
 
 
@@ -529,6 +567,8 @@ function biggerTasksFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
      end
      ### In this point will be inserted the maintenances
      insertMaintenances(solution, NUMBER_OF_MACHINES, NUMBER_OF_JOBS, p,d,t)
+     evaluateCompletionTimes(solution, NUMBER_OF_MACHINES, p, d, t)
+
      return solution
 end
 
@@ -538,7 +578,7 @@ end
 ######## in the machine. It can permit more tasks be done without a maintenance      ############
 #################################################################################################
 function lowerExpectDelayFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
-     jobOrderedByDeterioration = Arrray{Pair{Float64, Int32},2}(undef,NUMBER_OF_MACHINES,NUMBER_OF_JOBS)
+     jobOrderedByDeterioration = Array{Pair{Float64, Int32},2}(undef,NUMBER_OF_MACHINES,NUMBER_OF_JOBS)
      solution = Solution(zeros(0,0), zeros(0,0), zeros(0), zeros(0,0), -1)
 
      for i in 1:NUMBER_OF_MACHINES
@@ -565,6 +605,7 @@ function lowerExpectDelayFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
 
      ### In this point will be inserted the maintenances
      insertMaintenances(solution, NUMBER_OF_MACHINES, NUMBER_OF_JOBS, p,d,t)
+     evaluateCompletionTimes(solution, NUMBER_OF_MACHINES, p, d, t)
 
      return solution
 end
