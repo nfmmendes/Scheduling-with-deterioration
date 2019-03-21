@@ -36,7 +36,7 @@ struct Solution
 
 end
 
-globalBestSolution = Solution(zeros(0,0), zeros(0,0), zeros(0), zeros(0,0), -1)
+globalBestSolution = Solution(zeros(0,0), zeros(0), zeros(0,0), -1)
 globalBestSolutionValue = 1e100
 
 
@@ -256,7 +256,6 @@ function internal3Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p
 
                localSearchSize +=1
 
-
                if thirdSwapSlot > numberOfPeriodsOnMachine
                     secondSwapSlot+=1
 
@@ -358,7 +357,6 @@ function external2Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p
     secondMachine = 2
     firstSwapSlot = 1
     secondSwapSlot =1
-
 
      while triedAll == false || localSearchSize < MAX_LOCAL_SEARCH_SIZE
 
@@ -530,8 +528,16 @@ end
 function runTaskBalacing(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
 
      currentSolution = Solution(initialSolution)
-     completionTimes = initialSolution
+     bestSolution = Solution(currentSolution)
+     firstRun = zeros(NUMBER_OF_MACHINES)
 
+     #while
+
+     improved = true
+     while(improved)
+          improved = true
+
+     end
 end
 
 #################################### INITIAL SOLUTIONS STRATEGIES ###############################
@@ -624,8 +630,19 @@ function constructiveHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p,t)
 end
 
 ################################## PEERTUBATIONS ###############################################
-function shiftMachineSchedulings(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
+function shiftMachineSchedulings(solution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
 
+     if NUMBER_OF_MACHINES> 2
+          lastScheduling = solution.machineScheduling[NUMBER_OF_MACHINES]
+
+          for i = NUMBER_OF_MACHINES: 2
+               solution.machineScheduling[i] = solution.machineScheduling[i-1]
+          end
+          solution.machineScheduling[1] = lastScheduling
+     end
+
+     evaluateSolution(solution,collect(1:NUMBER_OF_MACHINES), p,d,t)
+     return shiftMachineSchedulings
 end
 
 ##################### Function reverse task job order on machines   ############################
@@ -644,7 +661,7 @@ function reverseTasks(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p,
                if job >= 0
                     completionTime += p[job, machine]
                     deterioration *= d[job,machine]
-                    if job < size(initialSolution.machineScheduling[machine] && (deterioration-1.0)*d[job,machine] >= t[machine]
+                    if job < size(initialSolution.machineScheduling[machine]) && (deterioration-1.0)*d[job,machine] >= t[machine]
                          completionTime += t[machine]
                          deterioration = 1
                          element = initialSolution.machineScheduling[job,machine]
@@ -652,7 +669,7 @@ function reverseTasks(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p,
                          splice!(initialSolution.machineScheduling[job,machine], index:index, [-1, element] )
                     end
                     index+=1
-               elseif
+               else
                     delete(initialSolution.machineScheduling[machine], index)
                end
           end
@@ -694,8 +711,8 @@ function mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
                  currentSolution = external3Swap(currentSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
                  iterationsWithoutImprovement = updateBestGlobalSolution(currentSolution, iterationsWithoutImprovement)
 
-                 currentSolution = runTaskBalacing(currentSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
-                 iterationsWithoutImprovement = updateBestGlobalSolution(currentSolution, iterationsWithoutImprovement)
+              ##   currentSolution = runTaskBalacing(currentSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
+              ##   iterationsWithoutImprovement = updateBestGlobalSolution(currentSolution, iterationsWithoutImprovement)
 
                   if iterationsWithoutImprovement%10 == 9
                       pertubation(initialSolution,  NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
