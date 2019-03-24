@@ -1,7 +1,6 @@
 using JuMP
 using CPLEX
 
-m = Model(solver=CplexSolver(CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1))
 
 #####################      HEURISTIC PARAMETERS     #######################
 
@@ -17,16 +16,18 @@ SWAP_UPDATE_STRATEGY = 1  # 1 = ALWAYS THE SAME CURRENT SOLUTION
 MAX_LOCAL_SEARCH_SIZE = 30000
 #############################################################################
 
-struct Solution
+ mutable struct _Solution
 
-
-      maintenancePositions          #2-dimensional array to define the slots in
+      maintenancePositions::Array{Int32, 2}
+                                    #2-dimensional array to define the slots in
                                     #each machine where maintenances are done.
                                     #First index indicates the machine
 
-      machineCompletionTimes       #Stores the completion time in each machine
+      machineCompletionTimes::Array{Int32, 1}
+                                    #Stores the completion time in each machine
 
-      machineScheduling             #2-dimensional array to define the activity
+      machineScheduling::Array{Int32, 2}
+                                    #2-dimensional array to define the activity
                                     #done in each slot in each machine
                                     #First index indicates the machine
                                     #An positive index (> 0) represent the job index.
@@ -34,9 +35,10 @@ struct Solution
 
      solutionValue::Float64         #Stores solution objective function value
 
+     _Solution()  =new()
 end
 
-globalBestSolution = Solution(zeros(0,0), zeros(0), zeros(0,0), -1)
+globalBestSolution =  _Solution();
 globalBestSolutionValue = 1e100
 
 
@@ -80,9 +82,10 @@ function  insertMaintenances(solution, NUMBER_OF_MACHINES, NUMBER_OF_JOBS, p,d,t
      ### until the next maintenance (or the last job) we check if the cumulated
      ### delay is greater than a maintenance. If it is, the maintenance is inserted
      ### one position before and all the delay is removed from the final time
-     initialSolution.maintenancePositions = Array{Int32,2}(undef,NUMBER_OF_MACHINES,0)
+     solution.maintenancePositions = Array{Int32,2}(undef,NUMBER_OF_MACHINES,0)
      for i in 1:NUMBER_OF_MACHINES
-          jobsOnMachine = size(solution.machineScheduling[i])
+          jobsOnMachine = size(solution.machineScheduling[i,:])
+          println(jobsOnMachine)
           accumulatedWork[i] = 0
           if jobsOnMachine >1
                for j in (jobsOnMachine-1):1
@@ -546,24 +549,41 @@ end
 ######## This function takes the jobs with bigger processing times and put them first ############
 ######## in the machine. It can permit lower delays, as bigger times are in begining  ############
 ##################################################################################################
-function biggerTasksFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
-     jobOrderedByDuration = Arrray{Pair{Float64, Int32},2}(undef,NUMBER_OF_MACHINES,NUMBER_OF_JOBS)
-     solution = Solution(zeros(0,0), zeros(0,0), zeros(0), zeros(0,0), -1)
+function biggerTasksFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p, d, t)
+     jobOrderedByDuration = Array{Pair{Float64, Int32},2}(undef,NUMBER_OF_MACHINES,NUMBER_OF_JOBS)
+     solution = _Solution()
+
 
      for i in 1:NUMBER_OF_MACHINES
           for j in 1:NUMBER_OF_JOBS
-               jobOrderedByDuration[i,j] = p[j,i]
+               jobOrderedByDuration[i,j] = Pair{Float64, Int32}(p[j,i],j)
           end
-          sort(jobOrderedByDuration[i], rev=true)
+
+          sort(jobOrderedByDuration[i,:], by = first, rev=true)
      end
 
-     jobUsed = zeros(NUMBER_OF_JOBS)
+     usedJobs = zeros(NUMBER_OF_JOBS)
+     usedMachines = zeros(NUMBER_OF_MACHINES)
      countInserted = 0
+     solution.machineScheduling = Array{Int32, 2}(undef,NUMBER_OF_MACHINES, 0)
      for i in 1:NUMBER_OF_MACHINES
           for j in 1:NUMBER_OF_JOBS
-               if jobUsed[jobOrderedByDuration[i,j].second] == 0
-                  jobUsed[jobOrderedByDuration[i,j].second] =1
-                  pushfirst!(solution.machineScheduling[i],jobOrderedByDuration[i,j].second)
+               if usedJobs[jobOrderedByDuration[i,j].second] == 0
+
+                  usedJobs[jobOrderedByDuration[i,j].second] =1
+                  if usedMachines[i] == 0
+                    println("HERE")
+                    resize!(solution.machineScheduling[i,:],1)
+
+                    append!(solution.machineScheduling[i,:], jobOrderedByDuration[i,j].second)
+                    println("****", solution.machineScheduling[i,:])
+                  else
+                    pushfirst!(solution.machineScheduling[i,:],jobOrderedByDuration[i,j].second)
+                  end
+
+                  usedMachines[i] = 1
+
+                  println(solution.machineScheduling[i,:])
                   countInserted +=1
                end
           end
@@ -572,7 +592,10 @@ function biggerTasksFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
           end
      end
      ### In this point will be inserted the maintenances
+
      insertMaintenances(solution, NUMBER_OF_MACHINES, NUMBER_OF_JOBS, p,d,t)
+
+
      evaluateCompletionTimes(solution, NUMBER_OF_MACHINES, p, d, t)
 
      return solution
@@ -623,10 +646,12 @@ end
 function constructiveHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p,t)
 
      if CONSTRUCTIVE_HEURISTIC_STRATEGY == 1
-          biggerTasksFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
+         solution =  biggerTasksFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
      elseif CONSTRUCTIVE_HEURISTIC_STRATEGY == 2
-          lowerExpectDelayFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
+         solutiopn =  lowerExpectDelayFirst(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
      end
+
+     return solution
 end
 
 ################################## PEERTUBATIONS ###############################################
@@ -679,18 +704,30 @@ function reverseTasks(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p,
 end
 
 
-function pertubation(initialSolution,  NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
+function pertubation(initialSolution,  NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d, t)
 
 
 
 end
 
+function printSolution(initialSolution, NUMBER_OF_MACHINES)
 
-function mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
+     for i in 1:NUMBER_OF_MACHINES
+          println("Scheduling in the machine: ",i)
+          for j in 1:size(initialSolution.machineScheduling[i])
+               print(initialSolution.machineScheduling[i,j]," " )
+          end
+     end
+end
+
+function mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d, t)
 
            iterationsWithoutImprovement = 0
 
-           initialSolution =
+           initialSolution = constructiveHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES,p,d,t)
+
+           printSolution(initialSolution, NUMBER_OF_MACHINES)
+
 
            currentSolution = Solution(initialSolution)
            while iterationsWithoutImprovement < MAX_ITERATIONS_WITHOUT_IMPROVEMENT
@@ -715,7 +752,7 @@ function mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
               ##   iterationsWithoutImprovement = updateBestGlobalSolution(currentSolution, iterationsWithoutImprovement)
 
                   if iterationsWithoutImprovement%10 == 9
-                      pertubation(initialSolution,  NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
+                      pertubation(initialSolution,  NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d, t)
                   end
 
                  iterationsWithoutImprovement +=1
@@ -767,6 +804,8 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                      d[i,j] = parse(Float64, rowData[j])
                 end
            end
+
+           mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES,p,d,t)
         end
     end
 end
