@@ -41,7 +41,7 @@ int main(){
 				}
 				
 				maintenanceTimes.resize(5);
-				int range = 2*(biggerJob - smallerJob);
+				int range = (biggerJob - smallerJob)/2;
 				
 				if(range <= 1)
 					range = biggerJob/10+1;
@@ -59,7 +59,7 @@ int main(){
 			
 				//Write the instance data
 				for(int k = 0;k<5;k++){
-					ofstream newInstance("Instances//"+to_string('A'+(char)k)+"_"+instanceName );
+					ofstream newInstance("Instances//"+to_string( (char)('A'+k))+"_"+instanceName );
 				
 					if(newInstance.is_open()){
 						
