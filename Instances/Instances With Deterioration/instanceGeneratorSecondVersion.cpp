@@ -26,7 +26,7 @@ using namespace std;
 	
 		const int numberOfMachines[MACHINE_CONFIGURATIONS] = {2, 5, 10, 20};
 		const int jobsByMachineRatio[JOBS_CONFIGURATIONS] = {10, 15, 20};
-		const pair<double,int> deteriorationIntervals[DETERIORATION_CONFIGURATIONS] = {make_pair(1.01, 6), make_pair(1.05, 10)};
+		const pair<double,int> deteriorationIntervals[DETERIORATION_CONFIGURATIONS] = {make_pair(1.01, 6), make_pair(1.05, 5)};
 		const int maintenances[MAINTEINANCES_CONFIGURATIONS] = {3, 9};
 		
 		
