@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{{\tt #1}}\fi
+
+\bibitem[Ruiz-Torres et~al.(2017)Ruiz-Torres, Paletta, e
+  M'Hallah]{ruiz2017makespan}
+Ruiz-Torres, A.~J., Paletta, G., e M'Hallah, R. (2017).
+\newblock Makespan minimisation with sequence-dependent machine deterioration
+  and maintenance events.
+\newblock {\em International Journal of Production Research}, 55\penalty0
+  (2):\penalty0 462--479.
+
+\end{thebibliography}
