@@ -16,6 +16,8 @@
 \addtolength{\textheight}{-101.0pt}
 \setlength{\headsep}{-5mm}
 
+\usepackage[linesnumbered,lined,boxed,commentsnumbered]{algorithm2e}
+
 \begin{document}
 
 \title{A new model and heuristic to a job and maintenance machine scheduling problem with sequence dependent deterioration } 
@@ -39,7 +41,7 @@
 
 \vspace{8mm}
 \begin{resumo}
-M\'aquinas que possuem alto n\'ivel de ocupa\c c\~ao comumente apresentam problemas de desgaste que impactam o seu desempenho e fazem com que manuten\c c\~oes corretivas sejam necess\'arias. Neste trabalho tratamos um problema de escalonamento de tarefas em m\'aquinas paralelas n\~ao correlatas com tempo de processamento dependente da deteriora\c c\~ao e manuten\c c\~ao. Neste problema buscamos minimizar o \emph{makespan} atrav\'es da defini\c c\~ao de sequ\^encias de tarefas e momentos de manuten\c c\~oes de um conjunto de m\'aquinas. O tempo processamento de cada tarefa aumenta por um fator de deteriora\c c\'ao $q$ (dependente da tarefa e m\'aquina) a cada tarefa executada desde a \'ultima manuten\c c\~ao. Apresentamos neste artigo uma vers\~ao linearizada de um modelo matem\'atico dispon\'ivel na literatura que descreve o problema e uma heur\'istica baseada na meta-heur\'istica ILS para resolv\^e-lo. Ent\~ao comparamos os resultados obtidos pela heuristica com os resultados da modelo matem\'atico e de algoritmos da literatura. 
+M\'aquinas que possuem alto n\'ivel de ocupa\c c\~ao comumente apresentam problemas de desgaste que impactam o seu desempenho e fazem com que manuten\c c\~oes corretivas sejam necess\'arias. Neste trabalho tratamos um problema de escalonamento de tarefas em m\'aquinas paralelas n\~ao correlatas com tempo de processamento dependente da deteriora\c c\~ao e manuten\c c\~ao. Neste problema buscamos minimizar o \emph{makespan} atrav\'es da defini\c c\~ao de sequ\^encias de tarefas e momentos de manuten\c c\~oes de um conjunto de m\'aquinas. O tempo processamento de cada tarefa aumenta por um fator de deteriora\c c\~ao $q$ (dependente da tarefa e m\'aquina) a cada tarefa executada desde a \'ultima manuten\c c\~ao. Apresentamos neste artigo uma vers\~ao linearizada de um modelo matem\'atico dispon\'ivel na literatura que descreve o problema e uma heur\'istica baseada na meta-heur\'istica ILS para resolv\^e-lo. Ent\~ao comparamos os resultados obtidos pela heuristica com os resultados da modelo matem\'atico e de algoritmos da literatura. 
  \end{resumo}
 
 \bigskip
@@ -77,12 +79,23 @@ Scheduling. Mathematical modeling. Meta-heuristic.
  
  Our main contribution in this paper is a linear and improved version of the model proposed by \citep{ruiz2017makespan} to describe the model that makes possible the use of any of the main MILP solvers to solve it. We also provide a heuristic procedure that allows to solve the version of problem that considers unrelated machines (with different deterioration rates and different processing and maintenance times).
  
- In the next session we present a short view of the previous works that deal with scheduling with deterioration problem. In the section 3 we describe the problem and present the model created by \citep{ruiz2017makespan} and our linear version. In the section 4 we present the proposed heuristic and a adaptation of the heuristic proposed in .... to solve a identical machine version of the problem. In the section 5 we describe the computational experiments and finally on section 6 we present the results of the experiments performed.  
+ In the next session we present a short view of the previous works that deal with scheduling with deterioration problem. In the section 3 we describe the problem and present the model created by \citep{ruiz2017makespan} and our linear version. In the section 4 we present the proposed heuristic and a adaptation of the heuristic proposed in \citep{ruiz2017makespan} to solve a identical machine version of the problem. In the section 5 we describe the computational experiments and finally on section 6 we present the results of the experiments performed.  
  
 \section{Literature review}
 
- Scheduling with deterioration problems have been investigated since the late 80's, being first study ...
+ Scheduling with deterioration problems have been investigated since the late 80's, with the first known study presented in \citep{gupta1988single}, where the processing time depends on the job starting time. This article was followed in next years by \citep{browne1990scheduling}, \citep{mosheiov1991v} and \citep{mosheiov1994scheduling} that used similar ways to evaluate the deterioration. 
  
+ The published studies can be divided in two groups according to how deterioration is estimated. The first and older group estimate the deterioration based on the job starting time, supposing that a machine is deteriorated with the same rate by any job,without considering the nature of job. The second group estimate the deterioration based on the set of jobs processed previously, considering the eventual different deterioration rates due to the hardness of some jobs.  
+ 
+ Among the works in which the deterioration is dependent on starting time we can highlight yet \citep{Mosheiov1998} that proved that the makespan minimization with parallel machines problem is strongly NP-hard even for a two machine case and \citep{JI2008342} that created a polynomial-time approximation scheme for the case with a fixed number of machines . In \citep{cheng2001single}, \citep{leung2008minimizing} and \citep{lalla2016modeling} the concept of step-deterioration is used to describe situations where the processing time just change if the job is processed after a threshold time. 
+ 
+ The first paper with a sequence-dependent deterioration was \citep{RUIZTORRES20132051}. In this paper is presented a non-linear model to describe the problem. This same problem is the subject in \citep{SantosArroyo2015} paper, where is proposed an ILS and a combined ILS with RVND algorithm to solve it. 
+ 
+Maintenance activities are introducted on \citep{Yang2011} and \citep{YANG20121458}, in a parallel machine scheduling with position-dependent deterioration, where the time is not important to define the deterioration but the jobs are yet considered equivalent on deterioration potential. We can cite yet \citep{HUANG20152897} that still uses the position-dependent deterioration concept, but without maintenance activities.
+ 
+The first work where there is a sequence-dependent deterioration and maintenance activities is \citep{ruiz2017makespan}. In this paper, the processing time of a job depend on the sequence of activities performed before it. After this, in the best of our knowledge only \citep{DING201935} worked in the same subject, changing slightly the problem definition to make the job deterioration influences its own processing time. 
+
+This paper is based on the problem defined by \citep{ruiz2017makespan} and in the next sections we will describe it, present a new mathematical formulation to replace the existent non-linear formulation and propose a ILS based heuristic to solve it. 
  
 \section{Problem description}
 
@@ -107,7 +120,7 @@ From this point, we will use the notation exposed on this section to all the res
 
 \section{Mathematical model}
 
-In this section we present the mathematical model proposed by ... and the modifications done in it to create a linearized version. We also include some constraints to avoid some scenarios not previously predicted in the original model.
+In this section we present the mathematical model proposed by \citep{ruiz2017makespan} and the modifications done in it to create a linearized version. We also include some constraints to avoid some scenarios not previously predicted in the original model.
 
 The proposed model works based on machine slots that could be filled with a job or a maintenance. Those slots are used to define the position of an activity on a machine schedule and have no fixed duration as it could have in a time indexed formulation. 
 
@@ -248,6 +261,83 @@ In other hand, this formulation allow us to decide if the next activity will be 
 
 \section{Heuristic algorithms}
 
+In this section we present the heuristic we propose to solve the job and maintenance machine scheduling problem with sequence-dependent deterioration. It is a ILS based algorithm with five local searches and two perturbations, that are used in an alternate way.  
+
+\IncMargin{1em}
+\begin{algorithm}[H]
+\caption{ILS heuristic}\label{ILS}
+\SetAlgoLined
+
+\SetKwData{JJ}{J}
+\SetKwData{MM}{M}
+\SetKwData{P}{p}
+\SetKwData{D}{d}
+\SetKwData{T}{t}
+\SetKwData{NonImproveIters}{nonImproveIters}
+\SetKwData{Temp}{temp}
+\SetKwData{SS}{s*}
+\SetKwData{S}{s}
+
+
+\SetKwFunction{StartTimer}{startTimer}
+\SetKwFunction{ConstructiveHeuristic}{constructiveHeuristic}
+\SetKwFunction{InternalTwoSwapLS}{internal2SwapLS}
+\SetKwFunction{InternalThreeSwapLS}{internal3SwapLS}
+\SetKwFunction{ExternalTwoSwapLS}{external3SwapLS}
+\SetKwFunction{ExternalThreeSwapLS}{external3SwapLS}
+\SetKwFunction{TaskBalancingLS}{taskBalancingLS}
+\SetKwFunction{UpdateBestGlobal}{updateBestGlobal}
+\SetKwFunction{DoPerturbation}{doPertubation}
+
+\SetKwInOut{Input}{input} 
+\SetKwInOut{Output}{output}
+\Input{\JJ, \MM, \P, \D, \T}
+\Output{\SS}
+
+\NonImproveIters$\leftarrow$ 0 \;
+\StartTimer(\Temp)
+
+\SS $\leftarrow$ \ConstructiveHeuristic(\JJ, \MM, \P, \D, \T)\;
+\S $\leftarrow$ \SS
+
+\While{$\NonImproveIters \leq MAX\_IT \quad and \quad \Temp < MAX\_TIME$ }{
+	\NonImproveIters $\leftarrow$ \NonImproveIters + 1 \;
+	
+	\S  $\leftarrow$ \InternalTwoSwapLS(\S , \JJ , \MM , \P , \D , \T)\;
+	\SS $\leftarrow$ \UpdateBestGlobal(\S , \SS , \NonImproveIters)\;
+	
+	\S $\leftarrow$ \InternalThreeSwapLS(\S , \JJ , \MM , \P , \D , \T)\;
+	\SS $\leftarrow$ \UpdateBestGlobal(\S , \SS , \NonImproveIters)\;
+	
+	\S $\leftarrow$ \ExternalTwoSwapLS(\S , \JJ , \MM , \P , \D , \T)\;
+	\SS $\leftarrow$ \UpdateBestGlobal(\S , \SS , \NonImproveIters)\;
+	
+	\S $\leftarrow$ \ExternalThreeSwapLS(\S , \JJ , \MM , \P , \D , \T)\;
+	\SS $\leftarrow$ \UpdateBestGlobal(\S , \SS , \NonImproveIters)\;
+
+	\S $\leftarrow$ \TaskBalancingLS(\S , \JJ , \MM , \P , \D , \T)\;
+	\SS $\leftarrow$ \UpdateBestGlobal(\S , \SS , \NonImproveIters)\;
+	
+	\If{ $\NonImproveIters\%10=0$}{
+		\S $\leftarrow$ \DoPerturbation{\S}	
+	}
+}
+
+\end{algorithm}
+\DecMargin{1em}
+
+
+In the Algorithm \ref{ILS} we can see the ILS function. It receive as input a set of jobs $J$, a set of machines $M$, the maintenance time of each machine and the processing time and deterioration delay of each job on each machine. 
+
+At line 3 we the variable $s*$ representing the best solution gets the solution obtained in the constructive heuristic. In this paper we tried two constructive algorithms. The first, that we will reference as \emph{ longest processing time first}(LPTF), orders all jobs by non-increasing processing time order and after that, starting from the first machine, it is assigned to each machine the non used job with longest processing time on that machine. The second, referenced as \emph{lowest delay first} (LDF) orders job by increasing deterioration delay order.After that, as in the previous method, we start from the first machine and insert one job by time on each machine, choosing the non used job with lowest delay. 
+
+Once the jobs are inserted in the machines, we put the maintenance operations. The strategy used is to evaluate the accumulated delay, starting from the last job to the first, and every time the deterioration delay becomes bigger than maintenance processing time, a maintenance is inserted in the position anterior to the job where the delay surpassed the maintenance processing time. 
+
+In the sequence of ILS method, we have from line 7 to 16 a sequence of local searches. After any local search the function \emph{updateBestGlobal} is called to evaluate if the new solution is best than the global solution and set the \emph{nonImproveIters} variable value to 0.
+
+The first local search performed \emph{internal2SwapLS} swap the position, at each machine, of two jobs.Those jobs are chosen as the index of two nested for. The number of swaps tested is limited by a big value, that eventually is not reached. 
+
+The second local search in the sequence( \emph{internal3SwapLS}) changes the position of three jobs in two different ways. Starting from a tuple of three indexes $(i_1, i_2, i_3)$, taken from three nested for loops, it tests two movements $(i_3, i_1, i_2)$ and $(i_2, i_3,i_1)$. The other three possible movements are equivalent to simple two-position swaps, and are not performed. 
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.6)  8 APR 2019 00:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.6)  9 APR 2019 12:51
 entering extended mode
 **./exemplo-latex.tex
 (exemplo-latex.tex
@@ -264,22 +264,82 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen129
 \Gin@req@width=\dimen130
+)
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithm2
+e\algorithm2e.sty"
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count103
+
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthe
+n.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\algocf@hangindent=\skip59
+
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ifoddpage\
+ifoddpage.sty"
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count104
+)
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\xspa
+ce.sty"
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/relsize\re
+lsize.sty"
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip60
+\skiplinenumber=\skip61
+\skiprule=\skip62
+\skiphlne=\skip63
+\skiptext=\skip64
+\skiplength=\skip65
+\algomargin=\skip66
+\skipalgocfslide=\skip67
+\algowidth=\dimen131
+\inoutsize=\dimen132
+\inoutindent=\dimen133
+\interspacetitleruled=\dimen134
+\interspacealgoruled=\dimen135
+\interspacetitleboxruled=\dimen136
+\algocf@ruledwidth=\skip68
+\algocf@inoutbox=\box30
+\algocf@inputbox=\box31
+\AlCapSkip=\skip69
+\AlCapHSkip=\skip70
+\algoskipindent=\skip71
+\algocf@nlbox=\box32
+\algocf@hangingbox=\box33
+\algocf@untilbox=\box34
+\algocf@skipuntil=\skip72
+\algocf@capbox=\box35
+\algocf@lcaptionbox=\skip73
+\algoheightruledefault=\skip74
+\algoheightrule=\skip75
+\algotitleheightruledefault=\skip76
+\algotitleheightrule=\skip77
+\c@algocfline=\count105
+\c@algocfproc=\count106
+\c@algocf=\count107
+\algocf@algoframe=\box36
+\algocf@algobox=\box37
 ) (exemplo-latex.aux)
 \openout1 = `exemplo-latex.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 21.
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1
 ptm.fd"
@@ -291,16 +351,16 @@ Package caption Info: End \AtBeginDocument code.
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mki
 i\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count103
-\scratchdimen=\dimen131
-\scratchbox=\box30
-\nofMPsegments=\count104
-\nofMParguments=\count105
+\scratchcounter=\count108
+\scratchdimen=\dimen137
+\scratchbox=\box38
+\nofMPsegments=\count109
+\nofMParguments=\count110
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count106
-\MPscratchDim=\dimen132
-\MPnumerator=\count107
-\makeMPintoPDFobject=\count108
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen138
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
 \everyMPtoPDFconversion=\toks24
 )
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\e
@@ -362,24 +422,24 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 23.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 27.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 30.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 32.
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1
 pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
-LaTeX Font Info:    Try loading font information for U+msa on input line 42.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 43.
+LaTeX Font Info:    Try loading font information for U+msa on input line 44.
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\u
 msa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 42.
+LaTeX Font Info:    Try loading font information for U+msb on input line 44.
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\u
 msb.fd"
@@ -388,7 +448,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <cabecalho_sbpo.png, id=1, 462.528pt x 92.345pt>
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 69.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 71.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
 
 
@@ -401,52 +461,76 @@ This may cause the page layout to be inconsistent, however.
 
 {C:/Users/Nilson Felipe/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./c
 abecalho_sbpo.png>]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 96.
+File: cabecalho_sbpo.png Graphic file (type png)
+<use cabecalho_sbpo.png>
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 95.
+(pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
+ [2]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 109.
+
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\oms
 ptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 96.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 109.
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 102.
-(pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
- [2]
-File: cabecalho_sbpo.png Graphic file (type png)
-<use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 158.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 128.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
  [3]
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 208.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 176.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
  [4]
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 246.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 232.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
- [5] (exemplo-latex.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 254--1
+ [5]
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 294.
+
+
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1
+phv.fd"
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 297.
+File: cabecalho_sbpo.png Graphic file (type png)
+<use cabecalho_sbpo.png>
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 330.
+(pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
+ [6]
+File: cabecalho_sbpo.png Graphic file (type png)
+<use cabecalho_sbpo.png>
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 339.
+(pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
+ [7] (exemplo-latex.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 344--1
 
  []
 
-)
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 259.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 93.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
- [6] (exemplo-latex.aux) ) 
+[8])
+File: cabecalho_sbpo.png Graphic file (type png)
+<use cabecalho_sbpo.png>
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 349.
+(pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
+ [9] (exemplo-latex.aux) ) 
 Here is how much of TeX's memory you used:
- 4731 strings out of 492945
- 69512 string characters out of 3122699
- 143558 words of memory out of 3000000
- 8522 multiletter control sequences out of 15000+200000
- 17964 words of font info for 46 fonts, out of 3000000 for 9000
+ 5855 strings out of 492945
+ 87968 string characters out of 3122699
+ 173754 words of memory out of 3000000
+ 9623 multiletter control sequences out of 15000+200000
+ 24672 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,14n,43p,1139b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,15n,43p,1139b,539s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX
  2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/Nilson Felipe/AppData/Local/Programs
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Nilson Felipe/A
@@ -459,12 +543,14 @@ AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
 /Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmsy8.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/font
 s/type1/urw/courier/ucrr8a.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Nilson Felipe/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Nilson Felipe/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on exemplo-latex.pdf (6 pages, 285376 bytes).
+iKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Nilson Felipe/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Nilson Feli
+pe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users
+/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.
+pfb>
+Output written on exemplo-latex.pdf (9 pages, 316640 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
+ 84 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
