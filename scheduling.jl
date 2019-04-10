@@ -12,7 +12,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
     #### READING THE INSTANCE LIST
     for instanceName in eachline(file)
         ################## CREATE A MODEL OBJECT TO BE RUN ON CPLEX  ####################
-        m = Model(with_optimizer(CPLEX.Optimizer, CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1, CPX_PARAM_TILIM=7200))
+        m = Model(with_optimizer(CPLEX.Optimizer, CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1, CPX_PARAM_TILIM=3600))
         #### MAIN PARAMETERS OF THE OPTIMIZATION
         NUMBER_OF_JOBS = 0
         NUMBER_OF_MACHINES = 0
@@ -112,7 +112,8 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ############################################################################################
            for k =1:NUMBER_OF_MACHINES
                for h = 2:NUMBER_OF_PERIODS
-                  @constraint(m, s[k,h-1] + sum(x[j,k,h-1] for j in 1:NUMBER_OF_JOBS)>= s[k,h] + sum(x[j,k,h] for j in 1:NUMBER_OF_JOBS) )
+                  @constraint(m, s[k,h-1] + sum(x[j,k,h-1] for j in 1:NUMBER_OF_JOBS)>=
+                                 s[k,h] + sum(x[j,k,h] for j in 1:NUMBER_OF_JOBS) )
                end
            end
 
@@ -167,7 +168,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            for j= 1:NUMBER_OF_JOBS
                for k = 1:NUMBER_OF_MACHINES
                   for h = 2:NUMBER_OF_PERIODS
-                       @constraint(m, x[j,k,h] - sum(x[jj,k,h-1] for jj in 1:NUMBER_OF_MACHINES) -s[k,h-1] <= 0)
+                      @constraint(m, x[j,k,h] - sum(x[jj,k,h-1] for jj in 1:NUMBER_OF_JOBS) -s[k,h-1] <= 0)
                   end
                end
            end
@@ -220,21 +221,30 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            end
 
 
+           for k = 1:NUMBER_OF_MACHINES
+                for h = 1:NUMBER_OF_PERIODS
+                      @constraint(m, s[k,h]<=0.5)
+                end
+           end
+
+
            ############################################################################################
            ##                              OBJECTIVE FUNCTION
            ############################################################################################
-           @objective(m, Min, Cmax)
+           @objective(m, Min, Cmax )
 
            println("Starting optimization: ", instanceName);
-           flush(stdout) 
+           flush(stdout)
 
-           #print(m)
+        #   print(m)
 
           # write("output.txt", readstring(`ls -l`))
 
            @time begin
            st = optimize!(m)
            end
+
+           println(termination_status(m))
 
            ############################################################################################
            ##                              PRINTING SOLUTION
@@ -293,7 +303,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                            println(string("s(", k , ",", h,") " , getvalue(s[k,h])))
                        end
                     end
-                end 
+                end
            elseif termination_status(m) == MOI.TIME_LIMIT && has_values(m)
                 println("-------TIME LIMIT REACHED. BEST VALUE FOUND: ", objective_value(m))
                 println(" ")
