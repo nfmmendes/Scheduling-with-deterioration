@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.6)  9 APR 2019 12:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.6)  9 APR 2019 13:09
 entering extended mode
 **./exemplo-latex.tex
 (exemplo-latex.tex
@@ -509,25 +509,25 @@ File: cabecalho_sbpo.png Graphic file (type png)
 Package pdftex.def Info: cabecalho_sbpo.png  used on input line 339.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
  [7] (exemplo-latex.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 344--1
+Underfull \hbox (badness 10000) in paragraph at lines 356--1
 
  []
 
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 93.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 58.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
 [8])
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 349.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 361.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
  [9] (exemplo-latex.aux) ) 
 Here is how much of TeX's memory you used:
- 5855 strings out of 492945
- 87968 string characters out of 3122699
+ 5856 strings out of 492945
+ 87976 string characters out of 3122699
  173754 words of memory out of 3000000
- 9623 multiletter control sequences out of 15000+200000
+ 9624 multiletter control sequences out of 15000+200000
  24672 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,15n,43p,1139b,539s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -548,7 +548,7 @@ ocal/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Nilson Feli
 pe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users
 /Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on exemplo-latex.pdf (9 pages, 316640 bytes).
+Output written on exemplo-latex.pdf (9 pages, 317918 bytes).
 PDF statistics:
  84 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

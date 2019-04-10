@@ -283,7 +283,7 @@ In this section we present the heuristic we propose to solve the job and mainten
 \SetKwFunction{ConstructiveHeuristic}{constructiveHeuristic}
 \SetKwFunction{InternalTwoSwapLS}{internal2SwapLS}
 \SetKwFunction{InternalThreeSwapLS}{internal3SwapLS}
-\SetKwFunction{ExternalTwoSwapLS}{external3SwapLS}
+\SetKwFunction{ExternalTwoSwapLS}{external2SwapLS}
 \SetKwFunction{ExternalThreeSwapLS}{external3SwapLS}
 \SetKwFunction{TaskBalancingLS}{taskBalancingLS}
 \SetKwFunction{UpdateBestGlobal}{updateBestGlobal}
@@ -335,10 +335,22 @@ Once the jobs are inserted in the machines, we put the maintenance operations. T
 
 In the sequence of ILS method, we have from line 7 to 16 a sequence of local searches. After any local search the function \emph{updateBestGlobal} is called to evaluate if the new solution is best than the global solution and set the \emph{nonImproveIters} variable value to 0.
 
-The first local search performed \emph{internal2SwapLS} swap the position, at each machine, of two jobs.Those jobs are chosen as the index of two nested for. The number of swaps tested is limited by a big value, that eventually is not reached. 
+The first local search performed, \emph{internal2SwapLS}, swaps the position, at each machine, of two jobs.Those jobs are chosen as the index of two nested \emph{for} loops. The number of swaps tested is limited by a big value, that eventually is not reached. 
 
-The second local search in the sequence( \emph{internal3SwapLS}) changes the position of three jobs in two different ways. Starting from a tuple of three indexes $(i_1, i_2, i_3)$, taken from three nested for loops, it tests two movements $(i_3, i_1, i_2)$ and $(i_2, i_3,i_1)$. The other three possible movements are equivalent to simple two-position swaps, and are not performed. 
+The second local search in the sequence( \emph{internal3SwapLS}) changes the position of three jobs in two different ways. Starting from a tuple of three indexes $(i_1, i_2, i_3)$, taken from three nested for loops, it tests two movements $(i_3, i_1, i_2)$ and $(i_2, i_3,i_1)$. The other three possible moves are equivalent to simple two-position swaps, and are not executed. The number of moves tested is limited, as in the previous function
 
+The two following local searches are inter-machines movements. The \emph{external2SwapLS} procedure swap two jobs between two machines (one job of first machine changes the position with one job of second machine). The machines are chosen by the index of two nested \emph{for} loops and the jobs are chosen in the same way. 
+
+By its turn, the \emph{external3SwapLS} procedure is analogous with the \emph{external2SwapLS}, changing three jobs of three different machines but adopting the same move strategy of the \emph{internal3SwapLS}. 
+
+Finally, the \emph{taskBalancingLS} procedure takes the shortest job from the machine with smaller completion time and swap it with the longest job in the machine with bigger completion time. This move is done a limited number of times. 
+
+After all these local searches, if the condition showed on line 17 is satisfied, we proceed a perturbation of the current solution. 
+
+FALAR SOBRE A PERTUBA\c C\~AO AQUI
+
+
+In the local search described above there are no maintenance position swaps. The maintenance positions are evaluated only on constructive heuristics and perturbation procedures due to performance reasons. 
 
 
 ~\\
