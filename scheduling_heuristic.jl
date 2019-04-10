@@ -43,12 +43,12 @@ globalBestSolutionValue = 1e100
      solutionValue::Float64         #Stores solution objective function value
 
      Solution()  =new()
-     Solution(other::Solution) = new(other.manteinancePositions,
-                                     other.machineCompletionTimes,
-                                     other.slotsOnMachine,
-                                     other.maintenancesOnMachine,
-                                     other.machineScheduling,
-                                     other.solutionValue)
+     Solution(other::Solution) = new(deepcopy(other.manteinancePositions),
+                                     deepcopy(other.machineCompletionTimes),
+                                     deepcopy(other.slotsOnMachine),
+                                     deepcopy(other.maintenancesOnMachine),
+                                     deepcopy(other.machineScheduling),
+                                     deepcopy(other.solutionValue))
 end
 
 globalBestSolution =  Solution()
@@ -80,9 +80,7 @@ function completionTimeOnMachine!(solution,machine, p, d, t)
                continue
           end
 
-          if solution.machineScheduling[machine, i] == 0
-               break
-          end
+          
 
           accumulated += p[solution.machineScheduling[machine, i],machine]*deterioration
           deterioration *= d[solution.machineScheduling[machine, i],machine]
@@ -135,15 +133,20 @@ function  insertMaintenances(solution, NUMBER_OF_MACHINES, NUMBER_OF_JOBS, p,d,t
      for i in 1:NUMBER_OF_MACHINES
           slotsOnMachine = solution.slotsOnMachine[i]
 
-          if slotsOnMachine == 0
-               println(solution.machineScheduling[i,:])
+          for j in 1:slotsOnMachine
+                if solution.machineScheduling[i,j] == -1
+                    slotsOnMachine = slotsOnMachine-1
+                    solution.machineScheduling[i,:] = removeOperationAt!(solution.machineScheduling[i,:], j)
+                end
           end
+
 
           accumulatedWork[i] = 0
           numberOfMaintenances = 0
           if slotsOnMachine >1
                for j in (slotsOnMachine-1):-1:1
                     job = solution.machineScheduling[i,j]
+
                     accumulatedDeterioration[i] *= d[job,i]
                     accumulatedWork[i] += p[job,i]
                     accumulatedDelay[i] += accumulatedWork[i]+accumulatedDeterioration[i]
@@ -173,29 +176,20 @@ end
 
 function evaluateSolution!(solution, machines, p, d, t)
 
-     slowerMachine = -1
-     biggerTime = -1
-     for i in 1:size(solution.machineScheduling)[1]
-          if biggerTime < solution.machineCompletionTimes[i]
-               biggerTime = solution.machineCompletionTimes[i]
-               slowerMachine = i
-          end
-     end
-
+     otherSolution = Solution(solution)
      for i in 1:size(machines)[1]
-         solution = completionTimeOnMachine!(solution,machines[i], p, d, t)
-    #      println("Solution value 1: ", solution.solutionValue, " Completion time: ",solution.machineCompletionTimes[machines[i]])
-         if machines[i] == slowerMachine && solution.machineCompletionTimes[machines[i]] < solution.solutionValue
-              solution.solutionValue= solution.machineCompletionTimes[machines[i]]
-         end
-
-         if solution.machineCompletionTimes[machines[i]] > solution.solutionValue
-              solution.solutionValue= solution.machineCompletionTimes[machines[i]]
-         end
-
+         otherSolution = completionTimeOnMachine!(solution,machines[i], p, d, t)
      end
 
+     makespan = -1
 
+     for i in 1:size(solution.machineCompletionTimes)[1]
+        if makespan < solution.machineCompletionTimes[i]
+            makespan = solution.machineCompletionTimes[i]
+        end
+     end
+
+     otherSolution.solutionValue = makespan
 
      return solution.solutionValue
 end
@@ -206,7 +200,7 @@ function updateBestGlobalSolution!(currentSolution, iterationsWithoutImprovement
      if currentSolution.solutionValue < globalBestSolutionValue
           print("Best solution found: ", currentSolution.solutionValue, " \tPrevious",globalBestSolutionValue )
           globalBestSolution = Solution(currentSolution)
-          globalBestSolutionValue = currentSolution.solutionValue
+          global globalBestSolutionValue = currentSolution.solutionValue
           iterationsWithoutImprovement = 0
      end
      return iterationsWithoutImprovement
@@ -217,35 +211,37 @@ end
 #### This function does not make any search on the input solution, just evaluate it  #########
 function updateBestSolutionsOnSwapLS!(initialSolution, previousSolution, solutionValue, currentSolution, bestSolution, bestSolutionOnMachineLoop)
      #### Evaluate if it is the best solution in the local search
+
      global globalBestSolutionValue
      global globalBestSolution
      #println(solutionValue, " ", bestSolution.solutionValue)
+
      if solutionValue <  bestSolution.solutionValue
-        bestSolution.solutionValue = solutionValue
         bestSolution = Solution(currentSolution)
      end
 
 
+
      #### Evaluate if it is the best solution in the local search and current machine
      if SWAP_UPDATE_STRATEGY == 2 && solutionValue < bestSolutionOnMachineLoop.solutionValue
-          bestSolutionOnMachineLoop = Solution(currentSolution)
+        bestSolutionOnMachineLoop = Solution(currentSolution)
      elseif SWAP_UPDATE_STRATEGY == 2
-          currentSolution = Solution(previousSolution)
+        currentSolution = Solution(previousSolution)
      end
-
      ### Current solution update strategy
      if SWAP_UPDATE_STRATEGY == 1        ## Never update the current solution
-          currentSolution = previousSolution
+          currentSolution = Solution(previousSolution)
      elseif SWAP_UPDATE_STRATEGY == 3   ## Update the current solution if it is the best
                                         ## global solution
           if solutionValue < globalBestSolutionValue
-               globalBestSolution = currentSolution
+               globalBestSolution = Solution(currentSolution)
                globalBestSolutionValue = currentSolution.solutionValue
           else
                currentSolution = Solution(initialSolution)
           end
      end
-     return currentSolution,bestSolution, bestSolution.solutionValue
+
+     return Solution(currentSolution),Solution(bestSolution), bestSolution.solutionValue
 end
 
 
@@ -255,8 +251,8 @@ end
 #### This function does not do maintenance swaps, but it can include/remove maintenances #####
 ####      if it is needed to make the machine completion time fall                       #####
 function internal2Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
-     bestSolution = Solution()
-     bestSolution.solutionValue = 1e100
+     bestSolution = Solution(initialSolution)
+     bestSolution.solutionValue = initialSolution.solutionValue
      currentSolution = Solution(initialSolution)
      triedAll = false
      localSeachSize =0
@@ -323,27 +319,28 @@ function internal2Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p
                 continue
            end
 
-         # println("Scheduling before 2 internal swap")
+        # println("Scheduling before 2 internal swap")
         #  println(currentSolution.machineScheduling[machine,:])
            ###  Effectivelly do the swap
            previousSolution = Solution(currentSolution)
            firstJob = currentSolution.machineScheduling[machine,lastSwapSlot]
            currentSolution.machineScheduling[machine,lastSwapSlot] = currentSolution.machineScheduling[machine,firstSwapSlot]
            currentSolution.machineScheduling[machine,firstSwapSlot] = firstJob
-         # println("Scheduling after 2 internal swap")
-         # println(currentSolution.machineScheduling[machine,:])
-         # sleep(1)
 
+
+           currentSolution = insertMaintenances(currentSolution, NUMBER_OF_MACHINES, NUMBER_OF_JOBS, p,d,t)
 
            solutionValue = evaluateSolution!(currentSolution,[machine],p, d,t)
-         #  println("Internal2Swap")
-         #  println("Current solution: ", solutionValue)
-         #  println(">> Best solution: ", currentSolution.solutionValue)
+           currentSolution.solutionValue = solutionValue
+
+
+
 
            currentSolution,bestSolution, bestSolutionValue =
                           updateBestSolutionsOnSwapLS!(initialSolution, previousSolution,
                                                        solutionValue, currentSolution, bestSolution,
                                                        bestSolutionOnMachineLoop)
+            printSolution(bestSolution, NUMBER_OF_MACHINES)
          # println("Scheduling after solution evaluation on  internal swap")
          # println(currentSolution.machineScheduling[machine,:])
            lastSwapSlot = lastSwapSlot+1
@@ -460,6 +457,7 @@ function internal3Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p
             # sleep(1)
 
              solutionValue = evaluateSolution!(currentSolution,[machine], p,d, t)
+             currentSolution.solutionValue = solutionValue
              currentSolution, bestSolution, bestSolutionValue =
                               updateBestSolutionsOnSwapLS!(initialSolution, previousSolution,
                                                            solutionValue, currentSolution,
@@ -475,7 +473,8 @@ function internal3Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p
              currentSolution.machineScheduling[machine,firstSwapSlot] = firstJob
 
              solutionValue = evaluateSolution!(currentSolution,[machine], p, d, t)
-             bestSolution, bestSolutionValue =
+             currentSolution.solutionValue = solutionValue
+             currentSolution, bestSolution, bestSolutionValue =
                            updateBestSolutionsOnSwapLS!(initialSolution, previousSolution,
                                                         solutionValue, currentSolution,
                                                         bestSolution, bestSolutionOnMachineLoop)
@@ -506,60 +505,63 @@ function external2Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p
 
     while triedAll == false && localSearchSize < MAX_LOCAL_SEARCH_SIZE
 
-           localSearchSize +=1
+        localSearchSize +=1
 
 
-           ### Check if the position is valid in the first machine
-           ### if it's not, the machines are changed
-           if firstSwapSlot >  firstMachineNumberOfSlots
-               firstSwapSlot = 1
-               secondSwapSlot = 1
-               firstMachine = firstMachine+1
-               secondMachine = secondMachine+1
-           end
+        ### Check if the position is valid in the first machine
+        ### if it's not, the machines are changed
+        if firstSwapSlot >  firstMachineNumberOfSlots
+            firstSwapSlot = 1
+            secondSwapSlot = 1
+            firstMachine = firstMachine+1
+            secondMachine = secondMachine+1
+        end
 
-           ### Check if the position is valid in the second machine
-           ### if it's not, the second machine is changed
-           if secondSwapSlot >  secondMachineNumberOfSlots
-               firstSwapSlot = 1
-               secondSwapSlot = 1
-               secondMachine = secondMachine+1
-           end
+        ### Check if the position is valid in the second machine
+        ### if it's not, the second machine is changed
+        if secondSwapSlot >  secondMachineNumberOfSlots
+            firstSwapSlot = 1
+            secondSwapSlot = 1
+            secondMachine = secondMachine+1
+        end
 
-           ### Verifies if all the machines were already tested
-           if firstMachine > NUMBER_OF_MACHINES || secondMachine > NUMBER_OF_MACHINES
-               triedAll = true
-               continue
-           end
+        ### Verifies if all the machines were already tested
+        if firstMachine > NUMBER_OF_MACHINES || secondMachine > NUMBER_OF_MACHINES
+            triedAll = true
+            continue
+        end
 
-           ### Verifies if the first slot have a mantainance procedure
-           ### if it is true, the loop goes back and the previous validations are re-done
-           if currentSolution.machineScheduling[firstMachine,firstSwapSlot] == -1
-               firstSwapSlot += 1
-               localSearchSize -= 1
-               continue
-           end
+        ### Verifies if the first slot have a mantainance procedure
+        ### if it is true, the loop goes back and the previous validations are re-done
+        if currentSolution.machineScheduling[firstMachine,firstSwapSlot] == -1
+            firstSwapSlot += 1
+            localSearchSize -= 1
+            continue
+        end
 
-           ### Verifies if the second slot have a mantainance procedure
-           ### if it is true, the loop goes back and the previous validations are re-done
-           if currentSolution.machineScheduling[secondMachine,secondSwapSlot] == -1
-               secondSwapSlot +=1
-               localSearchSize -=1
-               continue
-           end
+        ### Verifies if the second slot have a mantainance procedure
+        ### if it is true, the loop goes back and the previous validations are re-done
+        if currentSolution.machineScheduling[secondMachine,secondSwapSlot] == -1
+            secondSwapSlot +=1
+            localSearchSize -=1
+            continue
+        end
 
-           #This part is where actually is done the swap of the jobs. After
-           previousSolution = Solution(currentSolution)
-           firstJob = currentSolution.machineScheduling[secondMachine, secondSwapSlot]
-           currentSolution.machineScheduling[secondMachine,secondSwapSlot] = currentSolution.machineScheduling[firstMachine,firstMachine]
-           currentSolution.machineScheduling[firstMachine, firstSwapSlot] = firstJob
+        #This part is where actually is done the swap of the jobs. After
+        previousSolution = Solution(currentSolution)
+        firstJob = currentSolution.machineScheduling[secondMachine, secondSwapSlot]
+        currentSolution.machineScheduling[secondMachine,secondSwapSlot] = currentSolution.machineScheduling[firstMachine,firstMachine]
+        currentSolution.machineScheduling[firstMachine, firstSwapSlot] = firstJob
 
-           if bestSolutionValue > currentSolution.solutionValue
-               bestSolution = Solution(currentSolution)
-               bestSolutionValue = currentSolution.solutionValue
-           end
+        solutionValue = evaluateSolution!(currentSolution,[firstMachine,secondMachine], p, d, t)
+        currentSolution.solutionValue = solutionValue
 
-           currentSolution = Solution(previousSolution)
+        if bestSolutionValue > currentSolution.solutionValue
+            bestSolution = Solution(currentSolution)
+            bestSolutionValue = currentSolution.solutionValue
+        end
+
+        currentSolution = Solution(previousSolution)
      end
      return bestSolution
 end
@@ -569,6 +571,7 @@ end
 #### This function does not do maintenance swaps, but it can include/remove maintenances #####
 ####      if it is needed to make the machine completion time fall                       #####
 function external3Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
+
     bestSolution = Solution()
     bestSolution.solutionValue = 1e100
     bestSolutionValue = 1e100
@@ -581,6 +584,10 @@ function external3Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p
     firstSwapSlot = 1
     secondSwapSlot =1
     thirdSwapSlot = 1
+
+    if NUMBER_OF_MACHINES < 3
+        return initialSolution
+    end
 
     firstMachineNumberOfSlots = currentSolution.slotsOnMachine[firstMachine]
     secondMachineNumberOfSlots = currentSolution.slotsOnMachine[secondMachine]
@@ -940,9 +947,9 @@ function mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d, t)
            println("Local searches")
            while iterationsWithoutImprovement < MAX_ITERATIONS_WITHOUT_IMPROVEMENT
                  ### I THINK THIS IF WILL BE NOT NECESSARY
-              #   if totalTime > MAX_EXECUTION_TIME
-              #        break
-              #   end
+                 #   if totalTime > MAX_EXECUTION_TIME
+                 #        break
+                 #   end
                  iterationsWithoutImprovement += 1
 
 
@@ -950,23 +957,23 @@ function mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d, t)
                                                           NUMBER_OF_MACHINES, d, p, t))
                  iterationsWithoutImprovement = updateBestGlobalSolution!(currentSolution,
                                                           iterationsWithoutImprovement)
-                 println("Current solution: ", currentSolution.solutionValue)
-                
+                 println("Current solution A: ", currentSolution.solutionValue)
+                 printSolution(currentSolution,NUMBER_OF_MACHINES)
 
                  currentSolution = Solution(internal3Swap(currentSolution, NUMBER_OF_JOBS,
                                                           NUMBER_OF_MACHINES, d, p, t))
                  iterationsWithoutImprovement = updateBestGlobalSolution!(currentSolution,
                                                           iterationsWithoutImprovement)
-                # printSolution(currentSolution,NUMBER_OF_MACHINES)
-                println("Current solution: ", currentSolution.solutionValue)
+                 #printSolution(currentSolution,NUMBER_OF_MACHINES)
+                 #println("Current solution B: ", currentSolution.solutionValue)
 
 
                  currentSolution = Solution(external2Swap(currentSolution, NUMBER_OF_JOBS,
                                                           NUMBER_OF_MACHINES, d, p, t))
                  iterationsWithoutImprovement = updateBestGlobalSolution!(currentSolution,
                                                           iterationsWithoutImprovement)
-                 #println("Current solution: ", currentSolution.solutionValue)
-                 #printSolution(currentSolution,NUMBER_OF_MACHINES)
+                # println("Current solution C: ", currentSolution.solutionValue)
+                # printSolution(currentSolution,NUMBER_OF_MACHINES)
 
 
 
@@ -975,8 +982,8 @@ function mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d, t)
                                                           NUMBER_OF_MACHINES, d, p, t))
                  iterationsWithoutImprovement = updateBestGlobalSolution!(currentSolution,
                                                           iterationsWithoutImprovement)
-                # println("Current solution: ", currentSolution.solutionValue)
-                 #printSolution(currentSolution,NUMBER_OF_MACHINES)
+                # println("Current solution D: ", currentSolution.solutionValue)
+                # printSolution(currentSolution,NUMBER_OF_MACHINES)
 
 
 
@@ -985,7 +992,7 @@ function mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d, t)
                   println("Best value:", globalBestSolutionValue, "\tIterations without improvement: ", iterationsWithoutImprovement)
                   sleep(0.4)
 
-                  if iterationsWithoutImprovement%10 == 9
+                  if iterationsWithoutImprovement%5 == 1
                       currentSolution =Solution(pertubation(initialSolution,
                                                            NUMBER_OF_JOBS,
                                                             NUMBER_OF_MACHINES, p,d, t))
