@@ -1,0 +1,362 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{sbpo-template}
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{url}
+\usepackage[square]{natbib}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\includegraphics[width=\textwidth]{cabecalho_sbpo.png}}
+\renewcommand{\headrulewidth}{0pt}
+\setlength\headheight{101.0pt}
+\addtolength{\textheight}{-101.0pt}
+\setlength{\headsep}{-5mm}
+
+\usepackage[linesnumbered,lined,boxed,commentsnumbered]{algorithm2e}
+
+\begin{document}
+
+\title{A new model and heuristic to a job and maintenance machine scheduling problem with sequence dependent deterioration } 
+
+\maketitle
+\thispagestyle{fancy}
+
+\author{
+\name{Primeiro Autor}
+\institute{Filia\c c\~ao}
+\iaddress{Endere\c co da Institui\c c\~ao}
+\email{e-mail}
+}
+
+\author{ 
+\name{Segundo Autor}
+\institute{Filia\c c\~ao} 
+\iaddress{Endere\c co da Institui\c c\~ao}
+\email {e-mail}
+}
+
+\vspace{8mm}
+\begin{resumo}
+M\'aquinas que possuem alto n\'ivel de ocupa\c c\~ao comumente apresentam problemas de desgaste que impactam o seu desempenho e fazem com que manuten\c c\~oes corretivas sejam necess\'arias. Neste trabalho tratamos um problema de escalonamento de tarefas em m\'aquinas paralelas n\~ao correlatas com tempo de processamento dependente da deteriora\c c\~ao e manuten\c c\~ao. Neste problema buscamos minimizar o \emph{makespan} atrav\'es da defini\c c\~ao de sequ\^encias de tarefas e momentos de manuten\c c\~oes de um conjunto de m\'aquinas. O tempo processamento de cada tarefa aumenta por um fator de deteriora\c c\~ao $q$ (dependente da tarefa e m\'aquina) a cada tarefa executada desde a \'ultima manuten\c c\~ao. Apresentamos neste artigo uma vers\~ao linearizada de um modelo matem\'atico dispon\'ivel na literatura que descreve o problema e uma heur\'istica baseada na meta-heur\'istica ILS para resolv\^e-lo. Ent\~ao comparamos os resultados obtidos pela heuristica com os resultados da modelo matem\'atico e de algoritmos da literatura. 
+ \end{resumo}
+
+\bigskip
+\begin{palchaves}
+Scheduling. Modelagem matem\'atica. Meta-heuristica.
+
+\bigskip
+\noindent{T\'opicos (Escalonamento de tarefas, Modelagem matem\'atica, Lineariza\c c\~ao, Meta-heur\'istica, ILS ) }
+\end{palchaves}
+
+
+\vspace{8mm}
+
+\begin{abstract}
+Machines that have a high occupation level commonly presents deterioration problems which impacts on its performance, making needed corrective maintenances. In this paper we deal with a unrelated parallel machine job scheduling with time processing depending of deterioration and maintenance. In this problem, we aim to minimize the makespan through the definition of job sequences and maintenance events to a set of machines. The processing time of each job rises by a deterioration factor $q$ (depending on machine and job) after each job executed after the last maintenance. We present here a linear version of a mathematical model available on the literature to describe the problem as well a ILS based heuristic to solve it. So we compare the results obtained by the proposed heuristic with the results got through the model and literature algorithms. 
+\end{abstract}
+
+\bigskip
+\begin{keywords}
+Scheduling. Mathematical modeling. Meta-heuristic.
+
+\bigskip
+\noindent{Paper topics (Job scheduling, Mathematical model, Linearization, Meta-heuristic, ILS )}
+\end{keywords}
+
+ 
+\newpage
+\section{Introduction} 
+ 
+ In any continuous activity performed by a machine or person fatigue and deterioration factors affect the execution performance and increase the processing time. In some cases the lose of performance happens so frequently that it is necessary to include stop and maintenance events on the scheduling in order to recover the full performance of the executor and provide a overall best functioning of the system. 
+ 
+ In this paper we deal with the machine job scheduling problem on environments where deterioration is a relevant factor in a short time horizon, like medical services, student examination, computer processing. In those scenarios, we have a significant increase of time processing after the execution of each job due deterioration and a short maintenance procedure that could fix the accumulated deterioration, where maintenance could be a repair, stop, cooling, warming, etc...
+ 
+ Looking for the optimization of some metric, in this case the makespan, we define which jobs will be processed in each machine, in which order and also when to execute a maintenance procedures. 
+ 
+ Our main contribution in this paper is a linear and improved version of the model proposed by \citep{ruiz2017makespan} to describe the model that makes possible the use of any of the main MILP solvers to solve it. We also provide a heuristic procedure that allows to solve the version of problem that considers unrelated machines (with different deterioration rates and different processing and maintenance times).
+ 
+ In the next session we present a short view of the previous works that deal with scheduling with deterioration problem. In the section 3 we describe the problem and present the model created by \citep{ruiz2017makespan} and our linear version. In the section 4 we present the proposed heuristic and a adaptation of the heuristic proposed in \citep{ruiz2017makespan} to solve a identical machine version of the problem. In the section 5 we describe the computational experiments and finally on section 6 we present the results of the experiments performed.  
+ 
+\section{Literature review}
+
+ Scheduling with deterioration problems have been investigated since the late 80's, with the first known study presented in \citep{gupta1988single}, where the processing time depends on the job starting time. This article was followed in next years by \citep{browne1990scheduling}, \citep{mosheiov1991v} and \citep{mosheiov1994scheduling} that used similar ways to evaluate the deterioration. 
+ 
+ The published studies can be divided in two groups according to how deterioration is estimated. The first and older group estimate the deterioration based on the job starting time, supposing that a machine is deteriorated with the same rate by any job,without considering the nature of job. The second group estimate the deterioration based on the set of jobs processed previously, considering the eventual different deterioration rates due to the hardness of some jobs.  
+ 
+ Among the works in which the deterioration is dependent on starting time we can highlight yet \citep{Mosheiov1998} that proved that the makespan minimization with parallel machines problem is strongly NP-hard even for a two machine case and \citep{JI2008342} that created a polynomial-time approximation scheme for the case with a fixed number of machines . In \citep{cheng2001single}, \citep{leung2008minimizing} and \citep{lalla2016modeling} the concept of step-deterioration is used to describe situations where the processing time just change if the job is processed after a threshold time. 
+ 
+ The first paper with a sequence-dependent deterioration was \citep{RUIZTORRES20132051}. In this paper is presented a non-linear model to describe the problem. This same problem is the subject in \citep{SantosArroyo2015} paper, where is proposed an ILS and a combined ILS with RVND algorithm to solve it. 
+ 
+Maintenance activities are introducted on \citep{Yang2011} and \citep{YANG20121458}, in a parallel machine scheduling with position-dependent deterioration, where the time is not important to define the deterioration but the jobs are yet considered equivalent on deterioration potential. We can cite yet \citep{HUANG20152897} that still uses the position-dependent deterioration concept, but without maintenance activities.
+ 
+The first work where there is a sequence-dependent deterioration and maintenance activities is \citep{ruiz2017makespan}. In this paper, the processing time of a job depend on the sequence of activities performed before it. After this, in the best of our knowledge only \citep{DING201935} worked in the same subject, changing slightly the problem definition to make the job deterioration influences its own processing time. 
+
+This paper is based on the problem defined by \citep{ruiz2017makespan} and in the next sections we will describe it, present a new mathematical formulation to replace the existent non-linear formulation and propose a ILS based heuristic to solve it. 
+ 
+\section{Problem description}
+
+The job and maintenance machine scheduling problem with sequence dependent deterioration is basically a problem where a set of jobs should be scheduled on a set of machines in other to optimize some scheduling metric. The processing time of each job on each machine depends of the machine deterioration, that increases after a job be executed and is reset after a maintenance, that takes a significant amount of time to be done. Then, we can describe the problem as a follows. 
+
+Let $J={1, 2, 3,..,|J|}$ be a set of independent and non preemptive jobs to be processed on a set $M = {1, 2, ..., |M|}$ of unrelated parallel machines that suffer a significant deterioration after each job processed.
+
+If $p_{jm} \geq 0 $ is the baseline processing time of the job $j \in J$ on machine $m \in M$, $\delta_{jm} \geq 1$ is the accumulated delay factor caused by deterioration at machine $m \in M$ just before the start of job $j \in J$ and $d_{jm} \geq 1$ the additional delay factor caused by deterioration on the machine $m \in M$ after the job $j \in J$, we can state that:
+
+\begin{itemize}
+\item{  The actual processing time of machine $j \in J$ on machine $m \in M$ is equals to $p_{jm}*\delta_{jm}$ }
+
+\item{ The accumulated delay factor caused by deterioration on machine $m \in M$ after the processing in it of job $j \in J$ is equals to $\delta_{jm}*d_{jm}$}
+\end{itemize}
+
+Considering yet that all jobs are available on time zero, the objective is create a job processing sequence on each machine in order to optimize a scheduling metric, in this article, the minimization of makespan. 
+
+In these version of the problem the number of maintenance is unbounded and can be done in any time between the end of a job processing and the beginning of other job processing. Empty intervals on machines are not forbidden but does not make sense. A maintenance in one machine does not impact a maintenance in any other machine and all the machines can be repaired at same time without loss of overall performance. 
+
+From this point, we will use the notation exposed on this section to all the rest of the paper. 
+
+
+\section{Mathematical model}
+
+In this section we present the mathematical model proposed by \citep{ruiz2017makespan} and the modifications done in it to create a linearized version. We also include some constraints to avoid some scenarios not previously predicted in the original model.
+
+The proposed model works based on machine slots that could be filled with a job or a maintenance. Those slots are used to define the position of an activity on a machine schedule and have no fixed duration as it could have in a time indexed formulation. 
+
+In this way, we can define if a job $j \in J$ will be executed in the slot $h \in H$ of machine $m \in M$  using the binary variable $x_{jmh}$ and similarly if a maintenance will be executed at slot $h \in H$ of the machine $m \in M$ with binary variable $s_{mh}$.
+
+According to the activity performed in a machine slot we can define the resulting performance in the next machine slot. This is stored at the variable $q_{mh}$ that saves the current performance in the slot $h \in H$ of the machine $m \in M$, being its value between 1 to represent a $100\%$ performance (no deterioration) and 0 (total deterioration).
+
+With these definitions we can state the model bellow. 
+
+\begin{equation}\label{eq:fo_mod1}
+	\min C_{max}
+\end{equation}
+
+Subject to
+\begin{equation}\label{eq:uniqueAct_mod1}	
+ \sum_{j \in J}{x_{jmh}} +  s_{mh} \leq 1 \quad\quad\quad\quad \forall m \in M, h \in H 
+\end{equation}
+
+\begin{equation}\label{eq:mandJob_mod1}
+	\sum_{m \in M}\sum_{h \in H}{x_{jmh}} = 1 \quad\quad\quad\quad \forall j \in J
+\end{equation}
+ 
+\begin{equation}\label{eq:cMax_mod1}
+	\sum_{j \in J}\sum_{h \in H}{\frac{p_{j,m}}{q_{kh}}*x_{jmh}} + \sum_{h \in H}{t_h}*s_{mh} - C_{max} \leq 0 \quad \quad \quad \forall m \in M 
+\end{equation} 
+ 
+\begin{equation}\label{eq:det_mod1}
+	q_{mh} - \sum_{j \in J}{1-d_{jm}}*q_{m(h-1)}*x_{jm(h-1)} - s_{m(h-1)} = 0 \quad\quad \forall h \in H\backslash\{1\} , m \in M
+\end{equation} 
+
+\begin{equation}\label{eq:qInit_mod1}
+q_{m1} = 1 \quad\quad\quad\quad\quad \forall m \in M
+\end{equation}
+
+\begin{equation}\label{eq:xDef_mod1}
+    x_{jmh} \in \{0,1\} \quad \quad \quad \quad \forall j \in J, m \in M, h \in H
+\end{equation}
+
+\begin{equation}\label{eq:dDef_mod1}
+    s_{mh} \in \{0,1\} \quad \quad \quad \quad \forall m \in M, h \in H
+\end{equation}
+
+\begin{equation}\label{eq:qDef_mod1}
+    q_{mh} \geq 0 \quad \quad \quad \quad \forall  m \in M, h \in H
+\end{equation}
+
+In the Equation (\ref{eq:fo_mod1}) we have the objective function, that is just the value of the variable $C_{max}$ that represents the makespan.The Equation (\ref{eq:uniqueAct_mod1}) states that just one activity can be done by slot. Equation (\ref{eq:mandJob_mod1}) assigns an unique job to a machine slot. On Equation  (\ref{eq:cMax_mod1}) computes the maskespan based on the finish time on each machine and (\ref{eq:det_mod1}) computes the deterioration on each machine slot. Equation (\ref{eq:qInit_mod1}) initializes the $q$ value in each machine and finally Equations (\ref{eq:xDef_mod1}) to (\ref{eq:qDef_mod1}) defines the variables intervals. 
+
+As can be seen, the constraints represented in the Equations (\ref{eq:cMax_mod1}) and (\ref{eq:det_mod1}) are not linear. We could make them linear easily if there was multiplication instead of a division in the Equation (\ref{eq:cMax_mod1}). However, due the way used to define the machine performance (and consequently the deterioration) there is not a simple way to do this.
+
+The new formulation proposed uses the variable $q_{mh}$ to represent the delay factor (not the performance) of the machine $m \in M$ on slot $h \in H$ after a sequence of activities (jobs and maintenances). Using this approach, the variable lower bound is equals to 1 (representing a non delay on machine) and the upper bound is the product of all deteriorations in the machine. 
+
+With this variable meaning change the actual processing time of the job $j \in J$ on machine $m \in M$ in the period $h \in H$ (that we will represent with the variable $a_{jmh}$) can be calculated as $p_{jm}*q_{mh}$. 
+
+Another modification done is in the $d_{jm}$ definition. Now it will represent the delay caused due the deterioration. It can be calculated using the inverse of the value used on the original model without any significant loss of information.   
+
+The resulting model is the following: 
+
+\begin{equation}\label{eq:fo_mod2}
+	\min C_{max}
+\end{equation}
+
+Subject to
+\begin{equation}\label{eq:uniqueAct_mod2}	
+ \sum_{j \in J}{x_{jmh}} +  s_{mh} \leq 1 \quad\quad\quad\quad \forall m \in M, h \in H 
+\end{equation}
+
+\begin{equation}\label{eq:mandJob_mod2}
+	\sum_{m \in M}\sum_{h \in H}{x_{jmh}} = 1 \quad\quad\quad\quad \forall j \in J
+\end{equation}
+
+\begin{equation}\label{eq:procTime1_mod2}
+	a_{jmh} \leq M_1*x_{jmh} \quad \quad \quad \quad \forall j \in J, m \in M, h \in H
+\end{equation}
+
+\begin{equation}\label{eq:procTime2_mod2}
+	a_{jmh} \geq p_{jm}*q_{mh} - M_1*(1-x_{jmh}) \quad \quad \quad \forall j \in J, m \in M, h \in H
+\end{equation}
+
+\begin{equation}\label{eq:cMax_mod2}
+	\sum_{j \in J}\sum_{h \in H} a_{jmh} + \sum_{h \in H} t_h*s_{mh} - C_{max} \leq 0 \quad \quad \quad \forall m \in M
+\end{equation}
+
+\begin{equation}\label{eq:det_mod2}
+q_{mh} \geq d_{jm}*q_{m(h-1)} - M_2*[s_{m(h-1)}+(1-x_{jm(h-1)})]    \quad \quad \quad j \in J, m \in M, h \in H\backslash\{1\}
+\end{equation}
+
+\begin{equation}\label{eq:qInit_mod2}
+q_{m1} = 1 \quad\quad\quad\quad\quad \forall m \in M
+\end{equation}
+
+\begin{equation}\label{eq:xDef_mod2}
+    x_{jmh} \in \{0,1\} \quad \quad \quad \quad \forall j \in J, m \in M, h \in H
+\end{equation}
+
+\begin{equation}\label{eq:dDef_mod2}
+    s_{mh} \in \{0,1\} \quad \quad \quad \quad \forall m \in M, h \in H
+\end{equation}
+
+\begin{equation}\label{eq:aDef_mod2}
+    a_{jmh} \geq 0 \quad \quad \quad \quad \forall j \in J, m \in M, h \in H
+\end{equation}
+
+\begin{equation}\label{eq:qDef_mod2}
+    q_{mh} \geq 1 \quad \quad \quad \quad \forall  m \in M, h \in H
+\end{equation}
+
+In this model the Equations (\ref{eq:fo_mod2}) to (\ref{eq:mandJob_mod2}) are the same of original model. Equations (\ref{eq:procTime1_mod2}) and (\ref{eq:procTime2_mod2}) are the constraints used to define the actual processing time of the job $j \in J$ on slot $h \in H$ of machine $m \in M$ and uses the constant $M_1 \geq \sum_{j \in J}{p_{jm}}$ to free the value of variable $a_{jmh}$ according to the value of $x_{jmh}$. Equation (\ref{eq:cMax_mod2}) is the linear version of Equation (\ref{eq:cMax_mod1}) used to calculate the makespan and the Equation (\ref{eq:det_mod2}), with the constant $M_2 >= \prod_{j \in J}{d_{jm}}$, is the linear version of Equation (\ref{eq:det_mod1}) constraint used to evaluate the delay in the processing time. Equation (\ref{eq:qDef_mod2}) is correspondent to the Equation (\ref{eq:qDef_mod1}) and Equations (\ref{eq:xDef_mod2}) to (\ref{eq:qDef_mod2}) are constraints to define the bound of the variables.
+
+Beside those constraints we define some others to better describe some situations in the problem, mainly yielding a consistent schedule of the activities. They are presented bellow:
+
+\begin{equation}\label{eq:consecMaint_mod2}
+	s_{k(h-1)} + s_{kh} <= 1  \quad \quad \quad \quad \forall h \in H\backslash\{1\}
+\end{equation}
+
+\begin{equation}\label{eq:consecSlot1_mod2}
+	s_{k(h-1)} + \sum_{j \in J}{x_{jm(h-1)}} \geq 	s_{kh} + \sum_{j \in J}{x_{jmh}}  \quad \quad \quad \quad \forall h \in H\backslash\{1\}, m \in M
+\end{equation}
+
+\begin{equation}\label{eq:consecSlot2_mod2}
+	x_{jkh} - \sum_{l \in N}{x_lm(h-1)} - s_{m(h-1)} \leq 0    \quad \quad \quad \quad \forall j \in J, m \in M, h \in H\backslash\{0\}
+\end{equation}
+
+The Equation (\ref{eq:consecMaint_mod2}) states that is not permitted to proceed two maintenances in two consecutive slots. Actually nothing avoids it, but in a optimal solution it does not make senses, because the second maintenance has no effect on deterioration and spends more time (unless the maintenance time is equals to zero, a non-realistic scenario). 
+
+The Equations (\ref{eq:consecSlot1_mod2}) and (\ref{eq:consecSlot2_mod2}) are complementary and states that empty slots in the middle of a scheduling are not allowed. In other words, if the previous slot has not activity, it is because the machine use stopped there and its not possible to restart it. As the machine slots have no minimum time duration, it avoids strange solutions with several non used slot between two used slots. 
+
+Then, we have in the Equations (\ref{eq:fo_mod2}) to (\ref{eq:consecSlot2_mod2}) the complete formulation of the model proposed by us and used in the computational experiments of the paper. 
+
+
+
+\subsection{Considerations about the slot based formulation}
+One of the main concerns about the slot formulation to describe the job scheduling with sequence dependent deterioration is to define the number of slots available. Once any job (except the last) in a machine can be followed by a maintenance, a pessimistic value to the number of slots could be $2*|J|$. However, it is obviously a excessive value, that could be lowered. 
+
+The option used by us in this formulation is to check if, to all machines, the sum of the shortest jobs processing times one machine (without considering deterioration) is bigger than the processing time of a single job in any of the other machines. If it is true, we can be sure that the optimal solution has at most $(|J| - |M|)$ on a machine and at most $2(|J| - |M|)$ slots used. As the number of jobs is often much greater than the number of machines, this reduction is not so big, but allows us to get a significant reduction on number of variables and a observable improvement on solving performance.  
+
+In other hand, this formulation allow us to decide if the next activity will be a maintenance or not just by looking the current slot state, as in a Markov chain model. It make easy to model some problem characteristics, specially the accumulated deterioration. 
+
+\section{Heuristic algorithms}
+
+In this section we present the heuristic we propose to solve the job and maintenance machine scheduling problem with sequence-dependent deterioration. It is a ILS based algorithm with five local searches and two perturbations, that are used in an alternate way.  
+
+\IncMargin{1em}
+\begin{algorithm}[H]
+\caption{ILS heuristic}\label{ILS}
+\SetAlgoLined
+
+\SetKwData{JJ}{J}
+\SetKwData{MM}{M}
+\SetKwData{P}{p}
+\SetKwData{D}{d}
+\SetKwData{T}{t}
+\SetKwData{NonImproveIters}{nonImproveIters}
+\SetKwData{Temp}{temp}
+\SetKwData{SS}{s*}
+\SetKwData{S}{s}
+
+
+\SetKwFunction{StartTimer}{startTimer}
+\SetKwFunction{ConstructiveHeuristic}{constructiveHeuristic}
+\SetKwFunction{InternalTwoSwapLS}{internal2SwapLS}
+\SetKwFunction{InternalThreeSwapLS}{internal3SwapLS}
+\SetKwFunction{ExternalTwoSwapLS}{external2SwapLS}
+\SetKwFunction{ExternalThreeSwapLS}{external3SwapLS}
+\SetKwFunction{TaskBalancingLS}{taskBalancingLS}
+\SetKwFunction{UpdateBestGlobal}{updateBestGlobal}
+\SetKwFunction{DoPerturbation}{doPertubation}
+
+\SetKwInOut{Input}{input} 
+\SetKwInOut{Output}{output}
+\Input{\JJ, \MM, \P, \D, \T}
+\Output{\SS}
+
+\NonImproveIters$\leftarrow$ 0 \;
+\StartTimer(\Temp)
+
+\SS $\leftarrow$ \ConstructiveHeuristic(\JJ, \MM, \P, \D, \T)\;
+\S $\leftarrow$ \SS
+
+\While{$\NonImproveIters \leq MAX\_IT \quad and \quad \Temp < MAX\_TIME$ }{
+	\NonImproveIters $\leftarrow$ \NonImproveIters + 1 \;
+	
+	\S  $\leftarrow$ \InternalTwoSwapLS(\S , \JJ , \MM , \P , \D , \T)\;
+	\SS $\leftarrow$ \UpdateBestGlobal(\S , \SS , \NonImproveIters)\;
+	
+	\S $\leftarrow$ \InternalThreeSwapLS(\S , \JJ , \MM , \P , \D , \T)\;
+	\SS $\leftarrow$ \UpdateBestGlobal(\S , \SS , \NonImproveIters)\;
+	
+	\S $\leftarrow$ \ExternalTwoSwapLS(\S , \JJ , \MM , \P , \D , \T)\;
+	\SS $\leftarrow$ \UpdateBestGlobal(\S , \SS , \NonImproveIters)\;
+	
+	\S $\leftarrow$ \ExternalThreeSwapLS(\S , \JJ , \MM , \P , \D , \T)\;
+	\SS $\leftarrow$ \UpdateBestGlobal(\S , \SS , \NonImproveIters)\;
+
+	\S $\leftarrow$ \TaskBalancingLS(\S , \JJ , \MM , \P , \D , \T)\;
+	\SS $\leftarrow$ \UpdateBestGlobal(\S , \SS , \NonImproveIters)\;
+	
+	\If{ $\NonImproveIters\%10=0$}{
+		\S $\leftarrow$ \DoPerturbation{\S}	
+	}
+}
+
+\end{algorithm}
+\DecMargin{1em}
+
+
+In the Algorithm \ref{ILS} we can see the ILS function. It receive as input a set of jobs $J$, a set of machines $M$, the maintenance time of each machine and the processing time and deterioration delay of each job on each machine. 
+
+At line 3 we the variable $s*$ representing the best solution gets the solution obtained in the constructive heuristic. In this paper we tried two constructive algorithms. The first, that we will reference as \emph{ longest processing time first}(LPTF), orders all jobs by non-increasing processing time order and after that, starting from the first machine, it is assigned to each machine the non used job with longest processing time on that machine. The second, referenced as \emph{lowest delay first} (LDF) orders job by increasing deterioration delay order.After that, as in the previous method, we start from the first machine and insert one job by time on each machine, choosing the non used job with lowest delay. 
+
+Once the jobs are inserted in the machines, we put the maintenance operations. The strategy used is to evaluate the accumulated delay, starting from the last job to the first, and every time the deterioration delay becomes bigger than maintenance processing time, a maintenance is inserted in the position anterior to the job where the delay surpassed the maintenance processing time. 
+
+In the sequence of ILS method, we have from line 7 to 16 a sequence of local searches. After any local search the function \emph{updateBestGlobal} is called to evaluate if the new solution is best than the global solution and set the \emph{nonImproveIters} variable value to 0.
+
+The first local search performed, \emph{internal2SwapLS}, swaps the position, at each machine, of two jobs.Those jobs are chosen as the index of two nested \emph{for} loops. The number of swaps tested is limited by a big value, that eventually is not reached. 
+
+The second local search in the sequence( \emph{internal3SwapLS}) changes the position of three jobs in two different ways. Starting from a tuple of three indexes $(i_1, i_2, i_3)$, taken from three nested for loops, it tests two movements $(i_3, i_1, i_2)$ and $(i_2, i_3,i_1)$. The other three possible moves are equivalent to simple two-position swaps, and are not executed. The number of moves tested is limited, as in the previous function
+
+The two following local searches are inter-machines movements. The \emph{external2SwapLS} procedure swap two jobs between two machines (one job of first machine changes the position with one job of second machine). The machines are chosen by the index of two nested \emph{for} loops and the jobs are chosen in the same way. 
+
+By its turn, the \emph{external3SwapLS} procedure is analogous with the \emph{external2SwapLS}, changing three jobs of three different machines but adopting the same move strategy of the \emph{internal3SwapLS}. 
+
+Finally, the \emph{taskBalancingLS} procedure takes the shortest job from the machine with smaller completion time and swap it with the longest job in the machine with bigger completion time. This move is done a limited number of times. 
+
+After all these local searches, if the condition showed on line 17 is satisfied, we proceed a perturbation of the current solution. 
+
+FALAR SOBRE A PERTUBA\c C\~AO AQUI
+
+
+In the local search described above there are no maintenance position swaps. The maintenance positions are evaluated only on constructive heuristics and perturbation procedures due to performance reasons. 
+
+
+~\\
+\bibliographystyle{sbpo}
+\bibliography{exemplo-latex}
+
+
+\end{document}
+

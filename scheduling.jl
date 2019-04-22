@@ -115,7 +115,8 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ############################################################################################
            for k =1:NUMBER_OF_MACHINES
                for h = 2:NUMBER_OF_PERIODS
-                  @constraint(m, s[k,h-1] + sum(x[j,k,h-1] for j in 1:NUMBER_OF_JOBS)>= s[k,h] + sum(x[j,k,h] for j in 1:NUMBER_OF_JOBS) )
+                  @constraint(m, s[k,h-1] + sum(x[j,k,h-1] for j in 1:NUMBER_OF_JOBS)>=
+                                 s[k,h] + sum(x[j,k,h] for j in 1:NUMBER_OF_JOBS) )
                end
            end
 
@@ -244,18 +245,20 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ############################################################################################
            ##                              OBJECTIVE FUNCTION
            ############################################################################################
-           @objective(m, Min, Cmax)
+           @objective(m, Min, Cmax )
 
            println("Starting optimization: ", instanceName);
-           flush(stdout) 
+           flush(stdout)
 
-           #print(m)
+        #   print(m)
 
           # write("output.txt", readstring(`ls -l`))
 
            @time begin
            st = optimize!(m)
            end
+
+           println(termination_status(m))
 
            ############################################################################################
            ##                              PRINTING SOLUTION
@@ -314,7 +317,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                            println(string("s(", k , ",", h,") " , value(s[k,h])))
                        end
                     end
-                end 
+                end
            elseif termination_status(m) == MOI.TIME_LIMIT && has_values(m)
                 println("-------TIME LIMIT REACHED. BEST VALUE FOUND: ", objective_value(m))
                 println(" ")
