@@ -12,7 +12,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
     #### READING THE INSTANCE LIST
     for instanceName in eachline(file)
         ################## CREATE A MODEL OBJECT TO BE RUN ON CPLEX  ####################
-        m = Model(with_optimizer(CPLEX.Optimizer, CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1, CPX_PARAM_TILIM=7200))
+        m = Model(with_optimizer(CPLEX.Optimizer, CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1, CPX_PARAM_TILIM=3600))
         #### MAIN PARAMETERS OF THE OPTIMIZATION
         NUMBER_OF_JOBS = 0
         NUMBER_OF_MACHINES = 0
@@ -74,6 +74,9 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            #Continuous variable. Define the time spent to execute the job j on the machine k at position h
            @variable(m, a[1:NUMBER_OF_JOBS, 1:NUMBER_OF_MACHINES, 1:NUMBER_OF_PERIODS], base_name="a")
 
+           #Continuous variable. Define the completion time on machine k on period h
+         #  @variable(m, cp[1:NUMBER_OF_MACHINES, 1:NUMBER_OF_PERIODS], base_name="cp")
+           
            #Continuous variable. Defines the makespan
            @variable(m, Cmax, base_name="Cmax")
 
@@ -167,7 +170,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            for j= 1:NUMBER_OF_JOBS
                for k = 1:NUMBER_OF_MACHINES
                   for h = 2:NUMBER_OF_PERIODS
-                       @constraint(m, x[j,k,h] - sum(x[jj,k,h-1] for jj in 1:NUMBER_OF_MACHINES) -s[k,h-1] <= 0)
+                       @constraint(m, x[j,k,h] - sum(x[jj,k,h-1] for jj in 1:NUMBER_OF_JOBS) -s[k,h-1] <= 0)
                   end
                end
            end
@@ -176,11 +179,11 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ############################################################################################
            ##                 CONSTRAINT 10: THERE IS NOT DELAY AFTER AN MAINTENANCE
            ############################################################################################
-           for k = 1:NUMBER_OF_MACHINES
-               for h = 2:NUMBER_OF_PERIODS
-                  @constraint(m, q[k,h] <= bigM*(1-s[k,h-1])+1)
-               end
-           end
+        #   for k = 1:NUMBER_OF_MACHINES
+        #       for h = 2:NUMBER_OF_PERIODS
+        #          @constraint(m, q[k,h] <= bigM*(1-s[k,h-1])+1)
+        #       end
+        #   end
 
            ############################################################################################
            ##                 CONSTRAINT 11: THERE IS A DELAY AFTER EACH JOB
@@ -220,6 +223,24 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            end
 
 
+           
+       #      for k in 1:NUMBER_OF_MACHINES
+       #         for h in 1:NUMBER_OF_PERIODS
+       #             @constraint(m, sum(a[j,k,hh] for j in 1:NUMBER_OF_JOBS, hh in 1:h) + sum(t[k]*s[k,hh] for hh in 1:h)  <=  cp[k,h]) 
+       #         end
+       #     end
+    
+           
+           ############################################################################################
+           ##                 CUT 1 - NUMBER OF MAINTENANCES 
+           ############################################################################################
+       #    for k = 1:NUMBER_OF_MACHINES
+       #        for h = NUMBER_OF_PERIODS
+       #             @constraint(m, cp[k,h] - sum(x[j,k,hh]*p[j,k] for hh in 1:h, j in 1:NUMBER_OF_JOBS) <= (sum(s[k,hh] for hh in 1:h)+1)*t[k])
+       #        end
+       #    end
+           
+           
            ############################################################################################
            ##                              OBJECTIVE FUNCTION
            ############################################################################################
@@ -244,7 +265,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                ############################################################################################
                ##                              PRINTING CMAX VARIABLE VALUE
                ############################################################################################
-               println(string("Cmax ", getValue(Cmax)))
+               println(string("Cmax ", value(Cmax)))
 
                ############################################################################################
                ##                              PRINTING X VARIABLE VALUES
@@ -252,8 +273,8 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                for j = 1:NUMBER_OF_JOBS
                   for k = 1:NUMBER_OF_MACHINES
                        for h = 1:NUMBER_OF_PERIODS
-                           if ( getvalue(x[j,k,h] ) >  0)
-                               println(string("x(", j, ",", k , ",", h,") " , getvalue(x[j,k,h])))
+                           if ( value(x[j,k,h] ) >  0)
+                               println(string("x(", j, ",", k , ",", h,") " , value(x[j,k,h])))
                            end
                        end
                     end
@@ -265,8 +286,8 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                for j = 1:NUMBER_OF_JOBS
                   for k = 1:NUMBER_OF_MACHINES
                        for h = 1:NUMBER_OF_PERIODS
-                           if ( getvalue(a[j,k,h] ) > 0)
-                               println(string("a(", j, ",", k , ",", h,") " , getvalue(a[j,k,h])))
+                           if ( value(a[j,k,h] ) > 0)
+                               println(string("a(", j, ",", k , ",", h,") " , value(a[j,k,h])))
                            end
                        end
                     end
@@ -277,8 +298,8 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                ############################################################################################
                for k = 1:NUMBER_OF_MACHINES
                   for h = 1:NUMBER_OF_PERIODS
-                       if ( getvalue(q[k,h] ) > 0)
-                           println(string("q(", k , ",", h,") " , getvalue(q[k,h])))
+                       if ( value(q[k,h] ) > 0)
+                           println(string("q(", k , ",", h,") " , value(q[k,h])))
                        end
                   end
                 end
@@ -289,8 +310,8 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                 ############################################################################################
                 for k = 1:NUMBER_OF_MACHINES
                     for h = 1:NUMBER_OF_PERIODS
-                       if ( getvalue(s[k,h] ) >  0)
-                           println(string("s(", k , ",", h,") " , getvalue(s[k,h])))
+                       if ( value(s[k,h] ) >  0)
+                           println(string("s(", k , ",", h,") " , value(s[k,h])))
                        end
                     end
                 end 
