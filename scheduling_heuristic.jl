@@ -7,7 +7,7 @@ using CPLEX
 ###############################################################################
 ### THESE ARE THE DEFAULT VALUES. THEY CAN BE CHANGED IN ANY PART OF THE CODE
 ###############################################################################
-MAX_ITERATIONS_WITHOUT_IMPROVEMENT = 40
+MAX_ITERATIONS_WITHOUT_IMPROVEMENT = 30
 MAX_EXECUTION_TIME = 60*30
 CONSTRUCTIVE_HEURISTIC_STRATEGY = 2
 PERTURBATION_STRATEGY = 1
@@ -343,12 +343,17 @@ function internal2Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d,
                                          # in a machine
 
                     secondSwapSlot = firstSwapSlot +1
-                    if SWAP_UPDATE_STRATEGY == 2
-                          currentSolution = Solution(bestSolutionOnMachineLoop)
-                          bestSolutionOnMachineLoop = Solution(initialSolution)
-
+                    if machine <= NUMBER_OF_MACHINES
+                        numberOfSlots = currentSolution.slotsOnMachine[machine]
+                        if SWAP_UPDATE_STRATEGY == 2
+                              currentSolution = Solution(bestSolutionOnMachineLoop)
+                              bestSolutionOnMachineLoop = Solution(initialSolution)
+                        end
+                        bestSolutionOnMachineLoopValue = 1e100
+                    else
+                        triedAll = true
+                        continue
                     end
-                    bestSolutionOnMachineLoopValue = 1e100
                 end
 
 
@@ -372,6 +377,14 @@ function internal2Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d,
                 continue
            end
 
+            ##É uma gambiarra e deve ser removida
+            if currentSolution.machineScheduling[machine,lastSwapSlot] == 0 || currentSolution.machineScheduling[machine,firstSwapSlot] == 0
+                if lastSwapSlot == numberOfSlots || firstSwapSlot == numberOfSlots
+                    numberOfSlots -=1
+                    continue
+                end
+            end
+
 
            ###  Effectivelly do the swap
            previousSolution = Solution(currentSolution)
@@ -385,6 +398,7 @@ function internal2Swap(initialSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d,
            numberOfSlots = currentSolution.slotsOnMachine[machine]
 
            solutionValue = evaluateSolution!(currentSolution,[machine],p, d,t)
+           numberOfSlots = currentSolution.slotsOnMachine[machine]
 
            currentSolution.solutionValue = solutionValue
 
@@ -990,14 +1004,14 @@ function shiftMachineSchedulings(solution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p
 
      if NUMBER_OF_MACHINES> 2
           lastScheduling = solution.machineScheduling[NUMBER_OF_MACHINES,:]
+          lastSlots = solution.slotsOnMachine[NUMBER_OF_MACHINES]
 
           for i in NUMBER_OF_MACHINES:-1: 2
-
-
-               solution.machineScheduling[i,:] = solution.machineScheduling[i-1,:]
-
+               solution.machineScheduling[i,:] = deepcopy(solution.machineScheduling[i-1,:])
+               solution.slotsOnMachine[i] = deepcopy(solution.slotsOnMachine[i-1])
           end
           solution.machineScheduling[1,:] = lastScheduling
+          solution.slotsOnMachine[1] = lastSlots
      end
 
      evaluateSolution!(solution,collect(1:NUMBER_OF_MACHINES), p,d,t)
@@ -1079,8 +1093,8 @@ function mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d, t)
                 iterationsWithoutImprovement = updateBestGlobalSolution!(currentSolution,
                                                           iterationsWithoutImprovement)
 
-                #println("A")
-                #printSolution(currentSolution, NUMBER_OF_MACHINES)
+               # println("A")
+               # printSolution(currentSolution, NUMBER_OF_MACHINES)
 
 
                 currentSolution = Solution(internal3Swap(currentSolution, NUMBER_OF_JOBS,
@@ -1088,34 +1102,34 @@ function mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d, t)
                 iterationsWithoutImprovement = updateBestGlobalSolution!(currentSolution,
                                                           iterationsWithoutImprovement)
 
-                #println("B")
-                #printSolution(currentSolution, NUMBER_OF_MACHINES)
+              #  println("B")
+              #  printSolution(currentSolution, NUMBER_OF_MACHINES)
 
                 currentSolution = Solution(external2Swap(currentSolution, NUMBER_OF_JOBS,
                                                           NUMBER_OF_MACHINES, p,d, t))
                 iterationsWithoutImprovement = updateBestGlobalSolution!(currentSolution,
                                                           iterationsWithoutImprovement)
 
-                #println("C")
-                #printSolution(currentSolution, NUMBER_OF_MACHINES)
+              #  println("C")
+              #  printSolution(currentSolution, NUMBER_OF_MACHINES)
 
                 currentSolution = Solution(external3Swap(currentSolution, NUMBER_OF_JOBS,
                                                           NUMBER_OF_MACHINES, p,d, t))
                 iterationsWithoutImprovement = updateBestGlobalSolution!(currentSolution,
                                                           iterationsWithoutImprovement)
 
-                #println("D")
-                #printSolution(currentSolution, NUMBER_OF_MACHINES)
+              #  println("D")
+              #  printSolution(currentSolution, NUMBER_OF_MACHINES)
 
               ##   currentSolution = runTaskBalacing(currentSolution, NUMBER_OF_JOBS, NUMBER_OF_MACHINES, d, p, t)
               ##   iterationsWithoutImprovement = updateBestGlobalSolution(currentSolution, iterationsWithoutImprovement)
                   if iterationsWithoutImprovement%5 == 1
                       currentSolution =Solution(pertubation(initialSolution,NUMBER_OF_JOBS,
                                                             NUMBER_OF_MACHINES, p,d, t))
-                 #       println("PERT")
-                 #      printSolution(currentSolution, NUMBER_OF_MACHINES)
+                   #   println("PERT")
+                   #    printSolution(currentSolution, NUMBER_OF_MACHINES)
                   end
-
+             #   sleep(3)
            end
            println("_______________________ FINAL SOLUTION ____________________")
            printSolution(globalBestSolution,NUMBER_OF_MACHINES)
@@ -1127,6 +1141,7 @@ end
 ######                        MAIN FUNCTION                                      #######
 ########################################################################################
 open("Instances/Instances With Deterioration/instance_list.txt") do file
+    makespans = []
     for instanceName in eachline(file)
         NUMBER_OF_JOBS = 0
         NUMBER_OF_MACHINES = 0
@@ -1169,10 +1184,12 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                 end
            end
 
+           push!(makespans, globalBestSolutionValue)
            println("\t\t",instanceName)
            @time begin
                 mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES,p,d,t)
            end
         end
     end
+    println(makespans)
 end
