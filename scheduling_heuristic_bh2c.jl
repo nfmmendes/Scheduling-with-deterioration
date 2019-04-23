@@ -53,9 +53,24 @@ function evaluateGroups(groups,NUMBER_OF_MACHINES, Ws, p, d, t)
     return makespan
 end
 
+
+function printSolution(solution, NUMBER_OF_MACHINES, NUMBER_OF_JOBS)
+
+	for i in 1:size(solution)[1]
+		
+		println("Scheduling on machine :",i)
+		for j in 1:size(solution)[2]
+			println("Group ", j, ": Value = ", solution[i,j].value," \t", solution[i,j].jobSequence[:]) 			
+		end
+		
+	end
+
+end
+
 function mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d, t)
 
            global globalBestSolutionValue
+		   global bestSolution =[]
            Ws = NUMBER_OF_MACHINES
 
 
@@ -130,45 +145,53 @@ function mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d, t)
                     jobPos = machineIndex[machine]
 
                     for i =1:NUMBER_OF_MACHINES
-                        if  usedJobs[jobsOrderedByDuration[i,machineIndex[i]][2]] > 0
+                        while  usedJobs[jobsOrderedByDuration[i,machineIndex[i]][2]] > 0 && machineIndex[i] < NUMBER_OF_JOBS
                             machineIndex[i] = machineIndex[i]+1
                         end
                     end
 
                     lowestCompletion = 1e100
                     bestGroup = -1
+					currentJob = jobsOrderedByDuration[machine,machineIndex[machine]][2]
 
                     for i in 1:Ws
 
                         runtime = G[machine,i].deterioration * jobsOrderedByDuration[machine,jobPos][1]
+						#if i == 2						
+						#println("--------------",lowestCompletion, "\t", runtime, "\t", i, "\t", machine,"\t", G[machine,i].value,"\t" ,G[machine,i].value + runtime)
+						#end
                         ## New group, in an used machine, if it's possible use other group
                         if G[machine,i].value < 1e-05 && usedMachines[machine] >0 && usedGroups < Ws &&
                            G[machine,i].value + t[machine] +runtime < lowestCompletion
                             lowestCompletion = G[machine,i].value + t[machine] + runtime
                             bestGroup = i
-                        elseif G[machine,i].value < 1e-05 && usedGroups < Ws &&
-                           G[machine,i].value +runtime < lowestCompletion
+							break
+                        elseif G[machine,i].value < 1e-05 && usedGroups < Ws && G[machine,i].value +runtime < lowestCompletion
                             lowestCompletion = G[machine,i].value + runtime
                             bestGroup = i
-                        elseif G[machine,i].value + runtime < lowestCompletion
+							break
+                        elseif G[machine,i].value > 1e-05 && G[machine,i].value + runtime < lowestCompletion
                             lowestCompletion = G[machine,i].value + runtime
                             bestGroup = i
                         end
                     end
-
+					#println(machine, "\t", bestGroup)
+				    #println("_________________________________________")
+				
                     push!(G[machine,bestGroup].jobSequence,quickerJob)
                     G[machine,bestGroup].deterioration *= d[quickerJob,machine]
 
-                    if G[machine,bestGroup].value < 1e-05
-                        G[machine,bestGroup].value = lowestCompletion - t[machine]
-                        usedGroups = usedGroups+=1
-                    else
+                    if G[machine,bestGroup].value < 1e-05 && usedMachines[machine] > 0
                         G[machine,bestGroup].value = lowestCompletion
+                        usedGroups = usedGroups+=1
+					elseif G[machine,bestGroup].value < 1e-05
+                        G[machine,bestGroup].value = lowestCompletion
+                        usedGroups = usedGroups+=1
+					else
+                        G[machine,bestGroup].value = lowestCompletion
+						G[machine,bestGroup].value *= d[currentJob,machine]
                     end
 
-                    if usedMachines[machine] == 0
-                        usedGroups +=1
-                    end
 
                     usedMachines[machine] = 1
                  end
@@ -176,7 +199,7 @@ function mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d, t)
                  makespan = evaluateGroups(G, NUMBER_OF_MACHINES,Ws,p,d,t)
                  if makespan < globalBestSolutionValue
                     globalBestSolutionValue = makespan
-                    bestSolution = G
+                    bestSolution = deepcopy(G)
                  end
 
                  if Ws >= NUMBER_OF_JOBS - NUMBER_OF_MACHINES
@@ -184,7 +207,9 @@ function mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES, p,d, t)
                  end
                  Ws +=1
            end
-        println("....." , globalBestSolutionValue)
+			
+	       printSolution(bestSolution, NUMBER_OF_MACHINES, NUMBER_OF_JOBS)
+           println("....." , globalBestSolutionValue)
 end
 
 ########################################################################################
@@ -233,7 +258,12 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                 end
            end
            global globalBestSolutionValue = 1e100
-           mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES,p,d,t)
+
+		   println(instanceName)
+		   @time begin
+           		mainHeuristic(NUMBER_OF_JOBS, NUMBER_OF_MACHINES,p,d,t)
+		   end
+		   println("_____________________________________")
         end
     end
 end
