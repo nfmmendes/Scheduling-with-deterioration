@@ -56,7 +56,7 @@ Scheduling. Modelagem matem\'atica. Meta-heuristica.
 \vspace{8mm}
 
 \begin{abstract}
-Machines that have a high occupation level commonly presents deterioration problems which impacts on its performance, making needed corrective maintenances. In this paper we deal with a unrelated parallel machine job scheduling with time processing depending of deterioration and maintenance. In this problem, we aim to minimize the makespan through the definition of job sequences and maintenance events to a set of machines. The processing time of each job rises by a deterioration factor $q$ (depending on machine and job) after each job executed after the last maintenance. We present here a linear version of a mathematical model available on the literature to describe the problem as well a ILS based heuristic to solve it. So we compare the results obtained by the proposed heuristic with the results got through the model and literature algorithms. 
+Machines that have a high occupation levels commonly present deterioration problems which impacts on their performance, making needed corrective maintenances. In this paper we deal with a unrelated parallel machine job scheduling with time processing depending of deterioration and maintenance. In this problem, we aim to minimize the makespan through the definition of job sequences and maintenance events to a set of machines. The processing time of each job rises by a deterioration factor $q$ (depending on machine and job) after each job executed after the last maintenance. We present here a linear version of a mathematical model available on the literature to describe the problem as well an ILS based heuristic to solve it. So we compare the results obtained by the proposed heuristic with the results got through the model and literature algorithms. 
 \end{abstract}
 
 \bigskip
@@ -71,15 +71,13 @@ Scheduling. Mathematical modeling. Meta-heuristic.
 \newpage
 \section{Introduction} 
  
- In any continuous activity performed by a machine or person fatigue and deterioration factors affect the execution performance and increase the processing time. In some cases the lose of performance happens so frequently that it is necessary to include stop and maintenance events on the scheduling in order to recover the full performance of the executor and provide a overall best functioning of the system. 
+ Fatigue and deterioration commonly affect the performance of persons or machine executing an activity, causing the increase of processing time, errors or resource waste. In some cases it happens frequently, making necessary to include stop and maintenance events on the scheduling in order to recover the full performance of the executor and provide a overall best functioning of the system. 
  
- In this paper we deal with the machine job scheduling problem on environments where deterioration is a relevant factor in a short time horizon, like medical services, student examination, computer processing. In those scenarios, we have a significant increase of time processing after the execution of each job due deterioration and a short maintenance procedure that could fix the accumulated deterioration, where maintenance could be a repair, stop, cooling, warming, etc...
+ In this paper we deal with the machine job scheduling problem on environments where deterioration is a relevant factor in a short time horizon, like medical services, student examination and computer processing. In those scenarios, we have a significant increase of processing time after the execution of each job due deterioration and a short maintenance procedure (as a repair, stop, cooling, warming, etc...). In this way, we aim to optimize a scheduling metric ( makespan) by choosing which jobs will be processed in each machine, in the process order and also when to execute a maintenance procedures. 
  
- Looking for the optimization of some metric, in this case the makespan, we define which jobs will be processed in each machine, in which order and also when to execute a maintenance procedures. 
+ Our main contribution in this paper is a linear and improved version of the model proposed by \citep{ruiz2017makespan} to describe the problem for making possible it be solved in MILP solver. We also provide a heuristic procedure that allows to solve the version of problem that considers unrelated machines (with different deterioration rates and different processing and maintenance times).
  
- Our main contribution in this paper is a linear and improved version of the model proposed by \citep{ruiz2017makespan} to describe the model that makes possible the use of any of the main MILP solvers to solve it. We also provide a heuristic procedure that allows to solve the version of problem that considers unrelated machines (with different deterioration rates and different processing and maintenance times).
- 
- In the next session we present a short view of the previous works that deal with scheduling with deterioration problem. In the section 3 we describe the problem and present the model created by \citep{ruiz2017makespan} and our linear version. In the section 4 we present the proposed heuristic and a adaptation of the heuristic proposed in \citep{ruiz2017makespan} to solve a identical machine version of the problem. In the section 5 we describe the computational experiments and finally on section 6 we present the results of the experiments performed.  
+ In the next session we present a short view of the previous works that deal with scheduling with deterioration problem. In the section 3 we describe the problem and next, on section 4, the model proposed by \citep{ruiz2017makespan} and our linear version. In the section 5 we present the proposed heuristic and a adaptation of the heuristic proposed in \citep{ruiz2017makespan} to solve a identical machine version of the problem. In the section 6 we describe the computational experiments and finally on section 7 we present the results of the experiments performed.  
  
 \section{Literature review}
 
@@ -95,11 +93,11 @@ Maintenance activities are introducted on \citep{Yang2011} and \citep{YANG201214
  
 The first work where there is a sequence-dependent deterioration and maintenance activities is \citep{ruiz2017makespan}. In this paper, the processing time of a job depend on the sequence of activities performed before it. After this, in the best of our knowledge only \citep{DING201935} worked in the same subject, changing slightly the problem definition to make the job deterioration influences its own processing time. 
 
-This paper is based on the problem defined by \citep{ruiz2017makespan} and in the next sections we will describe it, present a new mathematical formulation to replace the existent non-linear formulation and propose a ILS based heuristic to solve it. 
+This paper is based on the problem defined by \citep{ruiz2017makespan} and in the next sections we will describe it, present a new mathematical formulation to replace the existent non-linear formulation and propose an ILS based heuristic to solve it. 
  
 \section{Problem description}
 
-The job and maintenance machine scheduling problem with sequence dependent deterioration is basically a problem where a set of jobs should be scheduled on a set of machines in other to optimize some scheduling metric. The processing time of each job on each machine depends of the machine deterioration, that increases after a job be executed and is reset after a maintenance, that takes a significant amount of time to be done. Then, we can describe the problem as a follows. 
+The job and maintenance machine scheduling problem with sequence dependent deterioration looks to define where a set of jobs should be scheduled on a set of machines and when to proceed manteinances in those machine in order to optimize some scheduling metric. The processing time of each job on each machine depends of the machine deterioration, that increases after a job be executed and is reset after a maintenance. A maintenance takes a significant amount of time to be done. Then, we can describe the problem as a follows. 
 
 Let $J={1, 2, 3,..,|J|}$ be a set of independent and non preemptive jobs to be processed on a set $M = {1, 2, ..., |M|}$ of unrelated parallel machines that suffer a significant deterioration after each job processed.
 
@@ -315,10 +313,7 @@ In this section we present the heuristic we propose to solve the job and mainten
 	\S $\leftarrow$ \ExternalThreeSwapLS(\S , \JJ , \MM , \P , \D , \T)\;
 	\SS $\leftarrow$ \UpdateBestGlobal(\S , \SS , \NonImproveIters)\;
 
-	\S $\leftarrow$ \TaskBalancingLS(\S , \JJ , \MM , \P , \D , \T)\;
-	\SS $\leftarrow$ \UpdateBestGlobal(\S , \SS , \NonImproveIters)\;
-	
-	\If{ $\NonImproveIters\%10=0$}{
+	\If{ $\NonImproveIters\ mod 5=0$}{
 		\S $\leftarrow$ \DoPerturbation{\S}	
 	}
 }
@@ -341,17 +336,30 @@ The second local search in the sequence( \emph{internal3SwapLS}) changes the pos
 
 The two following local searches are inter-machines movements. The \emph{external2SwapLS} procedure swap two jobs between two machines (one job of first machine changes the position with one job of second machine). The machines are chosen by the index of two nested \emph{for} loops and the jobs are chosen in the same way. 
 
-By its turn, the \emph{external3SwapLS} procedure is analogous with the \emph{external2SwapLS}, changing three jobs of three different machines but adopting the same move strategy of the \emph{internal3SwapLS}. 
-
-Finally, the \emph{taskBalancingLS} procedure takes the shortest job from the machine with smaller completion time and swap it with the longest job in the machine with bigger completion time. This move is done a limited number of times. 
+Finally the \emph{external3SwapLS} procedure is analogous with the \emph{external2SwapLS}, changing three jobs of three different machines but adopting the same move strategy of the \emph{internal3SwapLS}. 
 
 After all these local searches, if the condition showed on line 17 is satisfied, we proceed a perturbation of the current solution. 
 
-FALAR SOBRE A PERTUBA\c C\~AO AQUI
-
-
 In the local search described above there are no maintenance position swaps. The maintenance positions are evaluated only on constructive heuristics and perturbation procedures due to performance reasons. 
 
+The perturbation procedure used by us calls, alternately two functions. The first one reverses the order of all jobs in one machine and reevaluates the position of the maintenance activities. The second does a shift of one position on machine scheduling, assigning to the machine i the jobs of the machine i+1, and  the jobs of the last machine to the first. The order of the jobs in this perturbation does not change and the position of maintenance activities are recalculated.  
+
+
+\subsection{Computational experiments}
+
+To test the performance of the heuristics in solving the problem and the fitness of the model to describe the problem we created a instance set based on the parameters described by \cite{ruiz2017makespan}. To test the model were created three instances to each parameter set combination (number of machines, ration machines by job, deterioration interval and maintenance time interval) summing 144 instances. The heuristics were tested in a large set with 10 instances to each parameter set combination.
+
+The instances created have machines identical processing times to all jobs but different deterioration rates and maintenance times, in a semi-unrelated configuration. This approach was used to make easier to compare the results obtained by our heuristics and the ||nome heuristica|| heuristic proposed by \cite{ruiz2017makespan} created to solve a identical machines scenario. To make the result more directly comparable the || nome heuristica|| heuristic was adapted to consider unrelated machines, as described in the previous version. All the algorithms, however, works with instances having machines different processing times.  
+
+All the experiments were done in a Linux machine with 32 GB of ram and processor Core i7. The algorithms were implemented using Julia language (version 1.07) and the model was solved by Cplex 12.6 called through the Julia optimization library JuMP. As none of the algorithms uses random walks we run each instance just one time to each algorithm. 
+
+\section{Results}
+
+In this section we make a brief description of the results obtained by each one of methods used to solve the problem. 
+
+
+
+\section{Conclusion}
 
 ~\\
 \bibliographystyle{sbpo}
