@@ -1,6 +1,6 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage{sbpo-template}
-\usepackage[brazil]{babel}
+
 \usepackage[latin1]{inputenc}
 \usepackage{amsmath,amssymb}
 \usepackage{url}
@@ -109,22 +109,22 @@ If $p_{jm} \geq 0 $ is the baseline processing time of the job $j \in J$ on mach
 \item{ The accumulated delay factor caused by deterioration on machine $m \in M$ after the processing in it of job $j \in J$ is equals to $\delta_{jm}*d_{jm}$}
 \end{itemize}
 
-Considering yet that all jobs are available on time zero, the objective is create a job processing sequence on each machine in order to optimize a scheduling metric, in this article, the minimization of makespan. 
+Considering yet that all jobs are available on time zero, the objective is create a job processing sequence on each machine in order to optimize a scheduling metric, in this article, to minimize the makespan. 
 
-In these version of the problem the number of maintenance is unbounded and can be done in any time between the end of a job processing and the beginning of other job processing. Empty intervals on machines are not forbidden but does not make sense. A maintenance in one machine does not impact a maintenance in any other machine and all the machines can be repaired at same time without loss of overall performance. 
+In these version of the problem the number of maintenances is unbounded and can be done in any time between the end of a job processing and the beginning of other job processing. Empty intervals on machines are not forbidden but does not make sense. A maintenance in one machine does not impact a maintenance in any other machine and all the machines can be repaired at same time without loss of overall performance. 
 
 From this point, we will use the notation exposed on this section to all the rest of the paper. 
 
 
 \section{Mathematical model}
 
-In this section we present the mathematical model proposed by \citep{ruiz2017makespan} and the modifications done in it to create a linearized version. We also include some constraints to avoid some scenarios not previously predicted in the original model.
+In this section we present the mathematical model proposed by \citep{ruiz2017makespan} and the modifications done in it to create its linearized version. We also include some constraints to avoid some scenarios not previously predicted in the original model.
 
 The proposed model works based on machine slots that could be filled with a job or a maintenance. Those slots are used to define the position of an activity on a machine schedule and have no fixed duration as it could have in a time indexed formulation. 
 
-In this way, we can define if a job $j \in J$ will be executed in the slot $h \in H$ of machine $m \in M$  using the binary variable $x_{jmh}$ and similarly if a maintenance will be executed at slot $h \in H$ of the machine $m \in M$ with binary variable $s_{mh}$.
+In this way, we can define if a job $j \in J$ will be executed in the slot $h \in H$ of machine $m \in M$  using the binary variable $x_{jmh}$ and similarly if a maintenance will be executed at slot $h \in H$ of the machine $m \in M$ with the binary variable $s_{mh}$.
 
-According to the activity performed in a machine slot we can define the resulting performance in the next machine slot. This is stored at the variable $q_{mh}$ that saves the current performance in the slot $h \in H$ of the machine $m \in M$, being its value between 1 to represent a $100\%$ performance (no deterioration) and 0 (total deterioration).
+According to the activity performed in a machine slot we can define the resulting performance in the next machine slot. This is stored at the variable $q_{mh}$ that saves the current performance of the machine $m \in M$ in the slot $h \in H$, being its value between 1 to represent a $100\%$ performance (no deterioration) and 0 (total deterioration).
 
 With these definitions we can state the model bellow. 
 
@@ -169,7 +169,7 @@ In the Equation (\ref{eq:fo_mod1}) we have the objective function, that is just 
 
 As can be seen, the constraints represented in the Equations (\ref{eq:cMax_mod1}) and (\ref{eq:det_mod1}) are not linear. We could make them linear easily if there was multiplication instead of a division in the Equation (\ref{eq:cMax_mod1}). However, due the way used to define the machine performance (and consequently the deterioration) there is not a simple way to do this.
 
-The new formulation proposed uses the variable $q_{mh}$ to represent the delay factor (not the performance) of the machine $m \in M$ on slot $h \in H$ after a sequence of activities (jobs and maintenances). Using this approach, the variable lower bound is equals to 1 (representing a non delay on machine) and the upper bound is the product of all deteriorations in the machine. 
+The new formulation proposed uses the variable $q_{mh}$ to represent the processing time delay factor (not the performance) of the machine $m \in M$ on slot $h \in H$ after a sequence of activities (jobs and maintenances). Using this approach, the variable lower bound is equals to 1 (representing a non delay on machine) and the upper bound is the product of all deteriorations in the machine. 
 
 With this variable meaning change the actual processing time of the job $j \in J$ on machine $m \in M$ in the period $h \in H$ (that we will represent with the variable $a_{jmh}$) can be calculated as $p_{jm}*q_{mh}$. 
 
@@ -251,7 +251,7 @@ Then, we have in the Equations (\ref{eq:fo_mod2}) to (\ref{eq:consecSlot2_mod2})
 
 
 \subsection{Considerations about the slot based formulation}
-One of the main concerns about the slot formulation to describe the job scheduling with sequence dependent deterioration is to define the number of slots available. Once any job (except the last) in a machine can be followed by a maintenance, a pessimistic value to the number of slots could be $2*|J|$. However, it is obviously a excessive value, that could be lowered. 
+One of the main concerns about the slot formulation to describe this problem is to define the number of slots available on each machine. Once any job (except the last) in a machine can be followed by a maintenance, a pessimistic value to the number of slots could be $2*|J|$. However, it is obviously a excessive value, that could be lowered. 
 
 The option used by us in this formulation is to check if, to all machines, the sum of the shortest jobs processing times one machine (without considering deterioration) is bigger than the processing time of a single job in any of the other machines. If it is true, we can be sure that the optimal solution has at most $(|J| - |M|)$ on a machine and at most $2(|J| - |M|)$ slots used. As the number of jobs is often much greater than the number of machines, this reduction is not so big, but allows us to get a significant reduction on number of variables and a observable improvement on solving performance.  
 
@@ -259,10 +259,11 @@ In other hand, this formulation allow us to decide if the next activity will be 
 
 \section{Heuristic algorithms}
 
-In this section we present the heuristic we propose to solve the job and maintenance machine scheduling problem with sequence-dependent deterioration. It is a ILS based algorithm with five local searches and two perturbations, that are used in an alternate way.  
+In this section we present the heuristic we propose to solve the job and maintenance machine scheduling problem with sequence-dependent deterioration. It is an ILS based algorithm with four local searches and two perturbations, that are used in an alternate way.  This algorithm has as stop criteria the number of iterations without improvement $(30)$ and a time limit ($30$ minutes). 
 
 \IncMargin{1em}
 \begin{algorithm}[H]
+\tiny
 \caption{ILS heuristic}\label{ILS}
 \SetAlgoLined
 
@@ -324,42 +325,211 @@ In this section we present the heuristic we propose to solve the job and mainten
 
 In the Algorithm \ref{ILS} we can see the ILS function. It receive as input a set of jobs $J$, a set of machines $M$, the maintenance time of each machine and the processing time and deterioration delay of each job on each machine. 
 
-At line 3 we the variable $s*$ representing the best solution gets the solution obtained in the constructive heuristic. In this paper we tried two constructive algorithms. The first, that we will reference as \emph{ longest processing time first}(LPTF), orders all jobs by non-increasing processing time order and after that, starting from the first machine, it is assigned to each machine the non used job with longest processing time on that machine. The second, referenced as \emph{lowest delay first} (LDF) orders job by increasing deterioration delay order.After that, as in the previous method, we start from the first machine and insert one job by time on each machine, choosing the non used job with lowest delay. 
+At line 3 we the variable $s*$ representing the best solution gets the solution obtained in the constructive heuristic. In this paper we tried two constructive algorithms. The first, that we will reference as \emph{ longest processing time first}(LPTF), orders all jobs by non-increasing processing time order and after that, starting from the first machine, assigns to each machine the non used job with longest processing time on that machine. The second, referenced as \emph{lowest delay first} (LDF) orders job by increasing deterioration delay order.After that, as in the previous method, we start from the first machine and insert one job by time on each machine, choosing the non used job with lowest delay. 
 
 Once the jobs are inserted in the machines, we put the maintenance operations. The strategy used is to evaluate the accumulated delay, starting from the last job to the first, and every time the deterioration delay becomes bigger than maintenance processing time, a maintenance is inserted in the position anterior to the job where the delay surpassed the maintenance processing time. 
 
 In the sequence of ILS method, we have from line 7 to 16 a sequence of local searches. After any local search the function \emph{updateBestGlobal} is called to evaluate if the new solution is best than the global solution and set the \emph{nonImproveIters} variable value to 0.
 
-The first local search performed, \emph{internal2SwapLS}, swaps the position, at each machine, of two jobs.Those jobs are chosen as the index of two nested \emph{for} loops. The number of swaps tested is limited by a big value, that eventually is not reached. 
+The first local search performed, \emph{internal2SwapLS}, swaps the position, at each machine, of two jobs.Those jobs are chosen as the index of two nested \emph{for} loops. The number of swaps tested is limited by a big value $(30000)$, that eventually is not reached. 
 
 The second local search in the sequence( \emph{internal3SwapLS}) changes the position of three jobs in two different ways. Starting from a tuple of three indexes $(i_1, i_2, i_3)$, taken from three nested for loops, it tests two movements $(i_3, i_1, i_2)$ and $(i_2, i_3,i_1)$. The other three possible moves are equivalent to simple two-position swaps, and are not executed. The number of moves tested is limited, as in the previous function
 
-The two following local searches are inter-machines movements. The \emph{external2SwapLS} procedure swap two jobs between two machines (one job of first machine changes the position with one job of second machine). The machines are chosen by the index of two nested \emph{for} loops and the jobs are chosen in the same way. 
+The two following local searches are inter-machines movements. The \emph{external2SwapLS} procedure swap two jobs between two machines (one job of first machine changes the position with one job of second machine). The machines are chosen by the index of two pairs of nested \emph{for} loops (one for each machine) and the jobs are chosen in the same way. 
 
 Finally the \emph{external3SwapLS} procedure is analogous with the \emph{external2SwapLS}, changing three jobs of three different machines but adopting the same move strategy of the \emph{internal3SwapLS}. 
 
 After all these local searches, if the condition showed on line 17 is satisfied, we proceed a perturbation of the current solution. 
 
-In the local search described above there are no maintenance position swaps. The maintenance positions are evaluated only on constructive heuristics and perturbation procedures due to performance reasons. 
-
 The perturbation procedure used by us calls, alternately two functions. The first one reverses the order of all jobs in one machine and reevaluates the position of the maintenance activities. The second does a shift of one position on machine scheduling, assigning to the machine i the jobs of the machine i+1, and  the jobs of the last machine to the first. The order of the jobs in this perturbation does not change and the position of maintenance activities are recalculated.  
 
+Due to performance issues, in the local search described above there are no maintenance position swaps, except on the \emph{internal2SwapLS} function, where after each swap the maintenances are reallocated. In the constructive heuristics and perturbation procedures the maintenances are also evaluated. 
+
+To confront the results of this heuristic with those of the literature  we also adapted the heuristic \emph{Bh2c}, proposed by \cite{ruiz2017makespan}. This heuristic is a multistart constructive heuristic that, starting from a list of jobs ordered by processing time, tries to insert each job in the end of the group with lower completion time on current solution or in a new group, being the number of groups limited according to the iteration of method. Each group represents, in this case, a sequence of jobs between two maintenances. After that, as the machines are identical, the groups are assigned to the machines starting from the shortest to the longest, in order to minimize the makespan. There is not local search in the heuristic, which makes its very quick. 
+
+In our adaptation, the jobs are also sort by processing time, but the assignment of a job to a machine is done before the assignment of a job to a group. We chose the machine with lowest total processing time to receive the new job and after that the group is chosen like in the original method. This small change allow us to have a close to the literature algorithm that works in an unrelated machine scenario and permits to compare our method with the state of art algorithm.
+
+To provide a better understanding of these algorithms and also a possibility of result comparisons in posterior researches we make all the codes available on url ....
 
 \subsection{Computational experiments}
 
 To test the performance of the heuristics in solving the problem and the fitness of the model to describe the problem we created a instance set based on the parameters described by \cite{ruiz2017makespan}. To test the model were created three instances to each parameter set combination (number of machines, ration machines by job, deterioration interval and maintenance time interval) summing 144 instances. The heuristics were tested in a large set with 10 instances to each parameter set combination.
 
-The instances created have machines identical processing times to all jobs but different deterioration rates and maintenance times, in a semi-unrelated configuration. This approach was used to make easier to compare the results obtained by our heuristics and the ||nome heuristica|| heuristic proposed by \cite{ruiz2017makespan} created to solve a identical machines scenario. To make the result more directly comparable the || nome heuristica|| heuristic was adapted to consider unrelated machines, as described in the previous version. All the algorithms, however, works with instances having machines different processing times.  
+The instances created have machines identical processing times to all jobs but different deterioration rates and maintenance times, in a semi-unrelated configuration. This approach was used to make easier to compare the results obtained by our heuristics and the \emph{Bh2c} heuristic proposed by \cite{ruiz2017makespan} created to solve a identical machines scenario. To make the result more directly comparable the \emph{Bh2c} heuristic was adapted to consider unrelated machines, as described in the previous version. All the algorithms, however, works with instances having machines different processing times.  
 
-All the experiments were done in a Linux machine with 32 GB of ram and processor Core i7. The algorithms were implemented using Julia language (version 1.07) and the model was solved by Cplex 12.6 called through the Julia optimization library JuMP. As none of the algorithms uses random walks we run each instance just one time to each algorithm. 
+All the experiments were done in a Ubuntu 18.10 machine with 32 GB of ram and processor Core i7. The algorithms were implemented using Julia language (version 1.1.0) and the model was solved by Cplex 12.6 in default configuration called through the Julia optimization library JuMP with one hour runtime limit. As none of the algorithms uses random walks we run each instance just one time to each algorithm. 
 
 \section{Results}
 
-In this section we make a brief description of the results obtained by each one of methods used to solve the problem. 
+In this section we make a brief description of the results obtained by each one of methods used to solve the problem. We will start with a description of results obtained in the heuristic procedures and after that compare the results of the best heuristic with those obtained by the model. 
+
+As we said before, we create a set of 480 instances, with 10 instances to each combination of parameters. These parameters are number of machines $|M|$, ratio of jobs by machine $|J|/|B|$, deterioration range $d$ and maintenance times range $mt$. Due to space limitations, in the tables showed in this section we will group the instance results by parameter combination, without individualize the repetitions. 
+
+The \emph{LPTF-ILS} heuristic (in other words, the \emph{ILS} based heuristic with \emph{LPTF} constructive algorithm) obtained the best solution in 351 of the 480 instances. It was followed \emph{LDF-ILS} heuristic with 74 best solutions and finally the literature heuristic (\emph{Bh2c}) with 55 best solutions. 
+
+As it was stated before, the \emph{Bh2c} is a simple iterative-constructive procedure, without local searches on each. It obviously reflects on the average runtime. While we had an average processing time of $26,11$ seconds and $29.48$ seconds in the LPTF and LDF versions of the ILS algorithm respectively, in the \emph{Bh2c} algorithm the average runtime was of only $0.55$ seconds
+
+On Table 1 we can the results condensed by instance parameters. We can see in this table that \emph{LPTF-ILS} heuristic has the best solution on almost $80\%$ of cases and how this dominance is spread in all configurations. Another interesting aspect is the fast increase of \emph{Bh2c} heuristic runtime when the number of machines is $\leq 10$. When compared with the ILS heuristic runtime we see a 300 times difference fall in smaller instances fall to a 10 times difference on bigger ones, what indicate the existence of a performance degeneration in this algorithm to large instances.
+
+Coincidentally is also in the bigger instances that the \emph{Bh2c} showed its bests  results when compared with the other heuristics. But it happened just when the maintenance times were in the interval between 1 and 3. Probably it is due a lack of ability of the ILS algorithm in deal with instances where the ratio delay by maintenance  is time is greater and manteinances are more useful to reduce the makespan.  
+
+\begin{table}[!ht]
+\caption{Heuristic results comparison}
+\tiny
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+
+\multicolumn{4}{|c|}{Instance} & \multicolumn{2}{|c|}{LPTF-ILS}  & \multicolumn{2}{|c|}{LDF-ILS} &\multicolumn{2}{|c|}{Bh2C} & Best solution  \\
+
+$|M|$ & $|J|/|M|$ & det. range & maintenance time & values sum & avg. time(s) & value sum & avg. time & value sum & avg. time & \\
+\hline
+
+2& 10 & (1.01 - 1.05) & (1 - 3)   &  5165.89  &  3.06      & \textbf{5146.14}  &  2.70      &  5233.28  &  0.00      &  5146.14 \\
+ &  &  & (1 - 9)  &  5091.02  &  2.91      &  \textbf{5021.02}  &  3.30      &  5297.27  &  0.00      &  5021.02  \\
+ &  & (1.05 - 1.10) & (1 - 3)  &  5371.03  &  2.80      &  \textbf{5351.74}  &  3.26      &  5472.31  &  0.00      &  5351.74  \\
+ &  &  & (1 - 9)  &  \textbf{5673.94}  &  3.48      &  5791.06  &  2.69      &  6070.00  &  0.00      &  5673.94  \\
+ & 15 & (1.01 - 1.05) & (1 - 3)  &  \textbf{8037.09}  &  3.68      &  8183.19  &  3.85      &  8281.55  &  0.01      &  8037.09  \\
+ &  &  & (1 - 9)  &  \textbf{8641.63}  &  3.09      &  8722.62  &  3.84      &  9140.32  &  0.01      &  8641.63  \\
+ &  & (1.05 - 1.10) & (1 - 3)  &  8491.96  &  3.85      &  \textbf{8481.73}  &  3.96      &  8635.00  &  0.01      &  8481.73  \\
+ &  &  & (1 - 9)  &  \textbf{8317.41}  &  3.69      &  8400.27  &  3.30      &  9008.67  &  0.01      &  8317.41  \\
+ & 20 & (1.01 - 1.05) & (1 - 3)  &  10357.63  &  4.06      &  \textbf{10261.50}  &  4.83      &  10643.25  &  0.02      &  10261.50 \\
+ &  &  & (1 - 9)  &  \textbf{10925.55}  &  4.27      &  10963.10  &  5.21      &  11710.62  &  0.02      &  10925.55 \\
+ &  & (1.05 - 1.10) & (1 - 3)  &  \textbf{10727.32}  &  4.22      &  10870.55  &  4.85      &  11004.08  &  0.02      &  10727.32 \\
+ &  &  & (1 - 9)  &  \textbf{10657.14}  &  5.03      &  10737.06  &  5.07      &  11692.73  &  0.02      &  10657.14 \\
+5& 10 & (1.01 - 1.05) & (1 - 3)  &  \textbf{5345.53}  &  14.02      &  5670.88  &  14.78      &  5486.12  &  0.05      &  5345.53  \\
+ &  &  & (1 - 9)  &  \textbf{5162.58}  &  13.28      &  5618.03  &  14.67      &  5461.96  &  0.05      &  5162.58  \\
+ &  & (1.05 - 1.10) & (1 - 3)  &  \textbf{5358.78} &  15.61      &  5768.07  &  13.40      &  5467.86  &  0.06      &  5358.78  \\
+ &  &  & (1 - 9)  &  \textbf{5523.56}  &  14.82      &  5992.41  &  17.13      &  5960.48  &  0.05      &  5523.56  \\
+ & 15 & (1.01 - 1.05) & (1 - 3)  &  \textbf{7862.03}  &  20.14      &  8372.86  &  22.20      &  8097.04  &  0.17      &  7862.03  \\
+ &   &  & (1 - 9)  &  8015.33  &  19.76      &  \textbf{8386.29}  &  20.23      &  8620.50  &  0.16      &  8015.33  \\
+ &   & (1.05 - 1.10) & (1 - 3)  &  \textbf{8183.43}  &  18.47      &  8660.87  &  17.21      &  8396.36  &  0.18      &  8183.43  \\
+ &   &  & (1 - 9)  &  \textbf{8117.55}  &  22.30      &  8725.42  &  16.22      &  8814.16  &  0.17      &  8117.55  \\
+ & 20  & (1.01 - 1.05) & (1 - 3)  &  \textbf{10115.80}  &  30.08      &  10989.06  &  29.10      &  10453.02  &  0.39      &  10115.80 \\
+ &   &   & (1 - 9)  &  \textbf{11068.47}  &  25.51      &  11887.68  &  21.09      &  11886.53  &  0.38      &  11068.47 \\
+ &   & (1.05 - 1.10) & (1 - 3)  &  \textbf{10750.06}  &  26.21      &  11255.20  &  32.40      &  11066.53  &  0.40      &  10750.06 \\
+ &   &  & (1 - 9)  &  \textbf{10858.24}  &  26.78      &  11522.51  &  27.93      &  12020.59  &  0.38      &  10858.24 \\
+10& 10 & (1.01 - 1.05) & (1 - 3)  &  5345.01  &  24.54      &  6166.87  &  30.33      &  \textbf{5324.08}  &  0.57      &  5324.08 \\
+ &  &  & (1 - 9)  &  \textbf{5545.84}  &  23.22      &  6360.34  &  26.58      &  5684.28  &  0.55      &  5545.84 \\
+ &  & (1.05 - 1.10) & (1 - 3)  &  5548.39  &  24.02      &  6533.09  &  26.34      &  \textbf{5519.30}  &  0.58      &  5519.30 \\
+ &  &  & (1 - 9)  &  \textbf{5735.63} &  24.30      &  6511.42  &  29.57      &  6035.28  &  0.56      &  5735.63 \\
+ & 15 & (1.01 - 1.05) & (1 - 3)  &  \textbf{8085.82}  &  40.31      &  8955.02  &  32.87      &  8162.06  &  1.87      &  8085.82 \\
+ &  &  & (1 - 9)  &  \textbf{8000.85}  &  40.99      &  8856.95  &  47.02      &  8403.02  &  1.86      &  8000.85 \\
+ &  & (1.05 - 1.10) & (1 - 3)  &  \textbf{8059.88}  &  41.72      &  9096.06  &  41.11      &  8111.80  &  1.94      &  8059.88 \\
+ &  &  & (1 - 9)  &  \textbf{8321.30}  &  38.70      &  9214.92  &  39.50      &  8954.31  &  1.90      &  8321.30 \\
+ & 20 & (1.01 - 1.05) & (1 - 3)  &  \textbf{10823.95}  &  67.19      &  12169.92  &  68.93      &  11090.56  &  4.54      &  10823.95 \\
+ &  &  & (1 - 9)  &  \textbf{10838.02}  &  65.02      &  11843.52  &  97.55      &  11475.90  &  4.58      &  10838.02 \\
+ &  & (1.05 - 1.10) & (1 - 3)  &  \textbf{10572.30}  &  65.78      &  11805.80  &  92.79      &  10749.27  &  4.71      &  10572.30 \\
+ &  & & (1 - 9)  &  \textbf{11234.70}  &  81.99      &  12517.12  &  60.17      &  12289.36  &  4.51      &  11234.70 \\
+20 & 10 & (1.01 - 1.05) & (1 - 3)  &  5606.80  &  68.82      &  6624.71  &  104.21      &  \textbf{5496.81}  &  7.00      &  5496.81 \\
+ &  &  & (1 - 9)  &  \textbf{5808.86}  &  70.04      &  6674.04  &  70.99      &  5860.39  &  7.00      &  5808.86  \\
+ &  & (1.05 - 1.10) & (1 - 3)  &  5610.61  &  76.43      &  6778.45  &  69.75      &  \textbf{5427.72}  &  7.23      &  5427.72  \\
+ &  &  & (1 - 9)  &  \textbf{5672.84}  &  75.23      &  6786.92  &  76.32      &  5914.92  &  7.10      &  5672.84  \\
+ & 15 & (1.01 - 1.05) & (1 - 3)  &  \textbf{8266.51}  &  188.08      &  9574.26  &  199.17      &  8277.80  &  24.43      &  8266.51 \\ 
+ &  &  & (1 - 9)  &  \textbf{8315.54}  &  193.38      &  9527.92  &  165.24      &  8575.00  &  24.56      &  8315.54 \\
+ &  & (1.05 - 1.10) & (1 - 3)  &  8336.71  &  156.26      &  9781.78  &  172.81      &  \textbf{8280.65} &  24.94      &  8280.65 \\
+ &  &  & (1 - 9)  &  \textbf{8435.96}  &  168.96      &  9717.73  &  139.54      &  8946.37  &  24.37      &  8435.96 \\
+ & 20 & (1.01 - 1.05) & (1 - 3)  &  \textbf{10684.36}  &  414.02      &  12366.67  &  286.62      &  10821.52  &  59.29      &  10684.36 \\
+ &  &  & (1 - 9)  &  \textbf{11138.94}  &  391.27      &  12593.99  &  449.63      &  11671.24  &  58.49      &  11138.94 \\
+ &  & (1.05 - 1.10) & (1 - 3)  &  \textbf{11104.89}  &  468.26      &  12706.41  &  455.65      &  11151.75  &  60.56      &  11104.89 \\
+ &  &  & (1 - 9)  &  \textbf{11230.21}  &  428.91      &  13026.22  &  317.59      &  12054.92  &  60.24      &  11230.21 \\
+
+\hline
+
+\end{tabular}
+\end{table}
 
 
+A most "hidden" result found is the advantage in ordering the jobs by non-increasing processing time (longest processing times first). This result, already mentioned on literature to one machine or multi-parallel identical machines problems can be explained intuitively by a simple rule: once if the shorter jobs are done after the potential delays are also lower.  Even if this strategy does not bring a optimal solution as in other scheduling with deterioration problems it could provide a good initial and final solution. Its use also appears have no direct impact on convergence speed of the algorithm, as we can see comparing the runtimes of the two versions of the ILS. 
+
+In Table 2 we can see the results obtained by the model compared with those obtained by the best heuristic in the instance subset. None of the model solutions is optimal, but the best found after one hour runtime. 
+
+We can observe from the Table 2 a prevalence of model best values in small instances, specially with only two machines. As the number of machines increases, the heuristic solutions become better and finally when the number of jobs is greater than 150 (and so the number of slots is greater than 350) the model is not able to find solutions anymore. In most of cases where a solution is not found, the process is aborted on Linux for exceeding the machine memory capacity. 
+
+Indeed, strange model objective function values are noted already in instances with 100 jobs and 5 machines, what may indicate the difficulty of Cplex in create branches to explore more the feasible space. In these solutions what commonly happen is a scheduling of several jobs in few machines without any maintenance, making the deterioration grows exponentially and so the makespan. 
+
+
+\begin{table}[!ht]
+\caption{Model and best heuristic results comparison}
+\tiny
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+
+\multicolumn{4}{|c|}{Instance} & Model  & Best heuristic  \\
+
+$|M|$ & $|J|/|M|$ & det. range & maintenance time & & \\
+\hline
+
+2 & 10 & (1.00 - 1.05) & (1 - 3) & \textbf{1508.93} & 1544.40 \\
+  &    &  & (1 - 9) & \textbf{1488.68} & 1529.95 \\
+  &    & (1.05 - 1.10) & (1 - 3) & \textbf{1282.40} & 1325.69 \\
+  &    &  & (1 - 9) & \textbf{1544.54} & 1628.10 \\
+  & 15 & (1.00 - 1.05) & (1 - 3) & \textbf{2541.33} & 2610.55 \\
+  &    & (1.00 - 1.05) & (1 - 9) & \textbf{2445.65} & 2557.38 \\
+  &    & (1.05 - 1.10) & (1 - 3) &  \textbf{2620.72} & 2688.34 \\ 
+  &    &  & (1 - 9) & \textbf{2324.74} & 2416.93 \\ 
+  & 20 & (1.00 - 1.05) & (1 - 3) & \textbf{3063.25} & 3123.56 \\
+  &    &  & (1 - 9) & \textbf{2170.06} & 2280.81 \\
+  &    & (1.05 - 1.10) & (1 - 3) & \textbf{2041.28} & 2123.05 \\
+  &    &  & (1 - 9) & \textbf{1776.17} & 1841.48 \\
+5  & 10 & (1.00 - 1.05) & (1 - 3) & \textbf{1094.66} & 1088.06 \\
+   &    &  & (1 - 9) & \textbf{985.36} & 1019.08 \\
+   &    & (1.05 - 1.10) & (1 - 3) & 1134.36 & \textbf{1104.51} \\
+   &    &  & (1 - 9) & 4111.84 & \textbf{1074.09} \\
+   & 15 & (1.00 - 1.05) & (1 - 3) & 4135.38 & \textbf{1493.68} \\
+   &    &  & (1 - 9) & 2170.51 & \textbf{1574.19} \\
+   &    & (1.05 - 1.10) & (1 - 3) & 4475.05 & \textbf{1658.04} \\
+   &    &  & (1 - 9) & 2049.83 & \textbf{1526.15} \\
+   & 20 & (1.00 - 1.05) & (1 - 3) & 47692.86 & \textbf{1959.60} \\
+   &    &  & (1 - 9) & 3093.18 & \textbf{2231.79} \\
+   &    & (1.05 - 1.10) & (1 - 3) & 5672.07 & \textbf{2072.73} \\
+   &    &  & (1 - 9) & 5740.00 & \textbf{2390.12} \\
+10 & 10 & (1.00 - 1.05) & (1 - 3) & 539462.00 & \textbf{1094.23} \\
+   &    &  & (1 - 9) & 46701.00 & \textbf{1091.42} \\
+   &    & (1.05 - 1.10) & (1 - 3) & 22649.00 & \textbf{1089.04} \\
+   &    &  & (1 - 9) & 819636.00 & \textbf{1116.17} \\
+   & 15 & (1.00 - 1.05) & (1 - 3) & 500363.00 & \textbf{1608.41} \\
+   &    &  & (1 - 9) & 528772.00 & \textbf{1621.94} \\
+   &    & (1.05 - 1.10) & (1 - 3) & *** & 1623.52 \\
+   &    &  & (1 - 9) & *** & 1678.03 \\
+   & 20 & (1.00 - 1.05) & (1 - 3) & *** & 2309.79 \\
+   &    &  & (1 - 9) & *** & 2083.85 \\
+   &    & (1.05 - 1.10) & (1 - 3) & *** & 2054.90 \\
+   &    &  & (1 - 9) & *** & 2337.43 \\
+20 & 10 & (1.00 - 1.05) & (1 - 3) & *** & 1108.75 \\
+   &    &  & (1 - 9) & *** & 1111.32 \\
+   &    & (1.05 - 1.10) & (1 - 3) & *** & 1045.14 \\
+   &    &  & (1 - 9) & *** & 1110.78 \\
+   & 15 & (1.00 - 1.05) & (1 - 3) & *** & 1713.94 \\
+   &    &  & (1 - 9) & *** & 1666.68 \\
+   &    & (1.05 - 1.10) & (1 - 3) & *** & 1671.27 \\
+   &    &  & (1 - 9) & *** & 1653.88 \\
+   & 20 & (1.00 - 1.05) & (1 - 3) & *** & 2109.22 \\
+   &    &  & (1 - 9) & *** & 2257.76 \\
+   &    & (1.05 - 1.10) & (1 - 3) & *** & 2288.62 \\
+   &    &  & (1 - 9) & *** & 2232.33 \\
+
+
+\hline
+
+\end{tabular}
+\end{table}
+
+In any case, by providing feasible solutions in more than $60\%$ of instances tested the model proved to be satisfactory in providing good solutions and a hope of future improvements instead of only a formal description of the problem. Even if optimal solutions were not found we could solve hard scenarios with two machines better than with the heuristic and close to it in other situations. In our next investigations, we will try to explore theoretical results already know to create a better model and try to get the first optimal solutions. 
+ 
 
 \section{Conclusion}
+
+In this paper we presented a new model to the machine job and maintenance scheduling problem with sequence dependent deterioration, as well a heuristic algorithm to solve it. 
+
+The model proposed was able to get non-optimal solutions to more than $60\%$ of the instances tested and have the best solution found in cases with a low number of machines. 
+
+Our ILS based heuristic was able to reach good results when compared with a adapted version of state of art algorithm, mainly when the maintenance processing times were higher. 
+
+As we believe on the theoretical potential of solving well this problem we will continue to investigate it. In the next steps we will try to improve the performance of the heuristic presented by choosing better the maintenance positions, using more theoretical results available on the literature and trying more space efficient solution representations. In other hand, we will look for the development of alternative models that could enable to use robust and exact optimization techniques like column generation. 
+
+ 
 
 ~\\
 \bibliographystyle{sbpo}
