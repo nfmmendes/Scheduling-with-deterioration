@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.6)  25 APR 2019 15:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.6)  29 APR 2019 08:56
 entering extended mode
-**./exemplo-latex.tex
-(exemplo-latex.tex
+**./Scheduling-Deterioration-SBPO.tex
+(Scheduling-Deterioration-SBPO.tex
 LaTeX2e <2018-12-01>
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\artic
@@ -231,21 +231,72 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \Gin@req@height=\dimen128
 \Gin@req@width=\dimen129
 )
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/makecell\m
+akecell.sty"
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\arra
+y.sty"
+Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
+\col@sep=\dimen130
+\ar@mcellbox=\box30
+\extrarowheight=\dimen131
+\NC@list=\toks23
+\extratabsurround=\skip59
+\backup@length=\skip60
+\ar@cellbox=\box31
+)
+\rotheadsize=\dimen132
+\c@nlinenum=\count101
+\TeXr@lab=\toks24
+)
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/multirow\m
+ultirow.sty"
+Package: multirow 2019/01/01 v2.4 Span multiple rows of a table
+\multirow@colwidth=\skip61
+\multirow@cntb=\count102
+\multirow@dima=\skip62
+\bigstrutjot=\dimen133
+)
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xco
+lor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-c
+fg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Package option `usenames' ignored on input line 216.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\d
+vipsnam.def"
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+))
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithm2
 e\algorithm2e.sty"
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count101
+\c@AlgoLine=\count103
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthe
 n.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\algocf@hangindent=\skip59
+\algocf@hangindent=\skip63
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ifoddpage\
 ifoddpage.sty"
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count102
+\c@checkoddpage=\count104
 )
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\xspa
 ce.sty"
@@ -255,57 +306,57 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 lsize.sty"
 Package: relsize 2013/03/29 ver 4.1
 )
-\skiptotal=\skip60
-\skiplinenumber=\skip61
-\skiprule=\skip62
-\skiphlne=\skip63
-\skiptext=\skip64
-\skiplength=\skip65
-\algomargin=\skip66
-\skipalgocfslide=\skip67
-\algowidth=\dimen130
-\inoutsize=\dimen131
-\inoutindent=\dimen132
-\interspacetitleruled=\dimen133
-\interspacealgoruled=\dimen134
-\interspacetitleboxruled=\dimen135
-\algocf@ruledwidth=\skip68
-\algocf@inoutbox=\box30
-\algocf@inputbox=\box31
-\AlCapSkip=\skip69
-\AlCapHSkip=\skip70
-\algoskipindent=\skip71
-\algocf@nlbox=\box32
-\algocf@hangingbox=\box33
-\algocf@untilbox=\box34
-\algocf@skipuntil=\skip72
-\algocf@capbox=\box35
-\algocf@lcaptionbox=\skip73
-\algoheightruledefault=\skip74
-\algoheightrule=\skip75
-\algotitleheightruledefault=\skip76
-\algotitleheightrule=\skip77
-\c@algocfline=\count103
-\c@algocfproc=\count104
-\c@algocf=\count105
-\algocf@algoframe=\box36
-\algocf@algobox=\box37
-) (exemplo-latex.aux)
-\openout1 = `exemplo-latex.aux'.
+\skiptotal=\skip64
+\skiplinenumber=\skip65
+\skiprule=\skip66
+\skiphlne=\skip67
+\skiptext=\skip68
+\skiplength=\skip69
+\algomargin=\skip70
+\skipalgocfslide=\skip71
+\algowidth=\dimen134
+\inoutsize=\dimen135
+\inoutindent=\dimen136
+\interspacetitleruled=\dimen137
+\interspacealgoruled=\dimen138
+\interspacetitleboxruled=\dimen139
+\algocf@ruledwidth=\skip72
+\algocf@inoutbox=\box32
+\algocf@inputbox=\box33
+\AlCapSkip=\skip73
+\AlCapHSkip=\skip74
+\algoskipindent=\skip75
+\algocf@nlbox=\box34
+\algocf@hangingbox=\box35
+\algocf@untilbox=\box36
+\algocf@skipuntil=\skip76
+\algocf@capbox=\box37
+\algocf@lcaptionbox=\skip77
+\algoheightruledefault=\skip78
+\algoheightrule=\skip79
+\algotitleheightruledefault=\skip80
+\algotitleheightrule=\skip81
+\c@algocfline=\count105
+\c@algocfproc=\count106
+\c@algocf=\count107
+\algocf@algoframe=\box38
+\algocf@algobox=\box39
+) (Scheduling-Deterioration-SBPO.aux)
+\openout1 = `Scheduling-Deterioration-SBPO.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 24.
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1
 ptm.fd"
@@ -317,17 +368,17 @@ Package caption Info: End \AtBeginDocument code.
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mki
 i\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count106
-\scratchdimen=\dimen136
-\scratchbox=\box38
-\nofMPsegments=\count107
-\nofMParguments=\count108
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count109
-\MPscratchDim=\dimen137
-\MPnumerator=\count110
-\makeMPintoPDFobject=\count111
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count108
+\scratchdimen=\dimen140
+\scratchbox=\box40
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen141
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks26
 )
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\e
 pstopdf-base.sty"
@@ -388,24 +439,24 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 28.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 32.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 35.
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1
 pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 43.
-LaTeX Font Info:    Try loading font information for U+msa on input line 44.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
+LaTeX Font Info:    Try loading font information for U+msa on input line 47.
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\u
 msa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 44.
+LaTeX Font Info:    Try loading font information for U+msb on input line 47.
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\u
 msb.fd"
@@ -414,7 +465,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <cabecalho_sbpo.png, id=1, 462.528pt x 92.345pt>
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 71.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 73.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
 
 
@@ -427,92 +478,12 @@ This may cause the page layout to be inconsistent, however.
 
 {C:/Users/Nilson Felipe/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./c
 abecalho_sbpo.png>]
-
-Package natbib Warning: Citation `ruiz2017makespan' on page 2 undefined on inpu
-t line 78.
-
-
-Package natbib Warning: Citation `ruiz2017makespan' on page 2 undefined on inpu
-t line 80.
-
-
-Package natbib Warning: Citation `ruiz2017makespan' on page 2 undefined on inpu
-t line 80.
-
-
-Package natbib Warning: Citation `gupta1988single' on page 2 undefined on input
- line 84.
-
-
-Package natbib Warning: Citation `browne1990scheduling' on page 2 undefined on 
-input line 84.
-
-
-Package natbib Warning: Citation `mosheiov1991v' on page 2 undefined on input l
-ine 84.
-
-
-Package natbib Warning: Citation `mosheiov1994scheduling' on page 2 undefined o
-n input line 84.
-
-
-Package natbib Warning: Citation `Mosheiov1998' on page 2 undefined on input li
-ne 88.
-
-
-Package natbib Warning: Citation `JI2008342' on page 2 undefined on input line 
-88.
-
-
-Package natbib Warning: Citation `cheng2001single' on page 2 undefined on input
- line 88.
-
-
-Package natbib Warning: Citation `leung2008minimizing' on page 2 undefined on i
-nput line 88.
-
-
-Package natbib Warning: Citation `lalla2016modeling' on page 2 undefined on inp
-ut line 88.
-
-
-Package natbib Warning: Citation `RUIZTORRES20132051' on page 2 undefined on in
-put line 90.
-
-
-Package natbib Warning: Citation `SantosArroyo2015' on page 2 undefined on inpu
-t line 90.
-
-
-Package natbib Warning: Citation `Yang2011' on page 2 undefined on input line 9
-2.
-
-
-Package natbib Warning: Citation `YANG20121458' on page 2 undefined on input li
-ne 92.
-
-
-Package natbib Warning: Citation `HUANG20152897' on page 2 undefined on input l
-ine 92.
-
-
-Package natbib Warning: Citation `ruiz2017makespan' on page 2 undefined on inpu
-t line 94.
-
-
-Package natbib Warning: Citation `DING201935' on page 2 undefined on input line
- 94.
-
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 95.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 92.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
-[2]
-
-Package natbib Warning: Citation `ruiz2017makespan' on page 3 undefined on inpu
-t line 96.
-
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 107.
+ [2]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 106.
 
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\oms
@@ -520,124 +491,31 @@ ptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 107.
-
-
-Package natbib Warning: Citation `ruiz2017makespan' on page 3 undefined on inpu
-t line 121.
-
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 106.
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 128.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 112.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
-[3]
-
-LaTeX Warning: Reference `eq:fo_mod1' on page 4 undefined on input line 168.
-
-
-LaTeX Warning: Reference `eq:uniqueAct_mod1' on page 4 undefined on input line 
-168.
-
-
-LaTeX Warning: Reference `eq:mandJob_mod1' on page 4 undefined on input line 16
-8.
-
-
-LaTeX Warning: Reference `eq:cMax_mod1' on page 4 undefined on input line 168.
-
-
-LaTeX Warning: Reference `eq:det_mod1' on page 4 undefined on input line 168.
-
-
-LaTeX Warning: Reference `eq:qInit_mod1' on page 4 undefined on input line 168.
-
-
-
-LaTeX Warning: Reference `eq:xDef_mod1' on page 4 undefined on input line 168.
-
-
-LaTeX Warning: Reference `eq:qDef_mod1' on page 4 undefined on input line 168.
-
-
-LaTeX Warning: Reference `eq:cMax_mod1' on page 4 undefined on input line 170.
-
-
-LaTeX Warning: Reference `eq:det_mod1' on page 4 undefined on input line 170.
-
-
-LaTeX Warning: Reference `eq:cMax_mod1' on page 4 undefined on input line 170.
-
+ [3]
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 177.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 181.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
-[4]
-
-LaTeX Warning: Reference `eq:fo_mod2' on page 5 undefined on input line 229.
-
-
-LaTeX Warning: Reference `eq:mandJob_mod2' on page 5 undefined on input line 22
-9.
-
-
-LaTeX Warning: Reference `eq:procTime1_mod2' on page 5 undefined on input line 
-229.
-
-
-LaTeX Warning: Reference `eq:procTime2_mod2' on page 5 undefined on input line 
-229.
-
-
-LaTeX Warning: Reference `eq:cMax_mod2' on page 5 undefined on input line 229.
-
-
-LaTeX Warning: Reference `eq:cMax_mod1' on page 5 undefined on input line 229.
-
-
-LaTeX Warning: Reference `eq:det_mod2' on page 5 undefined on input line 229.
-
-
-LaTeX Warning: Reference `eq:det_mod1' on page 5 undefined on input line 229.
-
-
-LaTeX Warning: Reference `eq:qDef_mod2' on page 5 undefined on input line 229.
-
-
-LaTeX Warning: Reference `eq:qDef_mod1' on page 5 undefined on input line 229.
-
-
-LaTeX Warning: Reference `eq:xDef_mod2' on page 5 undefined on input line 229.
-
-
-LaTeX Warning: Reference `eq:qDef_mod2' on page 5 undefined on input line 229.
-
+ [4]
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 239.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 243.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
-[5]
-
-LaTeX Warning: Reference `eq:consecMaint_mod2' on page 6 undefined on input lin
-e 245.
-
-
-LaTeX Warning: Reference `eq:consecSlot1_mod2' on page 6 undefined on input lin
-e 247.
-
-
-LaTeX Warning: Reference `eq:consecSlot2_mod2' on page 6 undefined on input lin
-e 247.
-
-
-LaTeX Warning: Reference `eq:fo_mod2' on page 6 undefined on input line 249.
-
-
-LaTeX Warning: Reference `eq:consecSlot2_mod2' on page 6 undefined on input lin
-e 249.
+ [5]
+Overfull \hbox (2.46297pt too wide) in paragraph at lines 273--274
+\OT1/ptm/m/n/10.95 quality so-lu-tions for R$\OMS/cmsy/m/n/10.95 j$\OT1/ptm/m/n
+/10.95 Sdd,mnt$\OMS/cmsy/m/n/10.95 j$\OT1/ptm/m/n/10.95 C$[]$. in-stances It is
+ an ILS-based al-go-rithm with four lo-cal searches
+ []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 291.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 293.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 301.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 303.
 
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1
@@ -646,176 +524,158 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 296.
+(relsize)                Using 6.0pt instead on input line 306.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 297.
+(relsize)                Using 6.0pt instead on input line 307.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 299.
+(relsize)                Using 6.0pt instead on input line 309.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 300.
+(relsize)                Using 6.0pt instead on input line 310.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 321.
+(relsize)                Using 6.0pt instead on input line 326.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 321.
+(relsize)                Using 6.0pt instead on input line 326.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 321.
+(relsize)                Using 6.0pt instead on input line 326.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 321.
+(relsize)                Using 6.0pt instead on input line 326.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 321.
+(relsize)                Using 6.0pt instead on input line 326.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 321.
+(relsize)                Using 6.0pt instead on input line 326.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 321.
+(relsize)                Using 6.0pt instead on input line 326.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 321.
+(relsize)                Using 6.0pt instead on input line 326.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 321.
+(relsize)                Using 6.0pt instead on input line 326.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 321.
+(relsize)                Using 6.0pt instead on input line 326.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 321.
+(relsize)                Using 6.0pt instead on input line 326.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 321.
+(relsize)                Using 6.0pt instead on input line 326.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 321.
+(relsize)                Using 6.0pt instead on input line 326.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 321.
+(relsize)                Using 6.0pt instead on input line 326.
+
+
+Underfull \vbox (badness 2547) has occurred while \output is active []
 
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 326.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 329.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
-[6]
-
-LaTeX Warning: Reference `ILS' on page 7 undefined on input line 326.
-
+ [6]
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 344.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 348.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
+
 [7]
-
-Package natbib Warning: Citation `ruiz2017makespan' on page 8 undefined on inpu
-t line 348.
-
-
-Package natbib Warning: Citation `ruiz2017makespan' on page 8 undefined on inpu
-t line 356.
-
-
-Package natbib Warning: Citation `ruiz2017makespan' on page 8 undefined on inpu
-t line 358.
-
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 367.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 369.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
-[8]
+ [8]
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 520.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 522.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
- [9] (exemplo-latex.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 534--1
+ [9]
+File: cabecalho_sbpo.png Graphic file (type png)
+<use cabecalho_sbpo.png>
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 534.
+(pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
+ [10] (Scheduling-Deterioration-SBPO.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 535--1
 
  []
 
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 11.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 22.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
-[10]
+[11]
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 51.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 123.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
- [11])
-
-Package natbib Warning: There were undefined citations.
-
+ [12])
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 539.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 540.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
-[12] (exemplo-latex.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+ [13] (Scheduling-Deterioration-SBPO.aux) ) 
 Here is how much of TeX's memory you used:
- 5303 strings out of 492945
- 80054 string characters out of 3122699
- 205715 words of memory out of 3000000
- 9088 multiletter control sequences out of 15000+200000
- 27889 words of font info for 63 fonts, out of 3000000 for 9000
+ 6114 strings out of 492945
+ 90378 string characters out of 3122699
+ 234264 words of memory out of 3000000
+ 9880 multiletter control sequences out of 15000+200000
+ 29532 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,15n,43p,1139b,528s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/bas
-e/8r.enc}<C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmex10.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Nilson Felipe/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/User
+ 43i,17n,43p,1229b,536s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Nilson Felipe/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/Nilson Felipe/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/User
 s/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmmi8.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Nilson Felipe/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users
-/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Nilson Felipe/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Nil
-son Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pf
-b><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/tim
-es/utmb8a.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/urw/times/utmr8a.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on exemplo-latex.pdf (12 pages, 364236 bytes).
+m/cmmi10.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Nilson Felipe/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Us
+ers/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr10.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmr6.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Nilson Felipe/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Us
+ers/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmsy5.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Nilson Felipe/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Nilson Felipe/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/N
+ilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.
+pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/t
+imes/utmb8a.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/urw/times/utmr8a.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Scheduling-Deterioration-SBPO.pdf (13 pages, 388408 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
+ 117 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
