@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{makecell}
 \usepackage{multirow}
+\usepackage{booktabs}
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[C]{\includegraphics[width=\textwidth]{cabecalho_sbpo.png}}
@@ -23,33 +24,33 @@
 
 \begin{document}
 
-\title{A mathematical model and e metaheuristic for a job and maintenance machine scheduling problem with sequence dependent deterioration} 
+\title{A mathematical model and metaheuristic for a job and maintenance machine scheduling problem with sequence dependent deterioration} 
 
 \maketitle
 \thispagestyle{fancy}
 
-\author{
-\name{Nilson Mendes}
-\institute{DISMI, Universit{\` a} degli Studi di Modena e Reggio Emilia}
-\iaddress{Via Amendola 2, Pad. Morselli, 42122 Reggio Emilia, Italia}
-\email{nilson.mendes@unimore.it}
-}
-
-\author{ 
-\name{Manuel Iori}
-\institute{DISMI, Universit{\` a} degli Studi di Modena e Reggio Emilia}
-\iaddress{Via Amendola 2, Pad. Morselli, 42122 Reggio Emilia, Italia}
-\email {manuel.iori@unimore.it}
-}
+%\author{
+%\name{Nilson Mendes}
+%\institute{DISMI, Universit{\` a} degli Studi di Modena e Reggio Emilia}
+%\iaddress{Via Amendola 2, Pad. Morselli, 42122 Reggio Emilia, Italia}
+%\email{nilson.mendes@unimore.it}
+%}
+%
+%\author{ 
+%\name{Manuel Iori}
+%\institute{DISMI, Universit{\` a} degli Studi di Modena e Reggio Emilia}
+%\iaddress{Via Amendola 2, Pad. Morselli, 42122 Reggio Emilia, Italia}
+%\email {manuel.iori@unimore.it}
+%}
 
 \vspace{8mm}
 \begin{resumo}
-M\'aquinas que possuem alto n\'ivel de ocupa\c c\~ao comumente apresentam problemas de desgaste que impactam o seu desempenho e fazem com que manuten\c c\~oes corretivas sejam necess\'arias. Neste trabalho tratamos um problema de escalonamento de tarefas em m\'aquinas paralelas n\~ao correlatas com tempo de processamento dependente da deteriora\c c\~ao e manuten\c c\~ao. Neste problema buscamos minimizar o \emph{makespan} atrav\'es da defini\c c\~ao de sequ\^encias de tarefas e momentos de manuten\c c\~oes de um conjunto de m\'aquinas. O tempo processamento de cada tarefa aumenta por um fator de deteriora\c c\~ao $q$ (dependente da tarefa e m\'aquina) a cada tarefa executada desde a \'ultima manuten\c c\~ao. Apresentamos neste artigo uma vers\~ao linearizada de um modelo matem\'atico dispon\'ivel na literatura que descreve o problema e uma heur\'istica baseada na meta-heur\'istica ILS para resolv\^e-lo. Ent\~ao comparamos os resultados obtidos pela heuristica com os resultados da modelo matem\'atico e de algoritmos da literatura. 
+M\'aquinas que possuem alto n\'ivel de ocupa\c c\~ao comumente apresentam problemas de desgaste que podem impactar severamente o seu desempenho. Nestes casos, atividades de manuten\c c\~ao podem ser planejadas para restaurar a produtividade m\'axima. Neste trabalho tratamos um problema de escalonamento de tarefas e manuten\c c\~oes em um conjunto de m\'aquinas paralelas n\~ao correlatas em que se considera que o tempo de processamento cresce de acordo com um fator de deteriora\c c\~ao que depende da m\'aquina e da pr\'opria tarefa. O objetivo \'e definir um conjunto de escalonamentos que minimizem o makespan. Nos apresentamos uma vers\~ao linear de um modelo dispon\'ivel na literature, em com uma heuristica ILS. Extensivos testes computacionais s\~ao usados para verificar a efici\^encia dos m\'etodos e comparar-los com a da literature recente. 
  \end{resumo}
 
 \bigskip
 \begin{palchaves}
-Scheduling. Modelagem matem\'atica. Meta-heuristica.
+Job Scheduling. Modelagem matem\'atica. Meta-heuristica.
 
 \bigskip
 \noindent{T\'opicos (Escalonamento de tarefas, Modelagem matem\'atica, Lineariza\c c\~ao, Meta-heur\'istica, ILS ) }
@@ -64,7 +65,7 @@ We present a linear version of a mathematical model available in the literature,
 \end{abstract}
 
 \bigskip
-\begin{keywords} Scheduling. Mathematical modeling. Meta-heuristic.
+\begin{keywords}Job Scheduling. Mathematical modeling. Meta-heuristic.
 
 \bigskip
 \noindent{Paper topics (Job scheduling, Deterioration, Mathematical model, Linearization, Iterated Local Search)}
@@ -226,10 +227,10 @@ Formally, we make use of a continuous variable $a_{ijh}$, that is forced to take
 \begin{eqnarray}
 \label{eq:uniqueAct_mod2} \sum_{j \in J}{x_{ijh}} +  s_{ih} \leq 1 && \forall i \in M, h \in H \\
 \label{eq:mandJob_mod2} \sum_{i \in M}\sum_{h \in H}{x_{ijh}} = 1 && \forall j \in J\\
-\label{eq:procTime1_mod2} a_{ijh} \leq M_1 x_{ijh} && \forall i \in M, j \in J, h \in H\\
-\label{eq:procTime2_mod2} a_{ijh} \geq p_{ij} q'_{ih} - M_1 (1-x_{ijh}) &&\forall i \in M, j \in J, h \in H\\
+\label{eq:procTime1_mod2} a_{ijh} \leq M^a_i x_{ijh} && \forall i \in M, j \in J, h \in H\\
+\label{eq:procTime2_mod2} a_{ijh} \geq p_{ij} q'_{ih} - M^a_i (1-x_{ijh}) &&\forall i \in M, j \in J, h \in H\\
 \label{eq:cMax_mod2} \sum_{j \in J}\sum_{h \in H} a_{ijh} + \sum_{h \in H} t_h s_{ih} - \text{C}_{\max} \leq 0 && \forall i \in M\\
-\label{eq:det_mod2} q'_{ih} \geq d'_{ij} q'_{i,h-1} - M_2(s_{i,h-1}+1-x_{ij,h-1}) && i \in M, j \in J,  h \in H\backslash\{1\}\\
+\label{eq:det_mod2} q'_{ih} \geq d'_{ij} q'_{i,h-1} - M^b_i(s_{i,h-1}+1-x_{ij,h-1}) && i \in M, j \in J,  h \in H\backslash\{1\}\\
 \label{eq:qInit_mod2} q'_{i1} = 1 && \forall i \in M\\
 \label{eq:xDef_mod2} x_{ijh} \in \{0,1\} && \forall i \in M,  j \in J, h \in H\\
 \label{eq:dDef_mod2} s_{ih} \in \{0,1\} && \forall i \in M, h \in H\\
@@ -245,15 +246,6 @@ The linear representation of \eqref{eq:det_mod1} is obtained by constraints \eqr
 %
 Slot-based models typically involve a large number of variables and constraints, so it is convenient to try to limit their size. 
 To this aim, we reduce the space of solutions of model \eqref{eq:fo_mod2}--\eqref{eq:qDef_mod2} by using three additional constraints:
-%\begin{equation}\label{eq:consecMaint_mod2}
-%	s_{k(h-1)} + s_{kh} <= 1  \quad \quad \quad \quad \forall h \in H\backslash\{1\}
-%\end{equation}
-%\begin{equation}\label{eq:consecSlot1_mod2}
-%	s_{k(h-1)} + \sum_{j \in J}{x_{jm(h-1)}} \geq 	s_{kh} + \sum_{j \in J}{x_{jmh}}  \quad \quad \quad \quad \forall h \in H\backslash\{1\}, m \in M
-%\end{equation}
-%\begin{equation}\label{eq:consecSlot2_mod2}
-%	x_{jkh} - \sum_{l \in N}{x_lm(h-1)} - s_{m(h-1)} \leq 0    \quad \quad \quad \quad \forall j \in J, m \in M, h \in H\backslash\{0\}
-%\end{equation}
 \begin{eqnarray}
 \label{eq:consecMaint_mod2} s_{i,h-1} + s_{ih} \leq 1 && \forall i \in M, h \in H\backslash\{1\}\\
 \label{eq:consecSlot1_mod2} s_{i,h-1} + \sum_{j \in J}{x_{ij,h-1}} \geq s_{ih} + \sum_{j \in J}{x_{ijh}}  && \forall i \in M, h \in H\backslash\{1\}\\
@@ -330,8 +322,7 @@ The ILS procedure in Algorithm \ref{ILS} receives in input the set $J$ of jobs, 
 
 At line 3, the incumbent solution, represented by $s$*, is initialized by means of a constructive heuristic. In our work, we tried two constructive algorithms. The first, that we will reference as \emph{ longest processing time} (LPT), orders all jobs by non-increasing processing time on each machine and, after that, starting from the first machine, assigns to each machine the still unassigned job that has the longest processing time on the machine. The second, referenced as \emph{lowest delay first} (LDF) orders job by increasing deterioration delay order. After that, as in the previous method, it starts from the first machine and inserts one job at a time on each machine, choosing the still unassigned job that has lowest delay delay. 
 
-In each constructive algorithm, once the jobs are inserted in the machines, we take into account the maintenance operations. The strategy that we use is to evaluate the accumulated delay, starting from the last job and proceeding backwards to the first. Every time the deterioration delay becomes larger than the maintenance time, a maintenance activity is inserted in the slot that precedes the job for which the delay surpassed the maintenance time. 
-
+In each constructive algorithm, once the jobs are inserted in the machines, we take into account the maintenance operations. The strategy that we use is to evaluate the accumulated delay, starting from the last job and proceeding backwards to the first. Every time the deterioration delay becomes larger than the maintenance time, a maintenance activity is inserted. 
 We developed two variants of the ILS, one called \emph{LPT-ILS} that invokes the LPT algorithm, and the other, called \emph{LDF-ILS}, that invokes the LDF. 
 
 At lines from 7 to 14 we apply a sequence of local search procedures. After any local search, the function \emph{updateBestGlobal} is called to evaluate if the new solution we obtained is better than the incumbent solution. In such a case, we update $s$* and set the number of iterations without improvements, \emph{nonImproveIters}, to 0.
@@ -350,131 +341,110 @@ Due to performance issues, in the local search described above there are no main
 
 \section{Computational experiments} \label{sec:results}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\rev{QUESTA SEZIONE LA DEVO ANCORA RIVEDERE}\\
-To test the performance of the heuristics in solving the problem and the fitness of the model to describe the problem we created a instance set based on the parameters described by \cite{ruiz2017makespan}. To test the model were created three instances to each parameter set combination (number of machines, ration machines by job, deterioration interval and maintenance time interval) summing 144 instances. The heuristics were tested in a large set with 10 instances to each parameter set combination. As terminating conditions for the ILS we imposed $\text{MAX}\_\text{IT}$ equal to 30 iterations and $\text{MAX}\_\text{TIME}$ equal to $30$ computing minutes. 
+To test the performance of the methods we proposed for the R$|$Sdd,mnt$|$C$_{\max}$, we created a set of instances based on the parameters described in \cite{ruiz2017makespan}. We created three instances for each combination of number $m$ of machines, ratio $n/m$ of jobs per machine, deterioration interval and maintenance time interval, summing up to a total of 144 instances. We used this first set to test the MILP model. Then, we obtained a larger set by producing 10 random instances for each parameter combination, and we use it to test the heuristic methods. The instances that we created have identical processing times of each job on all machines, but different deterioration rates and maintenance times, in a semi-unrelated configuration. All algorithms we implemented, however, work with instances having different processing times on unrelated machines.  
 
-To compare the results of this ILS heuristic with those of the literature  we also adapted the heuristic \emph{Bh2c}, proposed by \cite{ruiz2017makespan}. This heuristic is a multistart constructive heuristic that, starting from a list of jobs ordered by processing time, tries to insert each job in the end of the group with lower completion time on current solution or in a new group, being the number of groups limited according to the iteration of method. Each group represents, in this case, a sequence of jobs between two maintenances. After that, as the machines are identical, the groups are assigned to the machines starting from the shortest to the longest, in order to minimize the makespan. There is not local search in the heuristic, which makes its very quick. 
+All the experiments were executed on a Ubuntu 18.04 LTS machine with 32 GB of ram and a Intel Xeon E3-1245 v5 processor with eight core of 3.5GHz . The algorithms were implemented using Julia language (version 1.1.0) and the MILP model was solved by Cplex 12.6 in default configuration, called through the Julia optimization library JuMP. We impose the MILP model to stop after one hour of computing time. As terminating conditions for the ILS, we imposed $\text{MAX}\_\text{IT}$ equal to 30 iterations and $\text{MAX}\_\text{TIME}$ equal to $30$ computing minutes. 
 
-In our adaptation, the jobs are also sort by processing time, but the assignment of a job to a machine is done before the assignment of a job to a group. We chose the machine with lowest total processing time to receive the new job and after that the group is chosen like in the original method. This small change allow us to have a close to the literature algorithm that works in an unrelated machine scenario and permits to compare our method with the state of art algorithm.
+To compare the results of this ILS heuristic with those of the literature, we reimplemented the best heuristic proposed by \cite{ruiz2017makespan} for the case of identical machines, and called \emph{Bh2c}. Algorithm Bh2c is a multistart constructive heuristic that, starting from a list of jobs ordered by processing time, tries to insert each job at the end of the group with lower completion time on the current solution or in a new group, being the total number of groups limited according to the current algorithm iteration. Each group represents a sequence of jobs between two maintenances. After that, as the machines are identical, the groups are assigned to the machines starting from the shortest to the longest, in order to minimize the makespan. There is no local search in Bh2c, which makes the algorithm very quick. 
 
-To provide a better understanding of these algorithms and also a possibility of result comparisons in posterior researches we make all the codes available on url ....
+In our adaptation, called Bh2c-R, the jobs are also sorted by processing time, but the assignment of a job to a machine is done before the assignment of a job to a group. We chose the machine with lowest total processing time to receive the new job and, after that, the group is chosen like in the original method. This small change allows us to have an algorithm that is close to the one in the literature but that also works with unrelated machines.
 
-The instances created have machines identical processing times to all jobs but different deterioration rates and maintenance times, in a semi-unrelated configuration. This approach was used to make easier to compare the results obtained by our heuristics and the \emph{Bh2c} heuristic proposed by \cite{ruiz2017makespan} created to solve a identical machines scenario. To make the result more directly comparable the \emph{Bh2c} heuristic was adapted to consider unrelated machines, as described in the previous version. All the algorithms, however, works with instances having machines different processing times.  
-
-All the experiments were done in a Ubuntu 18.10 machine with 32 GB of ram and processor Core i7. The algorithms were implemented using Julia language (version 1.1.0) and the model was solved by Cplex 12.6 in default configuration called through the Julia optimization library JuMP with one hour runtime limit. 
-
-\subsection{Computational results} 
-
-In this section we make a brief description of the results obtained by each one of methods used to solve the problem. We will start with a description of results obtained in the heuristic procedures and after that compare the results of the best heuristic with those obtained by the model. 
-
-As we said before, we create a set of 480 instances, with 10 instances to each combination of parameters. These parameters are number of machines $|M|$, ratio of jobs by machine $|J|/|B|$, deterioration range $d$ and maintenance times range $mt$. Due to space limitations, in the tables showed in this section we will group the instance results by parameter combination, without individualize the repetitions. 
-
-The \emph{LPTF-ILS} heuristic (in other words, the \emph{ILS} based heuristic with \emph{LPTF} constructive algorithm) obtained the best solution in 351 of the 480 instances. It was followed \emph{LDF-ILS} heuristic with 74 best solutions and finally the literature heuristic (\emph{Bh2c}) with 55 best solutions. 
-
-As it was stated before, the \emph{Bh2c} is a simple iterative-constructive procedure, without local searches on each. It obviously reflects on the average runtime. While we had an average processing time of $26,11$ seconds and $29.48$ seconds in the LPTF and LDF versions of the ILS algorithm respectively, in the \emph{Bh2c} algorithm the average runtime was of only $0.55$ seconds
-
-On Table 1 we can the results condensed by instance parameters. We can see in this table that \emph{LPTF-ILS} heuristic has the best solution on almost $80\%$ of cases and how this dominance is spread in all configurations. Another interesting aspect is the fast increase of \emph{Bh2c} heuristic runtime when the number of machines is $\leq 10$. When compared with the ILS heuristic runtime we see a 300 times difference fall in smaller instances fall to a 10 times difference on bigger ones, what indicate the existence of a performance degeneration in this algorithm to large instances.
-
-Coincidentally is also in the bigger instances that the \emph{Bh2c} showed its bests  results when compared with the other heuristics. But it happened just when the maintenance times were in the interval between 1 and 3. Probably it is due a lack of ability of the ILS algorithm in deal with instances where the ratio delay by maintenance  is time is greater and manteinances are more useful to reduce the makespan.  
-
-\begin{table}[!ht]
-\caption{Heuristic results comparison}
+\begin{table}[ht]
+\caption{Heuristic results comparison (10 instances per line)}\label{tab:heuristics}
 \tiny
 \centering
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-\hline
-
-\multicolumn{4}{|c|}{Instance parameters} & \multicolumn{3}{|c|}{LPTF-ILS}  & \multicolumn{3}{|c|}{LDF-ILS} &\multicolumn{3}{|c|}{Bh2C} & \multirow{2}{*}{ \makecell{Best\\ solution}}  \\
-\cline{1-13}
-$|M|$ & $\frac{|J|}{|M|}$ & d & mt & \% gap & \makecell{Best \\ solutions \\ count} & \makecell{Avg. \\ time \\(s)} & \%gap & \makecell{Best \\ solutions \\ count} & \makecell{Avg. \\ time \\(s)} & \% gap & \makecell{Best \\ solutions \\ count} & \makecell{Avg. \\ time \\(s)} & \\
-\hline
-
-2& 	10 & (1.01 - 1.05) & (1 - 3)   &  0.38  		& 2 & 		3.06      & \textbf{0.00} 	&  7    &  2.70      &  1.69  &		1 &  0.00      &  5146.14 \\
- &  &  & 				 (1 - 9)  &   1.39  		& 3 &		2.91      &  \textbf{0.00}  &  7	&  3.30      &  5.50  &	0	&  0.00      &  5021.02  \\
- &  & 	 (1.05 - 1.10) & (1 - 3)  &   0.36  		& 2 &		2.80      &  \textbf{0.00}  &  8	&  3.26      &  2.25  &	0	&  0.00      &  5351.74  \\
- &  &  & 				 (1 - 9)  &   \textbf{0.00} & 5 &		3.48      &  2.06  		    &  4	&  2.69  	 &  9.68  &	1	&  0.00      &  5673.94  \\
- & 	15 & (1.01 - 1.05) & (1 - 3)  &   \textbf{0.00} & 6 &		3.68      &  1.82  		    &  4	&  3.85  	 &  3.04  &	0	&  0.01      &  8037.09  \\
- &  &  & 				 (1 - 9)  &   \textbf{0.00} & 6 &		3.09      &  0.94  		    &  4	&  3.84  	 &  5.77  &	0	&  0.01      &  8641.63  \\
- &  & 	 (1.05 - 1.10) & (1 - 3)  &   0.12  		& 3 &		3.85      &  \textbf{0.00}  &  7	&  3.96      &  1.81  &	0	&  0.01      &  8481.73  \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 4 &		3.69      &  1.00  		    &  6	&  3.30  	 &  8.31  &		0    &  0.01      &  8317.41  \\
- & 	20 & (1.01 - 1.05) & (1 - 3)  &  0.94	        & 2 &		4.06      &  \textbf{0.00}  &  8	&  4.83      &  3.72 &		0     &  0.02      &  10261.50 \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00} & 6 &		4.27      &  0.34  		    &  4	&  5.21      &  7.19 &		0     &  0.02      &  10925.55 \\
- &  &    (1.05 - 1.10) & (1 - 3)  &  \textbf{0.00} & 5 &		4.22      &  1.34  		    &  5	&  4.85      &  2.58 &		0     &  0.02      &  10727.32 \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00} & 4 &		5.03      &  0.75  		    &  6	&  5.07      &  9.72 &		0     &  0.02      &  10657.14 \\
-5& 	10 & (1.01 - 1.05) & (1 - 3)  &  \textbf{0.00}  & 10 &		14.02      &  6.09  	    &  0	&  14.78      &  2.63 &		0     &  0.05      &  5345.53  \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10 &		13.28      &  8.82  	    &  0	&  14.67      &  5.80 &		0     &  0.05      &  5162.58  \\
- &  & 	 (1.05 - 1.10) & (1 - 3)  &  \textbf{0.00}  & 9 &		15.61      &  7.64  	    &  1	&  13.40      &  2.04 &		0     &  0.06      &  5358.78  \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10 &		14.82      &  8.49  	    &  0	&  17.13      &  7.91 &		0     &  0.05      &  5523.56  \\
- & 	15 & (1.01 - 1.05) & (1 - 3)  &  \textbf{0.00}  & 10 &		20.14      &  6.50  	    &  0	&  22.20      &  2.99 &		0     &  0.17      &  7862.03  \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10 &		19.76      &  4.63 		    &  0	&  20.23      &  7.55 &		0     &  0.16      &  8015.33  \\
- &  & 	 (1.05 - 1.10) & (1 - 3)  &  \textbf{0.00}  & 9 &		18.47      &  5.83  	    &  1    &  17.21      &  2.60 &		0     &  0.18      &  8183.43  \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 9 &		22.30      &  7.49  	    &  1	&  16.22      &  8.58 &		0     &  0.17      &  8117.55  \\
- & 	20 & (1.01 - 1.05) & (1 - 3)  &  \textbf{0.00} & 10 &		30.08      &  8.63  	    &  0	&  29.10      &  3.33 &		0     &  0.39      &  10115.80 \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00} & 9 &		25.51      &  7.40  	    &  1	&  21.09      &  7.39 &		0     &  0.38      &  11068.47 \\
- &  & 	 (1.05 - 1.10) & (1 - 3)  &  \textbf{0.00} & 10 &		26.21      &  4.70  	    &  0	&  32.40      &  2.94 &		0     &  0.40      &  10750.06 \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00} & 10 &		26.78      &  6.12  	    &  0	&  27.93      &  10.70 &		0  	 &  0.38      &  10858.24 \\
-10& 10 & (1.01 - 1.05) & (1 - 3)  &  0.39  		   &  2&		24.54      &  15.83  	    &  0	&  30.33      &  \textbf{0.00} &	8 &  0.57      &  5324.08 \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10&		23.22      &  14.69  	    &  0	&  26.58      &  2.50  &	0	  &     0.55      &  5545.84 \\
- &  & 	 (1.05 - 1.10) & (1 - 3)  &  0.53  		   &  3&		24.02      &  18.37  	    &  0	&  26.34      &  \textbf{0.00} & 7 &   0.58      &  5519.30 \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10 &		24.30      &  13.53  	    &  0	&  29.57      &  5.22  & 0 	&  0.56      &  5735.63 \\
- & 15 &  (1.01 - 1.05) & (1 - 3)  &  \textbf{0.00}  & 9 &		40.31      &  10.75  	    &  0	&  32.87      &  0.94  & 1 	&  1.87      &  8085.82 \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10 &		40.99      &  10.70  	    &  0	&  47.02      &  5.03  & 0 	&  1.86      &  8000.85 \\
- &  & 	 (1.05 - 1.10) & (1 - 3)  &  \textbf{0.00}  & 7 &		41.72      &  12.86  	    &  0	&  41.11      &  0.64  & 3 	&  1.94      &  8059.88 \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10 &		38.70      &  10.74  	    &  0	&  39.50      &  7.61  & 0	&  1.90      &  8321.30 \\
- & 20 &  (1.01 - 1.05) & (1 - 3)  &  \textbf{0.00} & 10 &		67.19      &  12.44  	    &  0	&  68.93      &  2.46 & 0 	&  4.54      &  10823.95 \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00} & 10 &		65.02      &  9.28  	    &  0	&  97.55      &  5.89 & 0  	&  4.58      &  10838.02 \\
- &  &    (1.05 - 1.10) & (1 - 3)  &  \textbf{0.00} & 10 &		65.78      &  11.67  	    &  0	&  92.79      &  1.67 & 0 	&  4.71      &  10572.30 \\
- &  & &  				 (1 - 9)  &  \textbf{0.00} & 10 &		81.99      &  11.41  	    &  0	&  60.17      &  9.39 & 0 	&  4.51      &  11234.70 \\
-20 & 10 &(1.01 - 1.05) & (1 - 3)  &  2.00 		   &  0 &		68.82      &  20.52  	    &  0	&  104.21     &  \textbf{0.00} & 10 &  7.00      &  5496.81 \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00}  &  9 &		70.04      &  14.89  	    &  0	&  70.99      &  0.89  & 1 	  &  7.00      &  5808.86  \\
- &  &    (1.05 - 1.10) & (1 - 3)  &  3.37  			&  0 &      76.43 	   &  24.89         &  0	&  69.75      &  \textbf{0.00}   & 10 &  7.23      &  5427.72  \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10 &		75.23      &  19.64  	    &  0	&  76.32       &  4.27         & 0 &  7.10      &  5672.84  \\
- & 15 &  (1.01 - 1.05) & (1 - 3)  &  \textbf{0.00}  &  7 &		188.08     &  15.82 	    &  0	&  199.17      &  0.14         & 3  &  24.43      &  8266.51 \\ 
- &  &  & 				 (1 - 9)  &  \textbf{0.00}  &  10 &		193.38     &  14.58  	    &  0	&  165.24      &  3.12         & 0 &  24.56      &  8315.54 \\
- &  &    (1.05 - 1.10) & (1 - 3)  &  0.68  		   &  2  &		156.26     &  18.13 	    &  0	&  172.81      &  \textbf{0.00} & 8 &  24.94      &  8280.65 \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00}  &  10 &		168.96     &  15.19  	    &  0	&  139.54      &  6.05 & 0 &  24.37      &  8435.96 \\
- & 20 &  (1.01 - 1.05) & (1 - 3)  &  \textbf{0.00} &  10 &		414.02     &  15.75  	    &  0	&  286.62      &  1.28 & 0 &  59.29      &  10684.36 \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00} &  10 &		391.27     &  13.06  	    &  0	&  449.63      &  4.78 & 0 &  58.49      &  11138.94 \\
- &  &    (1.05 - 1.10) & (1 - 3)  &  \textbf{0.00} &  8 &		468.26     &  14.42  	    &  0	&  455.65      &  0.42 & 2 &  60.56      &  11104.89 \\
- &  &  & 				 (1 - 9)  &  \textbf{0.00} &  10 &		428.91     &  15.99  	    &  0	&  317.59      &  7.34 & 0 &  60.24      &  11230.21 \\
+\begin{tabular}{cccccccccccccccc}
+\toprule
+\multicolumn{4}{c}{Instance parameters} & \multicolumn{3}{c}{LPTF-ILS}  & \multicolumn{3}{c}{LDF-ILS} &\multicolumn{3}{c}{Bh2C-R} & \multirow{2}{*}{ \makecell{Average best\\known \\ solution\\ value}}  \\
+\cmidrule(lr){1-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13} %\cmidrule(lr){14-14}
+$m$ & $n/m$ & $d$ & $mt$ & \%gap & \makecell{Best \\ solutions \\ count} & \makecell{Avg. \\ time \\(sec)} & \%gap & \makecell{Best \\ solutions \\ count} & \makecell{Avg. \\ time \\(sec)} & \%gap & \makecell{Best \\ solutions \\ count} & \makecell{Avg. \\ time \\(sec)} & \\
+\cmidrule(lr){1-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13} \cmidrule(lr){14-14}
 
 
-\hline
+2& 	10 & (1.01 - 1.05) & (1 - 3)   &  0.38  		& 2 & 		3.05      & \textbf{0.00} 	&  7    &  3.07      &  1.69  &		1 &  0.07      &  514.61 \\
+ &  &  & 				 (1 - 9)  &   1.39  		& 3 &		2.86      &  \textbf{0.00}  &  7	&  3.30      &  5.50  &	0	&  0.00      &  502.10  \\
+ &  & 	 (1.05 - 1.10) & (1 - 3)  &   0.36  		& 2 &		2.87      &  \textbf{0.00}  &  8	&  3.50      &  2.25  &	0	&  0.00      &  535.17  \\
+ &  &  & 				 (1 - 9)  &   \textbf{0.00} & 5 &		3.20      &  2.06  		    &  4	&  2.83  	 &  9.68  &	1	&  0.00      &  567.39  \\
+ & 	15 & (1.01 - 1.05) & (1 - 3)  &   \textbf{0.00} & 6 &		3.42      &  1.82  		    &  4	&  3.78  	 &  3.04  &	0	&  0.01      &  803.71  \\
+ &  &  & 				 (1 - 9)  &   \textbf{0.00} & 6 &		3.47      &  0.94  		    &  4	&  3.93  	 &  5.77  &	0	&  0.01      &  864.16  \\
+ &  & 	 (1.05 - 1.10) & (1 - 3)  &   0.12  		& 3 &		3.84      &  \textbf{0.00}  &  7	&  3.92      &  1.81  &	0	&  0.11      &  848.17  \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 4 &		3.80      &  1.00  		    &  6	&  3.57  	 &  8.31  &		0    &  0.01      &  831.74  \\
+ & 	20 & (1.01 - 1.05) & (1 - 3)  &  0.94	        & 2 &		9.22      &  \textbf{0.00}  &  8	&  4.84      &  3.72 &		0     &  0.02      &  1026.15 \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00} & 6 &		4.86      &  0.34  		    &  4	&  5.26      &  7.19 &		0     &  0.02      &  1092.55 \\
+ &  &    (1.05 - 1.10) & (1 - 3)  &  \textbf{0.00} & 5 &		4.52      &  1.34  		    &  5	&  4.13      &  2.58 &		0     &  0.02      &  1072.73 \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00} & 4 &		5.25      &  0.75  		    &  6	&  5.03      &  9.72 &		0     &  0.02      &  1065.71 \\
+5& 	10 & (1.01 - 1.05) & (1 - 3)  &  \textbf{0.00}  & 10 &		14.63      &  6.09  	    &  0	&  15.79      &  2.63 &		0     &  0.05      &  534.55  \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10 &		14.44      &  8.82  	    &  0	&  17.08      &  5.80 &		0     &  0.10      &  516.26  \\
+ &  & 	 (1.05 - 1.10) & (1 - 3)  &  \textbf{0.00}  & 9 &		16.60      &  7.64  	    &  1	&  16.64      &  2.04 &		0     &  0.11      &  535.88  \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10 &		17.78      &  8.49  	    &  0	&  18.08      &  7.91 &		0     &  0.05      &  552.36  \\
+ & 	15 & (1.01 - 1.05) & (1 - 3)  &  \textbf{0.00}  & 10 &		20.90      &  6.50  	    &  0	&  21.30      &  2.99 &		0     &  0.17      &  786.20  \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10 &		21.39      &  4.63 		    &  0	&  21.72      &  7.55 &		0     &  0.16      &  801.53  \\
+ &  & 	 (1.05 - 1.10) & (1 - 3)  &  \textbf{0.00}  & 9 &		20.07      &  5.83  	    &  1    &  21.63      &  2.60 &		0     &  0.18      &  818.34  \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 9 &		24.04      &  7.49  	    &  1	&  19.68      &  8.58 &		0     &  0.17      &  811.75  \\
+ & 	20 & (1.01 - 1.05) & (1 - 3)  &  \textbf{0.00} & 10 &		32.55      &  8.63  	    &  0	&  30.83      &  3.33 &		0     &  0.39      &  1011.58 \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00} & 9 &		27.64      &  7.40  	    &  1	&  25.85      &  7.39 &		0     &  0.38      &  1106.85 \\
+ &  & 	 (1.05 - 1.10) & (1 - 3)  &  \textbf{0.00} & 10 &		27.68      &  4.70  	    &  0	&  32.07      &  2.94 &		0     &  0.40      &  1075.01 \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00} & 10 &		27.54      &  6.12  	    &  0	&  30.65      &  10.70 &		0  	 &  0.39      &  1085.82 \\
+10& 10 & (1.01 - 1.05) & (1 - 3)  &  0.39  		   &  2&		25.13      &  15.83  	    &  0	&  34.20      &  \textbf{0.00} &	8 &  0.56      &  532.41 \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10&		23.08      &  14.69  	    &  0	&  28.55      &  2.50  &	0	  &     0.56      &  554.58 \\
+ &  & 	 (1.05 - 1.10) & (1 - 3)  &  0.53  		   &  3&		24.90      &  18.37  	    &  0	&  30.40      &  \textbf{0.00} & 7 &   0.58      &  551.93 \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10 &		24.49      &  13.53  	    &  0	&  29.11      &  5.22  & 0 	&  0.56      &  573.56 \\
+ & 15 &  (1.01 - 1.05) & (1 - 3)  &  \textbf{0.00}  & 9 &		44.60      &  10.75  	    &  0	&  47.84      &  0.94  & 1 	&  1.87      &  808.58 \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10 &		44.12      &  10.70  	    &  0	&  59.40      &  5.03  & 0 	&  1.86      &  800.08 \\
+ &  & 	 (1.05 - 1.10) & (1 - 3)  &  \textbf{0.00}  & 7 &		43.94      &  12.86  	    &  0	&  50.77      &  0.64  & 3 	&  1.94      &  805.99 \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10 &		40.67      &  10.74  	    &  0	&  49.48      &  7.61  & 0	&  1.90      &  832.13 \\
+ & 20 &  (1.01 - 1.05) & (1 - 3)  &  \textbf{0.00} & 10 &		68.91      &  12.44  	    &  0	&  72.74      &  2.46 & 0 	&  4.56      &  1082.39 \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00} & 10 &		65.95      &  9.28  	    &  0	&  93.57      &  5.89 & 0  	&  4.57      &  1083.80 \\
+ &  &    (1.05 - 1.10) & (1 - 3)  &  \textbf{0.00} & 10 &		72.20      &  11.67  	    &  0	&  88.23      &  1.67 & 0 	&  4.72      &  1057.23 \\
+ &  & &  				 (1 - 9)  &  \textbf{0.00} & 10 &		84.89      &  11.41  	    &  0	&  67.28      &  9.39 & 0 	&  4.53      &  1123.47 \\
+20 & 10 &(1.01 - 1.05) & (1 - 3)  &  2.00 		   &  0 &		68.75      &  20.52  	    &  0	&  103.05     &  \textbf{0.00} & 10 &  7.03      &  549.68 \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00}  &  9 &		75.35      &  14.89  	    &  0	&  81.42     &  0.89  & 1 	  &  7.00      &  580.88  \\
+ &  &    (1.05 - 1.10) & (1 - 3)  &  3.37  			&  0 &      78.88 	   &  24.89         &  0	&  81.06      &  \textbf{0.00}   & 10 &  7.23      &  542.77  \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00}  & 10 &		78.74      &  19.64  	    &  0	&  89.50       &  4.27         & 0 &  7.11      &  567.28  \\
+ & 15 &  (1.01 - 1.05) & (1 - 3)  &  \textbf{0.00}  &  7 &		193.55     &  15.82 	    &  0	&  206.72      &  0.14         & 3  &  24.43      &  826.65 \\ 
+ &  &  & 				 (1 - 9)  &  \textbf{0.00}  &  10 &		227.27     &  14.58  	    &  0	&  190.75      &  3.12         & 0 &  24.60      &  831.55 \\
+ &  &    (1.05 - 1.10) & (1 - 3)  &  0.68  		   &  2  &		182.42     &  18.13 	    &  0	&  207.64      &  \textbf{0.00} & 8 &  24.96      &  828.06 \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00}  &  10 &		192.62     &  15.19  	    &  0	&  173.17      &  6.05 & 0 &  24.47      &  843.60 \\
+ & 20 &  (1.01 - 1.05) & (1 - 3)  &  \textbf{0.00} &  10 &		394.63     &  15.75  	    &  0	&  356.60      &  1.28 & 0 &  59.33      &  1068.44 \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00} &  10 &		406.43     &  13.06  	    &  0	&  489.29      &  4.78 & 0 &  58.96      &  1113.89 \\
+ &  &    (1.05 - 1.10) & (1 - 3)  &  \textbf{0.00} &  8 &		463.36     &  14.42  	    &  0	&  456.11      &  0.42 & 2 &  60.53      &  1110.49 \\
+ &  &  & 				 (1 - 9)  &  \textbf{0.00} &  10 &		488.31     &  15.99  	    &  0	&  346.62      &  7.34 & 0 &  60.38      &  1123.02 \\
+ \cmidrule(lr){1-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13} \cmidrule(lr){14-14}
+\multicolumn{4}{l}{Average values} & 0.21 & 7.31 & 77.69 & 1.54 & 9.28 & 78.19 & 8.27 & 1.15 & 4.01 &815.68\\
 
+
+
+
+\bottomrule
 \end{tabular}
 \end{table}
 
+We start our computational analysis in Table \ref{tab:heuristics} with the description of the results that have been obtained by the heuristic procedures. The table reports the 
+number $m$ of machines, the ratio of jobs per machine $n/m$, the deterioration range $d$ and the maintenance times range $mtr$. The table also reports, for each method, the percentage gap from the bext know solution value, the number of times the algorithm reached the best solution value, and the computing time in seconds. The right-most column reports the best known solution value. Due to space limitations, each line reports average values on 10 instances. The last line reports overall average values. 
 
-A most "hidden" result found is the advantage in ordering the jobs by non-increasing processing time (longest processing times first). This result, already mentioned on literature to one machine or multi-parallel identical machines problems can be explained intuitively by a simple rule: once if the shorter jobs are done after the potential delays are also lower.  Even if this strategy does not bring a optimal solution as in other scheduling with deterioration problems it could provide a good initial and final solution. Its use also appears have no direct impact on convergence speed of the algorithm, as we can see comparing the runtimes of the two versions of the ILS. 
+The {LPTF-ILS} heuristic, that is the {ILS} based heuristic using the {LPT} constructive algorithm, obtained the best solution for 351 instances out of 480. The {LDF-ILS} heuristic obtained 74 best solutions, the heuristic adapted from the literature (Bh2c-R) 55. As stated before, {Bh2c-R} is a simple iterative-constructive procedure, so as expected it is very fast. It has an average processing time of only $4.01$ seconds. The two ILS algorithms are not too time consuming anyway, with LPT-ILS requiring $26.11$ seconds on average, and LDF-ILS $77.69$. Overall, the {LPTF-ILS} heuristic is the most performing algorithm, achieving the best solution on almost $80\%$ of the cases.
 
-In Table 2 we can see the results obtained by the model compared with those obtained by the best heuristic in the instance subset. None of the model solutions is optimal, but the best found after one hour runtime. 
+Another interesting aspect is the fast increase of {Bh2c-R} heuristic runtime when the number of machines is not above $10$. When compared with the ILS heuristic runtimes, we can notice a 300 times difference on small instances but just a 10 times difference on larger ones, indicating that the ILS heuristics scale better when $m$ increases. Algorithm {Bh2c-R} has its bests results, in comparison with the other methods,  for the large instances for which the maintenance times are in the interval between 1 and 3. Probably, this can be imputed to a lack of ability of the ILS algorithm in dealing with instances where maintenances are very useful to reduce the makespan.  
 
-We can observe from the Table 2 a prevalence of model best values in small instances, specially with only two machines. As the number of machines increases, the heuristic solutions become better and finally when the number of jobs is greater than 150 (and so the number of slots is greater than 350) the model is not able to find solutions anymore. In most of cases where a solution is not found, the process is aborted on Linux for exceeding the machine memory capacity. 
-
-Indeed, strange model objective function values are noted already in instances with 100 jobs and 5 machines, what may indicate the difficulty of Cplex in create branches to explore more the feasible space. In these solutions what commonly happen is a scheduling of several jobs in few machines without any maintenance, making the deterioration grows exponentially and so the makespan. 
-
-
-\begin{table}[!ht]
-\caption{Model and best heuristic results comparison}
+\begin{table}[h!]
+\caption{Model and best heuristic results comparison (3 instances per line)}\label{tab:model}
 \tiny
 \centering
-\begin{tabular}{|c|c|c|c|c|c|c |c|c|}
-\hline
-
-\multicolumn{4}{|c|}{Instance} & \multicolumn{4}{|c|}{Model}  & \makecell{Avg. best heuristic \\ average value}  \\
-\cline{1-8}
-$|M|$ & $|J|/|M|$ & det. range & maintenance time & Avg. value& \makecell{Avg.\\ Best bound} & \makecell{Avg. \\gap (\%)} & \makecell {Avg. \\ created nodes} &  \\
-\hline
-
-2 & 10 & (1.00 - 1.05) & (1 - 3) & 			  \textbf{502.98}  & 499.06 & 0,78 & 51859 &  514.66 \\
+\begin{tabular}{ccccccccc}
+\toprule
+\multicolumn{4}{c}{Instance} & \multicolumn{4}{c}{Model}  &  \multirow{2}{*}{\makecell{Best\\known \\ solution\\ value}}  \\
+ \cmidrule(lr){1-4} \cmidrule(lr){5-8} %\cmidrule(lr){9-9} 
+$m$ & $n/m$ & $d$ & $mt$ & \makecell{Avg. \\ sol. value}& \makecell{Avg.\\ best bound} & \makecell{Avg. \\ \%gap} & \makecell {Avg. \\ nodes} &  \\
+ \cmidrule(lr){1-4} \cmidrule(lr){5-8} \cmidrule(lr){9-9} 
+2 & 10 & (1.00 - 1.05) & (1 - 3) & 			  \textbf{502.98}  & 499.06 & 0.78 & 51859 &  514.66 \\
   &    &  & (1 - 9) & 						  \textbf{496.22} & 491.04 & 1.05  & 44012&  509.67 \\
   &    & (1.05 - 1.10) & (1 - 3) & 			  \textbf{427.46} & 421.58 & 3.53 & 49022 &  441.89 \\
   &    &  & (1 - 9) & 						  \textbf{514.84} & 502.62 & 2.43 & 56723 &  542.7 \\
   & 15 & (1.00 - 1.05) & (1 - 3) & 			  \textbf{847.00} & 836.12 & 1.30 & 45716 &  870.18 \\
   &    &               & (1 - 9) & 			  \textbf{815.21} & 804.93 & 1.27 & 216.13 & 852.46 \\
-  &    & (1.05 - 1.10) & (1 - 3) &  		  \textbf{873.57} & 837,55 & 4.30 & 46216& 896.11 \\ 
+  &    & (1.05 - 1.10) & (1 - 3) &  		  \textbf{873.57} & 837.55 & 4.30 & 46216& 896.11 \\ 
   &    &  & (1 - 9) & 						  \textbf{774.91} & 700.39 & 10.64 & 64965 & 805.64 \\ 
-  & 20 & (1.00 - 1.05) & (1 - 3) & 			  \textbf{1021.08} & 687.24 & 48,57 & 13248& 1041.18 \\
+  & 20 & (1.00 - 1.05) & (1 - 3) & 			  \textbf{1021.08} & 687.24 & 48.57 & 13248& 1041.18 \\
   &    &  & (1 - 9) & 						  \textbf{723.35} & 470.23 & 53.82 & 47919& 760.27 \\
   &    & (1.05 - 1.10) & (1 - 3) &  		  \textbf{680.42} & 170.05 & 300.12 & 66931 &  707.68 \\
   &    &  & (1 - 9) & 						  \textbf{592.05} & 243.35 & 143.29 & 140114 &  613.83 \\
@@ -495,10 +465,10 @@ $|M|$ & $|J|/|M|$ & det. range & maintenance time & Avg. value& \makecell{Avg.\\
    &    & (1.05 - 1.10) & (1 - 3) & 		   7549.66 & *** & *** & 3 & \textbf{353.01} \\
    &    &  & (1 - 9) & 						   273212.22 & ***  & *** & 0 & \textbf{372.06} \\
    & 15 & (1.00 - 1.05) & (1 - 3) & 		   166787.6 & *** & *** & 0 & \textbf{536.14} \\
-   &    &  & (1 - 9) & 						   176257,33 & ***  & *** & 0 & \textbf{540.64} \\
+   &    &  & (1 - 9) & 						   176257.33 & ***  & *** & 0 & \textbf{540.64} \\
    &    & (1.05 - 1.10) & (1 - 3) & 			*** &*** &*** &*** &  541.17   \\
    &    &  & (1 - 9) & 							*** &*** &*** &*** &  559.34 \\
-   & 20 & (1.00 - 1.05) & (1 - 3) & 			*** &*** &*** &*** &  769,93 \\
+   & 20 & (1.00 - 1.05) & (1 - 3) & 			*** &*** &*** &*** &  769.93 \\
    &    &  & (1 - 9) & 							*** &*** &*** &*** &  694.61 \\
    &    & (1.05 - 1.10) & (1 - 3) & 			*** &*** &*** &*** &  684.96 \\
    &    &  & (1 - 9) & 							*** &*** &*** &*** &  779.14 \\
@@ -513,16 +483,19 @@ $|M|$ & $|J|/|M|$ & det. range & maintenance time & Avg. value& \makecell{Avg.\\
    & 20 & (1.00 - 1.05) & (1 - 3) & 			*** &*** &*** &*** &  703.07 \\
    &    &  & (1 - 9) & 							*** &*** &*** &*** & 752.58 \\
    &    & (1.05 - 1.10) & (1 - 3) & 			*** &*** &*** &*** & 762.87 \\
- .  &    &  & (1 - 9) & 			***			 & *** &*** & *** & 744.11 \\
-
-
-\hline
-
+   &    &  & (1 - 9) & 			***			 & *** &*** & *** & 744.11 \\
+\bottomrule
 \end{tabular}
-\end{table}
+\end{table} 
 
-In any case, by providing feasible solutions in more than $60\%$ of instances tested the model proved to be satisfactory in providing good solutions and a hope of future improvements instead of only a formal description of the problem. Even if optimal solutions were not found we could solve hard scenarios with two machines better than with the heuristic and close to it in other situations. In our next investigations, we will try to explore theoretical results already know to create a better model and try to get the first optimal solutions. 
- 
+In Table \ref{tab:model} we report the results obtained by the MILP model and compare them with the best known solution values obtained by the heuristics we implemented. 
+Each line presents average values on three instances. For the model, we report the average solution value, the average best (lower) bound, the average gap between bound and solution value, and the number of nodes explored. None of the model solutions is proven optimal. The symbol ``***'', reported in the columns for many instances, means that the model execution was interrupted without providing the value in the column. 
+
+We can observe from the table that the model is effective in finding good-quality solutions on the small instances, especially for those involving only two machines. This shows that there is still room for improvement for our metaheuristic methods.  As the number of machines increases, the heuristic solutions become better and then, when the number of jobs is greater than 150 (and so the number of slots is greater than 350), the model is not able to find solutions anymore and the heuristic remain the only possible solution method. In most of cases where a solution is not found, the process has been aborted for exceeding the machine memory capacity. 
+
+We also notice that very large objective function values have been found by the model on instances with 100 jobs and 5 machines, 100 jobs and 10 machines, and 150 jobs and 10 machines. These have been found at the root node, on in very early nodes of the enumeration tree, by the heuristics in Cplex. The difficulty in creating new branches, because of the large size of the model, forbid the solver in exploring more in depth the space of feasible solutions. In these solutions, what commonly happen is a scheduling of several jobs in a few machines without any maintenance, making the deterioration consistently grow consistently, and so the makespan.
+
+Overall, the model provided feasible solutions for more than $60\%$ of the tested instances. Even if no proven optimal solution was found, the model could solve some hard cases with just two machines in a better better way than the heuristic. In our next investigations, we will try to create better models and prove optimality for some instances of small or moderate size.
 
 \section{Conclusions and future research directions}\label{sec:conclusions}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %

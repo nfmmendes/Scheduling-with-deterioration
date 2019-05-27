@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.6)  29 APR 2019 08:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.6)  29 APR 2019 22:09
 entering extended mode
 **./Scheduling-Deterioration-SBPO.tex
 (Scheduling-Deterioration-SBPO.tex
@@ -258,6 +258,27 @@ Package: multirow 2019/01/01 v2.4 Span multiple rows of a table
 \multirow@dima=\skip62
 \bigstrutjot=\dimen133
 )
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/booktabs\b
+ooktabs.sty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen134
+\lightrulewidth=\dimen135
+\cmidrulewidth=\dimen136
+\belowrulesep=\dimen137
+\belowbottomsep=\dimen138
+\aboverulesep=\dimen139
+\abovetopsep=\dimen140
+\cmidrulesep=\dimen141
+\cmidrulekern=\dimen142
+\defaultaddspace=\dimen143
+\@cmidla=\count103
+\@cmidlb=\count104
+\@aboverulesep=\dimen144
+\@belowrulesep=\dimen145
+\@thisruleclass=\count105
+\@lastruleclass=\count106
+\@thisrulewidth=\dimen146
+)
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/xcolor\xco
 lor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -285,7 +306,7 @@ File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/algorithm2
 e\algorithm2e.sty"
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count103
+\c@AlgoLine=\count107
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ifthe
 n.sty"
@@ -296,7 +317,7 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ifoddpage\
 ifoddpage.sty"
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count104
+\c@checkoddpage=\count108
 )
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\xspa
 ce.sty"
@@ -314,12 +335,12 @@ Package: relsize 2013/03/29 ver 4.1
 \skiplength=\skip69
 \algomargin=\skip70
 \skipalgocfslide=\skip71
-\algowidth=\dimen134
-\inoutsize=\dimen135
-\inoutindent=\dimen136
-\interspacetitleruled=\dimen137
-\interspacealgoruled=\dimen138
-\interspacetitleboxruled=\dimen139
+\algowidth=\dimen147
+\inoutsize=\dimen148
+\inoutindent=\dimen149
+\interspacetitleruled=\dimen150
+\interspacealgoruled=\dimen151
+\interspacetitleboxruled=\dimen152
 \algocf@ruledwidth=\skip72
 \algocf@inoutbox=\box32
 \algocf@inputbox=\box33
@@ -336,27 +357,27 @@ Package: relsize 2013/03/29 ver 4.1
 \algoheightrule=\skip79
 \algotitleheightruledefault=\skip80
 \algotitleheightrule=\skip81
-\c@algocfline=\count105
-\c@algocfproc=\count106
-\c@algocf=\count107
+\c@algocfline=\count109
+\c@algocfproc=\count110
+\c@algocf=\count111
 \algocf@algoframe=\box38
 \algocf@algobox=\box39
 ) (Scheduling-Deterioration-SBPO.aux)
 \openout1 = `Scheduling-Deterioration-SBPO.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 25.
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1
 ptm.fd"
@@ -368,16 +389,16 @@ Package caption Info: End \AtBeginDocument code.
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mki
 i\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count108
-\scratchdimen=\dimen140
+\scratchcounter=\count112
+\scratchdimen=\dimen153
 \scratchbox=\box40
-\nofMPsegments=\count109
-\nofMParguments=\count110
+\nofMPsegments=\count113
+\nofMParguments=\count114
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count111
-\MPscratchDim=\dimen141
-\MPnumerator=\count112
-\makeMPintoPDFobject=\count113
+\MPscratchCnt=\count115
+\MPscratchDim=\dimen154
+\MPnumerator=\count116
+\makeMPintoPDFobject=\count117
 \everyMPtoPDFconversion=\toks26
 )
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\e
@@ -439,33 +460,15 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 28.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 35.
-
-("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1
-pcr.fd"
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
-LaTeX Font Info:    Try loading font information for U+msa on input line 47.
-
-("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\u
-msa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 47.
-
-("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\u
-msb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 47.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
 <cabecalho_sbpo.png, id=1, 462.528pt x 92.345pt>
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 73.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 74.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
 
 
@@ -478,12 +481,24 @@ This may cause the page layout to be inconsistent, however.
 
 {C:/Users/Nilson Felipe/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./c
 abecalho_sbpo.png>]
+LaTeX Font Info:    Try loading font information for U+msa on input line 75.
+
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\u
+msa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 75.
+
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\u
+msb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 92.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 93.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
  [2]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 106.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 107.
 
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\oms
@@ -491,31 +506,31 @@ ptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 106.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 107.
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 112.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 113.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
  [3]
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 181.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 182.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
  [4]
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 243.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 244.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
  [5]
-Overfull \hbox (2.46297pt too wide) in paragraph at lines 273--274
+Overfull \hbox (2.46297pt too wide) in paragraph at lines 265--266
 \OT1/ptm/m/n/10.95 quality so-lu-tions for R$\OMS/cmsy/m/n/10.95 j$\OT1/ptm/m/n
 /10.95 Sdd,mnt$\OMS/cmsy/m/n/10.95 j$\OT1/ptm/m/n/10.95 C$[]$. in-stances It is
  an ILS-based al-go-rithm with four lo-cal searches
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 301.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 303.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 293.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 295.
 
 
 ("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1
@@ -524,130 +539,145 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 306.
+(relsize)                Using 6.0pt instead on input line 298.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 307.
+(relsize)                Using 6.0pt instead on input line 299.
+
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 299.
+
+
+("C:\Users\Nilson Felipe\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1
+pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+
+Package relsize Warning: Font size 4.16667pt is too small.
+(relsize)                Using 6.0pt instead on input line 301.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 309.
+(relsize)                Using 6.0pt instead on input line 302.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 310.
+(relsize)                Using 6.0pt instead on input line 318.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 326.
+(relsize)                Using 6.0pt instead on input line 318.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 326.
+(relsize)                Using 6.0pt instead on input line 318.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 326.
+(relsize)                Using 6.0pt instead on input line 318.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 326.
+(relsize)                Using 6.0pt instead on input line 318.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 326.
+(relsize)                Using 6.0pt instead on input line 318.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 326.
+(relsize)                Using 6.0pt instead on input line 318.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 326.
+(relsize)                Using 6.0pt instead on input line 318.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 326.
+(relsize)                Using 6.0pt instead on input line 318.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 326.
+(relsize)                Using 6.0pt instead on input line 318.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 326.
+(relsize)                Using 6.0pt instead on input line 318.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 326.
+(relsize)                Using 6.0pt instead on input line 318.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 326.
+(relsize)                Using 6.0pt instead on input line 318.
 
 
 Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 326.
-
-
-Package relsize Warning: Font size 4.16667pt is too small.
-(relsize)                Using 6.0pt instead on input line 326.
+(relsize)                Using 6.0pt instead on input line 318.
 
 
 Underfull \vbox (badness 2547) has occurred while \output is active []
 
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 329.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 321.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
  [6]
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 348.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 339.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
 
 [7]
+Overfull \vbox (14.0pt too high) detected at line 358
+ []
+
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 369.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 426.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
- [8]
+[8]
+Overfull \vbox (14.0pt too high) detected at line 435
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 3547) has occurred while \output is active []
+
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 522.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 493.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
  [9]
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 534.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 497.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
- [10] (Scheduling-Deterioration-SBPO.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 535--1
+
+[10] (Scheduling-Deterioration-SBPO.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 508--1
 
  []
 
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 22.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 49.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
-[11]
+[11])
 File: cabecalho_sbpo.png Graphic file (type png)
 <use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 123.
+Package pdftex.def Info: cabecalho_sbpo.png  used on input line 513.
 (pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
- [12])
-File: cabecalho_sbpo.png Graphic file (type png)
-<use cabecalho_sbpo.png>
-Package pdftex.def Info: cabecalho_sbpo.png  used on input line 540.
-(pdftex.def)             Requested size: 433.12209pt x 86.47879pt.
- [13] (Scheduling-Deterioration-SBPO.aux) ) 
+ [12] (Scheduling-Deterioration-SBPO.aux) ) 
 Here is how much of TeX's memory you used:
- 6114 strings out of 492945
- 90378 string characters out of 3122699
- 234264 words of memory out of 3000000
- 9880 multiletter control sequences out of 15000+200000
- 29532 words of font info for 65 fonts, out of 3000000 for 9000
+ 6167 strings out of 492945
+ 91192 string characters out of 3122699
+ 229033 words of memory out of 3000000
+ 9930 multiletter control sequences out of 15000+200000
+ 29017 words of font info for 63 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,17n,43p,1229b,536s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Nilson Felipe/AppData/Loca
@@ -655,27 +685,25 @@ l/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/Nilson Felipe/AppDa
 ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/User
 s/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmmi10.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Nilson Felipe/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Us
+pe1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Nilson Felipe/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Us
 ers/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmr10.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr6.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Nilson Felipe/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Us
+/cm/cmr6.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Nilson Felipe/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Us
 ers/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmsy5.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Nilson Felipe/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Nilson Felipe/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/N
-ilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.
-pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/t
-imes/utmb8a.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/urw/times/utmr8a.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Scheduling-Deterioration-SBPO.pdf (13 pages, 388408 bytes).
+/cm/cmsy8.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/urw/courier/ucrr8a.pfb><C:/Users/Nilson Felipe/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/Nilson Felipe/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Nilson Felipe/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Ni
+lson Felipe/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb
+>
+Output written on Scheduling-Deterioration-SBPO.pdf (12 pages, 361077 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
+ 105 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
