@@ -234,7 +234,7 @@ FUNCTION {format.names}
               t "others" =
                 { " et~al." * }
               %  { " and " * t * }
-                { " e " * t * }
+                { " and " * t * }
               if$
             }
           if$
@@ -321,7 +321,7 @@ FUNCTION {format.full.names}
               t "others" =
                 { " et~al." * }
                % { " and " * t * }
-                { " e " * t * }
+                { " and " * t * }
               if$
             }
           if$
@@ -1089,7 +1089,7 @@ FUNCTION {format.lab.names}
         { s #2 "{ff }{vv }{ll}{ jj}" format.name$ "others" =
             { " et~al." * }
       %      { " and " * s #2 "{vv~}{ll}" format.name$ * }
-            { " e " * s #2 "{vv~}{ll}" format.name$ * }
+            { " and " * s #2 "{vv~}{ll}" format.name$ * }
           if$
         }
       if$
