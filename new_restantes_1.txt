@@ -1,0 +1,24 @@
+Starting optimization: m20_j10_d2_mt3_r5.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 25184 rows and 12144 columns.
+MIP Presolve modified 832100 coefficients.
+Reduced MIP has 1644044 rows, 816460 columns, and 7303623 nonzeros.
+Reduced MIP has 812060 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.86 sec. (4859.03 ticks)
+Probing time = 12.26 sec. (4883.84 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 1644044 rows, 816460 columns, and 7303623 nonzeros.
+Reduced MIP has 812060 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 7.19 sec. (4210.12 ticks)
+Probing time = 5.36 sec. (2031.52 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   9.757837e+07  Node =       0  Best node =   0.000000e+00
+Heuristic still looking.
+Heuristic still looking.
