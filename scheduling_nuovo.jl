@@ -82,48 +82,52 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ##      CONSTRAINT 1: A JOB SHOULD BE DONE IN SOME MACHINE AND AFTER SOME JOB, MAINTENANCE
            ##                                    OR STARTING POINT
            ############################################################################################
-            for j = 2:(NUMBER_OF_JOBS+3)
+            for j = 2:(NUMBER_OF_JOBS+1)
                 @constraint(model, sum( x[i,j,k] for i = 1:(NUMBER_OF_JOBS+2), k = 1:NUMBER_OF_MACHINES) == 1 )
             end
 
 
 
-
-            for j = 2:(NUMBER_OF_JOBS+1)
-                @constraint(model, sum( x[i,j,k] for i = 1:(NUMBER_OF_JOBS+2), k=1:NUMBER_OF_MACHINES) == 1 )
+           ############################################################################################
+           ##      CONSTRAINT 2: FOR EACH MACHINE, JUST ONE JOB CAN BE AFTER THE STARTING POINT
+           ############################################################################################
+            for k = 1:(NUMBER_OF_MACHINES)
+                @constraint(model, sum( x[1,j,k] for j = 2:(NUMBER_OF_JOBS+2)) == 1 )
             end
 
            ############################################################################################
-           ##           CONSTRAINT 2: CONSTRAINT ANTI-CYCLE. A FLOW STARTS FROM ONE JOB AND DECREASES
+           ##           CONSTRAINT 3: CONSTRAINT ANTI-CYCLE. A FLOW STARTS FROM ONE JOB AND DECREASES
            ##               ONE UNITY IN EACH JOB. IF THE JOB CLOSES A CYCLE THIS CONSTRAINT IS NOT
            ##               RESPECTED. A CYCLE CAN START AND FINISH IN A MAINTENANCE HOWEVER
            ############################################################################################
-           for j= 1:NUMBER_OF_JOBS
+           for j= 2:NUMBER_OF_JOBS+1
                for i=1:(NUMBER_OF_JOBS+1)
-                   @constraint(model, f[j] <= f[i]-1 + 3*(NUMBER_OF_JOBS)*(1- sum(x[i,j,k] for k= 1:NUMBER_OF_MACHINES ) ) )
+					for k=1:NUMBER_OF_MACHINES
+                   		@constraint(model, f[j] <= f[i]-1 + 3*(NUMBER_OF_JOBS)*(1- sum(x[i,j,k] ) ) )
+					end
                end
            end
+
+
+		   for j= 2:NUMBER_OF_JOBS+1
+               for i=1:(NUMBER_OF_JOBS+1)
+					for k=1:NUMBER_OF_MACHINES
+	                   @constraint(model, f[j] >= f[i]-1 - 3*(NUMBER_OF_JOBS)*(1- sum(x[i,j,k] ) ) )
+					end
+               end
+           end
+
 
             @constraint(model, f[1]== 2*(NUMBER_OF_JOBS+3))
 
            ############################################################################################
-           ##           CONSTRAINT 3: THERE MUST THE SAME NUMBER OF JOBS BEFORE AND ONE AFTER THE JOB J
+           ##           CONSTRAINT 4: THERE MUST THE SAME NUMBER OF JOBS BEFORE AND ONE AFTER THE JOB J
            ##               ON A MACHINE
            ############################################################################################
            for j =2:(NUMBER_OF_JOBS+2)
-                @constraint(model, sum(x[i,j,m] for i = 1:(NUMBER_OF_JOBS+2), m=1:NUMBER_OF_MACHINES ) ==
-                               sum(x[j,i,m] for i = 2:(NUMBER_OF_JOBS+3), m=1:NUMBER_OF_MACHINES ) )
-
-           end
-
-
-           ############################################################################################
-           ##           CONSTRAINT 4: THE NUMBER OF JOBS JUST AFTER THE BEGIN ON THE MACHINE K
-           ##              MUST BE EQUALS TO THE NUMBER OF MACHINES JUST BEFORE THE JOB END
-           ############################################################################################
-           for k =1:NUMBER_OF_MACHINES
-                @constraint(model, sum(x[1,j,k] for j=2:(NUMBER_OF_MACHINES+3) ) ==
-                               sum(x[j,NUMBER_OF_JOBS+3,k] for j=1:(NUMBER_OF_JOBS+2) ) )
+				for m =1:NUMBER_OF_MACHINES
+                	@constraint(model, sum(x[i,j,m] for i = 1:(NUMBER_OF_JOBS+2)) == sum(x[j,i,m] for i = 2:(NUMBER_OF_JOBS+3) ) )
+				end
            end
 
            ############################################################################################
@@ -135,7 +139,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                         if i == 1 || i == NUMBER_OF_JOBS +2
                             @constraint(model, q[j]  >= q[i] - 1e6*(1-x[i,j,m]) )
                         else ## THE FIRST INDEX OF d GOES FROM 1 TO NUMBER OF JOBS. SO WE NEED TO DO -1
-                            @constraint(model, q[j]  >= q[i]*d[i-1,m] - 1e6*(1-x[i,j,m]) )
+                            @constraint(model, q[j]  >= q[i]*d[i-1,m] - 100*(1-x[i,j,m]) )
                         end
                     end
                 end
@@ -150,7 +154,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
             for i = 1:(NUMBER_OF_JOBS+2)
                 for j=2:(NUMBER_OF_JOBS+1)
                     for m=1:NUMBER_OF_MACHINES
-                        @constraint(model,a[j,m] >= p[j-1,m]*q[i] - 1e6*(1-x[i,j,m]))
+                        @constraint(model,a[j,m] >= p[j-1,m]*q[i] - 10000*(1-x[i,j,m]))
                     end
                 end
             end
@@ -161,8 +165,18 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
             ############################################################################################
             for m=1:NUMBER_OF_MACHINES
                 @constraint(model, sum(a[j,m] for j = 2:(NUMBER_OF_JOBS+1) ) +
-                                   sum(x[i,NUMBER_OF_JOBS+2,m] for i=1:(NUMBER_OF_JOBS+1) ) <= Cmax)
+                                   sum(t[m]*x[i,NUMBER_OF_JOBS+2,m] for i=1:(NUMBER_OF_JOBS+1) ) <= Cmax)
             end
+
+
+			############################################################################################
+            ##           CONSTRAINT 8: AVOID A UNIQUE CICLE DEPARTING AND RETURNING TO A MAINTENANCE
+            ############################################################################################
+			for m=1:NUMBER_OF_MACHINES
+				@constraint(model, sum(x[i,j,m] for i=2:(NUMBER_OF_JOBS+1), j=2:(NUMBER_OF_JOBS+2))<= 
+								   NUMBER_OF_JOBS*NUMBER_OF_JOBS*sum(x[1,j,m] for j=2:(NUMBER_OF_JOBS+2)))
+			end	
+
 
 
 
@@ -213,13 +227,13 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                     end
                end
 
-               ############################################################################################
+ 			   ############################################################################################
                ##                              PRINTING A VARIABLE VALUES
                ############################################################################################
                for j = 1:NUMBER_OF_JOBS
                     for k = 1:NUMBER_OF_MACHINES
-                       if ( value(a[j,m] ) > 0)
-                           println(string("a(", j, ",",m,") " , value(a[j,n])))
+                       if ( value(a[j,k] ) > 0)
+                           println(string("a(", j, ",",k,") " , value(a[j,k])))
                        end
                     end
                end
@@ -227,9 +241,19 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                ############################################################################################
                ##                              PRINTING Q VARIABLE VALUES
                ############################################################################################
-               for j = 1:(NUMBER_OF_MACHINES+3)
-                   if ( value(q[m] ) > 0)
-                       println(string("q(", m , ") " , value(q[m])))
+               for j = 1:(NUMBER_OF_JOBS+2)
+                   if ( value(q[j] ) > 0)
+                       println(string("q(", j , ") " , value(q[j])))
+                   end
+                end
+
+
+			   ############################################################################################
+               ##                              PRINTING F VARIABLE VALUES
+               ############################################################################################
+               for j = 1:(NUMBER_OF_JOBS+1)
+                   if ( value(f[j] ) > 0)
+                       println(string("f(", j , ") " , value(f[j])))
                    end
                 end
 
