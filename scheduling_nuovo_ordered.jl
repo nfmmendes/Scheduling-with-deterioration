@@ -46,7 +46,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            maintenanceDuration = split(maintenanceDurationData, " ")
 
            ##### STORE MAINTENANCE DATA
-           for i in NUMBER_OF_MACHINES
+           for i in 1:NUMBER_OF_MACHINES
                t[i] = parse(Float64, maintenanceDuration[i])
            end
 
@@ -86,7 +86,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
 			for i in 2:(NUMBER_OF_JOBS+1)
 				for j in (2:NUMBER_OF_JOBS+1)
 					for k in (1:NUMBER_OF_MACHINES)
-						if p[i-1,k] + d[i-1,k]*p[j-1,k] >= p[j-1,k] + d[j-1,k]*p[i-1,k]
+						if p[i-1,k] + d[i-1,k]*p[j-1,k] > p[j-1,k] + d[j-1,k]*p[i-1,k]
 						  @constraint(model, x[i,j,k] == 0)
 						end
 					end
