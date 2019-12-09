@@ -1,6 +1,6 @@
 using JuMP
-using CPLEX
-
+using Gurobi
+using MathOptFormat
 
 
 MAX_EXECUTION_TIME = 60*15
@@ -8,11 +8,11 @@ MAX_EXECUTION_TIME = 60*15
 
 bigM = 100000
 ############################ START MAIN FUNCTION ##############################
-open("Instances/Instances With Deterioration/instance_list.txt") do file
+open("Instances/Instances With Deterioration/test_gurobi.txt") do file
     #### READING THE INSTANCE LIST
     for instanceName in eachline(file)
         ################## CREATE A MODEL OBJECT TO BE RUN ON CPLEX  ####################
-        model = Model(with_optimizer(CPLEX.Optimizer, CPX_PARAM_WORKMEM=28672, CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1, CPX_PARAM_TILIM=3600))
+        model = Model(with_optimizer(Gurobi.Optimizer))
         #### MAIN PARAMETERS OF THE OPTIMIZATION
         NUMBER_OF_JOBS = 0
         NUMBER_OF_MACHINES = 0
@@ -237,7 +237,11 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
           # write("output.txt", readstring(`ls -l`))
 
            @time begin
-           st = optimize!(model)
+			#	writeLP(model, string("LP_FILES/", instanceName))
+         		#  st = optimize!(model)
+				lp_file = MathOptFormat.LP.Model()
+				MOI.copy_to(lp_file, backend(model))
+				MOI.write_to_file(lp_file, string("LP_Files/", replace(instanceName, "txt"=> "lp") ))
            end
 
            println(termination_status(model))
