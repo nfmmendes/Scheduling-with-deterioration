@@ -7833,3 +7833,2894 @@ Reduced MIP has 1211897 rows, 419838 columns, and 4868876 nonzeros.
 Reduced MIP has 415637 binaries, 0 generals, 0 SOSs, and 0 indicators.
 Presolve time = 6.67 sec. (2385.27 ticks)
 Probing time = 0.81 sec. (189.34 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.125300e+04  Node =       0  Best node =   0.000000e+00
+3636.475739 seconds (96.97 M allocations: 4.744 GiB, 0.48% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 11253.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1324
+Mixed integer rounding cuts applied:  828
+Gomory fractional cuts applied:  3
+Starting optimization: m20_j10_d1_mt3_r1.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821262 rows and 408601 columns.
+MIP Presolve modified 821565 coefficients.
+Reduced MIP has 1211861 rows, 419802 columns, and 4868588 nonzeros.
+Reduced MIP has 415601 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.12 sec. (3202.50 ticks)
+Probing time = 4.58 sec. (301.23 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798990 coefficients.
+Reduced MIP has 1211861 rows, 419802 columns, and 4868588 nonzeros.
+Reduced MIP has 415601 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.52 sec. (2386.53 ticks)
+Probing time = 0.73 sec. (188.75 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.136100e+04  Node =       0  Best node =   0.000000e+00
+3647.658272 seconds (96.97 M allocations: 4.762 GiB, 0.73% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 11361.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  19
+Implied bound cuts applied:  1540
+Flow cuts applied:  2
+Mixed integer rounding cuts applied:  1131
+Starting optimization: m20_j10_d1_mt3_r2.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821504 rows and 408722 columns.
+MIP Presolve modified 819919 coefficients.
+Reduced MIP has 1211740 rows, 419681 columns, and 4867620 nonzeros.
+Reduced MIP has 415480 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.92 sec. (3081.35 ticks)
+Probing time = 4.53 sec. (302.25 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798586 coefficients.
+Reduced MIP has 1211740 rows, 419681 columns, and 4867620 nonzeros.
+Reduced MIP has 415480 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.46 sec. (2383.33 ticks)
+Probing time = 0.90 sec. (189.72 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.177700e+04  Node =       0  Best node =   0.000000e+00
+3633.686614 seconds (96.98 M allocations: 4.762 GiB, 0.51% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 11777.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1206
+Mixed integer rounding cuts applied:  734
+Starting optimization: m20_j10_d1_mt3_r3.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 820860 rows and 408400 columns.
+MIP Presolve modified 825159 coefficients.
+Reduced MIP has 1212062 rows, 420003 columns, and 4870196 nonzeros.
+Reduced MIP has 415802 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.28 sec. (3330.98 ticks)
+Probing time = 4.47 sec. (301.71 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798968 coefficients.
+Reduced MIP has 1212062 rows, 420003 columns, and 4870196 nonzeros.
+Reduced MIP has 415802 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.42 sec. (2368.18 ticks)
+Probing time = 0.68 sec. (189.75 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.202100e+04  Node =       0  Best node =   0.000000e+00
+3633.858426 seconds (96.97 M allocations: 4.762 GiB, 0.51% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 12021.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1435
+Flow cuts applied:  1
+Mixed integer rounding cuts applied:  953
+Starting optimization: m20_j10_d1_mt3_r4.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821488 rows and 408714 columns.
+MIP Presolve modified 821904 coefficients.
+Reduced MIP has 1211748 rows, 419689 columns, and 4867684 nonzeros.
+Reduced MIP has 415488 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.96 sec. (3122.42 ticks)
+Probing time = 4.46 sec. (302.18 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798490 coefficients.
+Reduced MIP has 1211748 rows, 419689 columns, and 4867684 nonzeros.
+Reduced MIP has 415488 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.53 sec. (2368.82 ticks)
+Probing time = 0.78 sec. (189.51 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.144700e+04  Node =       0  Best node =   0.000000e+00
+3633.535123 seconds (96.98 M allocations: 4.762 GiB, 0.51% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 11447.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1411
+Mixed integer rounding cuts applied:  1011
+Gomory fractional cuts applied:  1
+Starting optimization: m20_j10_d1_mt3_r5.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821202 rows and 408571 columns.
+MIP Presolve modified 823685 coefficients.
+Reduced MIP has 1211891 rows, 419832 columns, and 4868828 nonzeros.
+Reduced MIP has 415631 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.25 sec. (3342.45 ticks)
+Probing time = 4.42 sec. (301.86 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798972 coefficients.
+Reduced MIP has 1211891 rows, 419832 columns, and 4868828 nonzeros.
+Reduced MIP has 415631 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.44 sec. (2368.29 ticks)
+Probing time = 0.70 sec. (189.59 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.165200e+04  Node =       0  Best node =   0.000000e+00
+3633.312824 seconds (96.97 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 11652.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1277
+Mixed integer rounding cuts applied:  855
+Starting optimization: m20_j10_d1_mt3_r6.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 820742 rows and 408341 columns.
+MIP Presolve modified 821247 coefficients.
+Reduced MIP has 1212121 rows, 420062 columns, and 4870668 nonzeros.
+Reduced MIP has 415861 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.90 sec. (3058.75 ticks)
+Probing time = 4.44 sec. (302.75 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 799456 coefficients.
+Reduced MIP has 1212121 rows, 420062 columns, and 4870668 nonzeros.
+Reduced MIP has 415861 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.37 sec. (2381.13 ticks)
+Probing time = 0.70 sec. (189.60 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.102100e+04  Node =       0  Best node =   0.000000e+00
+3633.250160 seconds (96.97 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 11021.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1331
+Mixed integer rounding cuts applied:  898
+Gomory fractional cuts applied:  1
+Starting optimization: m20_j10_d1_mt3_r7.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821322 rows and 408631 columns.
+MIP Presolve modified 819623 coefficients.
+Reduced MIP has 1211831 rows, 419772 columns, and 4868348 nonzeros.
+Reduced MIP has 415571 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.91 sec. (3105.17 ticks)
+Probing time = 4.38 sec. (302.50 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798984 coefficients.
+Reduced MIP has 1211831 rows, 419772 columns, and 4868348 nonzeros.
+Reduced MIP has 415571 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.43 sec. (2369.06 ticks)
+Probing time = 0.69 sec. (189.42 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.101900e+04  Node =       0  Best node =   0.000000e+00
+3633.312652 seconds (96.97 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 11019.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1385
+Mixed integer rounding cuts applied:  921
+Starting optimization: m20_j10_d1_mt3_r8.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821218 rows and 408579 columns.
+MIP Presolve modified 820315 coefficients.
+Reduced MIP has 1211883 rows, 419824 columns, and 4868764 nonzeros.
+Reduced MIP has 415623 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.06 sec. (3237.23 ticks)
+Probing time = 4.25 sec. (300.78 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798782 coefficients.
+Reduced MIP has 1211883 rows, 419824 columns, and 4868764 nonzeros.
+Reduced MIP has 415623 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.43 sec. (2384.64 ticks)
+Probing time = 0.76 sec. (189.12 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.113900e+04  Node =       0  Best node =   0.000000e+00
+3633.370271 seconds (96.97 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 11139.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1507
+Flow cuts applied:  1
+Mixed integer rounding cuts applied:  962
+Starting optimization: m20_j10_d1_mt3_r9.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821434 rows and 408687 columns.
+MIP Presolve modified 819269 coefficients.
+Reduced MIP has 1211775 rows, 419716 columns, and 4867900 nonzeros.
+Reduced MIP has 415515 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.87 sec. (3079.71 ticks)
+Probing time = 4.45 sec. (302.45 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798898 coefficients.
+Reduced MIP has 1211775 rows, 419716 columns, and 4867900 nonzeros.
+Reduced MIP has 415515 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.50 sec. (2367.20 ticks)
+Probing time = 0.76 sec. (189.53 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.140000e+04  Node =       0  Best node =   0.000000e+00
+3633.421923 seconds (96.98 M allocations: 4.762 GiB, 0.51% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 11400.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1355
+Mixed integer rounding cuts applied:  908
+Gomory fractional cuts applied:  1
+Starting optimization: m20_j10_d1_mt9_r0.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821176 rows and 408558 columns.
+MIP Presolve modified 832419 coefficients.
+Reduced MIP has 1211904 rows, 419845 columns, and 4868932 nonzeros.
+Reduced MIP has 415644 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.53 sec. (3502.99 ticks)
+Probing time = 4.45 sec. (302.53 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798692 coefficients.
+Reduced MIP has 1211904 rows, 419845 columns, and 4868932 nonzeros.
+Reduced MIP has 415644 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.46 sec. (2365.89 ticks)
+Probing time = 0.74 sec. (189.69 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.371700e+04  Node =       0  Best node =   0.000000e+00
+3633.280085 seconds (96.97 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 13717.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1379
+Mixed integer rounding cuts applied:  941
+Starting optimization: m20_j10_d1_mt9_r1.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821402 rows and 408671 columns.
+MIP Presolve modified 819676 coefficients.
+Reduced MIP has 1211791 rows, 419732 columns, and 4868028 nonzeros.
+Reduced MIP has 415531 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.86 sec. (3073.90 ticks)
+Probing time = 4.42 sec. (302.54 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798966 coefficients.
+Reduced MIP has 1211791 rows, 419732 columns, and 4868028 nonzeros.
+Reduced MIP has 415531 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.48 sec. (2383.49 ticks)
+Probing time = 0.72 sec. (189.61 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.368300e+04  Node =       0  Best node =   0.000000e+00
+3633.232623 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 13683.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1274
+Mixed integer rounding cuts applied:  898
+Starting optimization: m20_j10_d1_mt9_r2.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821424 rows and 408682 columns.
+MIP Presolve modified 819155 coefficients.
+Reduced MIP has 1211780 rows, 419721 columns, and 4867940 nonzeros.
+Reduced MIP has 415520 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.81 sec. (3060.14 ticks)
+Probing time = 4.31 sec. (302.64 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798936 coefficients.
+Reduced MIP has 1211780 rows, 419721 columns, and 4867940 nonzeros.
+Reduced MIP has 415520 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.42 sec. (2384.75 ticks)
+Probing time = 0.71 sec. (189.43 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.329800e+04  Node =       0  Best node =   0.000000e+00
+3633.116280 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 13298.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1333
+Mixed integer rounding cuts applied:  780
+Starting optimization: m20_j10_d1_mt9_r3.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821394 rows and 408667 columns.
+MIP Presolve modified 821771 coefficients.
+Reduced MIP has 1211795 rows, 419736 columns, and 4868060 nonzeros.
+Reduced MIP has 415535 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.93 sec. (3098.29 ticks)
+Probing time = 4.32 sec. (302.33 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798922 coefficients.
+Reduced MIP has 1211795 rows, 419736 columns, and 4868060 nonzeros.
+Reduced MIP has 415535 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.40 sec. (2383.14 ticks)
+Probing time = 0.77 sec. (189.63 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.411800e+04  Node =       0  Best node =   0.000000e+00
+3633.085598 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 14118.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1334
+Mixed integer rounding cuts applied:  783
+Starting optimization: m20_j10_d1_mt9_r4.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821638 rows and 408789 columns.
+MIP Presolve modified 818825 coefficients.
+Reduced MIP has 1211673 rows, 419614 columns, and 4867084 nonzeros.
+Reduced MIP has 415413 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.89 sec. (3130.24 ticks)
+Probing time = 4.30 sec. (302.35 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798746 coefficients.
+Reduced MIP has 1211673 rows, 419614 columns, and 4867084 nonzeros.
+Reduced MIP has 415413 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.38 sec. (2365.49 ticks)
+Probing time = 0.76 sec. (189.62 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.425800e+04  Node =       0  Best node =   0.000000e+00
+3633.082677 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 14258.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1419
+Mixed integer rounding cuts applied:  893
+Starting optimization: m20_j10_d1_mt9_r5.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821566 rows and 408753 columns.
+MIP Presolve modified 820985 coefficients.
+Reduced MIP has 1211709 rows, 419650 columns, and 4867372 nonzeros.
+Reduced MIP has 415449 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.14 sec. (3252.11 ticks)
+Probing time = 4.45 sec. (301.17 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798694 coefficients.
+Reduced MIP has 1211709 rows, 419650 columns, and 4867372 nonzeros.
+Reduced MIP has 415449 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.42 sec. (2364.49 ticks)
+Probing time = 0.71 sec. (189.24 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.406299e+04  Node =       0  Best node =   0.000000e+00
+3633.230240 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 14062.990000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1458
+Mixed integer rounding cuts applied:  937
+Gomory fractional cuts applied:  1
+Starting optimization: m20_j10_d1_mt9_r6.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821460 rows and 408700 columns.
+MIP Presolve modified 819526 coefficients.
+Reduced MIP has 1211762 rows, 419703 columns, and 4867796 nonzeros.
+Reduced MIP has 415502 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.94 sec. (3169.53 ticks)
+Probing time = 4.48 sec. (301.86 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798768 coefficients.
+Reduced MIP has 1211762 rows, 419703 columns, and 4867796 nonzeros.
+Reduced MIP has 415502 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.39 sec. (2383.03 ticks)
+Probing time = 0.68 sec. (188.96 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.344497e+04  Node =       0  Best node =   0.000000e+00
+3633.081874 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 13444.970000000001
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1411
+Mixed integer rounding cuts applied:  789
+Starting optimization: m20_j10_d1_mt9_r7.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821686 rows and 408813 columns.
+MIP Presolve modified 820122 coefficients.
+Reduced MIP has 1211649 rows, 419590 columns, and 4866892 nonzeros.
+Reduced MIP has 415389 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.06 sec. (3250.51 ticks)
+Probing time = 4.39 sec. (300.67 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798546 coefficients.
+Reduced MIP has 1211649 rows, 419590 columns, and 4866892 nonzeros.
+Reduced MIP has 415389 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.43 sec. (2383.19 ticks)
+Probing time = 0.72 sec. (188.74 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.426200e+04  Node =       0  Best node =   0.000000e+00
+3633.087251 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 14262.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1196
+Mixed integer rounding cuts applied:  789
+Gomory fractional cuts applied:  1
+Starting optimization: m20_j10_d1_mt9_r8.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821498 rows and 408719 columns.
+MIP Presolve modified 819316 coefficients.
+Reduced MIP has 1211743 rows, 419684 columns, and 4867644 nonzeros.
+Reduced MIP has 415483 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.85 sec. (3065.85 ticks)
+Probing time = 4.46 sec. (302.30 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798756 coefficients.
+Reduced MIP has 1211743 rows, 419684 columns, and 4867644 nonzeros.
+Reduced MIP has 415483 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.39 sec. (2366.45 ticks)
+Probing time = 0.77 sec. (189.50 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.415100e+04  Node =       0  Best node =   0.000000e+00
+3633.116939 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 14151.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1154
+Mixed integer rounding cuts applied:  661
+Starting optimization: m20_j10_d1_mt9_r9.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821034 rows and 408487 columns.
+MIP Presolve modified 819627 coefficients.
+Reduced MIP has 1211975 rows, 419916 columns, and 4869500 nonzeros.
+Reduced MIP has 415715 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.83 sec. (3064.59 ticks)
+Probing time = 4.43 sec. (302.46 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 799308 coefficients.
+Reduced MIP has 1211975 rows, 419916 columns, and 4869500 nonzeros.
+Reduced MIP has 415715 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.42 sec. (2384.16 ticks)
+Probing time = 0.70 sec. (189.71 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.387300e+04  Node =       0  Best node =   0.000000e+00
+3632.966315 seconds (96.97 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 13873.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1372
+Flow cuts applied:  2
+Mixed integer rounding cuts applied:  895
+Starting optimization: m20_j10_d2_mt3_r0.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821772 rows and 408856 columns.
+MIP Presolve modified 818950 coefficients.
+Reduced MIP has 1211606 rows, 419547 columns, and 4866548 nonzeros.
+Reduced MIP has 415346 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.66 sec. (3104.61 ticks)
+Probing time = 4.17 sec. (303.39 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798606 coefficients.
+Reduced MIP has 1211606 rows, 419547 columns, and 4866548 nonzeros.
+Reduced MIP has 415346 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.32 sec. (2377.89 ticks)
+Probing time = 0.65 sec. (189.66 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.045100e+04  Node =       0  Best node =   0.000000e+00
+3633.211095 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 10451.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1697
+Mixed integer rounding cuts applied:  1119
+Starting optimization: m20_j10_d2_mt3_r1.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821954 rows and 408947 columns.
+MIP Presolve modified 819029 coefficients.
+Reduced MIP has 1211515 rows, 419456 columns, and 4865820 nonzeros.
+Reduced MIP has 415255 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.68 sec. (3072.15 ticks)
+Probing time = 4.32 sec. (303.42 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 801804 coefficients.
+Reduced MIP has 1211515 rows, 419456 columns, and 4865820 nonzeros.
+Reduced MIP has 415255 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 5.43 sec. (3079.39 ticks)
+Probing time = 0.59 sec. (182.05 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.227000e+04  Node =       0  Best node =   0.000000e+00
+3633.100439 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 12270.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1845
+Mixed integer rounding cuts applied:  1411
+Starting optimization: m20_j10_d2_mt3_r2.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821382 rows and 408661 columns.
+MIP Presolve modified 819383 coefficients.
+Reduced MIP has 1211801 rows, 419742 columns, and 4868108 nonzeros.
+Reduced MIP has 415541 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.63 sec. (3068.46 ticks)
+Probing time = 4.29 sec. (303.49 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798992 coefficients.
+Reduced MIP has 1211801 rows, 419742 columns, and 4868108 nonzeros.
+Reduced MIP has 415541 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.34 sec. (2377.72 ticks)
+Probing time = 0.75 sec. (189.77 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.119000e+04  Node =       0  Best node =   0.000000e+00
+3633.068685 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 11190.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1731
+Mixed integer rounding cuts applied:  1280
+Starting optimization: m20_j10_d2_mt3_r3.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821642 rows and 408791 columns.
+MIP Presolve modified 819241 coefficients.
+Reduced MIP has 1211671 rows, 419612 columns, and 4867068 nonzeros.
+Reduced MIP has 415411 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.77 sec. (3215.03 ticks)
+Probing time = 4.29 sec. (302.87 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798586 coefficients.
+Reduced MIP has 1211671 rows, 419612 columns, and 4867068 nonzeros.
+Reduced MIP has 415411 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.36 sec. (2376.45 ticks)
+Probing time = 0.70 sec. (189.34 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.084800e+04  Node =       0  Best node =   0.000000e+00
+3633.309702 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 10848.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1788
+Mixed integer rounding cuts applied:  1368
+Starting optimization: m20_j10_d2_mt3_r4.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821808 rows and 408874 columns.
+MIP Presolve modified 819253 coefficients.
+Reduced MIP has 1211588 rows, 419529 columns, and 4866404 nonzeros.
+Reduced MIP has 415328 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.67 sec. (3155.18 ticks)
+Probing time = 4.29 sec. (303.34 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 801928 coefficients.
+Reduced MIP has 1211588 rows, 419529 columns, and 4866404 nonzeros.
+Reduced MIP has 415328 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 5.45 sec. (3090.11 ticks)
+Probing time = 0.64 sec. (181.72 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.084100e+04  Node =       0  Best node =   0.000000e+00
+3633.292352 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 10841.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1561
+Mixed integer rounding cuts applied:  1024
+Starting optimization: m20_j10_d2_mt3_r5.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821972 rows and 408956 columns.
+MIP Presolve modified 818452 coefficients.
+Reduced MIP has 1211506 rows, 419447 columns, and 4865748 nonzeros.
+Reduced MIP has 415246 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.67 sec. (2991.24 ticks)
+Probing time = 0.98 sec. (215.18 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 12033 coefficients.
+Reduced MIP has 1211506 rows, 419447 columns, and 4865748 nonzeros.
+Reduced MIP has 415246 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 5.42 sec. (3066.42 ticks)
+Probing time = 0.63 sec. (179.69 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.128200e+04  Node =       0  Best node =   0.000000e+00
+3633.249752 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 11282.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1747
+Mixed integer rounding cuts applied:  1382
+Starting optimization: m20_j10_d2_mt3_r6.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821880 rows and 408910 columns.
+MIP Presolve modified 819441 coefficients.
+Reduced MIP has 1211552 rows, 419493 columns, and 4866116 nonzeros.
+Reduced MIP has 415292 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.85 sec. (3234.39 ticks)
+Probing time = 4.28 sec. (302.13 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798380 coefficients.
+Reduced MIP has 1211552 rows, 419493 columns, and 4866116 nonzeros.
+Reduced MIP has 415292 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.42 sec. (2373.48 ticks)
+Probing time = 0.74 sec. (188.76 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.147500e+04  Node =       0  Best node =   0.000000e+00
+3633.377222 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 11475.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1834
+Mixed integer rounding cuts applied:  1494
+Starting optimization: m20_j10_d2_mt3_r7.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 822060 rows and 409000 columns.
+MIP Presolve modified 818770 coefficients.
+Reduced MIP has 1211462 rows, 419403 columns, and 4865396 nonzeros.
+Reduced MIP has 415202 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.67 sec. (3075.89 ticks)
+Probing time = 4.32 sec. (303.29 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798258 coefficients.
+Reduced MIP has 1211462 rows, 419403 columns, and 4865396 nonzeros.
+Reduced MIP has 415202 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.37 sec. (2374.23 ticks)
+Probing time = 0.72 sec. (189.62 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.150600e+04  Node =       0  Best node =   0.000000e+00
+3633.289911 seconds (96.99 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 11506.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1718
+Mixed integer rounding cuts applied:  1228
+Starting optimization: m20_j10_d2_mt3_r8.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821686 rows and 408813 columns.
+MIP Presolve modified 822003 coefficients.
+Reduced MIP has 1211649 rows, 419590 columns, and 4866892 nonzeros.
+Reduced MIP has 415389 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.93 sec. (3468.78 ticks)
+Probing time = 4.29 sec. (302.54 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 802719 coefficients.
+Reduced MIP has 1211649 rows, 419590 columns, and 4866892 nonzeros.
+Reduced MIP has 415389 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 5.55 sec. (3127.11 ticks)
+Probing time = 0.57 sec. (178.86 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.109900e+04  Node =       0  Best node =   0.000000e+00
+3633.183195 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 11099.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1635
+Mixed integer rounding cuts applied:  1296
+Starting optimization: m20_j10_d2_mt3_r9.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821936 rows and 408938 columns.
+MIP Presolve modified 820589 coefficients.
+Reduced MIP has 1211524 rows, 419465 columns, and 4865892 nonzeros.
+Reduced MIP has 415264 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.91 sec. (3311.65 ticks)
+Probing time = 4.34 sec. (302.48 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 801720 coefficients.
+Reduced MIP has 1211524 rows, 419465 columns, and 4865892 nonzeros.
+Reduced MIP has 415264 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 5.51 sec. (3089.08 ticks)
+Probing time = 0.59 sec. (181.48 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.129200e+04  Node =       0  Best node =   0.000000e+00
+3633.254014 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 11292.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  962
+Mixed integer rounding cuts applied:  637
+Starting optimization: m20_j10_d2_mt9_r0.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821850 rows and 408895 columns.
+MIP Presolve modified 818626 coefficients.
+Reduced MIP has 1211567 rows, 419508 columns, and 4866236 nonzeros.
+Reduced MIP has 415307 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.69 sec. (3132.18 ticks)
+Probing time = 4.31 sec. (303.42 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 803057 coefficients.
+Reduced MIP has 1211567 rows, 419508 columns, and 4866236 nonzeros.
+Reduced MIP has 415307 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 5.55 sec. (3137.31 ticks)
+Probing time = 0.59 sec. (178.65 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.333200e+04  Node =       0  Best node =   0.000000e+00
+3633.317873 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 13332.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  19
+Implied bound cuts applied:  735
+Mixed integer rounding cuts applied:  555
+Starting optimization: m20_j10_d2_mt9_r1.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821836 rows and 408888 columns.
+MIP Presolve modified 819962 coefficients.
+Reduced MIP has 1211574 rows, 419515 columns, and 4866292 nonzeros.
+Reduced MIP has 415314 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.68 sec. (3139.42 ticks)
+Probing time = 4.35 sec. (303.42 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 803263 coefficients.
+Reduced MIP has 1211574 rows, 419515 columns, and 4866292 nonzeros.
+Reduced MIP has 415314 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 5.51 sec. (3143.70 ticks)
+Probing time = 0.56 sec. (177.85 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.338797e+04  Node =       0  Best node =   0.000000e+00
+3633.020200 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 13387.970000000001
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1855
+Mixed integer rounding cuts applied:  1479
+Starting optimization: m20_j10_d2_mt9_r2.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821592 rows and 408766 columns.
+MIP Presolve modified 819809 coefficients.
+Reduced MIP has 1211696 rows, 419637 columns, and 4867268 nonzeros.
+Reduced MIP has 415436 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.68 sec. (3086.45 ticks)
+Probing time = 4.32 sec. (303.61 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798744 coefficients.
+Reduced MIP has 1211696 rows, 419637 columns, and 4867268 nonzeros.
+Reduced MIP has 415436 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.38 sec. (2373.41 ticks)
+Probing time = 0.69 sec. (190.12 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.357697e+04  Node =       0  Best node =   0.000000e+00
+3633.108253 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 13576.970000000001
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1604
+Mixed integer rounding cuts applied:  1234
+Starting optimization: m20_j10_d2_mt9_r3.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821914 rows and 408927 columns.
+MIP Presolve modified 820697 coefficients.
+Reduced MIP has 1211535 rows, 419476 columns, and 4865980 nonzeros.
+Reduced MIP has 415275 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.71 sec. (3118.66 ticks)
+Probing time = 4.34 sec. (303.42 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 803273 coefficients.
+Reduced MIP has 1211535 rows, 419476 columns, and 4865980 nonzeros.
+Reduced MIP has 415275 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 5.50 sec. (3147.04 ticks)
+Probing time = 0.55 sec. (177.97 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.392700e+04  Node =       0  Best node =   0.000000e+00
+3633.080426 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 13927.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1650
+Mixed integer rounding cuts applied:  1322
+Starting optimization: m20_j10_d2_mt9_r4.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821972 rows and 408956 columns.
+MIP Presolve modified 818459 coefficients.
+Reduced MIP has 1211506 rows, 419447 columns, and 4865748 nonzeros.
+Reduced MIP has 415246 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.65 sec. (3019.05 ticks)
+Probing time = 4.33 sec. (303.27 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798412 coefficients.
+Reduced MIP has 1211506 rows, 419447 columns, and 4865748 nonzeros.
+Reduced MIP has 415246 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.31 sec. (2373.40 ticks)
+Probing time = 0.71 sec. (189.59 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.349400e+04  Node =       0  Best node =   0.000000e+00
+3633.007390 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 13494.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1721
+Mixed integer rounding cuts applied:  1361
+Starting optimization: m20_j10_d2_mt9_r5.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821914 rows and 408927 columns.
+MIP Presolve modified 818638 coefficients.
+Reduced MIP has 1211535 rows, 419476 columns, and 4865980 nonzeros.
+Reduced MIP has 415275 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.70 sec. (3078.80 ticks)
+Probing time = 4.35 sec. (303.43 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798466 coefficients.
+Reduced MIP has 1211535 rows, 419476 columns, and 4865980 nonzeros.
+Reduced MIP has 415275 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.38 sec. (2370.91 ticks)
+Probing time = 0.74 sec. (189.81 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.440600e+04  Node =       0  Best node =   0.000000e+00
+3633.245781 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 14406.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1692
+Mixed integer rounding cuts applied:  1246
+Gomory fractional cuts applied:  2
+Starting optimization: m20_j10_d2_mt9_r6.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821608 rows and 408774 columns.
+MIP Presolve modified 820116 coefficients.
+Reduced MIP has 1211688 rows, 419629 columns, and 4867204 nonzeros.
+Reduced MIP has 415428 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.84 sec. (3263.07 ticks)
+Probing time = 4.45 sec. (301.72 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798618 coefficients.
+Reduced MIP has 1211688 rows, 419629 columns, and 4867204 nonzeros.
+Reduced MIP has 415428 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.31 sec. (2372.72 ticks)
+Probing time = 0.73 sec. (188.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.412300e+04  Node =       0  Best node =   0.000000e+00
+3633.117093 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 14123.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1713
+Mixed integer rounding cuts applied:  1381
+Starting optimization: m20_j10_d2_mt9_r7.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821684 rows and 408812 columns.
+MIP Presolve modified 823243 coefficients.
+Reduced MIP has 1211650 rows, 419591 columns, and 4866900 nonzeros.
+Reduced MIP has 415390 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.07 sec. (3438.89 ticks)
+Probing time = 4.34 sec. (303.23 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 798678 coefficients.
+Reduced MIP has 1211650 rows, 419591 columns, and 4866900 nonzeros.
+Reduced MIP has 415390 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 4.36 sec. (2377.14 ticks)
+Probing time = 0.72 sec. (189.55 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.297100e+04  Node =       0  Best node =   0.000000e+00
+3633.053334 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 12971.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1889
+Mixed integer rounding cuts applied:  1568
+Starting optimization: m20_j10_d2_mt9_r8.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 822132 rows and 409036 columns.
+MIP Presolve modified 818292 coefficients.
+Reduced MIP has 1211426 rows, 419367 columns, and 4865108 nonzeros.
+Reduced MIP has 415166 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.64 sec. (3011.14 ticks)
+Probing time = 0.96 sec. (215.15 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 12546 coefficients.
+Reduced MIP has 1211426 rows, 419367 columns, and 4865108 nonzeros.
+Reduced MIP has 415166 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 5.48 sec. (3091.28 ticks)
+Probing time = 0.60 sec. (178.30 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.368100e+04  Node =       0  Best node =   0.000000e+00
+3633.273655 seconds (96.99 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 13681.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1860
+Mixed integer rounding cuts applied:  1569
+Starting optimization: m20_j10_d2_mt9_r9.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 821948 rows and 408944 columns.
+MIP Presolve modified 819066 coefficients.
+Reduced MIP has 1211518 rows, 419459 columns, and 4865844 nonzeros.
+Reduced MIP has 415258 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 3.80 sec. (3220.12 ticks)
+Probing time = 4.28 sec. (301.80 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 802577 coefficients.
+Reduced MIP has 1211518 rows, 419459 columns, and 4865844 nonzeros.
+Reduced MIP has 415258 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 5.56 sec. (3126.18 ticks)
+Probing time = 0.61 sec. (178.96 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.309000e+04  Node =       0  Best node =   0.000000e+00
+3633.212490 seconds (96.98 M allocations: 4.762 GiB, 0.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 13090.000000000002
+ 
+ 
+ 
+
+Cover cuts applied:  20
+Implied bound cuts applied:  1732
+Mixed integer rounding cuts applied:  1335
+Starting optimization: m20_j15_d1_mt3_r0.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829768 rows and 911804 columns.
+MIP Presolve modified 1836843 coefficients.
+Reduced MIP has 2718758 rows, 930699 columns, and 10910964 nonzeros.
+Reduced MIP has 924398 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.22 sec. (7366.25 ticks)
+Probing time = 13.34 sec. (641.11 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800076 coefficients.
+Reduced MIP has 2718758 rows, 930699 columns, and 10910964 nonzeros.
+Reduced MIP has 924398 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.29 sec. (5292.58 ticks)
+Probing time = 3.26 sec. (406.10 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3712.567542 seconds (215.84 M allocations: 10.372 GiB, 1.40% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 17642.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.764200e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt3_r1.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829452 rows and 911646 columns.
+MIP Presolve modified 1831279 coefficients.
+Reduced MIP has 2718916 rows, 930857 columns, and 10912228 nonzeros.
+Reduced MIP has 924556 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.57 sec. (6790.63 ticks)
+Probing time = 11.17 sec. (644.31 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800888 coefficients.
+Reduced MIP has 2718916 rows, 930857 columns, and 10912228 nonzeros.
+Reduced MIP has 924556 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.40 sec. (5290.60 ticks)
+Probing time = 1.92 sec. (406.77 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3897.488900 seconds (215.84 M allocations: 10.371 GiB, 1.28% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 17048.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.704800e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt3_r2.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829990 rows and 911915 columns.
+MIP Presolve modified 1837817 coefficients.
+Reduced MIP has 2718647 rows, 930588 columns, and 10910076 nonzeros.
+Reduced MIP has 924287 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.18 sec. (7387.62 ticks)
+Probing time = 10.93 sec. (641.62 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800214 coefficients.
+Reduced MIP has 2718647 rows, 930588 columns, and 10910076 nonzeros.
+Reduced MIP has 924287 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.47 sec. (5290.29 ticks)
+Probing time = 1.89 sec. (405.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3951.500100 seconds (215.84 M allocations: 10.372 GiB, 1.25% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 17796.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.779600e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt3_r3.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830366 rows and 912103 columns.
+MIP Presolve modified 1831376 coefficients.
+Reduced MIP has 2718459 rows, 930400 columns, and 10908572 nonzeros.
+Reduced MIP has 924099 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.04 sec. (6789.63 ticks)
+Probing time = 10.59 sec. (644.41 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800068 coefficients.
+Reduced MIP has 2718459 rows, 930400 columns, and 10908572 nonzeros.
+Reduced MIP has 924099 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.27 sec. (5288.05 ticks)
+Probing time = 1.76 sec. (406.64 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3699.383818 seconds (215.85 M allocations: 10.372 GiB, 1.33% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 16994.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.699400e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt3_r4.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829144 rows and 911492 columns.
+MIP Presolve modified 1832903 coefficients.
+Reduced MIP has 2719070 rows, 931011 columns, and 10913460 nonzeros.
+Reduced MIP has 924710 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.25 sec. (6926.20 ticks)
+Probing time = 10.59 sec. (644.71 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1801294 coefficients.
+Reduced MIP has 2719070 rows, 931011 columns, and 10913460 nonzeros.
+Reduced MIP has 924710 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.39 sec. (5288.10 ticks)
+Probing time = 1.77 sec. (406.58 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3788.876080 seconds (215.83 M allocations: 10.371 GiB, 1.31% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 17127.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.712700e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt3_r5.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829832 rows and 911836 columns.
+MIP Presolve modified 1832933 coefficients.
+Reduced MIP has 2718726 rows, 930667 columns, and 10910708 nonzeros.
+Reduced MIP has 924366 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.46 sec. (7276.02 ticks)
+Probing time = 10.55 sec. (640.06 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800128 coefficients.
+Reduced MIP has 2718726 rows, 930667 columns, and 10910708 nonzeros.
+Reduced MIP has 924366 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.18 sec. (5288.38 ticks)
+Probing time = 1.92 sec. (404.12 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3690.497760 seconds (215.84 M allocations: 10.372 GiB, 1.33% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 16121.000000000002
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.612100e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt3_r6.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829564 rows and 911702 columns.
+MIP Presolve modified 1833087 coefficients.
+Reduced MIP has 2718860 rows, 930801 columns, and 10911780 nonzeros.
+Reduced MIP has 924500 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.18 sec. (6987.07 ticks)
+Probing time = 10.77 sec. (644.61 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800642 coefficients.
+Reduced MIP has 2718860 rows, 930801 columns, and 10911780 nonzeros.
+Reduced MIP has 924500 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.29 sec. (5292.08 ticks)
+Probing time = 1.92 sec. (406.68 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3810.728169 seconds (215.84 M allocations: 10.372 GiB, 1.29% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 16817.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.681700e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt3_r7.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829760 rows and 911800 columns.
+MIP Presolve modified 1835566 coefficients.
+Reduced MIP has 2718762 rows, 930703 columns, and 10910996 nonzeros.
+Reduced MIP has 924402 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.23 sec. (7059.88 ticks)
+Probing time = 11.15 sec. (644.43 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800544 coefficients.
+Reduced MIP has 2718762 rows, 930703 columns, and 10910996 nonzeros.
+Reduced MIP has 924402 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.30 sec. (5329.38 ticks)
+Probing time = 1.90 sec. (406.68 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3701.908445 seconds (215.84 M allocations: 10.372 GiB, 1.33% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 17640.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.764000e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt3_r8.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829570 rows and 911705 columns.
+MIP Presolve modified 1838214 coefficients.
+Reduced MIP has 2718857 rows, 930798 columns, and 10911756 nonzeros.
+Reduced MIP has 924497 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.16 sec. (7402.26 ticks)
+Probing time = 10.40 sec. (635.08 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800028 coefficients.
+Reduced MIP has 2718857 rows, 930798 columns, and 10911756 nonzeros.
+Reduced MIP has 924497 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.29 sec. (5289.71 ticks)
+Probing time = 1.76 sec. (402.57 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.706100e+04  Node =       0  Best node =   0.000000e+00
+Elapsed time = 12.02 sec. (10059.06 ticks) for 187 of 200 candidates for Gomory cuts
+3685.019291 seconds (215.84 M allocations: 10.372 GiB, 1.35% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 17061.000000000004
+ 
+ 
+ 
+
+Cover cuts applied:  19
+Implied bound cuts applied:  1697
+Flow cuts applied:  1
+Mixed integer rounding cuts applied:  1033
+Starting optimization: m20_j15_d1_mt3_r9.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829876 rows and 911858 columns.
+MIP Presolve modified 1838672 coefficients.
+Reduced MIP has 2718704 rows, 930645 columns, and 10910532 nonzeros.
+Reduced MIP has 924344 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.60 sec. (6967.01 ticks)
+Probing time = 10.85 sec. (644.76 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800502 coefficients.
+Reduced MIP has 2718704 rows, 930645 columns, and 10910532 nonzeros.
+Reduced MIP has 924344 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.97 sec. (5287.88 ticks)
+Probing time = 2.09 sec. (406.53 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3886.024470 seconds (215.84 M allocations: 10.372 GiB, 1.28% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 17113.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.711300e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt9_r0.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829342 rows and 911591 columns.
+MIP Presolve modified 1832992 coefficients.
+Reduced MIP has 2718971 rows, 930912 columns, and 10912668 nonzeros.
+Reduced MIP has 924611 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.46 sec. (6973.54 ticks)
+Probing time = 10.77 sec. (644.56 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1801028 coefficients.
+Reduced MIP has 2718971 rows, 930912 columns, and 10912668 nonzeros.
+Reduced MIP has 924611 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.25 sec. (5288.11 ticks)
+Probing time = 1.75 sec. (406.59 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3690.901945 seconds (215.83 M allocations: 10.371 GiB, 1.34% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 19783.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.978300e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt9_r1.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1828834 rows and 911337 columns.
+MIP Presolve modified 1831829 coefficients.
+Reduced MIP has 2719225 rows, 931166 columns, and 10914700 nonzeros.
+Reduced MIP has 924865 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.02 sec. (6789.84 ticks)
+Probing time = 10.67 sec. (644.40 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1801582 coefficients.
+Reduced MIP has 2719225 rows, 931166 columns, and 10914700 nonzeros.
+Reduced MIP has 924865 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.41 sec. (5289.35 ticks)
+Probing time = 1.97 sec. (406.46 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3699.401612 seconds (215.83 M allocations: 10.371 GiB, 1.34% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 20005.970000000005
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.000597e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt9_r2.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830034 rows and 911937 columns.
+MIP Presolve modified 1851064 coefficients.
+Reduced MIP has 2718625 rows, 930566 columns, and 10909900 nonzeros.
+Reduced MIP has 924265 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 12.05 sec. (7833.88 ticks)
+Probing time = 10.58 sec. (644.60 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1799842 coefficients.
+Reduced MIP has 2718625 rows, 930566 columns, and 10909900 nonzeros.
+Reduced MIP has 924265 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.29 sec. (5289.08 ticks)
+Probing time = 1.90 sec. (406.72 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3688.740015 seconds (215.84 M allocations: 10.372 GiB, 1.34% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 20175.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.017500e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt9_r3.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829222 rows and 911531 columns.
+MIP Presolve modified 1831315 coefficients.
+Reduced MIP has 2719031 rows, 930972 columns, and 10913148 nonzeros.
+Reduced MIP has 924671 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.31 sec. (6908.72 ticks)
+Probing time = 10.57 sec. (644.85 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1801236 coefficients.
+Reduced MIP has 2719031 rows, 930972 columns, and 10913148 nonzeros.
+Reduced MIP has 924671 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.23 sec. (5289.22 ticks)
+Probing time = 1.92 sec. (406.41 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3701.237667 seconds (215.83 M allocations: 10.371 GiB, 1.34% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 19745.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.974500e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt9_r4.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829592 rows and 911716 columns.
+MIP Presolve modified 1831100 coefficients.
+Reduced MIP has 2718846 rows, 930787 columns, and 10911668 nonzeros.
+Reduced MIP has 924486 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.14 sec. (6832.00 ticks)
+Probing time = 10.60 sec. (644.71 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800810 coefficients.
+Reduced MIP has 2718846 rows, 930787 columns, and 10911668 nonzeros.
+Reduced MIP has 924486 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.19 sec. (5286.95 ticks)
+Probing time = 1.92 sec. (406.44 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3741.266175 seconds (215.84 M allocations: 10.372 GiB, 1.33% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 20754.960000000003
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.075496e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt9_r5.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829022 rows and 911431 columns.
+MIP Presolve modified 1831737 coefficients.
+Reduced MIP has 2719131 rows, 931072 columns, and 10913948 nonzeros.
+Reduced MIP has 924771 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.06 sec. (6916.67 ticks)
+Probing time = 10.75 sec. (644.59 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1801250 coefficients.
+Reduced MIP has 2719131 rows, 931072 columns, and 10913948 nonzeros.
+Reduced MIP has 924771 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.46 sec. (5287.64 ticks)
+Probing time = 1.92 sec. (406.62 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3697.389959 seconds (215.83 M allocations: 10.371 GiB, 1.34% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 19982.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.998200e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt9_r6.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829900 rows and 911870 columns.
+MIP Presolve modified 1844277 coefficients.
+Reduced MIP has 2718692 rows, 930633 columns, and 10910436 nonzeros.
+Reduced MIP has 924332 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.60 sec. (7672.55 ticks)
+Probing time = 10.73 sec. (644.41 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800176 coefficients.
+Reduced MIP has 2718692 rows, 930633 columns, and 10910436 nonzeros.
+Reduced MIP has 924332 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.16 sec. (5289.99 ticks)
+Probing time = 1.92 sec. (406.73 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3687.006441 seconds (215.84 M allocations: 10.372 GiB, 1.34% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 20786.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.078600e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt9_r7.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829768 rows and 911804 columns.
+MIP Presolve modified 1831038 coefficients.
+Reduced MIP has 2718758 rows, 930699 columns, and 10910964 nonzeros.
+Reduced MIP has 924398 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.17 sec. (6920.68 ticks)
+Probing time = 10.66 sec. (644.09 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800652 coefficients.
+Reduced MIP has 2718758 rows, 930699 columns, and 10910964 nonzeros.
+Reduced MIP has 924398 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.31 sec. (5287.60 ticks)
+Probing time = 1.78 sec. (406.88 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3783.270855 seconds (215.84 M allocations: 10.372 GiB, 1.31% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 20977.990000000005
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.097799e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt9_r8.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1829100 rows and 911470 columns.
+MIP Presolve modified 1831840 coefficients.
+Reduced MIP has 2719092 rows, 931033 columns, and 10913636 nonzeros.
+Reduced MIP has 924732 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.10 sec. (6882.26 ticks)
+Probing time = 10.61 sec. (644.65 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1801304 coefficients.
+Reduced MIP has 2719092 rows, 931033 columns, and 10913636 nonzeros.
+Reduced MIP has 924732 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.23 sec. (5289.56 ticks)
+Probing time = 1.92 sec. (406.76 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3689.122671 seconds (215.83 M allocations: 10.371 GiB, 1.35% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 20498.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.049800e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d1_mt9_r9.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1828928 rows and 911384 columns.
+MIP Presolve modified 1838222 coefficients.
+Reduced MIP has 2719178 rows, 931119 columns, and 10914324 nonzeros.
+Reduced MIP has 924818 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.05 sec. (7412.24 ticks)
+Probing time = 10.51 sec. (642.73 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1801152 coefficients.
+Reduced MIP has 2719178 rows, 931119 columns, and 10914324 nonzeros.
+Reduced MIP has 924818 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.26 sec. (5293.20 ticks)
+Probing time = 1.96 sec. (406.18 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3687.520541 seconds (215.83 M allocations: 10.371 GiB, 1.33% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 19820.960000000003
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.982096e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt3_r0.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830974 rows and 912407 columns.
+MIP Presolve modified 1845383 coefficients.
+Reduced MIP has 2718155 rows, 930096 columns, and 10906140 nonzeros.
+Reduced MIP has 923795 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.13 sec. (7638.52 ticks)
+Probing time = 10.23 sec. (644.84 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1798584 coefficients.
+Reduced MIP has 2718155 rows, 930096 columns, and 10906140 nonzeros.
+Reduced MIP has 923795 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.19 sec. (5300.47 ticks)
+Probing time = 1.85 sec. (406.60 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3773.193297 seconds (215.86 M allocations: 10.372 GiB, 1.30% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 17462.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.746200e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt3_r1.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830198 rows and 912019 columns.
+MIP Presolve modified 1832084 coefficients.
+Reduced MIP has 2718543 rows, 930484 columns, and 10909244 nonzeros.
+Reduced MIP has 924183 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.02 sec. (7238.81 ticks)
+Probing time = 10.09 sec. (642.42 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800086 coefficients.
+Reduced MIP has 2718543 rows, 930484 columns, and 10909244 nonzeros.
+Reduced MIP has 924183 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.19 sec. (5302.60 ticks)
+Probing time = 1.86 sec. (404.54 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3827.699199 seconds (215.85 M allocations: 10.372 GiB, 1.29% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 16166.000000000002
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.616600e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt3_r2.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830440 rows and 912140 columns.
+MIP Presolve modified 1836271 coefficients.
+Reduced MIP has 2718422 rows, 930363 columns, and 10908276 nonzeros.
+Reduced MIP has 924062 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.76 sec. (7310.97 ticks)
+Probing time = 10.38 sec. (639.52 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1799730 coefficients.
+Reduced MIP has 2718422 rows, 930363 columns, and 10908276 nonzeros.
+Reduced MIP has 924062 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.21 sec. (5301.94 ticks)
+Probing time = 1.83 sec. (403.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3798.811096 seconds (215.85 M allocations: 10.372 GiB, 1.34% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 17209.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.720900e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt3_r3.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1831146 rows and 912493 columns.
+MIP Presolve modified 1829421 coefficients.
+Reduced MIP has 2718069 rows, 930010 columns, and 10905452 nonzeros.
+Reduced MIP has 923709 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 9.60 sec. (6816.70 ticks)
+Probing time = 10.33 sec. (646.56 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1799252 coefficients.
+Reduced MIP has 2718069 rows, 930010 columns, and 10905452 nonzeros.
+Reduced MIP has 923709 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.13 sec. (5301.83 ticks)
+Probing time = 1.82 sec. (406.82 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3686.915112 seconds (215.86 M allocations: 10.372 GiB, 1.33% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 17534.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.753400e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt3_r4.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830130 rows and 911985 columns.
+MIP Presolve modified 1831093 coefficients.
+Reduced MIP has 2718577 rows, 930518 columns, and 10909516 nonzeros.
+Reduced MIP has 924217 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 9.97 sec. (7109.58 ticks)
+Probing time = 10.17 sec. (645.30 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800322 coefficients.
+Reduced MIP has 2718577 rows, 930518 columns, and 10909516 nonzeros.
+Reduced MIP has 924217 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.94 sec. (5300.94 ticks)
+Probing time = 1.77 sec. (405.07 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3785.888077 seconds (215.85 M allocations: 10.372 GiB, 1.30% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 17336.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.733600e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt3_r5.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830718 rows and 912279 columns.
+MIP Presolve modified 1832633 coefficients.
+Reduced MIP has 2718283 rows, 930224 columns, and 10907164 nonzeros.
+Reduced MIP has 923923 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.08 sec. (7183.06 ticks)
+Probing time = 10.03 sec. (636.16 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1804832 coefficients.
+Reduced MIP has 2718283 rows, 930224 columns, and 10907164 nonzeros.
+Reduced MIP has 923923 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 14.34 sec. (6921.04 ticks)
+Probing time = 1.45 sec. (374.47 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.682600e+04  Node =       0  Best node =   0.000000e+00
+3683.342699 seconds (215.85 M allocations: 10.372 GiB, 1.34% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 16826.000000000004
+ 
+ 
+ 
+Starting optimization: m20_j15_d2_mt3_r6.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1831184 rows and 912512 columns.
+MIP Presolve modified 1837085 coefficients.
+Reduced MIP has 2718050 rows, 929991 columns, and 10905300 nonzeros.
+Reduced MIP has 923690 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.61 sec. (7432.55 ticks)
+Probing time = 10.06 sec. (641.98 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1798260 coefficients.
+Reduced MIP has 2718050 rows, 929991 columns, and 10905300 nonzeros.
+Reduced MIP has 923690 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.94 sec. (5299.45 ticks)
+Probing time = 1.69 sec. (405.86 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3751.624140 seconds (215.86 M allocations: 10.372 GiB, 1.32% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 16651.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.665100e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt3_r7.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830658 rows and 912249 columns.
+MIP Presolve modified 1830245 coefficients.
+Reduced MIP has 2718313 rows, 930254 columns, and 10907404 nonzeros.
+Reduced MIP has 923953 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 9.80 sec. (7001.91 ticks)
+Probing time = 10.14 sec. (645.32 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1799664 coefficients.
+Reduced MIP has 2718313 rows, 930254 columns, and 10907404 nonzeros.
+Reduced MIP has 923953 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.06 sec. (5302.73 ticks)
+Probing time = 1.76 sec. (405.46 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3816.826180 seconds (215.85 M allocations: 10.372 GiB, 1.29% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 16877.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.687700e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt3_r8.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830070 rows and 911955 columns.
+MIP Presolve modified 1830528 coefficients.
+Reduced MIP has 2718607 rows, 930548 columns, and 10909756 nonzeros.
+Reduced MIP has 924247 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 9.62 sec. (6817.36 ticks)
+Probing time = 10.17 sec. (646.79 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800390 coefficients.
+Reduced MIP has 2718607 rows, 930548 columns, and 10909756 nonzeros.
+Reduced MIP has 924247 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.09 sec. (5298.46 ticks)
+Probing time = 1.79 sec. (407.22 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3688.819335 seconds (215.84 M allocations: 10.372 GiB, 1.34% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 17177.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.717700e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt3_r9.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830568 rows and 912204 columns.
+MIP Presolve modified 1832197 coefficients.
+Reduced MIP has 2718358 rows, 930299 columns, and 10907764 nonzeros.
+Reduced MIP has 923998 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.07 sec. (7134.02 ticks)
+Probing time = 10.11 sec. (642.24 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1799650 coefficients.
+Reduced MIP has 2718358 rows, 930299 columns, and 10907764 nonzeros.
+Reduced MIP has 923998 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.02 sec. (5301.78 ticks)
+Probing time = 1.81 sec. (403.70 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   1.760100e+04  Node =       0  Best node =   0.000000e+00
+Elapsed time = 13.57 sec. (10019.11 ticks) for 157 of 200 candidates for Gomory cuts
+3684.914827 seconds (215.85 M allocations: 10.372 GiB, 1.34% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 17601.000000000004
+ 
+ 
+ 
+Starting optimization: m20_j15_d2_mt9_r0.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1831092 rows and 912466 columns.
+MIP Presolve modified 1832402 coefficients.
+Reduced MIP has 2718096 rows, 930037 columns, and 10905668 nonzeros.
+Reduced MIP has 923736 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 9.90 sec. (7096.16 ticks)
+Probing time = 10.15 sec. (646.16 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1799296 coefficients.
+Reduced MIP has 2718096 rows, 930037 columns, and 10905668 nonzeros.
+Reduced MIP has 923736 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.91 sec. (5295.29 ticks)
+Probing time = 1.78 sec. (405.65 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3764.870941 seconds (215.86 M allocations: 10.372 GiB, 1.31% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 20102.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.010200e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt9_r1.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830950 rows and 912395 columns.
+MIP Presolve modified 1830394 coefficients.
+Reduced MIP has 2718167 rows, 930108 columns, and 10906236 nonzeros.
+Reduced MIP has 923807 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 9.61 sec. (6855.21 ticks)
+Probing time = 10.17 sec. (646.68 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1799508 coefficients.
+Reduced MIP has 2718167 rows, 930108 columns, and 10906236 nonzeros.
+Reduced MIP has 923807 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.85 sec. (5296.33 ticks)
+Probing time = 1.84 sec. (407.12 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3687.346505 seconds (215.86 M allocations: 10.372 GiB, 1.34% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 19879.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.987900e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt9_r2.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830776 rows and 912308 columns.
+MIP Presolve modified 1830561 coefficients.
+Reduced MIP has 2718254 rows, 930195 columns, and 10906932 nonzeros.
+Reduced MIP has 923894 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 9.73 sec. (6858.39 ticks)
+Probing time = 10.23 sec. (646.79 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1799644 coefficients.
+Reduced MIP has 2718254 rows, 930195 columns, and 10906932 nonzeros.
+Reduced MIP has 923894 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.85 sec. (5296.07 ticks)
+Probing time = 1.79 sec. (406.65 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3700.743231 seconds (215.86 M allocations: 10.372 GiB, 1.34% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 19659.980000000003
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.965998e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt9_r3.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830924 rows and 912382 columns.
+MIP Presolve modified 1830516 coefficients.
+Reduced MIP has 2718180 rows, 930121 columns, and 10906340 nonzeros.
+Reduced MIP has 923820 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 9.66 sec. (6854.29 ticks)
+Probing time = 10.30 sec. (646.94 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1799540 coefficients.
+Reduced MIP has 2718180 rows, 930121 columns, and 10906340 nonzeros.
+Reduced MIP has 923820 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.99 sec. (5296.69 ticks)
+Probing time = 1.84 sec. (406.55 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3738.159547 seconds (215.86 M allocations: 10.372 GiB, 1.32% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 20775.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.077500e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt9_r4.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830010 rows and 911925 columns.
+MIP Presolve modified 1843620 coefficients.
+Reduced MIP has 2718637 rows, 930578 columns, and 10909996 nonzeros.
+Reduced MIP has 924277 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.34 sec. (7625.42 ticks)
+Probing time = 10.38 sec. (647.24 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800430 coefficients.
+Reduced MIP has 2718637 rows, 930578 columns, and 10909996 nonzeros.
+Reduced MIP has 924277 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.12 sec. (5300.19 ticks)
+Probing time = 1.74 sec. (406.72 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3744.560610 seconds (215.84 M allocations: 10.372 GiB, 1.32% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 20920.990000000005
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.092099e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt9_r5.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1831168 rows and 912504 columns.
+MIP Presolve modified 1832221 coefficients.
+Reduced MIP has 2718058 rows, 929999 columns, and 10905364 nonzeros.
+Reduced MIP has 923698 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 9.74 sec. (6882.78 ticks)
+Probing time = 10.24 sec. (646.42 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1799216 coefficients.
+Reduced MIP has 2718058 rows, 929999 columns, and 10905364 nonzeros.
+Reduced MIP has 923698 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.07 sec. (5298.20 ticks)
+Probing time = 1.82 sec. (407.24 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3687.216804 seconds (215.86 M allocations: 10.372 GiB, 1.34% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 20403.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.040300e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt9_r6.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830638 rows and 912239 columns.
+MIP Presolve modified 1830167 coefficients.
+Reduced MIP has 2718323 rows, 930264 columns, and 10907484 nonzeros.
+Reduced MIP has 923963 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 9.66 sec. (6792.19 ticks)
+Probing time = 10.23 sec. (647.55 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1806242 coefficients.
+Reduced MIP has 2718323 rows, 930264 columns, and 10907484 nonzeros.
+Reduced MIP has 923963 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 14.45 sec. (6944.97 ticks)
+Probing time = 1.38 sec. (372.40 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3688.367304 seconds (215.85 M allocations: 10.372 GiB, 1.34% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 19558.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   1.955800e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt9_r7.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830312 rows and 912076 columns.
+MIP Presolve modified 1832752 coefficients.
+Reduced MIP has 2718486 rows, 930427 columns, and 10908788 nonzeros.
+Reduced MIP has 924126 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 9.75 sec. (6883.01 ticks)
+Probing time = 10.22 sec. (646.95 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1800108 coefficients.
+Reduced MIP has 2718486 rows, 930427 columns, and 10908788 nonzeros.
+Reduced MIP has 924126 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.99 sec. (5294.58 ticks)
+Probing time = 1.84 sec. (407.38 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3687.824151 seconds (215.85 M allocations: 10.372 GiB, 1.34% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 20639.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.063900e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt9_r8.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1830812 rows and 912326 columns.
+MIP Presolve modified 1830193 coefficients.
+Reduced MIP has 2718236 rows, 930177 columns, and 10906788 nonzeros.
+Reduced MIP has 923876 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 9.66 sec. (6802.73 ticks)
+Probing time = 10.34 sec. (646.83 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1799666 coefficients.
+Reduced MIP has 2718236 rows, 930177 columns, and 10906788 nonzeros.
+Reduced MIP has 923876 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 11.08 sec. (5297.11 ticks)
+Probing time = 1.68 sec. (406.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3699.496917 seconds (215.86 M allocations: 10.372 GiB, 1.33% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 20751.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.075100e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j15_d2_mt9_r9.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Tried aggregator 1 time.
+MIP Presolve eliminated 1831326 rows and 912583 columns.
+MIP Presolve modified 1830066 coefficients.
+Reduced MIP has 2717979 rows, 929920 columns, and 10904732 nonzeros.
+Reduced MIP has 923619 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 9.56 sec. (6807.17 ticks)
+Probing time = 10.27 sec. (646.81 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 1799144 coefficients.
+Reduced MIP has 2717979 rows, 929920 columns, and 10904732 nonzeros.
+Reduced MIP has 923619 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 10.85 sec. (5294.82 ticks)
+Probing time = 1.84 sec. (406.58 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+3748.878615 seconds (215.86 M allocations: 10.372 GiB, 1.31% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 20643.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.064300e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j20_d1_mt3_r0.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Presolve has eliminated 3235696 rows and 1613718 columns...
+Presolve has improved bounds 837 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 3235696 rows and 1613718 columns.
+MIP Presolve modified 3249934 coefficients.
+Reduced MIP has 4826944 rows, 1642885 columns, and 19363652 nonzeros.
+Reduced MIP has 1634484 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 44.78 sec. (19221.03 ticks)
+Probing time = 18.35 sec. (1110.00 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 3204324 coefficients.
+Reduced MIP has 4826944 rows, 1642885 columns, and 19363652 nonzeros.
+Reduced MIP has 1634484 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 22.73 sec. (9385.42 ticks)
+Probing time = 3.38 sec. (706.14 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+4003.145043 seconds (384.76 M allocations: 18.994 GiB, 2.69% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 22286.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.228600e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j20_d1_mt3_r1.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Presolve has eliminated 3236874 rows and 1614307 columns...
+Presolve has improved bounds 828 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 3236874 rows and 1614307 columns.
+MIP Presolve modified 3249902 coefficients.
+Reduced MIP has 4826355 rows, 1642296 columns, and 19358940 nonzeros.
+Reduced MIP has 1633895 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 45.68 sec. (18683.29 ticks)
+Probing time = 20.54 sec. (1119.18 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 3203602 coefficients.
+Reduced MIP has 4826355 rows, 1642296 columns, and 19358940 nonzeros.
+Reduced MIP has 1633895 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 23.32 sec. (9380.50 ticks)
+Probing time = 3.59 sec. (710.94 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+4068.901442 seconds (384.78 M allocations: 18.994 GiB, 2.83% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 23789.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.378900e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j20_d1_mt3_r2.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Presolve has eliminated 3236490 rows and 1614115 columns...
+Presolve has improved bounds 2022 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 3236490 rows and 1614115 columns.
+MIP Presolve modified 3244244 coefficients.
+Reduced MIP has 4826547 rows, 1642488 columns, and 19360476 nonzeros.
+Reduced MIP has 1634087 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 46.56 sec. (18651.58 ticks)
+Probing time = 21.01 sec. (1120.49 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 3204062 coefficients.
+Reduced MIP has 4826547 rows, 1642488 columns, and 19360476 nonzeros.
+Reduced MIP has 1634087 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 23.61 sec. (9381.51 ticks)
+Probing time = 3.44 sec. (711.73 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+4313.370728 seconds (384.77 M allocations: 18.994 GiB, 2.71% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 21985.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.198500e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j20_d1_mt3_r3.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Presolve has eliminated 3236482 rows and 1614111 columns...
+Presolve has improved bounds 825 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 3236482 rows and 1614111 columns.
+MIP Presolve modified 3244247 coefficients.
+Reduced MIP has 4826551 rows, 1642492 columns, and 19360508 nonzeros.
+Reduced MIP has 1634091 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 55.96 sec. (18431.62 ticks)
+Probing time = 21.45 sec. (1119.72 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 3204022 coefficients.
+Reduced MIP has 4826551 rows, 1642492 columns, and 19360508 nonzeros.
+Reduced MIP has 1634091 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 22.64 sec. (9383.61 ticks)
+Probing time = 3.84 sec. (711.56 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+4216.851560 seconds (384.77 M allocations: 18.994 GiB, 2.77% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 22933.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.293300e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j20_d1_mt3_r4.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Presolve has eliminated 3236016 rows and 1613878 columns...
+Presolve has improved bounds 815 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 3236016 rows and 1613878 columns.
+MIP Presolve modified 3245512 coefficients.
+Reduced MIP has 4826784 rows, 1642725 columns, and 19362372 nonzeros.
+Reduced MIP has 1634324 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 48.87 sec. (18893.55 ticks)
+Probing time = 21.15 sec. (1106.64 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 3204292 coefficients.
+Reduced MIP has 4826784 rows, 1642725 columns, and 19362372 nonzeros.
+Reduced MIP has 1634324 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 22.70 sec. (9383.15 ticks)
+Probing time = 3.48 sec. (701.66 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+4004.986350 seconds (384.77 M allocations: 18.994 GiB, 2.93% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 22477.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.247700e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j20_d1_mt3_r5.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Presolve has eliminated 3235862 rows and 1613801 columns...
+Presolve has improved bounds 1638 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 3235862 rows and 1613801 columns.
+MIP Presolve modified 3248275 coefficients.
+Reduced MIP has 4826861 rows, 1642802 columns, and 19362988 nonzeros.
+Reduced MIP has 1634401 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 47.15 sec. (18747.25 ticks)
+Probing time = 21.78 sec. (1120.23 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 3204334 coefficients.
+Reduced MIP has 4826861 rows, 1642802 columns, and 19362988 nonzeros.
+Reduced MIP has 1634401 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 24.09 sec. (9383.56 ticks)
+Probing time = 3.55 sec. (710.95 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+4150.999887 seconds (384.76 M allocations: 18.994 GiB, 2.83% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 22539.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.253900e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j20_d1_mt3_r6.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Presolve has eliminated 3235914 rows and 1613827 columns...
+Presolve has improved bounds 1621 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 3235914 rows and 1613827 columns.
+MIP Presolve modified 3247704 coefficients.
+Reduced MIP has 4826835 rows, 1642776 columns, and 19362780 nonzeros.
+Reduced MIP has 1634375 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 51.91 sec. (18716.57 ticks)
+Probing time = 21.18 sec. (1120.06 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 3204610 coefficients.
+Reduced MIP has 4826835 rows, 1642776 columns, and 19362780 nonzeros.
+Reduced MIP has 1634375 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 23.36 sec. (9382.58 ticks)
+Probing time = 3.82 sec. (710.99 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+4217.702374 seconds (384.76 M allocations: 18.994 GiB, 2.78% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 22425.000000000004
+ 
+ 
+ 
+
+Node log . . .
+Best integer =   2.242500e+04  Node =       0  Best node =   0.000000e+00
+Starting optimization: m20_j20_d1_mt3_r7.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 28672
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Presolve has eliminated 3236072 rows and 1613906 columns...
+Presolve has improved bounds 1618 times...
+Tried aggregator 1 time.
+MIP Presolve eliminated 3236072 rows and 1613906 columns.
+MIP Presolve modified 3245625 coefficients.
+Reduced MIP has 4826756 rows, 1642697 columns, and 19362148 nonzeros.
+Reduced MIP has 1634296 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 52.50 sec. (18628.28 ticks)
+Probing time = 27.40 sec. (1120.29 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 3204278 coefficients.
+Reduced MIP has 4826756 rows, 1642697 columns, and 19362148 nonzeros.
+Reduced MIP has 1634296 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 24.27 sec. (9384.47 ticks)
+Probing time = 3.37 sec. (712.10 ticks)
