@@ -12,7 +12,13 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
     #### READING THE INSTANCE LIST
     for instanceName in eachline(file)
         ################## CREATE A MODEL OBJECT TO BE RUN ON CPLEX  ####################
-        model = Model(with_optimizer(CPLEX.Optimizer, CPX_PARAM_WORKMEM=28672, CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1, CPX_PARAM_TILIM=3600))
+        model = Model(with_optimizer(CPLEX.Optimizer))
+		MOI.set(model, MOI.RawParameter("CPX_PARAM_TILIM"), 3600)
+		MOI.set(model, MOI.RawParameter("CPX_PARAM_MIPDISPLAY"), 1)
+		MOI.set(model, MOI.RawParameter("CPX_PARAM_MIPINTERVAL"), 1)
+		MOI.set(model, MOI.RawParameter("CPX_PARAM_WORKMEM"), 1)
+		#, CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1, CPX_PARAM_TILIM=3600)
+
         #### MAIN PARAMETERS OF THE OPTIMIZATION
         NUMBER_OF_JOBS = 0
         NUMBER_OF_MACHINES = 0

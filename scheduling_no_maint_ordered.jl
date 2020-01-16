@@ -1,5 +1,6 @@
 using JuMP
 using CPLEX
+using Gurobi
 
 
 
@@ -11,8 +12,14 @@ bigM = 100000
 open("Instances/Instances With Deterioration/instance_list.txt") do file
     #### READING THE INSTANCE LIST
     for instanceName in eachline(file)
+		# model = Model(with_optimizer(Gurobi.Optimizer, MIPFocus = 3))
+model = Model(with_optimizer(CPLEX.Optimizer))
+		MOI.set(model, MOI.RawParameter("CPX_PARAM_TILIM"), 3600)
+		MOI.set(model, MOI.RawParameter("CPX_PARAM_MIPDISPLAY"), 1)
+		MOI.set(model, MOI.RawParameter("CPX_PARAM_MIPINTERVAL"), 1)
+		MOI.set(model, MOI.RawParameter("CPX_PARAM_WORKMEM"), 1)
         ################## CREATE A MODEL OBJECT TO BE RUN ON CPLEX  ####################
-        model = Model(with_optimizer(CPLEX.Optimizer, CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1, CPX_PARAM_TILIM=3600, CPX_PARAM_SYMMETRY=1))
+      #  model = Model(with_optimizer(CPLEX.Optimizer, CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1, CPX_PARAM_TILIM=3600, CPX_PARAM_SYMMETRY=1))
         #### MAIN PARAMETERS OF THE OPTIMIZATION
         NUMBER_OF_JOBS = 0
         NUMBER_OF_MACHINES = 0
@@ -71,9 +78,6 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            #Continuous variable. Define the time spent to execute the job j on the machine k
            @variable(model, a[2:NUMBER_OF_JOBS+1, 1:NUMBER_OF_MACHINES] >= 0, base_name="a")
 
-           #Continuous variable. Define the completion time on machine k on period h
-           @variable(model, f[1:NUMBER_OF_JOBS+2], base_name="f")
-
            #Continuous variable. Defines the makespan
            @variable(model, Cmax, base_name="Cmax")
 
@@ -103,34 +107,8 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
             end
 
 
-
            ############################################################################################
-           ##           CONSTRAINT 2: CONSTRAINT ANTI-CYCLE. A FLOW STARTS FROM ONE JOB AND DECREASES
-           ##               ONE UNITY IN EACH JOB. IF THE JOB CLOSES A CYCLE THIS CONSTRAINT IS NOT
-           ##               RESPECTED. A CYCLE CAN START AND FINISH IN A MAINTENANCE HOWEVER
-           ############################################################################################
-           for j= 2:NUMBER_OF_JOBS+1
-               for i=1:(NUMBER_OF_JOBS+1)
-					for k=1:NUMBER_OF_MACHINES
-                   		@constraint(model, f[j] <= f[i]-1 + (NUMBER_OF_JOBS+5)*(1- sum(x[i,j,k] ) ) )
-					end
-               end
-           end
-
-
-		   for j= 2:NUMBER_OF_JOBS+1
-               for i=1:(NUMBER_OF_JOBS+1)
-					for k=1:NUMBER_OF_MACHINES
-	                   @constraint(model, f[j] >= f[i]-1 - (NUMBER_OF_JOBS+5)*(1- sum(x[i,j,k] ) ) )
-					end
-               end
-           end
-
-            @constraint(model, f[1]== (NUMBER_OF_JOBS+6))
-
-
-           ############################################################################################
-           ##           CONSTRAINT 4: THERE MUST THE SAME NUMBER OF JOBS BEFORE AND ONE AFTER THE JOB J
+           ##           CONSTRAINT 2: THERE MUST THE SAME NUMBER OF JOBS BEFORE AND ONE AFTER THE JOB J
            ##               ON A MACHINE
            ############################################################################################
            for j =2:(NUMBER_OF_JOBS+1)
@@ -140,7 +118,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            end
 
            ############################################################################################
-           ##           CONSTRAINT 5: DELAY FACTOR EVALUATION
+           ##           CONSTRAINT 3: DELAY FACTOR EVALUATION
            ############################################################################################
            for i = 1:(NUMBER_OF_JOBS+1)
                 for j=2:(NUMBER_OF_JOBS+1)
@@ -158,7 +136,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
             @constraint(model, q[1] == 1 )
 
             ############################################################################################
-            ##           CONSTRAINT 6: PROCESSING TIME
+            ##           CONSTRAINT 4: PROCESSING TIME
             ############################################################################################
             for i = 1:(NUMBER_OF_JOBS+1)
                 for j=2:(NUMBER_OF_JOBS+1)
@@ -168,9 +146,14 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                 end
             end
 
+			for j=2:(NUMBER_OF_JOBS+1)
+				for m=1:NUMBER_OF_MACHINES
+					@constraint(model, a[j,m] - p[j-1,m] <= t[m])
+				end
+			end
 
             ############################################################################################
-            ##           CONSTRAINT 7: MAKESPAN
+            ##           CONSTRAINT 5: MAKESPAN
             ############################################################################################
             for m=1:NUMBER_OF_MACHINES
                 @constraint(model, sum(a[j,m] for j = 2:(NUMBER_OF_JOBS+1) ) +
@@ -179,7 +162,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
 
 
 			############################################################################################
-            ##           CONSTRAINT 8: AVOID A UNIQUE CICLE DEPARTING AND RETURNING TO A MAINTENANCE
+            ##           CONSTRAINT 6: AVOID A UNIQUE CICLE DEPARTING AND RETURNING TO A MAINTENANCE
             ############################################################################################
 			for m=1:NUMBER_OF_MACHINES
 				@constraint(model, sum(x[i,j,m] for i=2:(NUMBER_OF_JOBS+1), j=2:(NUMBER_OF_JOBS+2))<=
