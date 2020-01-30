@@ -1,0 +1,61 @@
+Starting optimization: m20_j20_d1_mt9_r8.txt
+3763.785834 seconds (374.21 M allocations: 18.245 GiB, 2.04% gc time)
+TIME_LIMIT
+Optimization finished
+-------UNEXPECTED ERROR : m20_j20_d1_mt9_r8.txt
+ 
+ 
+ 
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+Warning:  No solution found from 1 MIP starts.
+Retaining values of one MIP start for possible repair.
+Starting optimization: m20_j20_d1_mt9_r9.txt
+3747.441149 seconds (332.25 M allocations: 16.175 GiB, 1.51% gc time)
+TIME_LIMIT
+Optimization finished
+-------UNEXPECTED ERROR : m20_j20_d1_mt9_r9.txt
+ 
+ 
+ 
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+Warning:  No solution found from 1 MIP starts.
+Retaining values of one MIP start for possible repair.
+Starting optimization: m20_j20_d2_mt3_r0.txt
+3809.184691 seconds (332.29 M allocations: 16.176 GiB, 1.54% gc time)
+TIME_LIMIT
+Optimization finished
+-------UNEXPECTED ERROR : m20_j20_d2_mt3_r0.txt
+ 
+ 
+ 
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+Warning:  No solution found from 1 MIP starts.
+Retaining values of one MIP start for possible repair.
+Starting optimization: m20_j20_d2_mt3_r1.txt
+3829.535606 seconds (332.29 M allocations: 16.176 GiB, 1.50% gc time)
+TIME_LIMIT
+Optimization finished
+-------UNEXPECTED ERROR : m20_j20_d2_mt3_r1.txt
+ 
+ 
+ 
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+Warning:  No solution found from 1 MIP starts.
+Retaining values of one MIP start for possible repair.
+Starting optimization: m20_j20_d2_mt3_r2.txt

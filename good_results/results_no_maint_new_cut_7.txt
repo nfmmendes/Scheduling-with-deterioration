@@ -1,0 +1,16 @@
+Starting optimization: m20_j20_d2_mt3_r4.txt
+3772.343805 seconds (374.25 M allocations: 18.246 GiB, 1.97% gc time)
+TIME_LIMIT
+Optimization finished
+-------UNEXPECTED ERROR : m20_j20_d2_mt3_r4.txt
+ 
+ 
+ 
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+Warning:  No solution found from 1 MIP starts.
+Retaining values of one MIP start for possible repair.
+Starting optimization: m20_j20_d2_mt3_r5.txt
