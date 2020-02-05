@@ -1,0 +1,480 @@
+m2_j10_d1_mt3_r0	Best integer =   5.170000e+02  Node =   89496  Best node =   3.009910e+02	3611.199104 seconds 
+m2_j10_d1_mt3_r1	Best integer =   4.690700e+02  Node = 1069712  Best node =   3.269809e+02	3600.165986 seconds 
+m2_j10_d1_mt3_r2	Best integer =   5.260600e+02  Node = 8214384  Best node =   3.486036e+02	3600.198089 seconds 
+m2_j10_d1_mt3_r3	Best integer =   3.534024e+02  Node = 7886866  Best node =   2.930706e+02	3600.156830 seconds 
+m2_j10_d1_mt3_r4	Best integer =   5.084300e+02  Node = 7489195  Best node =   3.724306e+02	3600.150538 seconds 
+m2_j10_d1_mt3_r5	Best integer =   5.775129e+02  Node = 9478171  Best node =   4.263803e+02	3600.147678 seconds 
+m2_j10_d1_mt3_r6	Best integer =   4.548845e+02  Node = 6711706  Best node =   3.583244e+02	3600.229569 seconds 
+m2_j10_d1_mt3_r7	Best integer =   5.827100e+02  Node = 10297703  Best node =   4.283581e+02	3600.138526 seconds 
+m2_j10_d1_mt3_r8	Best integer =   4.622494e+02  Node = 8360532  Best node =   3.597200e+02	3600.161434 seconds 
+m2_j10_d1_mt3_r9	Best integer =   4.874626e+02  Node =  768842  Best node =   2.694469e+02	3600.161434 seconds 
+m2_j10_d1_mt9_r0	Best integer =   5.012100e+02  Node = 5868345  Best node =   3.563064e+02	3600.168156 seconds 
+m2_j10_d1_mt9_r1	Best integer =   4.714749e+02  Node = 6869935  Best node =   3.629930e+02	3600.188504 seconds 
+m2_j10_d1_mt9_r2	Best integer =   5.198000e+02  Node = 5977925  Best node =   3.751580e+02	3600.161710 seconds 
+m2_j10_d1_mt9_r3	Best integer =   4.353248e+02  Node = 7888112  Best node =   3.003354e+02	3600.182310 seconds 
+m2_j10_d1_mt9_r4	Best integer =   3.598900e+02  Node = 4882819  Best node =   2.978786e+02	3600.184137 seconds 
+m2_j10_d1_mt9_r5	Best integer =   4.538200e+02  Node = 7000356  Best node =   3.566458e+02	3600.155991 seconds 
+m2_j10_d1_mt9_r6	Best integer =   5.107408e+02  Node = 2853730  Best node =   3.125646e+02	3600.179047 seconds
+m2_j10_d1_mt9_r7	Best integer =   5.455228e+02  Node = 8427487  Best node =   4.099843e+02	3600.271031 seconds 
+m2_j10_d1_mt9_r8	Best integer =   5.617681e+02  Node =   33200  Best node =   2.852680e+02	3600.168857 seconds 
+m2_j10_d1_mt9_r9	Best integer =   4.773200e+02  Node =   21918  Best node =   2.543012e+02	3600.155400 seconds 
+m2_j10_d2_mt3_r0	Best integer =   3.839900e+02  Node = 7245275  Best node =   3.125521e+02	3600.186007 seconds 
+m2_j10_d2_mt3_r1	Best integer =   3.911000e+02  Node =  254209  Best node =   2.969285e+02	3600.167126 seconds 
+m2_j10_d2_mt3_r2	Best integer =   5.117000e+02  Node =   28229  Best node =   2.908124e+02	3600.190700 seconds 
+m2_j10_d2_mt3_r3	Best integer =   5.860500e+02  Node =  148971  Best node =   3.807145e+02	3600.174511 seconds 
+m2_j10_d2_mt3_r4	Best integer =   5.274200e+02  Node = 6528150  Best node =   4.298608e+02	3600.166519 seconds 
+m2_j10_d2_mt3_r5	Best integer =   5.408500e+02  Node =    1794  Best node =   2.702403e+02	3600.417061 seconds 
+m2_j10_d2_mt3_r6	Best integer =   5.045400e+02  Node = 6610012  Best node =   3.975454e+02	3600.215401 seconds 
+m2_j10_d2_mt3_r7	Best integer =   5.965500e+02  Node =   21462  Best node =   2.759250e+02	3600.163936 seconds 
+m2_j10_d2_mt3_r8	Best integer =   5.727986e+02  Node = 8840626  Best node =   4.916986e+02	3600.247117 seconds 
+m2_j10_d2_mt3_r9	Best integer =   5.453000e+02  Node =  928480  Best node =   3.739975e+02	3600.304503 seconds 
+m2_j10_d2_mt9_r0	Best integer =   4.759000e+02  Node = 4791698  Best node =   3.633593e+02	3600.186932 seconds 
+m2_j10_d2_mt9_r1	Best integer =   6.293500e+02  Node =  611269  Best node =   4.349735e+02	3600.165846 seconds 
+m2_j10_d2_mt9_r2	Best integer =   4.469080e+02  Node = 7764937  Best node =   3.482521e+02	3600.283970 seconds 
+m2_j10_d2_mt9_r3	Best integer =   5.684400e+02  Node = 1219267  Best node =   3.619301e+02	3600.209814 seconds 
+m2_j10_d2_mt9_r4	Best integer =   4.927575e+02  Node = 2469137  Best node =   3.720184e+02	3600.184797 seconds 
+m2_j10_d2_mt9_r5	Best integer =   5.462500e+02  Node = 6484630  Best node =   4.183964e+02	3600.205967 seconds 
+m2_j10_d2_mt9_r6	Best integer =   4.853400e+02  Node = 5024574  Best node =   3.578546e+02	3600.185841 seconds 
+m2_j10_d2_mt9_r7	Best integer =   6.072600e+02  Node = 1582739  Best node =   4.022846e+02	3600.374140 seconds 
+m2_j10_d2_mt9_r8	Best integer =   5.413596e+02  Node = 6619945  Best node =   3.960436e+02	3600.157049 seconds 
+m2_j10_d2_mt9_r9	Best integer =   5.732000e+02  Node = 1032432  Best node =   3.897684e+02	3600.168416 seconds 
+m2_j15_d1_mt3_r0	Best integer =   9.098200e+02  Node = 2795640  Best node =   3.671359e+02	3600.625199 seconds 
+m2_j15_d1_mt3_r1	Best integer =   8.218900e+02  Node = 2437571  Best node =   3.526332e+02	3600.222951 seconds 
+m2_j15_d1_mt3_r2	Best integer =   8.104000e+02  Node = 2960699  Best node =   3.868494e+02	3600.135813 seconds 
+m2_j15_d1_mt3_r3	Best integer =   7.751700e+02  Node = 1274597  Best node =   3.421576e+02	3600.228920 seconds 
+m2_j15_d1_mt3_r4	Best integer =   8.194100e+02  Node = 2941720  Best node =   3.665069e+02	3600.163699 seconds 
+m2_j15_d1_mt3_r5	Best integer =   7.407556e+02  Node =  624657  Best node =   3.172450e+02	3600.195345 seconds 
+m2_j15_d1_mt3_r6	Best integer =   7.795966e+02  Node = 2573917  Best node =   3.944290e+02	3600.143221 seconds 
+m2_j15_d1_mt3_r7	Best integer =   7.718708e+02  Node = 2588924  Best node =   3.547282e+02	3600.195747 seconds 
+m2_j15_d1_mt3_r8	Best integer =   7.053500e+02  Node = 1224510  Best node =   3.237889e+02	3600.202268 seconds 
+m2_j15_d1_mt3_r9	Best integer =   7.104216e+02  Node = 2519578  Best node =   4.047416e+02	3600.291935 seconds 
+m2_j15_d1_mt9_r0	Best integer =   8.399400e+02  Node = 2693848  Best node =   3.854970e+02	3600.191015 seconds 
+m2_j15_d1_mt9_r1	Best integer =   7.529100e+02  Node = 2393042  Best node =   3.568434e+02	3600.182016 seconds 
+m2_j15_d1_mt9_r2	Best integer =   8.746181e+02  Node = 2736742  Best node =   4.089236e+02	3600.173829 seconds 
+m2_j15_d1_mt9_r3	Best integer =   8.525331e+02  Node = 2830891  Best node =   4.122266e+02	3600.171130 seconds 
+m2_j15_d1_mt9_r4	Best integer =   8.501168e+02  Node = 2618801  Best node =   3.894013e+02	3600.177734 seconds
+m2_j15_d1_mt9_r5	Best integer =   7.810046e+02  Node = 3660695  Best node =   3.628878e+02	3600.157936 seconds 
+m2_j15_d1_mt9_r6	Best integer =   8.039676e+02  Node = 2950406  Best node =   3.727656e+02	3600.192656 seconds 
+m2_j15_d1_mt9_r7	Best integer =   8.158900e+02  Node = 2784693  Best node =   3.757120e+02	3600.294833 seconds 
+m2_j15_d1_mt9_r8	Best integer =   7.519405e+02  Node = 2706158  Best node =   3.469185e+02	3600.138404 seconds 
+m2_j15_d1_mt9_r9	Best integer =   9.127452e+02  Node = 4606335  Best node =   3.896480e+02	3600.467838 seconds 
+m2_j15_d2_mt3_r0	Best integer =   9.134500e+02  Node =  154593  Best node =   4.385609e+02	3600.190823 seconds 
+m2_j15_d2_mt3_r1	Best integer =   8.527000e+02  Node =  441831  Best node =   4.368250e+02	3600.167664 seconds 
+m2_j15_d2_mt3_r2	Best integer =   8.620000e+02  Node =   96796  Best node =   3.661887e+02	3600.175447 seconds 
+m2_j15_d2_mt3_r3	Best integer =   7.940000e+02  Node = 2985826  Best node =   4.224264e+02	3600.216075 seconds 
+m2_j15_d2_mt3_r4	Best integer =   6.628500e+02  Node =  319237  Best node =   3.771988e+02	3600.256430 seconds 
+m2_j15_d2_mt3_r5	Best integer =   7.373500e+02  Node = 2044372  Best node =   3.942995e+02	3600.206736 seconds 
+m2_j15_d2_mt3_r6	Best integer =   8.207000e+02  Node =  155398  Best node =   3.828482e+02	3600.297019 seconds 
+m2_j15_d2_mt3_r7	Best integer =   8.490000e+02  Node = 1285740  Best node =   4.281380e+02	3600.165107 seconds 
+m2_j15_d2_mt3_r8	Best integer =   8.439000e+02  Node =  104928  Best node =   3.942384e+02	3600.225393 seconds 
+m2_j15_d2_mt3_r9	Best integer =   8.436000e+02  Node =  221297  Best node =   4.309706e+02	3600.152438 seconds 
+m2_j15_d2_mt9_r0	Best integer =   7.315400e+02  Node = 2532585  Best node =   4.076353e+02	3600.204258 seconds 
+m2_j15_d2_mt9_r1	Best integer =   8.125000e+02  Node = 2991036  Best node =   4.088643e+02	3600.178941 seconds 
+m2_j15_d2_mt9_r2	Best integer =   7.815000e+02  Node = 2211022  Best node =   4.368606e+02	3600.197469 seconds 
+m2_j15_d2_mt9_r3	Best integer =   8.764500e+02  Node = 2876095  Best node =   4.493831e+02	3600.202050 seconds 
+m2_j15_d2_mt9_r4	Best integer =   7.452680e+02  Node = 2445097  Best node =   4.227138e+02	3600.198647 seconds 
+m2_j15_d2_mt9_r5	Best integer =   8.539558e+02  Node = 2466217  Best node =   4.179461e+02	3600.164498 seconds 
+m2_j15_d2_mt9_r6	Best integer =   8.294000e+02  Node = 2814242  Best node =   4.235060e+02	3600.205327 seconds 
+m2_j15_d2_mt9_r7	Best integer =   8.672000e+02  Node = 2253650  Best node =   4.749811e+02	3600.186584 seconds 
+m2_j15_d2_mt9_r8	Best integer =   7.596000e+02  Node = 1950031  Best node =   4.288462e+02	3600.167336 seconds 
+m2_j15_d2_mt9_r9	Best integer =   7.088000e+02  Node = 2416102  Best node =   4.162334e+02	3600.195900 seconds 
+m2_j20_d1_mt3_r0	Best integer =   1.142291e+03  Node = 1374380  Best node =   3.714051e+02	3600.230075 seconds 
+m2_j20_d1_mt3_r1	Best integer =   9.185172e+02  Node = 1919791  Best node =   3.104709e+02	3600.383317 seconds 
+m2_j20_d1_mt3_r2	Best integer =   1.015188e+03  Node = 1113537  Best node =   3.764899e+02	3600.173574 seconds 
+m2_j20_d1_mt3_r3	Best integer =   1.121361e+03  Node = 1143566  Best node =   3.939427e+02	3600.235716 seconds 
+m2_j20_d1_mt3_r4	Best integer =   8.379990e+02  Node =  919327  Best node =   2.776561e+02	3600.106756 seconds 
+m2_j20_d1_mt3_r5	Best integer =   1.108650e+03  Node = 1174533  Best node =   3.732403e+02	3600.213988 seconds 
+m2_j20_d1_mt3_r6	Best integer =   9.919108e+02  Node = 1046469  Best node =   3.655484e+02	3600.285273 seconds
+m2_j20_d1_mt3_r7	Best integer =   9.296700e+02  Node = 1489610  Best node =   3.092571e+02	3600.148723 seconds 
+m2_j20_d1_mt3_r8	Best integer =   1.072765e+03  Node = 1876089  Best node =   3.551179e+02	3600.306615 seconds 
+m2_j20_d1_mt3_r9	Best integer =   8.982200e+02  Node =  770326  Best node =   2.997778e+02	3600.194886 seconds 
+m2_j20_d1_mt9_r0	Best integer =   1.131579e+03  Node = 1290625  Best node =   3.861303e+02	3600.172537 seconds 
+m2_j20_d1_mt9_r1	Best integer =   1.265163e+03  Node = 2145956  Best node =   3.992669e+02	3600.086461 seconds 
+m2_j20_d1_mt9_r2	Best integer =   1.065376e+03  Node = 1392331  Best node =   4.009043e+02	3600.146557 seconds 
+m2_j20_d1_mt9_r3	Best integer =   1.098745e+03  Node = 2111530  Best node =   3.274498e+02	3600.347630 seconds
+m2_j20_d1_mt9_r4	Best integer =   1.030708e+03  Node = 1308678  Best node =   3.340355e+02	3600.215423 seconds 
+m2_j20_d1_mt9_r5	Best integer =   8.490336e+02  Node = 1128213  Best node =   3.511917e+02	3600.213081 seconds 
+m2_j20_d1_mt9_r6	Best integer =   1.009350e+03  Node = 2088448  Best node =   3.322560e+02	3600.304460 seconds 
+m2_j20_d1_mt9_r7	Best integer =   9.752370e+02  Node = 1207327  Best node =   3.549124e+02	3600.400594 seconds 
+m2_j20_d1_mt9_r8	Best integer =   9.529761e+02  Node = 2059899  Best node =   3.024598e+02	3600.427510 seconds 
+m2_j20_d1_mt9_r9	Best integer =   1.097667e+03  Node = 1769615  Best node =   3.796087e+02	3600.283940 seconds 
+m2_j20_d2_mt3_r0	Best integer =   1.086350e+03  Node = 1087628  Best node =   4.532918e+02	3600.135668 seconds 
+m2_j20_d2_mt3_r1	Best integer =   9.844000e+02  Node =   79151  Best node =   3.704120e+02	3600.157652 seconds 
+m2_j20_d2_mt3_r2	Best integer =   9.604500e+02  Node =   23458  Best node =   3.431823e+02	3600.166722 seconds
+m2_j20_d2_mt3_r3	Best integer =   1.085650e+03  Node =  838520  Best node =   5.005574e+02	3600.161654 seconds
+m2_j20_d2_mt3_r4	Best integer =   1.203550e+03  Node =  951762  Best node =   5.221428e+02	3600.183172 seconds 
+m2_j20_d2_mt3_r5	Best integer =   1.038870e+03  Node =  410353  Best node =   4.493440e+02	3600.234382 seconds 
+m2_j20_d2_mt3_r6	Best integer =   8.651000e+02  Node =  872963  Best node =   3.689673e+02	3600.163296 seconds 
+m2_j20_d2_mt3_r7	Best integer =   9.298000e+02  Node =  322301  Best node =   4.370373e+02	3600.178206 seconds 
+m2_j20_d2_mt3_r8	Best integer =   1.003770e+03  Node =  798141  Best node =   4.306331e+02	3600.212333 seconds 
+m2_j20_d2_mt3_r9	Best integer =   1.204760e+03  Node = 1131205  Best node =   3.997087e+02	3600.159629 seconds 
+m2_j20_d2_mt9_r0	Best integer =   8.654500e+02  Node =  443849  Best node =   3.422967e+02	3600.097672 seconds 
+m2_j20_d2_mt9_r1	Best integer =   1.191131e+03  Node = 1369640  Best node =   4.331448e+02	3600.225842 seconds 
+m2_j20_d2_mt9_r2	Best integer =   9.338600e+02  Node = 1458190  Best node =   3.814385e+02	3600.431889 seconds 
+m2_j20_d2_mt9_r3	Best integer =   1.077850e+03  Node =  915345  Best node =   4.700318e+02	3600.270959 seconds 
+m2_j20_d2_mt9_r4	Best integer =   9.872200e+02  Node = 1840378  Best node =   3.902003e+02	3600.335436 seconds 
+m2_j20_d2_mt9_r5	Best integer =   1.098620e+03  Node = 1803021  Best node =   3.661245e+02	3600.288234 seconds 
+m2_j20_d2_mt9_r6	Best integer =   1.015680e+03  Node = 1239388  Best node =   4.225457e+02	3600.228493 seconds 
+m2_j20_d2_mt9_r7	Best integer =   1.008260e+03  Node = 1053270  Best node =   3.685575e+02	3600.182419 seconds 
+m2_j20_d2_mt9_r8	Best integer =   1.090150e+03  Node = 1138104  Best node =   4.422716e+02	3600.246241 seconds 
+m2_j20_d2_mt9_r9	Best integer =   1.026000e+03  Node = 1727683  Best node =   4.044429e+02	3600.402423 seconds 
+m5_j10_d1_mt3_r0	Best integer =   5.364085e+02  Node =   21515  Best node =   8.655583e+01	3600.551783 seconds 
+m5_j10_d1_mt3_r1	Best integer =   5.470000e+02  Node =   23523  Best node =   8.541496e+01	3600.527762 seconds 
+m5_j10_d1_mt3_r2	Best integer =   5.257314e+02  Node =   18446  Best node =   8.513267e+01	3600.639022 seconds 
+m5_j10_d1_mt3_r3	Best integer =   5.047914e+02  Node =   34567  Best node =   8.797165e+01	3600.437251 seconds 
+m5_j10_d1_mt3_r4	Best integer =   5.065948e+02  Node =   22549  Best node =   8.743720e+01	3600.414946 seconds 
+m5_j10_d1_mt3_r5	Best integer =   4.470520e+02  Node =   18788  Best node =   8.099196e+01	3600.990317 seconds 
+m5_j10_d1_mt3_r6	Best integer =   5.841589e+02  Node =   27041  Best node =   8.983994e+01	3600.576487 seconds 
+m5_j10_d1_mt3_r7	Best integer =   5.301100e+02  Node =    1838  Best node =   8.705820e+01	3600.574542 seconds 
+m5_j10_d1_mt3_r8	Best integer =   5.424296e+02  Node =   21518  Best node =   9.124910e+01	3600.531609 seconds 
+m5_j10_d1_mt3_r9	Best integer =   4.831436e+02  Node =   19746  Best node =   7.894220e+01	3600.271832 seconds 
+m5_j10_d1_mt9_r0	Best integer =   4.495800e+02  Node =   51413  Best node =   9.680895e+01	3600.379244 seconds 
+m5_j10_d1_mt9_r1	Best integer =   4.876065e+02  Node =   18756  Best node =   8.146764e+01	3600.416454 seconds
+m5_j10_d1_mt9_r2	Best integer =   5.224386e+02  Node =   26387  Best node =   8.958020e+01	3600.372448 seconds 
+m5_j10_d1_mt9_r3	Best integer =   5.727400e+02  Node =   29868  Best node =   9.846871e+01	3600.613911 seconds 
+m5_j10_d1_mt9_r4	Best integer =   4.807969e+02  Node =   21498  Best node =   7.924825e+01	3600.592336 seconds 
+m5_j10_d1_mt9_r5	Best integer =   4.463608e+02  Node =   16882  Best node =   8.118766e+01	3600.281332 seconds 
+m5_j10_d1_mt9_r6	Best integer =   5.124719e+02  Node =   17666  Best node =   8.648241e+01	3600.365274 seconds 
+m5_j10_d1_mt9_r7	Best integer =   4.603504e+02  Node =   49323  Best node =   8.835579e+01	3600.366640 seconds
+m5_j10_d1_mt9_r8	Best integer =   4.823052e+02  Node =   24496  Best node =   8.271119e+01	3600.495987 seconds 
+m5_j10_d1_mt9_r9	Best integer =   5.397311e+02  Node =   19025  Best node =   9.425759e+01	3600.538473 seconds 
+m5_j10_d2_mt3_r0	Best integer =   5.245000e+02  Node =   19282  Best node =   1.010693e+02	3600.489575 seconds 
+m5_j10_d2_mt3_r1	Best integer =   5.330000e+02  Node =   21852  Best node =   1.049258e+02	3600.329781 seconds 
+m5_j10_d2_mt3_r2	Best integer =   5.329600e+02  Node =   25025  Best node =   1.030307e+02	3600.354262 seconds 
+m5_j10_d2_mt3_r3	Best integer =   5.297800e+02  Node =   20631  Best node =   1.132076e+02	3600.331543 seconds 
+m5_j10_d2_mt3_r4	Best integer =   5.690000e+02  Node =   22709  Best node =   1.123690e+02	3600.336504 seconds 
+m5_j10_d2_mt3_r5	Best integer =   4.580000e+02  Node =   16858  Best node =   9.278601e+01	3600.345846 seconds 
+m5_j10_d2_mt3_r6	Best integer =   4.881000e+02  Node =   29318  Best node =   1.050071e+02	3600.389547 seconds 
+m5_j10_d2_mt3_r7	Best integer =   4.951000e+02  Node =   21420  Best node =   1.081723e+02	3600.783080 seconds 
+m5_j10_d2_mt3_r8	Best integer =   5.241800e+02  Node =   28938  Best node =   1.114201e+02	3600.391404 seconds 
+m5_j10_d2_mt3_r9	Best integer =   4.958000e+02  Node =    9041  Best node =   9.319466e+01	3600.654273 seconds 
+m5_j10_d2_mt9_r0	Best integer =   4.974500e+02  Node =   14294  Best node =   9.625000e+01	3600.367721 seconds 
+m5_j10_d2_mt9_r1	Best integer =   6.141400e+02  Node =   17250  Best node =   1.046703e+02	3600.404231 seconds 
+m5_j10_d2_mt9_r2	Best integer =   5.340000e+02  Node =   18393  Best node =   1.048748e+02	3600.348120 seconds 
+m5_j10_d2_mt9_r3	Best integer =   5.841900e+02  Node =   19346  Best node =   1.030869e+02	3600.305183 seconds 
+m5_j10_d2_mt9_r4	Best integer =   5.485500e+02  Node =   10493  Best node =   9.613458e+01	3600.488064 seconds 
+m5_j10_d2_mt9_r5	Best integer =   4.432400e+02  Node =   41684  Best node =   1.102640e+02	3601.191082 seconds 
+m5_j10_d2_mt9_r6	Best integer =   5.137000e+02  Node =   28848  Best node =   1.144691e+02	3600.360399 seconds 
+m5_j10_d2_mt9_r7	Best integer =   4.853000e+02  Node =   22721  Best node =   9.638786e+01	3600.670711 seconds 
+m5_j10_d2_mt9_r8	Best integer =   5.471800e+02  Node =   19243  Best node =   1.038470e+02	3600.337212 seconds 
+m5_j10_d2_mt9_r9	Best integer =   5.271100e+02  Node =   19713  Best node =   9.955551e+01	3600.283360 seconds 
+m5_j15_d1_mt3_r0	Best integer =   8.247412e+02  Node =    1695  Best node =   1.041085e+02	3601.164576 seconds 
+m5_j15_d1_mt3_r1	Best integer =   7.901010e+02  Node =     685  Best node =   1.004422e+02	3600.673244 seconds 
+m5_j15_d1_mt3_r2	Best integer =   6.806552e+02  Node =       0  Best node =   6.351274e+01	3600.706378 seconds 
+m5_j15_d1_mt3_r3	Best integer =   8.458666e+02  Node =    1819  Best node =   1.070257e+02	3600.434746 seconds 
+m5_j15_d1_mt3_r4	Best integer =   7.524060e+02  Node =       6  Best node =   9.310741e+01	3600.713607 seconds 
+m5_j15_d1_mt3_r5	Best integer =   9.051182e+02  Node =       0  Best node =   1.100552e+02	3600.649437 seconds 
+m5_j15_d1_mt3_r6	Best integer =   7.780600e+02  Node =    1721  Best node =   9.724778e+01	3600.792843 seconds 
+m5_j15_d1_mt3_r7	Best integer =   1.022538e+03  Node =       0  Best node =   1.059822e+02	3600.706578 seconds 
+m5_j15_d1_mt3_r8	Best integer =   8.226000e+02  Node =    1250  Best node =   1.008290e+02	3600.533894 seconds
+m5_j15_d1_mt3_r9 	Best integer =   7.946764e+02  Node =       5  Best node =   9.911845e+01	3600.633183 seconds 
+m5_j15_d1_mt9_r0	Best integer =   8.160942e+02  Node =    1234  Best node =   1.024162e+02	3600.757179 seconds 
+m5_j15_d1_mt9_r1	Best integer =   8.051257e+02  Node =       0  Best node =   9.636177e+01	3600.581114 seconds 
+m5_j15_d1_mt9_r2	Best integer =   7.734936e+02  Node =    1780  Best node =   9.968532e+01	3600.810609 seconds 
+m5_j15_d1_mt9_r3	Best integer =   7.795261e+02  Node =       0  Best node =   9.905142e+01	3600.712554 seconds 
+m5_j15_d1_mt9_r4	Best integer =   8.431308e+02  Node =       0  Best node =   1.020855e+02	3600.685388 seconds 
+m5_j15_d1_mt9_r5	Best integer =   8.209490e+02  Node =     324  Best node =   1.036126e+02	3600.537279 seconds 
+m5_j15_d1_mt9_r6	Best integer =   7.935462e+02  Node =    1281  Best node =   1.030444e+02	3600.579083 seconds 
+m5_j15_d1_mt9_r7	Best integer =   8.198045e+02  Node =    1022  Best node =   1.008660e+02	3600.650187 seconds 
+m5_j15_d1_mt9_r8	Best integer =   8.129659e+02  Node =       0  Best node =   1.021808e+02	3600.661470 seconds 
+m5_j15_d1_mt9_r9	Best integer =   8.819879e+02  Node =    1714  Best node =   1.130625e+02	3600.635014 seconds 
+m5_j15_d2_mt3_r0	Best integer =   8.531730e+02  Node =    1017  Best node =   1.188726e+02	3600.541244 seconds 
+m5_j15_d2_mt3_r1	Best integer =   8.986600e+02  Node =     710  Best node =   1.213358e+02	3600.643858 seconds 
+m5_j15_d2_mt3_r2	Best integer =   8.047400e+02  Node =     339  Best node =   1.146060e+02	3600.703095 seconds 
+m5_j15_d2_mt3_r3	Best integer =   7.769880e+02  Node =     545  Best node =   1.126580e+02	3600.538015 seconds 
+m5_j15_d2_mt3_r4	Best integer =   7.075300e+02  Node =       0  Best node =   1.047485e+02	3600.669686 seconds 
+m5_j15_d2_mt3_r5	Best integer =   8.194500e+02  Node =     932  Best node =   1.206342e+02	3600.646995 seconds 
+m5_j15_d2_mt3_r6	Best integer =   7.818080e+02  Node =    1510  Best node =   1.151193e+02	3600.654299 seconds 
+m5_j15_d2_mt3_r7	Best integer =   9.530500e+02  Node =     528  Best node =   1.259364e+02	3600.521829 seconds 
+m5_j15_d2_mt3_r8	Best integer =   8.021400e+02  Node =    1585  Best node =   1.179866e+02	3600.670349 seconds 
+m5_j15_d2_mt3_r9	Best integer =   7.572800e+02  Node =    1560  Best node =   1.101206e+02	3600.753778 seconds 
+m5_j15_d2_mt9_r0	Best integer =   7.674200e+02  Node =    1097  Best node =   1.125404e+02	3600.663784 seconds 
+m5_j15_d2_mt9_r1	Best integer =   7.266310e+02  Node =    1654  Best node =   1.091871e+02	3600.539115 seconds 
+m5_j15_d2_mt9_r2	Best integer =   6.977615e+02  Node =    1347  Best node =   1.066329e+02	3600.552256 seconds 
+m5_j15_d2_mt9_r3	Best integer =   8.237894e+02  Node =    1260  Best node =   1.135477e+02	3600.634490 seconds 
+m5_j15_d2_mt9_r4	Best integer =   7.684459e+02  Node =    1923  Best node =   1.133059e+02	3600.740400 seconds 
+m5_j15_d2_mt9_r5	Best integer =   8.237325e+02  Node =    1666  Best node =   1.183816e+02	3600.565099 seconds 
+m5_j15_d2_mt9_r6	Best integer =   8.184675e+02  Node =    1115  Best node =   1.159651e+02	3601.334480 seconds 
+m5_j15_d2_mt9_r7	Best integer =   7.220880e+02  Node =    1781  Best node =   1.084277e+02	3600.751424 seconds 
+m5_j15_d2_mt9_r8	Best integer =   8.411700e+02  Node =    1258  Best node =   1.158338e+02	3600.649919 seconds 
+m5_j15_d2_mt9_r9	Best integer =   9.440000e+02  Node =       0  Best node =   1.240065e+02	3600.572034 seconds 
+m5_j20_d1_mt3_r0	Best integer =   9.842139e+02  Node =       0  Best node =   1.131596e+02	3601.270939 seconds 
+m5_j20_d1_mt3_r1	Best integer =   1.234527e+03  Node =       0  Best node =   1.019761e+02	3601.458854 seconds 
+m5_j20_d1_mt3_r2	Best integer =   3.456686e+03  Node =      24  Best node =   1.068655e+02	3601.246024 seconds 
+m5_j20_d1_mt3_r3	Best integer =   1.023720e+03  Node =      16  Best node =   1.117735e+02	3601.389534 seconds 
+m5_j20_d1_mt3_r4	Best integer =   1.114306e+03  Node =       0  Best node =   1.181797e+02	3601.279749 seconds 
+m5_j20_d1_mt3_r5	Best integer =   3.920526e+03  Node =      25  Best node =   1.200377e+02	3601.365460 seconds 
+m5_j20_d1_mt3_r6	Best integer =   1.134623e+03  Node =       4  Best node =   1.162835e+02	3601.320949 seconds 
+m5_j20_d1_mt3_r7	Best integer =   1.026590e+03  Node =       0  Best node =   1.062776e+02	3601.501766 seconds 
+m5_j20_d1_mt3_r8	Best integer =   3.117797e+03  Node =       7  Best node =   1.114494e+02	3601.432878 seconds 
+m5_j20_d1_mt3_r9	Best integer =   9.823210e+02  Node =       0  Best node =   1.060902e+02	3601.251474 seconds 
+m5_j20_d1_mt9_r0	Best integer =   1.111438e+03  Node =      12  Best node =   1.246252e+02	3601.375737 seconds 
+m5_j20_d1_mt9_r1	Best integer =   1.225728e+03  Node =       0  Best node =   1.173004e+02	3601.379135 seconds 
+m5_j20_d1_mt9_r2	Best integer =   1.685514e+03  Node =       0  Best node =   1.198779e+02	3601.430664 seconds 
+m5_j20_d1_mt9_r3	Best integer =   1.058975e+03  Node =       0  Best node =   1.207645e+02	3601.333124 seconds 
+m5_j20_d1_mt9_r4	Best integer =   1.109684e+03  Node =       0  Best node =   1.177822e+02	3601.467921 seconds 
+m5_j20_d1_mt9_r5	Best integer =   1.078122e+03  Node =       0  Best node =   9.753192e+01	3601.359094 seconds 
+m5_j20_d1_mt9_r6	Best integer =   4.143605e+03  Node =      11  Best node =   1.280689e+02	3601.406048 seconds 
+m5_j20_d1_mt9_r7	Best integer =   1.403195e+03  Node =       0  Best node =   1.254553e+02	3601.261066 seconds 
+m5_j20_d1_mt9_r8	Best integer =   1.212390e+03  Node =       0  Best node =   1.239160e+02	3601.476657 seconds 
+m5_j20_d1_mt9_r9	Best integer =   1.905322e+03  Node =       0  Best node =   1.254427e+02	3601.340340 seconds 
+m5_j20_d2_mt3_r0	Best integer =   1.126294e+03  Node =       0  Best node =   1.305040e+02	3601.454703 seconds 
+m5_j20_d2_mt3_r1	Best integer =   1.168290e+03  Node =       0  Best node =   1.317116e+02	3601.263091 seconds 
+m5_j20_d2_mt3_r2	Best integer =   1.016400e+03  Node =       0  Best node =   1.236457e+02	3601.357321 seconds 
+m5_j20_d2_mt3_r3	Best integer =   9.774000e+02  Node =       0  Best node =   1.245770e+02	3601.295444 seconds 
+m5_j20_d2_mt3_r4	Best integer =   1.188022e+03  Node =     146  Best node =   1.332615e+02	3601.432169 seconds 
+m5_j20_d2_mt3_r5	Best integer =   1.221500e+03  Node =       0  Best node =   1.313339e+02	3601.330723 seconds 
+m5_j20_d2_mt3_r6	Best integer =   1.111873e+03  Node =     185  Best node =   1.274656e+02	3601.467509 seconds 
+m5_j20_d2_mt3_r7	Best integer =   1.080598e+03  Node =       0  Best node =   1.310439e+02	3601.229206 seconds 
+m5_j20_d2_mt3_r8	Best integer =   5.137560e+03  Node =       0  Best node =   1.614241e+01	3601.414281 seconds 
+m5_j20_d2_mt3_r9	Best integer =   1.343081e+03  Node =       9  Best node =   1.395215e+02	3601.224015 seconds 
+m5_j20_d2_mt9_r0	Best integer =   1.434836e+03  Node =       0  Best node =   1.388288e+02	3601.460460 seconds
+m5_j20_d2_mt9_r1	Best integer =   1.127547e+03  Node =       0  Best node =   1.382924e+02	3601.210917 seconds 
+m5_j20_d2_mt9_r2	Best integer =   1.227230e+03  Node =       0  Best node =   1.377082e+02	3601.441645 seconds 
+m5_j20_d2_mt9_r3	Best integer =   1.061950e+03  Node =       0  Best node =   1.233129e+02	3601.260039 seconds 
+m5_j20_d2_mt9_r4	Best integer =   2.804039e+03  Node =       0  Best node =   4.582100e+01	3601.420451 seconds 
+m5_j20_d2_mt9_r5	Best integer =   1.091600e+03  Node =       0  Best node =   1.248003e+02	3601.216187 seconds 
+m5_j20_d2_mt9_r6	Best integer =   1.102589e+03  Node =       0  Best node =   1.232945e+02	3601.986208 seconds  
+m5_j20_d2_mt9_r7	Best integer =   1.070057e+03  Node =       0  Best node =   1.281711e+02	3601.313516 seconds 
+m5_j20_d2_mt9_r8	Best integer =   1.081827e+03  Node =      23  Best node =   1.288337e+02	3601.483368 seconds 
+m5_j20_d2_mt9_r9	Best integer =   1.135388e+03  Node =     225  Best node =   1.315296e+02	3601.280165 seconds 
+m10_j10_d1_mt3_r0	Best integer =   6.072482e+02  Node =       0  Best node =   4.292857e+01	3602.746556 seconds 
+m10_j10_d1_mt3_r1	Best integer =   4.972620e+03  Node =       0  Best node =   8.644621e+00	3603.008465 seconds 
+m10_j10_d1_mt3_r2	Best integer =   5.823649e+02  Node =       0  Best node =   3.384890e+01	3603.023830 seconds 
+m10_j10_d1_mt3_r3	Best integer =   1.972738e+03  Node =       0  Best node =   8.787789e+00	3602.993276 seconds 
+m10_j10_d1_mt3_r4	Best integer =   6.353416e+02  Node =       0  Best node =   5.346243e+01	3603.647138 seconds 
+m10_j10_d1_mt3_r5	Best integer =   1.908590e+03  Node =       0  Best node =  -1.000000e+00	3603.008038 seconds 
+m10_j10_d1_mt3_r6	Best integer =   1.213284e+03  Node =       0  Best node =  -1.000000e+00	3602.920581 seconds 
+m10_j10_d1_mt3_r7	Best integer =   5.720658e+02  Node =       0  Best node =  -1.000000e+00	3603.113697 seconds 
+m10_j10_d1_mt3_r8	Best integer =   7.503388e+02  Node =       0  Best node =   2.276575e+01	3603.053636 seconds 
+m10_j10_d1_mt3_r9	Best integer =   5.330900e+02  Node =       0  Best node =   4.478950e+01	3602.917555 seconds 	
+m10_j10_d1_mt9_r0	Best integer =   5.680943e+02  Node =       0  Best node =   5.603374e+01	3603.202390 seconds 
+m10_j10_d1_mt9_r1	Best integer =   5.695754e+02  Node =       0  Best node =   5.528313e+01	3603.018501 seconds 	
+m10_j10_d1_mt9_r2	Best integer =   6.153954e+02  Node =       0  Best node =   3.251688e+01	3602.927157 seconds 
+m10_j10_d1_mt9_r3	Best integer =   6.024574e+02  Node =       0  Best node =   5.397285e+01	3603.148968 seconds 
+m10_j10_d1_mt9_r4	Best integer =   5.794900e+02  Node =       0  Best node =   5.932713e+01	3603.278753 seconds 
+m10_j10_d1_mt9_r5	Best integer =   6.400365e+02  Node =       0  Best node =   5.738275e+01	3603.104796 seconds 
+m10_j10_d1_mt9_r6	Best integer =   7.379545e+02  Node =       0  Best node =   1.824369e+01	3603.155608 seconds 
+m10_j10_d1_mt9_r7	Best integer =   5.862156e+02  Node =       0  Best node =   4.303205e+01	3603.023961 seconds 
+m10_j10_d1_mt9_r8	Best integer =   7.080841e+02  Node =       0  Best node =  -1.000000e+00	3602.978691 seconds 
+m10_j10_d1_mt9_r9	Best integer =   6.112586e+02  Node =       0  Best node =   5.444151e+01	3603.328191 seconds 
+m10_j10_d2_mt3_r0	Best integer =   2.546630e+03  Node =       0  Best node =   5.140188e+01	3603.046537 seconds 
+m10_j10_d2_mt3_r1	Best integer =   5.069460e+02  Node =       0  Best node =   6.194600e+01	3603.325528 seconds 
+m10_j10_d2_mt3_r2	Best integer =   4.722300e+02  Node =       0  Best node =   6.096959e+01	3603.323363 seconds 
+m10_j10_d2_mt3_r3	Best integer =   3.125440e+03  Node =       0  Best node =  -1.000000e+00	3603.002813 seconds 
+m10_j10_d2_mt3_r4	Best integer =   5.920000e+02  Node =      35  Best node =   6.354795e+01	3603.186865 seconds 
+m10_j10_d2_mt3_r5	Best integer =   8.052840e+02  Node =       0  Best node =  -1.000000e+00	3603.297670 seconds 
+m10_j10_d2_mt3_r6	Best integer =   5.247850e+02  Node =       0  Best node =   5.321592e+01	3603.158356 seconds 
+m10_j10_d2_mt3_r7	Best integer =   3.710900e+03  Node =       0  Best node =  -1.000000e+00	3602.967215 seconds 
+m10_j10_d2_mt3_r8	Best integer =   6.109600e+02  Node =       0  Best node =   6.549955e+01	3603.302815 seconds 
+m10_j10_d2_mt3_r9	Best integer =   6.926500e+02  Node =       0  Best node =   6.487892e+01	3603.328899 seconds 
+m10_j10_d2_mt9_r0	Best integer =   2.696980e+03  Node =       0  Best node =   1.680640e+01	3602.949989 seconds 
+m10_j10_d2_mt9_r1	Best integer =   5.571968e+02  Node =     238  Best node =   6.397368e+01	3603.315319 seconds 
+m10_j10_d2_mt9_r2	Best integer =   3.278399e+03  Node =      28  Best node =   6.261948e+01	3603.188754 seconds 
+m10_j10_d2_mt9_r3	Best integer =   6.850315e+02  Node =       0  Best node =   5.976266e+01	3602.979115 seconds 
+m10_j10_d2_mt9_r4	Best integer =   1.957750e+03  Node =       7  Best node =   6.750062e+01	3603.322347 seconds 
+m10_j10_d2_mt9_r5	Best integer =   6.624028e+02  Node =       3  Best node =   6.333783e+01	3603.118654 seconds 
+m10_j10_d2_mt9_r6	Best integer =   6.507946e+02  Node =       0  Best node =   5.984560e+01	3603.121462 seconds 
+m10_j10_d2_mt9_r7	Best integer =   7.445864e+02  Node =       0  Best node =  -1.000000e+00	3603.154032 seconds 
+m10_j10_d2_mt9_r8	Best integer =   8.897256e+02  Node =       0  Best node =   6.276512e+01	3603.245382 seconds 
+m10_j10_d2_mt9_r9	Best integer =   6.922684e+02  Node =       0  Best node =  -1.000000e+00	3602.966676 seconds 
+m10_j15_d1_mt3_r0	-	3701.868713 seconds 
+m10_j15_d1_mt3_r1	-	3606.066049 seconds 
+m10_j15_d1_mt3_r2	- 	3606.016988 seconds 
+m10_j15_d1_mt3_r3	-	3605.965498 seconds 
+m10_j15_d1_mt3_r4	-	3608.486230 seconds 
+m10_j15_d1_mt3_r5	-	3606.191041 seconds 
+m10_j15_d1_mt3_r6	-	3752.379782 seconds 
+m10_j15_d1_mt3_r7	-	3605.995297 seconds 
+m10_j15_d1_mt3_r8	-	3605.987968 seconds 
+m10_j15_d1_mt3_r9	-	3605.894453 seconds 
+m10_j15_d1_mt9_r0	-	3608.477367 seconds 
+m10_j15_d1_mt9_r1	-	3606.037701 seconds 
+m10_j15_d1_mt9_r2	-	3605.986099 seconds 
+m10_j15_d1_mt9_r3	- 	3606.191176 seconds 
+m10_j15_d1_mt9_r4	-	3774.739669 seconds 	
+m10_j15_d1_mt9_r5	-	3801.324052 seconds 
+m10_j15_d1_mt9_r6	-	3606.027296 seconds 
+m10_j15_d1_mt9_r7	- 	3606.094930 seconds 
+m10_j15_d1_mt9_r8	-	3606.003021 seconds 
+m10_j15_d1_mt9_r9	-	3605.939338 seconds 
+m10_j15_d2_mt3_r0	-	3606.057816 seconds 
+m10_j15_d2_mt3_r1	-	3654.050192 seconds 
+m10_j15_d2_mt3_r2	-	3606.092053 seconds 	
+m10_j15_d2_mt3_r3	-	3606.067960 seconds 
+m10_j15_d2_mt3_r4	-	3775.829273 seconds 
+m10_j15_d2_mt3_r5	-	3608.569682 seconds 
+m10_j15_d2_mt3_r6	-	3606.160897 seconds 
+m10_j15_d2_mt3_r7	-	3606.094083 seconds 
+m10_j15_d2_mt3_r8	-	3606.155583 seconds 
+m10_j15_d2_mt3_r9	-	3606.078179 seconds 
+m10_j15_d2_mt9_r0	-	3606.295620 seconds 
+m10_j15_d2_mt9_r1	-	3608.951957 seconds 
+m10_j15_d2_mt9_r2	-	3606.594412 seconds 
+m10_j15_d2_mt9_r3	- 	3606.382864 seconds
+m10_j15_d2_mt9_r4	-	3605.921527 seconds 
+m10_j15_d2_mt9_r5	-	3652.169603 seconds 
+m10_j15_d2_mt9_r6	-	3606.120449 seconds 
+m10_j15_d2_mt9_r7	-	3620.404670 seconds 
+m10_j15_d2_mt9_r8	- 	3606.208749 seconds 
+m10_j15_d2_mt9_r9	- 	3606.109857 seconds 
+m10_j20_d1_mt3_r0	-	3615.234204 seconds 
+m10_j20_d1_mt3_r1	-	3613.674647 seconds 
+m10_j20_d1_mt3_r2	-	3607.191809 seconds 
+m10_j20_d1_mt3_r3	-	3677.090868 seconds 
+m10_j20_d1_mt3_r4	-	3613.410519 seconds 
+m10_j20_d1_mt3_r5	-	3607.186168 seconds 
+m10_j20_d1_mt3_r6	-	3613.525997 seconds 
+m10_j20_d1_mt3_r7	-	3607.122502 seconds 
+m10_j20_d1_mt3_r8	-	3615.644470 seconds 
+m10_j20_d1_mt3_r9	-	3613.651589 seconds 
+m10_j20_d1_mt9_r0	-	3607.395444 seconds 
+m10_j20_d1_mt9_r1	-	3613.659074 seconds 
+m10_j20_d1_mt9_r2	-	3607.547476 seconds 
+m10_j20_d1_mt9_r3	-	3613.715581 seconds 
+m10_j20_d1_mt9_r4	-	3607.610937 seconds 
+m10_j20_d1_mt9_r5	-	3614.664568 seconds 
+m10_j20_d1_mt9_r6	-	3607.307980 seconds 
+m10_j20_d1_mt9_r7	-	3615.697724 seconds 
+m10_j20_d1_mt9_r8	-	3613.544020 seconds 
+m10_j20_d1_mt9_r9	-	3607.284795 seconds 
+m10_j20_d2_mt3_r0	-	3613.625767 seconds 
+m10_j20_d2_mt3_r1	-	3607.277275 seconds 
+m10_j20_d2_mt3_r2	-	3613.717542 seconds 
+m10_j20_d2_mt3_r3	-	3607.354494 seconds 
+m10_j20_d2_mt3_r4	-	3613.628820 seconds 
+m10_j20_d2_mt3_r5	-	3607.389164 seconds 
+m10_j20_d2_mt3_r6	-	3613.475474 seconds 
+m10_j20_d2_mt3_r7	-	3607.209994 seconds 
+m10_j20_d2_mt3_r8	-	3613.722187 seconds 
+m10_j20_d2_mt3_r9	-	3607.337485 seconds 
+m10_j20_d2_mt9_r0	-	3613.790688 seconds 
+m10_j20_d2_mt9_r1	- 	3607.352110 seconds 
+m10_j20_d2_mt9_r2	-	3613.831137 seconds 
+m10_j20_d2_mt9_r3	-	3607.287220 seconds 
+m10_j20_d2_mt9_r4	-	3613.764828 seconds 
+m10_j20_d2_mt9_r5	-	3608.288169 seconds 
+m10_j20_d2_mt9_r6	-	3613.808461 seconds 
+m10_j20_d2_mt9_r7	-	3607.273402 seconds 
+m10_j20_d2_mt9_r8	-	3613.622953 seconds 
+m10_j20_d2_mt9_r9	-	3607.382972 seconds 
+m20_j10_d1_mt3_r0	-	3626.820199 seconds 
+m20_j10_d1_mt3_r1	-	3626.615271 seconds 
+m20_j10_d1_mt3_r2	-	3626.666527 seconds 
+m20_j10_d1_mt3_r3	-	3766.208667 seconds 
+m20_j10_d1_mt3_r4	-	3626.534938 seconds 
+m20_j10_d1_mt3_r5	-	3626.428950 seconds 
+m20_j10_d1_mt3_r6	-	3626.437178 seconds 
+m20_j10_d1_mt3_r7	-	3626.659188 seconds 
+m20_j10_d1_mt3_r8	-	3626.454288 seconds 
+m20_j10_d1_mt3_r9	-	3626.646383 seconds 
+m20_j10_d1_mt9_r0	-	3627.199109 seconds 
+m20_j10_d1_mt9_r1	-	3627.138293 seconds 
+m20_j10_d1_mt9_r2	-	3626.664143 seconds 
+m20_j10_d1_mt9_r3	-	3626.796437 seconds 
+m20_j10_d1_mt9_r4	-	3627.189186 seconds 
+m20_j10_d1_mt9_r5	-	3627.352322 seconds 
+m20_j10_d1_mt9_r6	-	3627.172424 seconds 
+m20_j10_d1_mt9_r7	-	3627.247404 seconds 
+m20_j10_d1_mt9_r8	-	3627.392452 seconds 
+m20_j10_d1_mt9_r9	-	3627.322389 seconds 
+m20_j10_d2_mt3_r0	-	3626.811023 seconds 
+m20_j10_d2_mt3_r1	-	3626.629987 seconds 
+m20_j10_d2_mt3_r2	-	3626.683706 seconds 
+m20_j10_d2_mt3_r3	-	3626.890511 seconds 
+m20_j10_d2_mt3_r4	-	3626.630700 seconds 
+m20_j10_d2_mt3_r5	-	3626.738893 seconds 
+m20_j10_d2_mt3_r6	-	3627.000555 seconds 
+m20_j10_d2_mt3_r7	-	3626.712267 seconds 
+m20_j10_d2_mt3_r8	-	3626.600206 seconds 
+m20_j10_d2_mt3_r9	-	3626.532258 seconds 
+m20_j10_d2_mt9_r0	-	3626.583014 seconds
+m20_j10_d2_mt9_r1	-	3626.395009 seconds 
+m20_j10_d2_mt9_r2	-	3626.540387 seconds 
+m20_j10_d2_mt9_r3	-	3626.759140 seconds 
+m20_j10_d2_mt9_r4	-	3626.505996 seconds 
+m20_j10_d2_mt9_r5	-	3626.705435 seconds 
+m20_j10_d2_mt9_r6	-	3626.660704 seconds 
+m20_j10_d2_mt9_r7	-	3626.435554 seconds 
+m20_j10_d2_mt9_r8	-	3626.373959 seconds 
+m20_j10_d2_mt9_r9	-	3626.820691 seconds 
+m20_j15_d1_mt3_r0	-	3711.953881 seconds 
+m20_j15_d1_mt3_r1	-	3712.343280 seconds 
+m20_j15_d1_mt3_r2	-	3712.185303 seconds 
+m20_j15_d1_mt3_r3	-	3712.104082 seconds 
+m20_j15_d1_mt3_r4	-	3712.052635 seconds 
+m20_j15_d1_mt3_r5	-	3712.111128 seconds 
+m20_j15_d1_mt3_r6	-	3711.343509 seconds 
+m20_j15_d1_mt3_r7	-	3712.407057 seconds 
+m20_j15_d1_mt3_r8	-	3711.659546 seconds 
+m20_j15_d1_mt3_r9	-	3712.326780 seconds 
+m20_j15_d1_mt9_r0	-	3712.399231 seconds 
+m20_j15_d1_mt9_r1	-	3713.589509 seconds 
+m20_j15_d1_mt9_r2	-	3712.359958 seconds 
+m20_j15_d1_mt9_r3	-	3712.733679 seconds 
+m20_j15_d1_mt9_r4	-	3713.154188 seconds 
+m20_j15_d1_mt9_r5	-	3711.897428 seconds 
+m20_j15_d1_mt9_r6	-	3712.967223 seconds 
+m20_j15_d1_mt9_r7	-	3713.060063 seconds 
+m20_j15_d1_mt9_r8	-	3712.570881 seconds 
+m20_j15_d1_mt9_r9	-	3712.500333 seconds 
+m20_j15_d2_mt3_r0	-	3710.755433 seconds 
+m20_j15_d2_mt3_r1	-	3712.697844 seconds 
+m20_j15_d2_mt3_r2	-	3712.262293 seconds 
+m20_j15_d2_mt3_r3	-	3711.604172 seconds 
+m20_j15_d2_mt3_r4	-	3711.886957 seconds 
+m20_j15_d2_mt3_r5	-	3712.493973 seconds 
+m20_j15_d2_mt3_r6	-	3721.746792 seconds 
+m20_j15_d2_mt3_r7	-	3712.339847 seconds 
+m20_j15_d2_mt3_r8	-	3746.415688 seconds 
+m20_j15_d2_mt3_r9	-	3712.027779 seconds 
+m20_j15_d2_mt9_r0	-	3711.750926 seconds 
+m20_j15_d2_mt9_r1	-	3712.500534 seconds 
+m20_j15_d2_mt9_r2	-	3712.400862 seconds 
+m20_j15_d2_mt9_r3	-	3714.322265 seconds 
+m20_j15_d2_mt9_r4	-	3712.602959 seconds 
+m20_j15_d2_mt9_r5	-	3712.101330 seconds 
+m20_j15_d2_mt9_r6 	- 	3711.669136 seconds 
+m20_j15_d2_mt9_r7	-	3711.012388 seconds 
+m20_j15_d2_mt9_r8	-	3712.635427 seconds 
+m20_j15_d2_mt9_r9	-	3711.732154 seconds 
+m20_j20_d1_mt3_r0 	-	3729.245435 seconds 
+m20_j20_d1_mt3_r1	-	3778.392418 seconds 
+m20_j20_d1_mt3_r2	-	3787.181033 seconds 
+m20_j20_d1_mt3_r3	-	3759.431568 seconds 
+m20_j20_d1_mt3_r4	-	3778.359543 seconds 
+m20_j20_d1_mt3_r5	-	3819.112401 seconds 
+m20_j20_d1_mt3_r6	-	3792.977709 seconds 
+m20_j20_d1_mt3_r7	-	3799.335898 seconds 
+m20_j20_d1_mt3_r8	-	3779.493959 seconds 
+m20_j20_d1_mt3_r9	-	3763.052491 seconds 
+m20_j20_d1_mt9_r0	
+m20_j20_d1_mt9_r1	-	3756.709222 seconds 
+m20_j20_d1_mt9_r2	-	3742.512526 seconds 
+m20_j20_d1_mt9_r3	-	3750.244744 seconds 
+m20_j20_d1_mt9_r4
+m20_j20_d1_mt9_r5	-	3787.385222 seconds 
+m20_j20_d1_mt9_r6	-	3733.527741 seconds 
+m20_j20_d1_mt9_r7	-	
+m20_j20_d1_mt9_r8	-	3763.785834 seconds 
+m20_j20_d1_mt9_r9	-	3747.441149 seconds 
+m20_j20_d2_mt3_r0	-	3809.184691 seconds 
+m20_j20_d2_mt3_r1	-	3829.535606 seconds 
+m20_j20_d2_mt3_r2	-
+m20_j20_d2_mt3_r3	-
+m20_j20_d2_mt3_r4	-	3772.343805 seconds 
+m20_j20_d2_mt3_r5	-
+m20_j20_d2_mt3_r6	-	3765.136760 seconds 
+m20_j20_d2_mt3_r7	-	3748.408270 seconds 
+m20_j20_d2_mt3_r8	-	3757.571699 seconds
+m20_j20_d2_mt3_r9	-	3743.609526 seconds 
+m20_j20_d2_mt9_r0
+m20_j20_d2_mt9_r1
+m20_j20_d2_mt9_r2
+m20_j20_d2_mt9_r3	-	3776.758464 seconds
+m20_j20_d2_mt9_r4	-	3738.933310 seconds
+m20_j20_d2_mt9_r5	-	
+m20_j20_d2_mt9_r6	-	3768.156410 seconds
+m20_j20_d2_mt9_r7	-	3751.471831	seconds
+m20_j20_d2_mt9_r8	-	3738.141266 seconds
+m20_j20_d2_mt9_r9	-	
