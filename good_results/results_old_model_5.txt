@@ -1,0 +1,241 @@
+Starting optimization: m2_j10_d1_mt9_r0.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+1 of 1 MIP starts provided solutions.
+MIP start 'm1' defined initial solution with objective 550.4847.
+Warning:  Non-integral bounds for integer variables rounded.
+Tried aggregator 2 times.
+MIP Presolve eliminated 1683 rows and 4 columns.
+MIP Presolve modified 14744 coefficients.
+Aggregator did 40 substitutions.
+Reduced MIP has 6330 rows, 3233 columns, and 53732 nonzeros.
+Reduced MIP has 1636 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.05 sec. (64.91 ticks)
+Probing time = 0.02 sec. (4.72 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 9000 coefficients.
+Reduced MIP has 6330 rows, 3233 columns, and 53732 nonzeros.
+Reduced MIP has 1636 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (26.11 ticks)
+Probing time = 0.01 sec. (3.88 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   5.504847e+02  Node =       0  Best node =   0.000000e+00
+Best integer =   5.217346e+02  Node =       0  Best node =   2.564103e-01
+Best integer =   5.160671e+02  Node =       0  Best node =   5.045045e-01
+Best integer =   5.157315e+02  Node =       0  Best node =   1.070241e+00
+Best integer =   5.157315e+02  Node =       0  Best node =   4.970000e+02
+Best integer =   5.092400e+02  Node =     221  Best node =   4.970000e+02
+Best integer =   5.081306e+02  Node =    3292  Best node =   4.970000e+02
+Best integer =   5.081306e+02  Node =    3328  Best node =   4.970000e+02
+Best integer =   5.080206e+02  Node =    5426  Best node =   4.970000e+02
+Best integer =   5.074400e+02  Node =    5482  Best node =   4.970000e+02
+Best integer =   5.070206e+02  Node =    9288  Best node =   4.970000e+02
+Best integer =   5.070000e+02  Node =    9528  Best node =   4.970000e+02
+Best integer =   5.067214e+02  Node =   12830  Best node =   4.970000e+02
+Best integer =   5.065844e+02  Node =   21270  Best node =   4.970036e+02
+Best integer =   5.062812e+02  Node =   22950  Best node =   4.970036e+02
+Best integer =   5.059898e+02  Node =   24746  Best node =   4.970036e+02
+Best integer =   5.056262e+02  Node =   36666  Best node =   4.970039e+02
+Best integer =   5.055498e+02  Node =   38083  Best node =   4.970180e+02
+Best integer =   5.055130e+02  Node =   53503  Best node =   4.970182e+02
+Best integer =   5.055098e+02  Node =   55358  Best node =   4.970182e+02
+Best integer =   5.053434e+02  Node =   57302  Best node =   4.970193e+02
+Best integer =   5.052798e+02  Node =   57302  Best node =   4.970193e+02
+Best integer =   5.052284e+02  Node =   62544  Best node =   4.970194e+02
+Best integer =   5.051966e+02  Node =   63574  Best node =   4.970194e+02
+Best integer =   5.051342e+02  Node =   81116  Best node =   4.970220e+02
+Best integer =   5.050730e+02  Node =  104917  Best node =   4.970250e+02
+3612.768535 seconds (46.51 M allocations: 2.298 GiB, 0.03% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 505.07299977268474
+ 
+ 
+ 
+Starting optimization: m2_j10_d1_mt9_r1.txt
+Best integer =   5.050730e+02  Node =  860763  Best node =   4.975250e+02
+Best integer =   5.050730e+02  Node =  860847  Best node =   4.975250e+02
+Best integer =   5.050730e+02  Node =  861152  Best node =   4.975250e+02
+
+Cover cuts applied:  1
+Implied bound cuts applied:  1318
+Mixed integer rounding cuts applied:  1008
+Zero-half cuts applied:  2
+Gomory fractional cuts applied:  1
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+1 of 1 MIP starts provided solutions.
+MIP start 'm1' defined initial solution with objective 493.5397.
+Warning:  Non-integral bounds for integer variables rounded.
+Tried aggregator 2 times.
+MIP Presolve eliminated 1683 rows and 4 columns.
+MIP Presolve modified 15048 coefficients.
+Aggregator did 40 substitutions.
+Reduced MIP has 6330 rows, 3233 columns, and 53732 nonzeros.
+Reduced MIP has 1636 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.04 sec. (65.05 ticks)
+Probing time = 0.02 sec. (4.72 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 9000 coefficients.
+Reduced MIP has 6330 rows, 3233 columns, and 53732 nonzeros.
+Reduced MIP has 1636 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (26.13 ticks)
+Probing time = 0.01 sec. (3.88 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   4.935397e+02  Node =       0  Best node =   0.000000e+00
+Best integer =   4.927691e+02  Node =       0  Best node =   4.635000e+02
+Best integer =   4.923735e+02  Node =       0  Best node =   4.635000e+02
+Best integer =   4.918706e+02  Node =      17  Best node =   4.635000e+02
+Best integer =   4.903906e+02  Node =      17  Best node =   4.635000e+02
+Best integer =   4.899450e+02  Node =      21  Best node =   4.635000e+02
+Best integer =   4.865615e+02  Node =     277  Best node =   4.635000e+02
+Best integer =   4.861652e+02  Node =    1098  Best node =   4.635000e+02
+Best integer =   4.857482e+02  Node =    1137  Best node =   4.635000e+02
+Best integer =   4.839715e+02  Node =    1148  Best node =   4.635000e+02
+Best integer =   4.839715e+02  Node =    3095  Best node =   4.635000e+02
+Best integer =   4.839148e+02  Node =   14238  Best node =   4.635000e+02
+Best integer =   4.824920e+02  Node =   14982  Best node =   4.635000e+02
+Best integer =   4.824079e+02  Node =   15965  Best node =   4.635000e+02
+Best integer =   4.812302e+02  Node =   16296  Best node =   4.635000e+02
+Best integer =   4.784972e+02  Node =   16568  Best node =   4.635000e+02
+Best integer =   4.780116e+02  Node =   17005  Best node =   4.635000e+02
+Best integer =   4.774355e+02  Node =   17129  Best node =   4.635000e+02
+Best integer =   4.772165e+02  Node =   17901  Best node =   4.635000e+02
+Best integer =   4.767923e+02  Node =   17977  Best node =   4.635000e+02
+Best integer =   4.767058e+02  Node =   17981  Best node =   4.635000e+02
+Best integer =   4.764698e+02  Node =   18459  Best node =   4.635000e+02
+Best integer =   4.762041e+02  Node =   18711  Best node =   4.635000e+02
+Best integer =   4.761402e+02  Node =   19191  Best node =   4.635000e+02
+Best integer =   4.761024e+02  Node =   29037  Best node =   4.635000e+02
+Best integer =   4.759959e+02  Node =   29786  Best node =   4.635000e+02
+Best integer =   4.759167e+02  Node =   37954  Best node =   4.635000e+02
+Best integer =   4.758304e+02  Node =   40270  Best node =   4.635000e+02
+Best integer =   4.758287e+02  Node =   40931  Best node =   4.635000e+02
+Best integer =   4.757786e+02  Node =   41500  Best node =   4.635000e+02
+Best integer =   4.757786e+02  Node =   41711  Best node =   4.635000e+02
+Best integer =   4.757578e+02  Node =   49222  Best node =   4.635000e+02
+Best integer =   4.756942e+02  Node =   54468  Best node =   4.635000e+02
+3600.530211 seconds (323.88 k allocations: 14.618 MiB, 0.00% gc time)
+TIME_LIMIT
+Optimization finished
+-------TIME LIMIT REACHED. BEST VALUE FOUND: 475.69416312407924
+ 
+ 
+ 
+Starting optimization: m2_j10_d1_mt9_r2.txt
+Best integer =   4.756942e+02  Node =  675798  Best node =   4.645465e+02
+
+Implied bound cuts applied:  1322
+Flow cuts applied:  1
+Mixed integer rounding cuts applied:  1792
+Zero-half cuts applied:  5
+Gomory fractional cuts applied:  1
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+1 of 1 MIP starts provided solutions.
+MIP start 'm1' defined initial solution with objective 581.2188.
+Warning:  Non-integral bounds for integer variables rounded.
+Tried aggregator 2 times.
+MIP Presolve eliminated 1683 rows and 4 columns.
+MIP Presolve modified 14592 coefficients.
+Aggregator did 40 substitutions.
+Reduced MIP has 6330 rows, 3233 columns, and 53732 nonzeros.
+Reduced MIP has 1636 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.05 sec. (64.98 ticks)
+Probing time = 0.04 sec. (4.72 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 9000 coefficients.
+Reduced MIP has 6330 rows, 3233 columns, and 53732 nonzeros.
+Reduced MIP has 1636 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.03 sec. (25.98 ticks)
+Probing time = 0.01 sec. (3.88 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   5.812188e+02  Node =       0  Best node =   0.000000e+00
+Best integer =   5.750608e+02  Node =       0  Best node =   3.478261e-01
+Best integer =   5.730684e+02  Node =       0  Best node =   4.101291e-01
+Best integer =   5.687240e+02  Node =       0  Best node =   1.512283e+00
+Best integer =   5.663297e+02  Node =       0  Best node =   1.775899e+00
+Best integer =   5.513611e+02  Node =       0  Best node =   1.775899e+00
+Best integer =   5.489458e+02  Node =       0  Best node =   1.775899e+00
+Best integer =   5.378512e+02  Node =       0  Best node =   1.775899e+00
+Best integer =   5.348735e+02  Node =       0  Best node =   2.308593e+01
+Best integer =   5.343256e+02  Node =       0  Best node =   2.308593e+01
+Best integer =   5.320620e+02  Node =     810  Best node =   5.125000e+02
+Best integer =   5.320620e+02  Node =    3288  Best node =   5.125000e+02
+Best integer =   5.318757e+02  Node =    3358  Best node =   5.125000e+02
+Best integer =   5.318757e+02  Node =    3414  Best node =   5.125000e+02
+Best integer =   5.316551e+02  Node =    3479  Best node =   5.125000e+02
+Best integer =   5.300951e+02  Node =    4150  Best node =   5.125000e+02
+Best integer =   5.300917e+02  Node =    4420  Best node =   5.125000e+02
+Best integer =   5.294332e+02  Node =    4616  Best node =   5.125000e+02
+Best integer =   5.290357e+02  Node =    4618  Best node =   5.125000e+02
+Best integer =   5.287581e+02  Node =    7040  Best node =   5.125000e+02
+Best integer =   5.285195e+02  Node =    7883  Best node =   5.125000e+02
+Best integer =   5.281221e+02  Node =    8440  Best node =   5.125000e+02
+Best integer =   5.271375e+02  Node =    9283  Best node =   5.125000e+02
+Best integer =   5.269066e+02  Node =    9288  Best node =   5.125000e+02
+Best integer =   5.267051e+02  Node =    9643  Best node =   5.125000e+02
+Best integer =   5.262998e+02  Node =   10052  Best node =   5.125000e+02
+Best integer =   5.261198e+02  Node =   10385  Best node =   5.125000e+02
+Best integer =   5.258298e+02  Node =   11054  Best node =   5.125000e+02
+Best integer =   5.256636e+02  Node =   28762  Best node =   5.125071e+02
+Best integer =   5.255417e+02  Node =  315863  Best node =   5.135736e+02
+Best integer =   5.255364e+02  Node =  322968  Best node =   5.135854e+02
+Best integer =   5.254999e+02  Node =  336996  Best node =   5.136100e+02
+Best integer =   5.253484e+02  Node =  338268  Best node =   5.136127e+02
+Best integer =   5.253238e+02  Node =  341403  Best node =   5.136133e+02
+Best integer =   5.253238e+02  Node =  720410  Best node =   5.140285e+02
+
+There may be further error information in the clone logs.
+
+Implied bound cuts applied:  1385
+Mixed integer rounding cuts applied:  1118
+Gomory fractional cuts applied:  1
+Warning: MIP starts not constructed because of out-of-memory status.
+
+Consider using CPLEX node files to reduce memory usage.
+CPLEX Error  1001: Out of memory.
+ERROR: LoadError: CPLEX.CplexError(1001, "CPLEX Error  1001: Out of memory.\n")
+Stacktrace:
+ [1] optimize! at /home/iori1/.julia/packages/CPLEX/iAQQk/src/cpx_solve.jl:23 [inlined]
+ [2] optimize!(::CPLEX.Optimizer) at /home/iori1/.julia/packages/CPLEX/iAQQk/src/MOI/MOI_wrapper.jl:1838
+ [3] optimize!(::MathOptInterface.Bridges.LazyBridgeOptimizer{CPLEX.Optimizer}) at /home/iori1/.julia/packages/MathOptInterface/A2UPd/src/Bridges/bridge_optimizer.jl:225
+ [4] optimize!(::MathOptInterface.Utilities.CachingOptimizer{MathOptInterface.AbstractOptimizer,MathOptInterface.Utilities.UniversalFallback{MathOptInterface.Utilities.Model{Float64}}}) at /home/iori1/.julia/packages/MathOptInterface/A2UPd/src/Utilities/cachingoptimizer.jl:189
+ [5] #optimize!#78(::Bool, ::Bool, ::Base.Iterators.Pairs{Union{},Union{},Tuple{},NamedTuple{(),Tuple{}}}, ::Function, ::Model, ::Nothing) at /home/iori1/.julia/packages/JuMP/MsUSY/src/optimizer_interface.jl:141
+ [6] optimize! at /home/iori1/.julia/packages/JuMP/MsUSY/src/optimizer_interface.jl:111 [inlined] (repeats 2 times)
+ [7] macro expansion at /home/iori1/Scrivania/scheduling-with-deterioration-sbpo/scheduling.jl:267 [inlined]
+ [8] macro expansion at ./util.jl:156 [inlined]
+ [9] (::getfield(Main, Symbol("##4#6")){String,Model})(::IOStream) at /home/iori1/Scrivania/scheduling-with-deterioration-sbpo/scheduling.jl:266
+ [10] #open#310(::Base.Iterators.Pairs{Union{},Union{},Tuple{},NamedTuple{(),Tuple{}}}, ::Function, ::getfield(Main, Symbol("##4#6")){String,Model}, ::String) at ./iostream.jl:369
+ [11] open at ./iostream.jl:367 [inlined]
+ [12] (::getfield(Main, Symbol("##3#5")))(::IOStream) at /home/iori1/Scrivania/scheduling-with-deterioration-sbpo/scheduling.jl:30
+ [13] #open#310(::Base.Iterators.Pairs{Union{},Union{},Tuple{},NamedTuple{(),Tuple{}}}, ::Function, ::getfield(Main, Symbol("##3#5")), ::String) at ./iostream.jl:369
+ [14] open(::Function, ::String) at ./iostream.jl:367
+ [15] top-level scope at none:0
+ [16] include at ./boot.jl:326 [inlined]
+ [17] include_relative(::Module, ::String) at ./loading.jl:1038
+ [18] include(::Module, ::String) at ./sysimg.jl:29
+ [19] include(::String) at ./client.jl:403
+ [20] top-level scope at none:0
+in expression starting at /home/iori1/Scrivania/scheduling-with-deterioration-sbpo/scheduling.jl:11

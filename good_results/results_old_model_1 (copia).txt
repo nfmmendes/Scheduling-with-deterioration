@@ -1,0 +1,148 @@
+Starting optimization: m2_j10_d1_mt3_r0.txt
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+1 of 1 MIP starts provided solutions.
+MIP start 'm1' defined initial solution with objective 542.2369.
+Warning:  Non-integral bounds for integer variables rounded.
+Tried aggregator 2 times.
+MIP Presolve eliminated 1683 rows and 4 columns.
+MIP Presolve modified 15048 coefficients.
+Aggregator did 40 substitutions.
+Reduced MIP has 6330 rows, 3233 columns, and 53694 nonzeros.
+Reduced MIP has 1636 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.04 sec. (64.81 ticks)
+Probing time = 0.01 sec. (4.72 ticks)
+Tried aggregator 1 time.
+MIP Presolve modified 9000 coefficients.
+Reduced MIP has 6330 rows, 3233 columns, and 53694 nonzeros.
+Reduced MIP has 1636 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (26.02 ticks)
+Probing time = 0.01 sec. (3.87 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 8 threads.
+
+Node log . . .
+Best integer =   5.422369e+02  Node =       0  Best node =   0.000000e+00
+Best integer =   5.378716e+02  Node =       0  Best node =  -5.820766e-10
+Best integer =   5.289685e+02  Node =       0  Best node =   0.000000e+00
+Best integer =   5.273932e+02  Node =       0  Best node =   2.637332e-01
+Best integer =   5.272526e+02  Node =       0  Best node =   2.637332e-01
+Best integer =   5.267239e+02  Node =       0  Best node =   3.702306e-01
+Best integer =   5.246900e+02  Node =       0  Best node =   4.982669e+00
+Best integer =   5.246900e+02  Node =       0  Best node =   2.467375e+02
+Best integer =   5.232800e+02  Node =      26  Best node =   5.135000e+02
+Best integer =   5.226106e+02  Node =     536  Best node =   5.135000e+02
+Best integer =   5.225300e+02  Node =    1194  Best node =   5.135000e+02
+Best integer =   5.216800e+02  Node =    1258  Best node =   5.135000e+02
+Best integer =   5.208044e+02  Node =    2212  Best node =   5.135000e+02
+Best integer =   5.205736e+02  Node =    3260  Best node =   5.135000e+02
+Best integer =   5.205736e+02  Node =    3272  Best node =   5.135000e+02
+Best integer =   5.197100e+02  Node =    4597  Best node =   5.135000e+02
+Best integer =   5.190300e+02  Node =    6169  Best node =   5.135000e+02
+Best integer =   5.190000e+02  Node =    6832  Best node =   5.135000e+02
+Best integer =   5.180870e+02  Node =    8550  Best node =   5.135000e+02
+Best integer =   5.180000e+02  Node =   18321  Best node =   5.135000e+02
+Best integer =   5.178311e+02  Node =   19072  Best node =   5.135000e+02
+Best integer =   5.173954e+02  Node =   26736  Best node =   5.135000e+02
+Best integer =   5.172409e+02  Node =   27271  Best node =   5.135000e+02
+Best integer =   5.172325e+02  Node =   28582  Best node =   5.135000e+02
+Best integer =   5.172100e+02  Node =   29684  Best node =   5.135000e+02
+Best integer =   5.169530e+02  Node =   31323  Best node =   5.135000e+02
+Best integer =   5.163900e+02  Node =   41142  Best node =   5.135000e+02
+Best integer =   5.163300e+02  Node =   43602  Best node =   5.135000e+02
+Best integer =   5.161200e+02  Node =  596184  Best node =   5.135856e+02
+
+signal (15): Terminato
+in expression starting at /home/iori1/Scrivania/scheduling-with-deterioration-sbpo/scheduling.jl:11
+_bf0cccf4802814557be563ad2e6ef81f at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_85ff797cc168560ca674b5687500fcaa at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_28df9693972018cbc703c3e0bbf9ea34 at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_458c27ff5e8b53b24f24b11298e4748a at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_6874c3b6b6be3f68ecba8390ec5eef57 at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_f68671c86e58ee857262d57e613a989e at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_6461e05fddcc3cd8f9bc66780cf8fd0f at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_f029c31cc9e2101cddbedf5857dc19e0 at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_e6cdb163bd4e145629049c0c48fd8a0d at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_a5ac66bf2a77f76a39d6d39cb35ec3b8 at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_8727296eaaa73edeafa0b13f8264cf6b at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_c61c6b0d728c97d9284b71d6d09582c0 at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_00d3484724425db51115f7f77592bc7d at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_c69cadd8f44da6e42b444e6f0807896a at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_6874c3b6b6be3f68ecba8390ec5eef57 at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_0ff8510b91f0240cafe918f6ab601dab at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_cac20a5c347b91b75f3929b6cf82c567 at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_5ce57952ba3c58d45c4ff1caf38ccdb0 at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+_8bd0e61f623cb30e4bf612edcfdd2080 at /opt/ibm/ILOG/CPLEX_Studio128/cplex/bin/x86-64_linux/libcplex1280.so (unknown line)
+optimize! at /home/iori1/.julia/packages/CPLEX/iAQQk/src/cpx_solve.jl:7 [inlined]
+optimize! at /home/iori1/.julia/packages/CPLEX/iAQQk/src/MOI/MOI_wrapper.jl:1838
+optimize! at /home/iori1/.julia/packages/MathOptInterface/A2UPd/src/Bridges/bridge_optimizer.jl:225
+jl_fptr_trampoline at /buildworker/worker/package_linux64/build/src/gf.c:1864
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2219
+optimize! at /home/iori1/.julia/packages/MathOptInterface/A2UPd/src/Utilities/cachingoptimizer.jl:189
+jl_fptr_trampoline at /buildworker/worker/package_linux64/build/src/gf.c:1864
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2219
+#optimize!#78 at /home/iori1/.julia/packages/JuMP/MsUSY/src/optimizer_interface.jl:141
+unknown function (ip: 0x7fed30220e72)
+jl_fptr_trampoline at /buildworker/worker/package_linux64/build/src/gf.c:1864
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2219
+optimize! at /home/iori1/.julia/packages/JuMP/MsUSY/src/optimizer_interface.jl:111 [inlined]
+optimize! at /home/iori1/.julia/packages/JuMP/MsUSY/src/optimizer_interface.jl:111 [inlined]
+macro expansion at /home/iori1/Scrivania/scheduling-with-deterioration-sbpo/scheduling.jl:267 [inlined]
+macro expansion at ./util.jl:156 [inlined]
+#4 at /home/iori1/Scrivania/scheduling-with-deterioration-sbpo/scheduling.jl:266
+#open#310 at ./iostream.jl:369
+jl_fptr_trampoline at /buildworker/worker/package_linux64/build/src/gf.c:1864
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2219
+open at ./iostream.jl:367 [inlined]
+#3 at /home/iori1/Scrivania/scheduling-with-deterioration-sbpo/scheduling.jl:30
+#open#310 at ./iostream.jl:369
+jl_fptr_trampoline at /buildworker/worker/package_linux64/build/src/gf.c:1864
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2219
+open at ./iostream.jl:367
+jl_fptr_trampoline at /buildworker/worker/package_linux64/build/src/gf.c:1864
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2219
+do_call at /buildworker/worker/package_linux64/build/src/interpreter.c:323
+eval_value at /buildworker/worker/package_linux64/build/src/interpreter.c:411
+eval_stmt_value at /buildworker/worker/package_linux64/build/src/interpreter.c:362 [inlined]
+eval_body at /buildworker/worker/package_linux64/build/src/interpreter.c:773
+jl_interpret_toplevel_thunk_callback at /buildworker/worker/package_linux64/build/src/interpreter.c:885
+unknown function (ip: 0xfffffffffffffffe)
+unknown function (ip: 0x7fed1491d8bf)
+unknown function (ip: 0xb)
+jl_interpret_toplevel_thunk at /buildworker/worker/package_linux64/build/src/interpreter.c:894
+jl_toplevel_eval_flex at /buildworker/worker/package_linux64/build/src/toplevel.c:764
+jl_parse_eval_all at /buildworker/worker/package_linux64/build/src/ast.c:883
+jl_load at /buildworker/worker/package_linux64/build/src/toplevel.c:826
+include at ./boot.jl:326 [inlined]
+include_relative at ./loading.jl:1038
+include at ./sysimg.jl:29
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2219
+include at ./client.jl:403
+jl_fptr_trampoline at /buildworker/worker/package_linux64/build/src/gf.c:1864
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2219
+do_call at /buildworker/worker/package_linux64/build/src/interpreter.c:323
+eval_value at /buildworker/worker/package_linux64/build/src/interpreter.c:411
+eval_stmt_value at /buildworker/worker/package_linux64/build/src/interpreter.c:362 [inlined]
+eval_body at /buildworker/worker/package_linux64/build/src/interpreter.c:773
+jl_interpret_toplevel_thunk_callback at /buildworker/worker/package_linux64/build/src/interpreter.c:885
+unknown function (ip: 0xfffffffffffffffe)
+unknown function (ip: 0x7fed31dc3c0f)
+unknown function (ip: 0xffffffffffffffff)
+jl_interpret_toplevel_thunk at /buildworker/worker/package_linux64/build/src/interpreter.c:894
+jl_toplevel_eval_flex at /buildworker/worker/package_linux64/build/src/toplevel.c:764
+jl_toplevel_eval_in at /buildworker/worker/package_linux64/build/src/toplevel.c:793
+eval at ./boot.jl:328
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2219
+exec_options at ./client.jl:243
+_start at ./client.jl:436
+jl_apply_generic at /buildworker/worker/package_linux64/build/src/gf.c:2219
+unknown function (ip: 0x40191d)
+unknown function (ip: 0x401523)
+__libc_start_main at /build/glibc-OTsEL5/glibc-2.27/csu/../csu/libc-start.c:310
+unknown function (ip: 0x4015c4)
+unknown function (ip: 0xffffffffffffffff)
+Allocations: 72189585 (Pool: 72178449; Big: 11136); GC: 160

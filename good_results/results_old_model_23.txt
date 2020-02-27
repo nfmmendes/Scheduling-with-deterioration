@@ -1,0 +1,16 @@
+Starting optimization: m10_j15_d1_mt9_r5.txt
+3774.535300 seconds (131.13 M allocations: 8.578 GiB, 2.31% gc time)
+TIME_LIMIT
+Optimization finished
+-------UNEXPECTED ERROR : m10_j15_d1_mt9_r5.txt
+ 
+ 
+ 
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+Warning:  No solution found from 1 MIP starts.
+Retaining values of one MIP start for possible repair.
+Starting optimization: m10_j15_d1_mt9_r6.txt

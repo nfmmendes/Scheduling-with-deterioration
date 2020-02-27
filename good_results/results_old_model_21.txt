@@ -1,0 +1,106 @@
+Starting optimization: m10_j15_d1_mt3_r6.txt
+3753.302218 seconds (131.13 M allocations: 8.578 GiB, 1.79% gc time)
+TIME_LIMIT
+Optimization finished
+-------UNEXPECTED ERROR : m10_j15_d1_mt3_r6.txt
+ 
+ 
+ 
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+Warning:  No solution found from 1 MIP starts.
+Retaining values of one MIP start for possible repair.
+Starting optimization: m10_j15_d1_mt3_r7.txt
+3780.413646 seconds (84.94 M allocations: 6.294 GiB, 2.05% gc time)
+TIME_LIMIT
+Optimization finished
+-------UNEXPECTED ERROR : m10_j15_d1_mt3_r7.txt
+ 
+ 
+ 
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+Warning:  No solution found from 1 MIP starts.
+Retaining values of one MIP start for possible repair.
+Starting optimization: m10_j15_d1_mt3_r8.txt
+3787.277040 seconds (84.94 M allocations: 6.294 GiB, 1.82% gc time)
+TIME_LIMIT
+Optimization finished
+-------UNEXPECTED ERROR : m10_j15_d1_mt3_r8.txt
+ 
+ 
+ 
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+Warning:  No solution found from 1 MIP starts.
+Retaining values of one MIP start for possible repair.
+Starting optimization: m10_j15_d1_mt3_r9.txt
+3781.471504 seconds (84.94 M allocations: 6.294 GiB, 2.12% gc time)
+TIME_LIMIT
+Optimization finished
+-------UNEXPECTED ERROR : m10_j15_d1_mt3_r9.txt
+ 
+ 
+ 
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+Warning:  No solution found from 1 MIP starts.
+Retaining values of one MIP start for possible repair.
+Starting optimization: m10_j15_d1_mt9_r0.txt
+3779.370968 seconds (84.94 M allocations: 6.294 GiB, 2.32% gc time)
+TIME_LIMIT
+Optimization finished
+-------UNEXPECTED ERROR : m10_j15_d1_mt9_r0.txt
+ 
+ 
+ 
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+Warning:  No solution found from 1 MIP starts.
+Retaining values of one MIP start for possible repair.
+Starting optimization: m10_j15_d1_mt9_r1.txt
+3790.548479 seconds (84.94 M allocations: 6.294 GiB, 2.36% gc time)
+TIME_LIMIT
+Optimization finished
+-------UNEXPECTED ERROR : m10_j15_d1_mt9_r1.txt
+ 
+ 
+ 
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+Warning:  No solution found from 1 MIP starts.
+Retaining values of one MIP start for possible repair.
+Starting optimization: m10_j15_d1_mt9_r2.txt
+3816.417503 seconds (84.94 M allocations: 6.294 GiB, 2.65% gc time)
+TIME_LIMIT
+Optimization finished
+-------UNEXPECTED ERROR : m10_j15_d1_mt9_r2.txt
+ 
+ 
+ 
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+Warning:  No solution found from 1 MIP starts.
+Retaining values of one MIP start for possible repair.
+Starting optimization: m10_j15_d1_mt9_r3.txt

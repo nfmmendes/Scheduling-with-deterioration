@@ -1,0 +1,31 @@
+Starting optimization: m10_j15_d1_mt9_r8.txt
+3773.904199 seconds (131.13 M allocations: 8.578 GiB, 2.15% gc time)
+TIME_LIMIT
+Optimization finished
+-------UNEXPECTED ERROR : m10_j15_d1_mt9_r8.txt
+ 
+ 
+ 
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+Warning:  No solution found from 1 MIP starts.
+Retaining values of one MIP start for possible repair.
+Starting optimization: m10_j15_d1_mt9_r9.txt
+3779.420211 seconds (84.94 M allocations: 6.294 GiB, 2.01% gc time)
+TIME_LIMIT
+Optimization finished
+-------UNEXPECTED ERROR : m10_j15_d1_mt9_r9.txt
+ 
+ 
+ 
+CPXPARAM_TimeLimit                               3600
+CPXPARAM_WorkMem                                 1
+CPXPARAM_MIP_Display                             1
+CPXPARAM_MIP_Interval                            1
+Warning:  Non-integral bounds for integer variables rounded.
+Warning:  No solution found from 1 MIP starts.
+Retaining values of one MIP start for possible repair.
+Starting optimization: m10_j15_d2_mt3_r0.txt
