@@ -12,7 +12,16 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
     #### READING THE INSTANCE LIST
     for instanceName in eachline(file)
         ################## CREATE A MODEL OBJECT TO BE RUN ON CPLEX  ####################
-        m = Model(with_optimizer(CPLEX.Optimizer, CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1, CPX_PARAM_TILIM=3600))
+        #m = Model(with_optimizer(CPLEX.Optimizer, CPX_PARAM_MIPDISPLAY=1, CPX_PARAM_MIPINTERVAL=1, CPX_PARAM_TILIM=3600))
+
+		m = Model(with_optimizer(CPLEX.Optimizer))
+		MOI.set(m, MOI.RawParameter("CPX_PARAM_TILIM"), 3600)
+		MOI.set(m, MOI.RawParameter("CPX_PARAM_MIPDISPLAY"), 1)
+		MOI.set(m, MOI.RawParameter("CPX_PARAM_MIPINTERVAL"), 1)
+		MOI.set(m, MOI.RawParameter("CPX_PARAM_WORKMEM"), 1)
+
+
+
         #### MAIN PARAMETERS OF THE OPTIMIZATION
         NUMBER_OF_JOBS = 0
         NUMBER_OF_MACHINES = 0
@@ -30,13 +39,19 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            d = zeros(NUMBER_OF_JOBS, NUMBER_OF_MACHINES)     #2-dimensional array
            p = zeros(NUMBER_OF_JOBS, NUMBER_OF_MACHINES)     #2-dimensional array
            t = zeros(NUMBER_OF_MACHINES)                     #1-dimensional array
+           
+
+
+           deteriorationProds = ones(NUMBER_OF_MACHINES)
 
            jobDurationData = readline(instance)
            jobDurations = split(jobDurationData, " ")
 
            ##### STORE JOBS DURATION. IT IS SUPPOSED THAT ALL MACHINES ARE
            ##### EQUALS HERE
+	   sumJobs = 0
            for i in 1:NUMBER_OF_JOBS
+               sumJobs  = sumJobs + parse(Float64, jobDurations[i]) 
                for j in 1:NUMBER_OF_MACHINES
                    p[i,j] = parse(Float64, jobDurations[i])
                end
@@ -46,7 +61,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            maintenanceDuration = split(maintenanceDurationData, " ")
 
            ##### STORE MAINTENANCE DATA
-           for i in NUMBER_OF_MACHINES
+           for i in 1:NUMBER_OF_MACHINES
                t[i] = parse(Float64, maintenanceDuration[i])
            end
 
@@ -56,6 +71,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                  stringData = readline(instance)
                  rowData = split(stringData, " ")
                  for j in 1:NUMBER_OF_MACHINES
+                     deteriorationProds[j] = deteriorationProds[j]*parse(Float64, rowData[j])
                      d[i,j] = parse(Float64, rowData[j])
                 end
            end
@@ -137,7 +153,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            for j = 1:NUMBER_OF_JOBS
                for k = 1:NUMBER_OF_MACHINES
                   for h = 1:NUMBER_OF_PERIODS
-                       @constraint( m,  a[j,k,h] <= bigM*x[j,k,h])
+                       @constraint( m,  a[j,k,h] <= sumJobs*x[j,k,h])
                   end
                end
            end
@@ -151,7 +167,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            for j = 1:NUMBER_OF_JOBS
                for k = 1:NUMBER_OF_MACHINES
                   for h = 1:NUMBER_OF_PERIODS
-                       @constraint( m,  a[j,k,h] >= p[j,k]*q[k,h] - bigM*(1-x[j,k,h]))
+                       @constraint( m,  a[j,k,h] >= p[j,k]*q[k,h] - sumJobs*(1-x[j,k,h]))
                   end
                end
            end
@@ -192,7 +208,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            for j= 1:NUMBER_OF_JOBS
                for k = 1:NUMBER_OF_MACHINES
                   for h = 2:NUMBER_OF_PERIODS
-                       @constraint(m, q[k,h] >= d[j,k]*q[k,h-1] - bigM*(s[k,h-1] + (1- x[j,k,h])))
+                       @constraint(m, q[k,h] >= d[j,k]*q[k,h-1] -  deteriorationProds[k]*(s[k,h-1] + (1- x[j,k,h])))
                   end
                end
            end

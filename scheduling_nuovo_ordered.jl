@@ -36,6 +36,8 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            d = zeros(NUMBER_OF_JOBS, NUMBER_OF_MACHINES)     #2-dimensional array
            p = zeros(NUMBER_OF_JOBS, NUMBER_OF_MACHINES)     #2-dimensional array
            t = zeros(NUMBER_OF_MACHINES)                     #1-dimensional array
+	   sumTimes = zeros(NUMBER_OF_MACHINES)
+	   prodDet = ones(NUMBER_OF_MACHINES)
 
            jobDurationData = readline(instance)
            jobDurations = split(jobDurationData, " ")
@@ -45,6 +47,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
 		   lowestJob = 1e8
            for i in 1:NUMBER_OF_JOBS
                for j in 1:NUMBER_OF_MACHINES
+                   sumTimes[j] = sumTimes[j] + parse(Float64, jobDurations[i])
                    p[i,j] = parse(Float64, jobDurations[i])
 				   if p[i,j] < lowestJob 
 					  lowestJob = p[i,j]
@@ -70,6 +73,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                  stringData = readline(instance)
                  rowData = split(stringData, " ")
                  for j in 1:NUMBER_OF_MACHINES
+		     prodDet[j] = prodDet[j]*parse(Float64, rowData[j])
                      d[i,j] = parse(Float64, rowData[j])
                 end
            end
@@ -175,12 +179,8 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            for i = 1:(NUMBER_OF_JOBS+2)
                 for j=2:(NUMBER_OF_JOBS+1)
                     for m = 1:NUMBER_OF_MACHINES
-                        if i == 1 || i == NUMBER_OF_JOBS +2
-                            @constraint(model, q[j]  >= q[i] - (1+biggerMaintenance/lowestJob) *(1-x[i,j,m]) )
-                        else ## THE FIRST INDEX OF d GOES FROM 1 TO NUMBER OF JOBS. SO WE NEED TO DO -1
-							##println(string("i = ", i, " j= ", j, " m = ", m, " d[i-1,m] = ", d[i-1,m]))
-                            @constraint(model, q[j]  >= q[i]*d[i-1,m] - 100*(1+biggerMaintenance/lowestJob)*(1-x[i,j,m]) )
-                        end
+                        #100*(1+biggerMaintenance/lowestJob)
+                        @constraint(model, q[j]  >= q[i]*d[j-1,m] - prodDet[m]*(1-x[i,j,m]) )
                     end
                 end
             end
@@ -194,7 +194,8 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
             for i = 1:(NUMBER_OF_JOBS+2)
                 for j=2:(NUMBER_OF_JOBS+1)
                     for m=1:NUMBER_OF_MACHINES
-                        @constraint(model,a[j,m] >= p[j-1,m]*q[i] - (1+biggerMaintenance/lowestJob)*p[j-1,m]*(1-x[i,j,m]))
+                        # (1+biggerMaintenance/lowestJob)*p[j-1,m] 
+                        @constraint(model,a[j,m] >= p[j-1,m]*q[i] - sumTimes[m]*(1-x[i,j,m]))
                     end
                 end
             end
@@ -238,7 +239,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            println("Starting optimization: ", instanceName);
            flush(stdout)
 
-        #   print(m)
+           #print(model)
 
           # write("output.txt", readstring(`ls -l`))
 
@@ -252,7 +253,8 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
            ##                              PRINTING SOLUTION
            ############################################################################################
            println("Optimization finished")
-           if(termination_status(model) == MOI.OPTIMAL)
+		### termination_status(model) == MOI.OPTIMAL
+           if(true)
                ############################################################################################
                ##                              PRINTING CMAX VARIABLE VALUE
                ############################################################################################
@@ -274,7 +276,7 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                ############################################################################################
                ##                              PRINTING A VARIABLE VALUES
                ############################################################################################
-               for j = 1:NUMBER_OF_JOBS
+               for j = 1:(NUMBER_OF_JOBS+1)
                     for k = 1:NUMBER_OF_MACHINES
                        if ( value(a[j,k] ) > 0)
                            println(string("a(", j, ",",k,") " , value(a[j,k])))
@@ -292,14 +294,14 @@ open("Instances/Instances With Deterioration/instance_list.txt") do file
                 end
 
 
-			   ############################################################################################
+               ############################################################################################
                ##                              PRINTING F VARIABLE VALUES
                ############################################################################################
-               for j = 1:(NUMBER_OF_JOBS+1)
-                   if ( value(f[j] ) > 0)
-                       println(string("f(", j , ") " , value(f[j])))
-                   end
-                end
+               #for j = 1:(NUMBER_OF_JOBS+1)
+               #    if ( value(f[j] ) > 0)
+               #        println(string("f(", j , ") " , value(f[j])))
+               #    end
+               # end
 
            elseif termination_status(model) == MOI.TIME_LIMIT && has_values(model)
                 println("-------TIME LIMIT REACHED. BEST VALUE FOUND: ", objective_value(model))
