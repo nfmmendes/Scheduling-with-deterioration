@@ -32,17 +32,20 @@ enum LOCAL_SEARCH_CRITERIA{BEST_IMPROVEMENT, FIRST_IMPROVEMENT};
 class Input{
 
     private:
-        bool successfull; 
-        string fileName;
-        int numberOfMachines;
-        int numberOfJobs;
-        vector<double> maintenanceTimes;
-        vector<vector<double> > processingTimes; 
-        vector<vector<double> > deteriorationFactors;
+        bool successfull;                           ///< This variable is true if the input reading was successfull
+        string fileName;                            ///< Input file name
+        int numberOfMachines;                       ///< Number of machines available 
+        int numberOfJobs;                           ///< Number of jobs to be scheduled 
+        vector<double> maintenanceTimes;            ///< Maintenance time on each machine
+        vector<vector<double> > processingTimes;    ///< Processing time of each job in each machine
+        vector<vector<double> > deteriorationFactors;  ///< Deterioration factor of each job in each machine 
 
     public:  
         Input(){ successfull = false; }
 
+        /**
+         * Member constructor
+         **/
         Input(string fileName){
             successfull = false; 
             this->fileName = fileName; 
@@ -56,7 +59,7 @@ class Input{
             ifstream arq(file.c_str());
 
             if(!arq.good()){
-                assert("Input file not found."); 
+                cerr<<"Input file not found.\n"; 
                 successfull = false;
 
             }
@@ -64,12 +67,15 @@ class Input{
             arq>>numberOfMachines;
             arq>>numberOfJobs;
 
-	    cout<<numberOfMachines<<" "<<numberOfJobs<<endl;
+            #ifdef DEBUG
+            cout<<numberOfMachines<<" "<<numberOfJobs<<endl;
+            #endif 
             maintenanceTimes.resize(numberOfMachines);
             processingTimes.resize(numberOfMachines);
             deteriorationFactors.resize(numberOfMachines);
 
-            
+            //In the current version of the problem the jobs have the same processing time in all machines 
+            //so you just need to read the processing time once and then replicate it to all machines 
             double pt;
             for(int i=0;i<numberOfJobs;i++){
                 arq>>pt;
@@ -90,7 +96,8 @@ class Input{
         }
 
         /**
-         * 
+         * This function is just to debug the reading process. If the file was read right it will be print
+         * right here 
          * */
         void printInput(){
             cout<< " --------------------  Starting printing the instance --------------------  "<<endl; 
@@ -103,6 +110,7 @@ class Input{
             
             cout<<endl;
 
+            //In this version of the problem the jobs have the same processing time in all the machines 
             cout<<"Processing times"<<endl; 
             for(int i=0; i < numberOfJobs; i++)
                 cout<<processingTimes[0][i]<<" "; 
@@ -122,7 +130,7 @@ class Input{
 
 
         /**
-         * 
+         * Returns true if the input file was read successfully or false otherwise 
          * */
         bool readSuccessfull(){
             return successfull; 
@@ -130,7 +138,7 @@ class Input{
 
 
         /**
-         * 
+         * Start the input file reading (if the file name was already informed) 
          * */
         void readInput(){
             if(this->fileName.empty())
@@ -140,11 +148,16 @@ class Input{
             
         }
 
-        vector<double> getMaintenanceTimes(){ return maintenanceTimes; }
+        /**
+         * Get the maintenance time for all machines
+         * */
+        vector<double> getMaintenanceTimes(){ 
+            return maintenanceTimes; 
+        }
 
 
         /***
-         * 
+         * Get maintenance time of a single machine  
          * */
         double getMaintenanceTimes(int machine){ 
             if(machine < 0 || machine >= numberOfMachines) 
@@ -181,7 +194,7 @@ class Input{
         void setNUmberOfMachines(int value) { numberOfMachines = value;}
 
         int bestFirstJobOnMachine(int machine, int jobA, int jobB ){
-            if(jobA < 0 || jobA >= numberOfMachines || jobB < 0 || jobB >= numberOfMachines )
+            if(jobA < 0 || jobA >= numberOfJobs || jobB < 0 || jobB >= numberOfJobs )
                 assert("Invalid job indexes"); 
             
             if(machine < 0 || machine >= numberOfMachines)
@@ -212,7 +225,7 @@ class Util{
         }
 
         /***
-         *  It performs a binary search to 
+         *  It performs a binary search to say what is the best position to put a job in a sequence 
          * */
         static int bestInsertionPosition(Input *input, int &machine, int &job, int first , int last , vector<int> &sequence){
             
@@ -222,8 +235,18 @@ class Util{
             int firstJob = sequence[first]; 
             int lastJob = sequence[last]; 
 
+            if(last < first){
+                cout<<"ERROR | Invalid interval "<<endl;
+                exit(0);
+            }
+                
             if(last - first == 1){
-                return first + 1; 
+                if(input->bestFirstJobOnMachine(machine, job, firstJob) == job)
+                    return first;
+                else if(input->bestFirstJobOnMachine(machine, job, lastJob) == job)
+                    return last;
+                else 
+                    return last + 1;
             }
 
             if(last  == first){
@@ -236,10 +259,10 @@ class Util{
             int middle = (first + last)/2 ; 
             int middleJob = sequence[middle];
 
-            if(input->bestFirstJobOnMachine(machine, middle, job) == job){
+            if(input->bestFirstJobOnMachine(machine, middleJob, job) == job){
                 return bestInsertionPosition(input, machine, job, first, middle, sequence); 
             }else{
-                return bestInsertionPosition(input,machine, job, middle, last, sequence);
+                return bestInsertionPosition(input,machine, job, middle+1, last, sequence);
             }
         }
 };
@@ -572,14 +595,14 @@ class Solution{
                             presentJobs[ val [i].sequence[j] ]++; 
                         }
                     }
-            
+            /***
             for(int i=0; i<presentJobs.size(); i++){
                 cout<<presentJobs[i]<<" ";
                 if(i%10 == 9)
                     cout<<endl;
             }
             cout<<endl; 
-
+            ***/
 
             for(int i=0; i<presentJobs.size(); i++)
                 if(presentJobs[i] != 1)
@@ -614,7 +637,7 @@ class Solution{
         bool isEmpty(){
 
             bool empty = true;
-            cout<<"Inicio\n";
+            
             if(this->schedule.size() > 0){
                 for(const auto &[ key, val] : this->schedule){
                     if(val.size()> 0 && any_of(val.begin(), val.end(), [](Group v){ return v.sequence.size() >0; })){
@@ -624,7 +647,7 @@ class Solution{
                 }
             } 
 
-            cout<<"Fim\n";
+            
             return empty; 
         }
 
@@ -1217,7 +1240,6 @@ class MainHeuristic {
                     cerr<<"Solution strategy initialization not found\n"; 
                     break;
             }
-            cout<<"Fim create\n";
         }
 
         /**
@@ -1390,26 +1412,32 @@ class MainHeuristic {
             for(int i=0; i<NUM_SWAP_GROUPS_LOCAL_SEARCH_REPETITIONS; i++)
                 swapGroupsLocalSearch();
            
+            #ifdef DEBUG
             cout<<"Current solution after A: "<<currentSolution.getCost()<<endl;
-
+            #endif 
+            
             if(currentSolution.getCost() < bestSolution.getCost())
                 bestSolution = currentSolution; 
 
             //Second neighborhood
              for(int i=0; i< NUM_MOVE_JOB_TO_OTHER_INTERNAL_GROUP_REPETITIONS; i++)
                 moveJobToOtherInternalGroup(); 
-            
-            cout<<"Current solution after B: "<<currentSolution.getCost()<<endl;
 
+             #ifdef DEBUG
+            cout<<"Current solution after B: "<<currentSolution.getCost()<<endl;
+            #endif
+            
             if(currentSolution.getCost() < bestSolution.getCost())
                 bestSolution = currentSolution; 
 
             //Third neighborhood
             for(int i=0; i < NUM_SWAP_JOBS_LOCAL_SEARCH_REPETITIONS;i++)
                 swapJobsLocalSearch();
-   
+            
+            #ifdef DEBUG
             cout<<"Current solution after C: "<<currentSolution.getCost()<<endl;
-
+            #endif
+            
             if(currentSolution.getCost() < bestSolution.getCost())
                 bestSolution = currentSolution; 
 
@@ -1417,8 +1445,10 @@ class MainHeuristic {
             for(int i=0; i<NUM_SWAP_GROUPS_LOCAL_SEARCH_REPETITIONS; i++)
                 moveGroupLocalSearch(); 
 
+            #ifdef DEBUG
             cout<<"Current solution after D: "<<currentSolution.getCost()<<endl;
-
+            #endif
+                
             if(currentSolution.getCost() < bestSolution.getCost())
                 bestSolution = currentSolution;
 
@@ -1426,8 +1456,10 @@ class MainHeuristic {
             for(int i=0; i< NUM_MOVE_JOB_TO_OTHER_EXTERNAL_GROUP_REPETITIONS; i++)
                 moveJobToOtherExternalGroup(); 
    
+            #ifdef DEBUG
             cout<<"Current solution after E: "<<currentSolution.getCost()<<endl;
-
+            #endif
+            
         //    if(!currentSolution.isFeasible(nj,nm))
         //        cout<<"NFeasible\n";
 
@@ -1778,7 +1810,9 @@ class MainHeuristic {
             double bestCostFound = __DBL_MAX__ ; 
            
             while(iterationsWithoutImprovement <= MAX_ITERATIONS_WITHOUT_IMPROVEMENT){
-                cout<<"Main while : " << iterationsWithoutImprovement <<" "<<bestSolution.getCost()<<endl; 
+                #ifdef DEBUG
+                    cout<<"Main while : " << iterationsWithoutImprovement <<" "<<bestSolution.getCost()<<endl; 
+                #endif
                 executeLocalSearch();
                 executeSolutionDestruction();
                 executeSolutionReconstruction();
@@ -1788,11 +1822,7 @@ class MainHeuristic {
                     iterationsWithoutImprovement = 0; 
                     bestCostFound = bestSolution.getCost(); 
                 }
-                
             }
-            
-           
-
         }
 };
 
@@ -1836,7 +1866,10 @@ int main(int argc, char * argv[]){
             auto duration = duration_cast<microseconds>(stop - start);
             cout<<duration.count()/1000000.0<<endl;
             res<<instance<< "  "<<bestSolution.getCost()<<" "<<duration.count()/1000000.0<<endl;
-            //bestSolution.printSolution(); 
+            cout<<instance<<endl;
+            cout<<"Is feasible? " << bestSolution.isFeasible(input.getNumberOfJobs(), input.getNumberOfMachines())<<endl;
+            bestSolution.printSolution(); 
+            cout<<endl<<endl<<endl<<"_____________________________________________"<<endl; 
             //bestSolution.isFeasible(input.getNumberOfJobs(), input.getNumberOfMachines());
         }
     }
